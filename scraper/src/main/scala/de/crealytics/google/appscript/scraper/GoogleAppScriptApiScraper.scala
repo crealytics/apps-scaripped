@@ -6,13 +6,29 @@ import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import org.jsoup.nodes._
 import org.jsoup.select._
 import de.crealytics.google.appscript.api._
+import scala.util._
 
 object GoogleAppScriptClassScraper {
+  def scrapeOverview(url: String): Seq[String] = {
+    val browser = new Browser
+    val doc = browser.get(url)
+    (doc >> elements("table.member.type tr td a")).map(_.attr("href"))
+  }
+  def scrapeAllFromOverview(url: String): Seq[ApiClass] = {
+    val detailUrls = scrapeOverview(url)
+    detailUrls.flatMap { du =>
+      Try {
+        scrapeClass(url + du)
+      }.recoverWith {
+        case e => Failure(new RuntimeException(s"Could not scrape $du" ))
+      }.toOption
+    }
+  }
   def scrapeClass(url: String): ApiClass = {
     val browser = new Browser
     val doc = browser.get(url)
-    val apiClassElement = doc >> element("h1.page-title")
-    val apiClassName = apiClassElement.text.replace("Class ", "")
+    val apiClassText = (doc >> element("h1.page-title")).text
+    val Array(tpe, apiClassName) = apiClassText.split(" ")
     val classDescription = doc >> text("div.type.doc")
     val methodElements = doc >> elementList("div.function.doc")
     val apiMethods = methodElements.map { div =>
@@ -28,6 +44,6 @@ object GoogleAppScriptClassScraper {
       }
       ApiMethod(name, params, returnType, description)
     }.toSeq
-    ApiClass(apiClassName, apiMethods, classDescription)
+    ApiClass(apiClassName, tpe, apiMethods, classDescription)
   }
 }
