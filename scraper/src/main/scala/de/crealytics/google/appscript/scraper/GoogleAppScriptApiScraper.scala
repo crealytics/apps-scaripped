@@ -30,11 +30,11 @@ object GoogleAppScriptClassScraper {
     val apiClassText = (doc >> element("h1.page-title")).text
     val Array(tpe, apiClassName) = apiClassText.split(" ")
     val classDescription = doc >> text("div.type.doc")
-    val methodElements = doc >> elementList("div.function.doc")
-    val apiMethods = methodElements.map { div =>
+    val methodElements = (doc >?> elementList("div.function.doc"))
+    val apiMethods = methodElements.getOrElse(List()).map { div =>
       val name = """\(.*\)""".r.replaceAllIn(div >> text("h3 code"), "")
-      val description = div >> text("p")
-      val returnType = div >> text("h4 + p > code")
+      val description = (div >?> text("p")).getOrElse("")
+      val returnType = (div >?> text("h4 + p > code")).getOrElse("void")
       val paramRows = (div >> elementList("table.function.param tr")).drop(1)
       val params = paramRows.flatMap { row =>
         row >> texts("td") match {
