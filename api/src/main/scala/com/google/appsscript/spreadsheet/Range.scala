@@ -6,8 +6,6 @@ import com.google.appsscript.charts._
 
 import com.google.appsscript.drive._
 
-import java.util.Date
-
 import scala.scalajs.js
 
 /** Range Access and modify spreadsheet ranges. This class allows users to access and modify ranges in Google Sheets. A range can be a single cell in a sheet or a range of cells in a sheet. */

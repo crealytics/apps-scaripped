@@ -6,8 +6,6 @@ import com.google.appsscript.charts._
 
 import com.google.appsscript.drive._
 
-import java.util.Date
-
 import scala.scalajs.js
 
 /** EmbeddedBarChartBuilder Builder for bar charts. For more details, see the Gviz documentation. */

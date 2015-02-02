@@ -10,53 +10,36 @@ import org.jsoup.select._
 import java.nio.file.{ Paths, Files }
 import java.nio.charset.StandardCharsets
 import ammonite.all._
+import net.ceedubs.ficus.Ficus._
+import net.ceedubs.ficus.readers.ArbitraryTypeReader._
 
 object GoogleAppScriptApiScraper {
   println("Welcome to the Scala worksheet")
 
   val wd = root / 'Users / 'moe / 'Workspaces / 'bidmanagement / 'google_apps_script_scala_js / 'api / 'src / 'main / 'scala
-  rm ! wd
-  def allFromPackage(pkg: String) = s"$pkg._"
+  import com.typesafe.config.ConfigFactory
   case class ImportLink(
     url: String,
     pkg: String = "",
     imports: Seq[String] = Seq(),
-    scraper: ApiScraper = GoogleAppScriptClassScraper,
-    extraClasses: Seq[ApiClass] = Seq())
-  val baseApi = ImportLink(
-    url = "https://developers.google.com/apps-script/reference/base/",
-    pkg = "com.google.appsscript.base")
-  val uiApi = ImportLink(
-    url = "https://developers.google.com/apps-script/reference/ui/",
-    pkg = "com.google.appsscript.ui")
+    scraperClass: String = "GoogleAppScriptClassScraper",
+    extraClasses: Seq[ApiClass] = Seq()) {
+    def scraper = {
+      import scala.reflect.runtime.universe
+      val runtimeMirror = universe.runtimeMirror(getClass.getClassLoader)
+      val module = runtimeMirror.staticModule(scraperClass)
+      val obj = runtimeMirror.reflectModule(module)
+      obj.instance.asInstanceOf[ApiScraper]
+    }
+  }
 
-  val chartsApi = ImportLink(
-    url = "https://developers.google.com/apps-script/reference/charts/",
-    pkg = "com.google.appsscript.charts",
-    imports = Seq(allFromPackage(baseApi.pkg), allFromPackage(uiApi.pkg)))
-  val driveApi = ImportLink(
-    url = "https://developers.google.com/apps-script/reference/drive/",
-    pkg = "com.google.appsscript.drive",
-    imports = Seq(allFromPackage(baseApi.pkg)))
-  val spreadsheetApi = ImportLink(
-    url = "https://developers.google.com/apps-script/reference/spreadsheet/",
-    pkg = "com.google.appsscript.spreadsheet",
-    imports = Seq(allFromPackage(baseApi.pkg), allFromPackage(chartsApi.pkg), allFromPackage(driveApi.pkg), "java.util.Date"))
+  val conf = ConfigFactory.load()
+  val scrapingConfigs = conf.as[Map[String, ImportLink]]("scraping")
 
-  val adwordsApi = ImportLink(
-    url = "https://developers.google.com/adwords/scripts/docs/reference/adwordsapp/",
-    pkg = "com.google.appsscript.adwords",
-    imports = spreadsheetApi.imports ++ List(allFromPackage(spreadsheetApi.pkg), allFromPackage(driveApi.pkg)),
-    scraper = GoogleAdWordsScriptScraper,
-    extraClasses = Seq(ApiClass("Operation", tpe = "class", methods = Seq(), description = "Unknown type which is not further speficied in API")))
+  rm ! wd
+  def allFromPackage(pkg: String) = s"$pkg._"
 
-  val overviewUrls = List(
-    baseApi,
-    chartsApi,
-    uiApi,
-    spreadsheetApi,
-    driveApi,
-    adwordsApi)
+  val overviewUrls = scrapingConfigs.values.toList
 
   overviewUrls.par.foreach { importLink =>
     import importLink._
@@ -74,7 +57,7 @@ object GoogleAppScriptApiScraper {
       scraper.scrapeClass(subUrl)
     }
     (importLink.extraClasses ++ classes).foreach { scrapedClass =>
-      val code = CodeGenerator.codeForClass(scrapedClass, pkg, imports)
+      val code = CodeGenerator.codeForClass(scrapedClass, pkg, imports.map(allFromPackage))
       val spkg = pkg.split("\\.").toList
       val path = spkg.foldLeft(wd)(_ / _)
       mkdir ! path

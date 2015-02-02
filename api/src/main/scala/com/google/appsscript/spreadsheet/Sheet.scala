@@ -6,8 +6,6 @@ import com.google.appsscript.charts._
 
 import com.google.appsscript.drive._
 
-import java.util.Date
-
 import scala.scalajs.js
 
 /** Sheet Access and modify spreadsheet sheets. Common operations are renaming a sheet and accessing range objects from the sheet. */

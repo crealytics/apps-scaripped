@@ -6,8 +6,6 @@ import com.google.appsscript.charts._
 
 import com.google.appsscript.drive._
 
-import java.util.Date
-
 import scala.scalajs.js
 
 /** EmbeddedAreaChartBuilder Builder for area charts. For more details, see the Gviz documentation. */

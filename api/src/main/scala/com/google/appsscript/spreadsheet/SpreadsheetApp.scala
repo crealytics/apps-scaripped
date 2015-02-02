@@ -6,8 +6,6 @@ import com.google.appsscript.charts._
 
 import com.google.appsscript.drive._
 
-import java.util.Date
-
 import scala.scalajs.js
 
 /** SpreadsheetApp This class allows users to open Google Sheets files and to create new ones. This class is the parent class for the Spreadsheet service. */

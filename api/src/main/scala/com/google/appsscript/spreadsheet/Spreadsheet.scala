@@ -4,8 +4,6 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
-import java.util.Date
-
 import scala.scalajs.js
 
 /** Spreadsheet This class allows users to access and modify Google Sheets files. Common operations are adding new sheets and adding collaborators. */
