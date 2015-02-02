@@ -4,6 +4,8 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
+import com.google.appsscript.drive._
+
 import java.util.Date
 
 /** PageProtection Access and modify the state of protection permissions on a sheet. This class allows users to access and modify sheet protection permissions on a sheet. */

@@ -10,4 +10,4 @@ resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
 
 lazy val scraper = project
 
-lazy val api = project
+lazy val api = project.enablePlugins(ScalaJSPlugin)

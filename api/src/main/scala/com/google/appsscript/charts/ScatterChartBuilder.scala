@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * ScatterChartBuilder Builder for scatter charts. For more details, see the Google Charts documentation. Here is an example that shows how to build a scatter chart. The data is imported from a Google spreadsheet. 
  *  
@@ -39,14 +41,14 @@ trait ScatterChartBuilder {
   /** Sets the data view definition to use for the chart. */
   def setDataViewDefinition(dataViewDefinition: DataViewDefinition): ScatterChartBuilder = ???
   /** Sets the dimensions for the chart. */
-  def setDimensions(width: Int)(height: Int): ScatterChartBuilder = ???
+  def setDimensions(width: Int, height: Int): ScatterChartBuilder = ???
   /** Sets the position of the legend with respect to the chart. By default, there will be no legend. */
   def setLegendPosition(position: Position): ScatterChartBuilder = ???
   /** Sets the text style of the chart legend. */
   def setLegendTextStyle(textStyle: TextStyle): ScatterChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): ScatterChartBuilder = ???
+  def setOption(option: String, value: AnyRef): ScatterChartBuilder = ???
   /** Sets the style for points in the line. By default, points will have no particular styles, and only the line will be visible. */
   def setPointStyle(style: PointStyle): ScatterChartBuilder = ???
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
@@ -56,7 +58,7 @@ trait ScatterChartBuilder {
   /** Makes the horizontal axis into a logarithmic scale (requires all values to be positive). */
   def setXAxisLogScale: ScatterChartBuilder = ???
   /** Sets the range for the horizontal axis of the chart. */
-  def setXAxisRange(start: Number)(end: Number): ScatterChartBuilder = ???
+  def setXAxisRange(start: Number, end: Number): ScatterChartBuilder = ???
   /** Sets the horizontal axis text style. */
   def setXAxisTextStyle(textStyle: TextStyle): ScatterChartBuilder = ???
   /** Adds a title to the horizontal axis. The title will be centered and will appear below the axis value labels. */
@@ -66,7 +68,7 @@ trait ScatterChartBuilder {
   /** Makes the vertical axis into a logarithmic scale (requires all values to be positive). */
   def setYAxisLogScale: ScatterChartBuilder = ???
   /** Sets the range for the vertical axis of the chart. If any data points fall outside the range, the range will be expanded to include those data points. */
-  def setYAxisRange(start: Number)(end: Number): ScatterChartBuilder = ???
+  def setYAxisRange(start: Number, end: Number): ScatterChartBuilder = ???
   /** Sets the vertical axis text style. */
   def setYAxisTextStyle(textStyle: TextStyle): ScatterChartBuilder = ???
   /** Adds a title to the vertical axis. The title will be centered and will appear to the left of the value labels. */

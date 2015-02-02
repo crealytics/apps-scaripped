@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * PieChartBuilder A builder for pie charts. For more details, see the Google Charts documentation. Here is an example that shows how to build a pie chart. The data is imported from a Google spreadsheet. 
  *  
@@ -41,14 +43,14 @@ trait PieChartBuilder {
   /** Sets the data view definition to use for the chart. */
   def setDataViewDefinition(dataViewDefinition: DataViewDefinition): PieChartBuilder = ???
   /** Sets the dimensions for the chart. */
-  def setDimensions(width: Int)(height: Int): PieChartBuilder = ???
+  def setDimensions(width: Int, height: Int): PieChartBuilder = ???
   /** Sets the position of the legend with respect to the chart. By default, there will be no legend. */
   def setLegendPosition(position: Position): PieChartBuilder = ???
   /** Sets the text style of the chart legend. */
   def setLegendTextStyle(textStyle: TextStyle): PieChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): PieChartBuilder = ???
+  def setOption(option: String, value: AnyRef): PieChartBuilder = ???
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
   def setTitle(chartTitle: String): PieChartBuilder = ???
   /** Sets the text style of the chart title. */

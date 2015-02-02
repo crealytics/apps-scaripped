@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * LineChartBuilder Builder for line charts. For more details, see the Google Charts documentation. Here is an example that shows how to build a line chart. The data is imported from a Google spreadsheet. 
  *  
@@ -44,18 +46,18 @@ trait LineChartBuilder {
   /** Sets the data view definition to use for the chart. */
   def setDataViewDefinition(dataViewDefinition: DataViewDefinition): LineChartBuilder = ???
   /** Sets the dimensions for the chart. */
-  def setDimensions(width: Int)(height: Int): LineChartBuilder = ???
+  def setDimensions(width: Int, height: Int): LineChartBuilder = ???
   /** Sets the position of the legend with respect to the chart. By default, there will be no legend. */
   def setLegendPosition(position: Position): LineChartBuilder = ???
   /** Sets the text style of the chart legend. */
   def setLegendTextStyle(textStyle: TextStyle): LineChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): LineChartBuilder = ???
+  def setOption(option: String, value: AnyRef): LineChartBuilder = ???
   /** Sets the style for points in the line. By default, points will have no particular styles, and only the line will be visible. */
   def setPointStyle(style: PointStyle): LineChartBuilder = ???
   /** Sets the range for the chart. */
-  def setRange(start: Number)(end: Number): LineChartBuilder = ???
+  def setRange(start: Number, end: Number): LineChartBuilder = ???
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
   def setTitle(chartTitle: String): LineChartBuilder = ???
   /** Sets the text style of the chart title. */

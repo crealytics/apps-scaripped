@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * DataTableBuilder Builder of DataTable objects. Building a data table consists of first specifying its columns, and then adding its rows, one at a time. Example: 
  *  var data = Charts.newDataTable()
@@ -17,11 +19,11 @@ import com.google.appsscript.base._
  */
 trait DataTableBuilder {
   /** Adds a column to the data table. Columns will be added from 0 to n. */
-  def addColumn(`type`: ColumnType)(label: String): DataTableBuilder = ???
+  def addColumn(`type`: ColumnType, label: String): DataTableBuilder = ???
   /** Adds a row to the data table. */
-  def addRow(values: Seq[Object]): DataTableBuilder = ???
+  def addRow(values: Seq[AnyRef]): DataTableBuilder = ???
   /** Builds and returns a data table. */
   def build: DataTable = ???
   /** Sets a specific value in the table. */
-  def setValue(row: Int)(column: Int)(value: Object): DataTableBuilder = ???
+  def setValue(row: Int, column: Int, value: AnyRef): DataTableBuilder = ???
 }

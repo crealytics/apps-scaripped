@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * CategoryFilterBuilder A builder for category filter controls. A category filter is a picker to choose one or more between a set of defined values. Given a column of type string, this control will filter out the rows that don't match any of the picked values. Here is an example that creates a table chart a binds a category filter to it. This allows the user to filter the data the table displays. 
  *  

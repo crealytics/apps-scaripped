@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * AreaChartBuilder Builder for area charts. For more details, see the Google Charts documentation. Here is an example that shows how to build an area chart. 
  *  
@@ -57,18 +59,18 @@ trait AreaChartBuilder {
   /** Sets the data view definition to use for the chart. */
   def setDataViewDefinition(dataViewDefinition: DataViewDefinition): AreaChartBuilder = ???
   /** Sets the dimensions for the chart. */
-  def setDimensions(width: Int)(height: Int): AreaChartBuilder = ???
+  def setDimensions(width: Int, height: Int): AreaChartBuilder = ???
   /** Sets the position of the legend with respect to the chart. By default, there will be no legend. */
   def setLegendPosition(position: Position): AreaChartBuilder = ???
   /** Sets the text style of the chart legend. */
   def setLegendTextStyle(textStyle: TextStyle): AreaChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): AreaChartBuilder = ???
+  def setOption(option: String, value: AnyRef): AreaChartBuilder = ???
   /** Sets the style for points in the line. By default, points will have no particular styles, and only the line will be visible. */
   def setPointStyle(style: PointStyle): AreaChartBuilder = ???
   /** Sets the range for the chart. */
-  def setRange(start: Number)(end: Number): AreaChartBuilder = ???
+  def setRange(start: Number, end: Number): AreaChartBuilder = ???
   /** Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default, there is no stacking. */
   def setStacked: AreaChartBuilder = ???
   /** Sets the title of the chart. The title will be displayed centered above the chart. */

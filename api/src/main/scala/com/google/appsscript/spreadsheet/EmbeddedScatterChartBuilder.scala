@@ -4,6 +4,8 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
+import com.google.appsscript.drive._
+
 import java.util.Date
 
 /** EmbeddedScatterChartBuilder Builder for scatter charts. For more details, see the Gviz documentation. */
@@ -46,11 +48,11 @@ trait EmbeddedScatterChartBuilder {
   def setLegendTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): EmbeddedChartBuilder = ???
+  def setOption(option: String, value: AnyRef): EmbeddedChartBuilder = ???
   /** Sets the style for points in the line. By default, points will have no particular styles, and only the line will be visible. */
   def setPointStyle(style: PointStyle): EmbeddedScatterChartBuilder = ???
   /** Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos are 1-indexed. */
-  def setPosition(anchorRowPos: Int)(anchorColPos: Int)(offsetX: Int)(offsetY: Int): EmbeddedChartBuilder = ???
+  def setPosition(anchorRowPos: Int, anchorColPos: Int, offsetX: Int, offsetY: Int): EmbeddedChartBuilder = ???
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
   def setTitle(chartTitle: String): EmbeddedScatterChartBuilder = ???
   /** Sets the text style of the chart title. */
@@ -58,7 +60,7 @@ trait EmbeddedScatterChartBuilder {
   /** Makes the horizontal axis into a logarithmic scale (requires all values to be positive). */
   def setXAxisLogScale: EmbeddedScatterChartBuilder = ???
   /** Sets the range for the horizontal axis of the chart. */
-  def setXAxisRange(start: Number)(end: Number): EmbeddedScatterChartBuilder = ???
+  def setXAxisRange(start: Number, end: Number): EmbeddedScatterChartBuilder = ???
   /** Sets the horizontal axis text style. */
   def setXAxisTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder = ???
   /** Adds a title to the horizontal axis. The title will be centered and will appear below the axis value labels. */
@@ -68,7 +70,7 @@ trait EmbeddedScatterChartBuilder {
   /** Makes the vertical axis into a logarithmic scale (requires all values to be positive). */
   def setYAxisLogScale: EmbeddedScatterChartBuilder = ???
   /** Sets the range for the vertical axis of the chart. If any data points fall outside the range, the range will be expanded to include those data points. */
-  def setYAxisRange(start: Number)(end: Number): EmbeddedScatterChartBuilder = ???
+  def setYAxisRange(start: Number, end: Number): EmbeddedScatterChartBuilder = ???
   /** Sets the vertical axis text style. */
   def setYAxisTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder = ???
   /** Adds a title to the vertical axis. The title will be centered and will appear to the left of the value labels. */

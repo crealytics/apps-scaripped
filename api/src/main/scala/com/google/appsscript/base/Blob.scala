@@ -27,7 +27,7 @@ trait Blob {
   /** Sets the data of this blob from a string with UTF-8 encoding. */
   def setDataFromString(string: String): Blob = ???
   /** Sets the data of this blob from a string with the specified encoding. */
-  def setDataFromString(string: String)(charset: String): Blob = ???
+  def setDataFromString(string: String, charset: String): Blob = ???
   /** Sets the name of this blob. */
   def setName(name: String): Blob = ???
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

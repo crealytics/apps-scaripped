@@ -4,6 +4,8 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
+import com.google.appsscript.drive._
+
 import java.util.Date
 
 /** SpreadsheetApp This class allows users to open Google Sheets files and to create new ones. This class is the parent class for the Spreadsheet service. */
@@ -11,7 +13,7 @@ trait SpreadsheetApp {
   /** Creates a new spreadsheet with the given name. */
   def create(name: String): Spreadsheet = ???
   /** Creates a new spreadsheet with the given name and the specified number of rows and columns. */
-  def create(name: String)(rows: Int)(columns: Int): Spreadsheet = ???
+  def create(name: String, rows: Int, columns: Int): Spreadsheet = ???
   /** Applies all pending Spreadsheet changes. Spreadsheet operations are sometimes bundled together to improve performance, such as when doing multiple calls to Range.getValue(). However, sometimes you may want to make sure that all pending changes are made right away, for instance to show users data as a script is executing. */
   def flush: Unit = ???
   /** Returns the currently active spreadsheet, or null if there is none. Functions that are run in the context of a spreadsheet can get a reference to the corresponding Spreadsheet object by calling this function. */
@@ -26,6 +28,8 @@ trait SpreadsheetApp {
   def getUi: Ui = ???
   /** Creates a builder for a data-validation rule. */
   def newDataValidation: DataValidationBuilder = ???
+  /** Opens the spreadsheet that corresponds to the given File object. */
+  def open(file: File): Spreadsheet = ???
   /** Opens the spreadsheet with the given ID. A spreadsheet ID can be extracted from its URL. For example, the spreadsheet ID in the URL https://docs.google.com/spreadsheets/d/abc1234567/edit#gid=0 is "abc1234567". */
   def openById(id: String): Spreadsheet = ???
   /** Opens the spreadsheet with the given url. */

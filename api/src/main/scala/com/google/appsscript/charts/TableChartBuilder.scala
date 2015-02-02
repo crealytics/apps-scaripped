@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * TableChartBuilder A builder for table charts. For more details, see the Google Charts documentation. Here is an example that shows how to build a table chart. The data is imported from a Google spreadsheet. 
  *  
@@ -28,7 +30,7 @@ trait TableChartBuilder {
   /** Enables paging and sets the number of rows in each page. */
   def enablePaging(pageSize: Int): TableChartBuilder = ???
   /** Enables paging, sets the number of rows in each page and the first table page to display (page numbers are zero based). */
-  def enablePaging(pageSize: Int)(startPage: Int): TableChartBuilder = ???
+  def enablePaging(pageSize: Int, startPage: Int): TableChartBuilder = ???
   /** Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing the column order of the table, so that column zero is the right-most column, and the last column is the left-most column. */
   def enableRtlTable(rtlEnabled: Boolean): TableChartBuilder = ???
   /** Sets whether to sort columns when the user clicks a column heading. */
@@ -42,7 +44,7 @@ trait TableChartBuilder {
   /** Sets the data view definition to use for the chart. */
   def setDataViewDefinition(dataViewDefinition: DataViewDefinition): TableChartBuilder = ???
   /** Sets the dimensions for the chart. */
-  def setDimensions(width: Int)(height: Int): TableChartBuilder = ???
+  def setDimensions(width: Int, height: Int): TableChartBuilder = ???
   /** Sets the row number for the first row in the data table. */
   def setFirstRowNumber(number: Int): TableChartBuilder = ???
   /** Sets the index of the column according to which the table should be initially sorted (ascending). */
@@ -51,7 +53,7 @@ trait TableChartBuilder {
   def setInitialSortingDescending(column: Int): TableChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): TableChartBuilder = ???
+  def setOption(option: String, value: AnyRef): TableChartBuilder = ???
   /** Sets whether to show the row number as the first column of the table. */
   def showRowNumberColumn(showRowNumber: Boolean): TableChartBuilder = ???
   /** Sets whether alternating color style will be assigned to odd and even rows of a table chart. */

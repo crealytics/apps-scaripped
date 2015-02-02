@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * StringFilterBuilder A builder for string filter controls. A string filter is a simple text input field that lets the user filter data via string matching. Given a column of type string and matching options, this control will filter out the rows that don't match the term that's in the input field. This example creates a table chart and binds it to a string filter. Using the filter, it is possible to change the table chart to display a subset of its data. 
  *  

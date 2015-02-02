@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * DataViewDefinitionBuilder Builder for DataViewDefinition objects. Here's an example of using the builder. The data is imported from a Google spreadsheet. 
  *  

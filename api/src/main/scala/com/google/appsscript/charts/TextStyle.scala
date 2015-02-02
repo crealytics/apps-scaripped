@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * TextStyle A text style configuration object. Used in charts options to configure text style for elements that accepts it, such as title, horizontal axis, vertical axis, legend and tooltip. 
  *  

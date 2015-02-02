@@ -16,7 +16,7 @@ package com.google.appsscript.base
  */
 trait Menu {
   /** Adds an item to the menu. The label for a menu item should be in sentence case (only the first word capitalized). */
-  def addItem(caption: String)(functionName: String): Menu = ???
+  def addItem(caption: String, functionName: String): Menu = ???
   /** Adds a visual separator to the menu. */
   def addSeparator: Menu = ???
   /** Adds a sub-menu to the menu. */

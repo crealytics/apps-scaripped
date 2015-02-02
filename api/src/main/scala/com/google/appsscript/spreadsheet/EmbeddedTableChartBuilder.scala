@@ -4,6 +4,8 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
+import com.google.appsscript.drive._
+
 import java.util.Date
 
 /** EmbeddedTableChartBuilder Builder for table charts. For more details, see the Gviz documentation. */
@@ -31,7 +33,7 @@ trait EmbeddedTableChartBuilder {
   /** Enables paging and sets the number of rows in each page. */
   def enablePaging(pageSize: Int): EmbeddedTableChartBuilder = ???
   /** Enables paging, sets the number of rows in each page and the first table page to display (page numbers are zero based). */
-  def enablePaging(pageSize: Int)(startPage: Int): EmbeddedTableChartBuilder = ???
+  def enablePaging(pageSize: Int, startPage: Int): EmbeddedTableChartBuilder = ???
   /** Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing the column order of the table, so that column zero is the right-most column, and the last column is the left-most column. */
   def enableRtlTable(rtlEnabled: Boolean): EmbeddedTableChartBuilder = ???
   /** Sets whether to sort columns when the user clicks a column heading. */
@@ -54,9 +56,9 @@ trait EmbeddedTableChartBuilder {
   def setInitialSortingDescending(column: Int): EmbeddedTableChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): EmbeddedChartBuilder = ???
+  def setOption(option: String, value: AnyRef): EmbeddedChartBuilder = ???
   /** Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos are 1-indexed. */
-  def setPosition(anchorRowPos: Int)(anchorColPos: Int)(offsetX: Int)(offsetY: Int): EmbeddedChartBuilder = ???
+  def setPosition(anchorRowPos: Int, anchorColPos: Int, offsetX: Int, offsetY: Int): EmbeddedChartBuilder = ???
   /** Sets whether to show the row number as the first column of the table. */
   def showRowNumberColumn(showRowNumber: Boolean): EmbeddedTableChartBuilder = ???
   /** Sets whether alternating color style will be assigned to odd and even rows of a table chart. */

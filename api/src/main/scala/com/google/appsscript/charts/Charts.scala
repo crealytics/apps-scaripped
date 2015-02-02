@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * Charts Entry point for creating Charts in scripts. This example creates a basic data table, populates an area chart with the data, and adds it into a UiApp: 
  *  

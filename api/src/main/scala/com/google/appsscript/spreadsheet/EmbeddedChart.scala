@@ -4,6 +4,8 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
+import com.google.appsscript.drive._
+
 import java.util.Date
 
 /**

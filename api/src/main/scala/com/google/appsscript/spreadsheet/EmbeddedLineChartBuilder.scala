@@ -4,6 +4,8 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
+import com.google.appsscript.drive._
+
 import java.util.Date
 
 /** EmbeddedLineChartBuilder Builder for line charts. For more details, see the Gviz documentation. */
@@ -50,13 +52,13 @@ trait EmbeddedLineChartBuilder {
   def setLegendTextStyle(textStyle: TextStyle): EmbeddedLineChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): EmbeddedChartBuilder = ???
+  def setOption(option: String, value: AnyRef): EmbeddedChartBuilder = ???
   /** Sets the style for points in the line. By default, points will have no particular styles, and only the line will be visible. */
   def setPointStyle(style: PointStyle): EmbeddedLineChartBuilder = ???
   /** Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos are 1-indexed. */
-  def setPosition(anchorRowPos: Int)(anchorColPos: Int)(offsetX: Int)(offsetY: Int): EmbeddedChartBuilder = ???
+  def setPosition(anchorRowPos: Int, anchorColPos: Int, offsetX: Int, offsetY: Int): EmbeddedChartBuilder = ???
   /** Sets the range for the chart. */
-  def setRange(start: Number)(end: Number): EmbeddedLineChartBuilder = ???
+  def setRange(start: Number, end: Number): EmbeddedLineChartBuilder = ???
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
   def setTitle(chartTitle: String): EmbeddedLineChartBuilder = ???
   /** Sets the text style of the chart title. */

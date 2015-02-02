@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * NumberRangeFilterBuilder A builder for number range filter controls. A number range filter is a slider with two thumbs that lets the user select ranges of numeric values. Given a column of type number and matching options, this control will filter out the rows that don't match the range that was selected. This example creates a table chart bound to a number range filter: 
  *  

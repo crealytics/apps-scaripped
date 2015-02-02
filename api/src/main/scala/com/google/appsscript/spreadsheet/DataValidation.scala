@@ -4,6 +4,8 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
+import com.google.appsscript.drive._
+
 import java.util.Date
 
 /**
@@ -27,7 +29,7 @@ trait DataValidation {
   /** Gets the rule's criteria type as defined in the DataValidationCriteria enum. To get the arguments for the criteria, use getCriteriaValues(). To use these values to create or modify a data-validation rule, see DataValidationBuilder.withCriteria(criteria, args). */
   def getCriteriaType: DataValidationCriteria = ???
   /** Gets an array of arguments for the rule's criteria. To get the criteria type, use getCriteriaType(). To use these values to create or modify a data-validation rule, see DataValidationBuilder.withCriteria(criteria, args). */
-  def getCriteriaValues: Seq[Object] = ???
+  def getCriteriaValues: Seq[AnyRef] = ???
   /** Gets the rule's help text, or null if no help text is set. */
   def getHelpText: String = ???
 }

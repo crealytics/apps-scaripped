@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * BarChartBuilder Builder for bar charts. For more details, see the Google Charts documentation. Here is an example that shows how to build a bar chart. The data is imported from a Google spreadsheet. 
  *  
@@ -43,16 +45,16 @@ trait BarChartBuilder {
   /** Sets the data view definition to use for the chart. */
   def setDataViewDefinition(dataViewDefinition: DataViewDefinition): BarChartBuilder = ???
   /** Sets the dimensions for the chart. */
-  def setDimensions(width: Int)(height: Int): BarChartBuilder = ???
+  def setDimensions(width: Int, height: Int): BarChartBuilder = ???
   /** Sets the position of the legend with respect to the chart. By default, there will be no legend. */
   def setLegendPosition(position: Position): BarChartBuilder = ???
   /** Sets the text style of the chart legend. */
   def setLegendTextStyle(textStyle: TextStyle): BarChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): BarChartBuilder = ???
+  def setOption(option: String, value: AnyRef): BarChartBuilder = ???
   /** Sets the range for the chart. */
-  def setRange(start: Number)(end: Number): BarChartBuilder = ???
+  def setRange(start: Number, end: Number): BarChartBuilder = ???
   /** Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default, there is no stacking. */
   def setStacked: BarChartBuilder = ???
   /** Sets the title of the chart. The title will be displayed centered above the chart. */

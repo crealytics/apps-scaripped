@@ -4,6 +4,8 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
+import com.google.appsscript.drive._
+
 import java.util.Date
 
 /** Range Access and modify spreadsheet ranges. This class allows users to access and modify ranges in Google Sheets. A range can be a single cell in a sheet or a range of cells in a sheet. */
@@ -15,7 +17,7 @@ trait Range {
   /** Clears the range of contents, formats, and data-validation rules. */
   def clear: Range = ???
   /** Clears the range of contents, format, data-validation rules, and/or comments, as specified with the given advanced options. By default all data will be cleared. */
-  def clear(options: Object): Range = ???
+  def clear(options: AnyRef): Range = ???
   /** Clears the content of the range, leaving the formatting intact. */
   def clearContent: Range = ???
   /** Clears the data-validation rules for the range. */
@@ -25,17 +27,17 @@ trait Range {
   /** Clears the note in the given cell or cells. */
   def clearNote: Range = ???
   /** Copy the formatting of the range to the given location. If the destination is larger or smaller than the source range then the source will be repeated or truncated accordingly. Note that this method copies the formatting only. For a detailed description of the gridId parameter, see getGridId(). */
-  def copyFormatToRange(gridId: Int)(column: Int)(columnEnd: Int)(row: Int)(rowEnd: Int): Unit = ???
+  def copyFormatToRange(gridId: Int, column: Int, columnEnd: Int, row: Int, rowEnd: Int): Unit = ???
   /** Copy the formatting of the range to the given location. If the destination is larger or smaller than the source range then the source will be repeated or truncated accordingly. Note that this method copies the formatting only. */
-  def copyFormatToRange(sheet: Sheet)(column: Int)(columnEnd: Int)(row: Int)(rowEnd: Int): Unit = ???
+  def copyFormatToRange(sheet: Sheet, column: Int, columnEnd: Int, row: Int, rowEnd: Int): Unit = ???
   /** Copies the data from a range of cells to another range of cells. Both the values and formatting are copied. */
   def copyTo(destination: Range): Unit = ???
   /** Copies the data from a range of cells to another range of cells. By default both the values and formatting are copied, but this can be overridden using advanced arguments. */
-  def copyTo(destination: Range)(options: Object): Unit = ???
+  def copyTo(destination: Range, options: AnyRef): Unit = ???
   /** Copy the content of the range to the given location. If the destination is larger or smaller than the source range then the source will be repeated or truncated accordingly. For a detailed description of the gridId parameter, see getGridId(). */
-  def copyValuesToRange(gridId: Int)(column: Int)(columnEnd: Int)(row: Int)(rowEnd: Int): Unit = ???
+  def copyValuesToRange(gridId: Int, column: Int, columnEnd: Int, row: Int, rowEnd: Int): Unit = ???
   /** Copy the content of the range to the given location. If the destination is larger or smaller than the source range then the source will be repeated or truncated accordingly. */
-  def copyValuesToRange(sheet: Sheet)(column: Int)(columnEnd: Int)(row: Int)(rowEnd: Int): Unit = ???
+  def copyValuesToRange(sheet: Sheet, column: Int, columnEnd: Int, row: Int, rowEnd: Int): Unit = ???
   /** Returns a string description of the range, in A1 notation. */
   def getA1Notation: String = ???
   /** Returns the background color of the top-left cell in the range (i.e., '#ffffff'). */
@@ -43,7 +45,7 @@ trait Range {
   /** Returns the background colors of the cells in the range (i.e., '#ffffff'). */
   def getBackgrounds: Seq[Seq[String]] = ???
   /** Returns a given cell within a range. */
-  def getCell(row: Int)(column: Int): Range = ???
+  def getCell(row: Int, column: Int): Range = ???
   /** Returns the starting column position for this range. */
   def getColumn: Int = ???
   /** Returns a URL for the data in this range, which can be used to create charts and queries. */
@@ -119,7 +121,7 @@ trait Range {
   /** Returns the sheet this range belongs to. */
   def getSheet: Sheet = ???
   /** Returns the value of the top-left cell in the range. The value may be of type Number, Boolean, Date, or String depending on the value of the cell. Empty cells will return an empty string. */
-  def getValue: Object = ???
+  def getValue: AnyRef = ???
   /** Returns the rectangular grid of values for this range. Returns a two-dimensional array of values, indexed by row, then by column. The values may be of type Number, Boolean, Date, or String, depending on the value of the cell. Empty cells will be represented by an empty string in the array. Remember that while a range index starts at 1, 1, the JavaScript array will be indexed from [0][0]. */
   def getValues: Seq[Seq[AnyRef]] = ???
   /** Returns the vertical alignment (top/middle/bottom) of the cell in the top-left corner of the range. */
@@ -143,19 +145,19 @@ trait Range {
   /** Cut and paste (both format and values) from this range to the target range. */
   def moveTo(target: Range): Unit = ???
   /** Returns a new range that is offset from this range by the given number of rows and columns (which can be negative). The new range will be the same size as the original range. */
-  def offset(rowOffset: Int)(columnOffset: Int): Range = ???
+  def offset(rowOffset: Int, columnOffset: Int): Range = ???
   /** Returns a new range that is relative to the current range, whose upper left point is offset from the current range by the given rows and columns, and with the given height in cells. */
-  def offset(rowOffset: Int)(columnOffset: Int)(numRows: Int): Range = ???
+  def offset(rowOffset: Int, columnOffset: Int, numRows: Int): Range = ???
   /** Returns a new range that is relative to the current range, whose upper left point is offset from the current range by the given rows and columns, and with the given height and width in cells. */
-  def offset(rowOffset: Int)(columnOffset: Int)(numRows: Int)(numColumns: Int): Range = ???
+  def offset(rowOffset: Int, columnOffset: Int, numRows: Int, numColumns: Int): Range = ???
   /** Sets the background color of all cells in the range in CSS notation (like '#ffffff' or 'white'). */
   def setBackground(color: String): Range = ???
   /** Sets the background to the given RGB color. This is a convenience wrapper for the setBackground call that takes a string color. */
-  def setBackgroundRGB(red: Int)(green: Int)(blue: Int): Range = ???
+  def setBackgroundRGB(red: Int, green: Int, blue: Int): Range = ???
   /** Sets a rectangular grid of background colors (must match dimensions of this range). The colors are in CSS notation (like '#ffffff' or 'white'). */
   def setBackgrounds(color: Seq[Seq[String]]): Range = ???
   /** Sets the border property. Valid values are true (on), false (off) and null (no change). */
-  def setBorder(top: Boolean)(left: Boolean)(bottom: Boolean)(right: Boolean)(vertical: Boolean)(horizontal: Boolean): Range = ???
+  def setBorder(top: Boolean, left: Boolean, bottom: Boolean, right: Boolean, vertical: Boolean, horizontal: Boolean): Range = ???
   /** Sets one data-validation rule for all cells in the range. */
   def setDataValidation(rule: DataValidation): Range = ???
   /** Sets the data-validation rules for all cells in the range. This method takes a two-dimensional array of data validations, indexed by row then by column. The array dimensions must correspond to the range dimensions. */
@@ -205,7 +207,7 @@ trait Range {
   /** Sets a rectangular grid of number or date formats (must match dimensions of this range). The values are formatting strings, see setNumberFormat(numberFormat). Date formats follow the SimpleDateFormat specification. */
   def setNumberFormats(numberFormats: Seq[Seq[AnyRef]]): Range = ???
   /** Sets the value of the range. The value can be numeric, string, boolean or date. If it begins with '=' it is interpreted as a formula. */
-  def setValue(value: Object): Range = ???
+  def setValue(value: AnyRef): Range = ???
   /** Sets a rectangular grid of values (must match dimensions of this range). */
   def setValues(values: Seq[Seq[AnyRef]]): Range = ???
   /** Set the vertical (top to bottom) alignment for the given range (top/middle/bottom). */
@@ -217,5 +219,5 @@ trait Range {
   /** Sets a rectangular grid of word wrap policies (must match dimensions of this range). Cells with wrap enabled (the default) will resize to display their full content. Cells with wrap disabled will display as much as possible in the cell without resizing or running to multiple lines. */
   def setWraps(isWrapEnabled: Seq[Seq[AnyRef]]): Range = ???
   /** Sorts the cells in the given range. Sorts the cells in a given range, by column and order specified. */
-  def sort(sortSpecObj: Object): Range = ???
+  def sort(sortSpecObj: AnyRef): Range = ???
 }

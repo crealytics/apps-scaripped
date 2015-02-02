@@ -4,6 +4,8 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
+import com.google.appsscript.drive._
+
 import java.util.Date
 
 /**
@@ -52,7 +54,7 @@ trait EmbeddedChartBuilder {
   def setChartType(`type`: ChartType): EmbeddedChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): EmbeddedChartBuilder = ???
+  def setOption(option: String, value: AnyRef): EmbeddedChartBuilder = ???
   /** Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos are 1-indexed. */
-  def setPosition(anchorRowPos: Int)(anchorColPos: Int)(offsetX: Int)(offsetY: Int): EmbeddedChartBuilder = ???
+  def setPosition(anchorRowPos: Int, anchorColPos: Int, offsetX: Int, offsetY: Int): EmbeddedChartBuilder = ???
 }

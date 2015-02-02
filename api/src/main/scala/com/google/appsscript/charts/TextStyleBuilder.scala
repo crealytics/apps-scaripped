@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * TextStyleBuilder A builder used to create TextStyle objects. It allows configuration of the text's properties such as name, color, and size. The following example shows how to create a text style using the builder. For a more complete example, refer to the documentation for TextStyle. 
  *  

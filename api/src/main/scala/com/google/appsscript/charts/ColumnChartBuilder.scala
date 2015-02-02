@@ -2,6 +2,8 @@ package com.google.appsscript.charts
 
 import com.google.appsscript.base._
 
+import com.google.appsscript.ui._
+
 /**
  * ColumnChartBuilder Builder for column charts. For more details, see the Google Charts documentation. This example shows how to create a column chart with data from a data table. 
  *  
@@ -51,16 +53,16 @@ trait ColumnChartBuilder {
   /** Sets the data view definition to use for the chart. */
   def setDataViewDefinition(dataViewDefinition: DataViewDefinition): ColumnChartBuilder = ???
   /** Sets the dimensions for the chart. */
-  def setDimensions(width: Int)(height: Int): ColumnChartBuilder = ???
+  def setDimensions(width: Int, height: Int): ColumnChartBuilder = ???
   /** Sets the position of the legend with respect to the chart. By default, there will be no legend. */
   def setLegendPosition(position: Position): ColumnChartBuilder = ???
   /** Sets the text style of the chart legend. */
   def setLegendTextStyle(textStyle: TextStyle): ColumnChartBuilder = ???
   /**
    */
-  def setOption(option: String)(value: Object): ColumnChartBuilder = ???
+  def setOption(option: String, value: AnyRef): ColumnChartBuilder = ???
   /** Sets the range for the chart. */
-  def setRange(start: Number)(end: Number): ColumnChartBuilder = ???
+  def setRange(start: Number, end: Number): ColumnChartBuilder = ???
   /** Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default, there is no stacking. */
   def setStacked: ColumnChartBuilder = ???
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
