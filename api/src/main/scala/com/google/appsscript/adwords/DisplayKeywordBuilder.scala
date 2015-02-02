@@ -12,13 +12,15 @@ import com.google.appsscript.spreadsheet._
 
 import com.google.appsscript.drive._
 
+import scala.scalajs.js
+
 /**
- * 
- *  Builder for 
+ *
+ *  Builder for
  * <a href="adwordsapp_displaykeyword.html">DisplayKeyword</a>
- *  objects. 
+ *  objects.
  * <p>Example usage:</p>
- *  
+ *
  * <pre class="prettyprint">
  *  var displayKeywordBuilder = adGroup.display().newKeywordBuilder();
  *  var displayKeyword = displayKeywordBuilder
@@ -26,27 +28,27 @@ import com.google.appsscript.drive._
  *    .withCpc(0.50)                // optional
  *    .build()                      // create the display keyword</pre>
  */
-trait DisplayKeywordBuilder {
+trait DisplayKeywordBuilder extends js.Object {
   /**
-   *  Builds the display keyword. Returns a 
+   *  Builds the display keyword. Returns a
    * <a href="adwordsapp_displaykeywordoperation.html">DisplayKeywordOperation</a>
-   *  that corresponds to the creation of the 
+   *  that corresponds to the creation of the
    * <a href="adwordsapp_displaykeyword.html">DisplayKeyword</a>
    * .
    */
-  def build: DisplayKeywordOperation = ???
+  def build: DisplayKeywordOperation = js.native
   /**
-   *  Builds the excluded display keyword. Returns an 
+   *  Builds the excluded display keyword. Returns an
    * <a href="adwordsapp_excludeddisplaykeywordoperation.html">ExcludedDisplayKeywordOperation</a>
-   *  that corresponds to the creation of the 
+   *  that corresponds to the creation of the
    * <a href="adwordsapp_excludeddisplaykeyword.html">ExcludedDisplayKeyword</a>
    * .
    */
-  def exclude: ExcludedDisplayKeywordOperation = ???
+  def exclude: ExcludedDisplayKeywordOperation = js.native
   /**  Sets the max CPC bid of the new display keyword to the specified value. */
-  def withCpc(cpc: Double): DisplayKeywordBuilder = ???
+  def withCpc(cpc: Double): DisplayKeywordBuilder = js.native
   /**  Sets the max CPM bid of the new display keyword to the specified value. */
-  def withCpm(cpm: Double): DisplayKeywordBuilder = ???
+  def withCpm(cpm: Double): DisplayKeywordBuilder = js.native
   /**  Sets the text of the display keyword. This field is required. */
-  def withText(text: String): DisplayKeywordBuilder = ???
+  def withText(text: String): DisplayKeywordBuilder = js.native
 }

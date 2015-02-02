@@ -4,10 +4,12 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.ui._
 
+import scala.scalajs.js
+
 /**
- * CategoryFilterBuilder A builder for category filter controls. A category filter is a picker to choose one or more between a set of defined values. Given a column of type string, this control will filter out the rows that don't match any of the picked values. Here is an example that creates a table chart a binds a category filter to it. This allows the user to filter the data the table displays. 
- *  
- * 
+ * CategoryFilterBuilder A builder for category filter controls. A category filter is a picker to choose one or more between a set of defined values. Given a column of type string, this control will filter out the rows that don't match any of the picked values. Here is an example that creates a table chart a binds a category filter to it. This allows the user to filter the data the table displays.
+ *
+ *
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var sampleData = Charts.newDataTable()
@@ -27,11 +29,11 @@ import com.google.appsscript.ui._
  *        .addRow(["Nov", 58, 388])
  *        .addRow(["Dec", 63, 400])
  *        .build();
- *        
+ *
  *    var chart = Charts.newTableChart()
  *        .setDimensions(600, 500)
  *        .build();
- *        
+ *
  *    var categoryFilter = Charts.newCategoryFilter()
  *        .setFilterColumnLabel("Month")
  *        .setAllowMultiple(true)
@@ -40,51 +42,51 @@ import com.google.appsscript.ui._
  *        .setCaption('Choose categories...')
  *        .setSortValues(true)
  *        .build();
- *    
+ *
  *    var panel = app.createVerticalPanel().setSpacing(10);
  *    panel.add(categoryFilter).add(chart);
- *    
+ *
  *    var dashboard = Charts.newDashboardPanel()
  *        .setDataTable(sampleData)
  *        .bind(categoryFilter, chart)
  *        .build();
- *        
+ *
  *    dashboard.add(panel);
  *    app.add(dashboard);
  *    return app;
  *  }
- *  
+ *
  *  For more details, see the Gviz documentation
  */
-trait CategoryFilterBuilder {
+trait CategoryFilterBuilder extends js.Object {
   /** Builds a control. */
-  def build: Control = ???
+  def build: Control = js.native
   /** Sets whether multiple values can be selected, rather than just one. The default value of this option is true (allowing multiple selection). */
-  def setAllowMultiple(allowMultiple: Boolean): CategoryFilterBuilder = ???
+  def setAllowMultiple(allowMultiple: Boolean): CategoryFilterBuilder = js.native
   /** Sets whether the user is allowed not to choose any value. If false the user must choose at least one value from the available ones. The default value of this option is true. */
-  def setAllowNone(allowNone: Boolean): CategoryFilterBuilder = ???
+  def setAllowNone(allowNone: Boolean): CategoryFilterBuilder = js.native
   /** Sets whether the user is allowed to type in a text field to narrow down the list of possible choices (via an autocompleter), or not. The default value of this option is true (allowing the user to type in values in the picker). */
-  def setAllowTyping(allowTyping: Boolean): CategoryFilterBuilder = ???
+  def setAllowTyping(allowTyping: Boolean): CategoryFilterBuilder = js.native
   /** Sets the caption to display inside the value picker widget when no item is selected. */
-  def setCaption(caption: String): CategoryFilterBuilder = ???
+  def setCaption(caption: String): CategoryFilterBuilder = js.native
   /** Sets the data table to use for the control using a DataTableBuilder. This is a convenience method for setting the data table without needing to call build(). */
-  def setDataTable(tableBuilder: DataTableBuilder): CategoryFilterBuilder = ???
+  def setDataTable(tableBuilder: DataTableBuilder): CategoryFilterBuilder = js.native
   /** Sets the control data table, which will be the control's underlying data model. */
-  def setDataTable(table: DataTableSource): CategoryFilterBuilder = ???
+  def setDataTable(table: DataTableSource): CategoryFilterBuilder = js.native
   /** Sets the index of the data table column to filter on. The values of that column will determine whether or not each row should be filtered. It is mandatory to set either this or the column label using setFilterColumnLabel(columnLabel). */
-  def setFilterColumnIndex(columnIndex: Int): CategoryFilterBuilder = ???
+  def setFilterColumnIndex(columnIndex: Int): CategoryFilterBuilder = js.native
   /** Sets the label of the data table column to filter on. The values of that column will determine whether or not each row should be filtered. It is mandatory to set either this or a column index using setFilterColumnIndex(columnIndex). */
-  def setFilterColumnLabel(columnLabel: String): CategoryFilterBuilder = ???
+  def setFilterColumnLabel(columnLabel: String): CategoryFilterBuilder = js.native
   /** Sets the label to display next to the slider. If unspecified, the label of the column the control operates on will be used. */
-  def setLabel(label: String): CategoryFilterBuilder = ???
+  def setLabel(label: String): CategoryFilterBuilder = js.native
   /** Sets a separator string appended to the label, to visually separate the label from the category picker. */
-  def setLabelSeparator(labelSeparator: String): CategoryFilterBuilder = ???
+  def setLabelSeparator(labelSeparator: String): CategoryFilterBuilder = js.native
   /** Sets whether the label should display above (vertical stacking) or beside (horizontal stacking) the input field. */
-  def setLabelStacking(orientation: Orientation): CategoryFilterBuilder = ???
+  def setLabelStacking(orientation: Orientation): CategoryFilterBuilder = js.native
   /** Sets how to display selected values, when multiple selection is allowed. */
-  def setSelectedValuesLayout(layout: PickerValuesLayout): CategoryFilterBuilder = ???
+  def setSelectedValuesLayout(layout: PickerValuesLayout): CategoryFilterBuilder = js.native
   /** Sets whether the values to choose from should be sorted. */
-  def setSortValues(sortValues: Boolean): CategoryFilterBuilder = ???
+  def setSortValues(sortValues: Boolean): CategoryFilterBuilder = js.native
   /** Sets the list of values (categories) the user can choose from. */
-  def setValues(values: Seq[String]): CategoryFilterBuilder = ???
+  def setValues(values: Seq[String]): CategoryFilterBuilder = js.native
 }

@@ -17,7 +17,12 @@ object GoogleAppScriptApiScraper {
   val wd = root / 'Users / 'moe / 'Workspaces / 'bidmanagement / 'google_apps_script_scala_js / 'api / 'src / 'main / 'scala
   rm ! wd
   def allFromPackage(pkg: String) = s"$pkg._"
-  case class ImportLink(url: String, pkg: String = "", imports: Seq[String] = Seq(), scraper: ApiScraper = GoogleAppScriptClassScraper, extraClasses: Seq[ApiClass] = Seq())
+  case class ImportLink(
+    url: String,
+    pkg: String = "",
+    imports: Seq[String] = Seq(),
+    scraper: ApiScraper = GoogleAppScriptClassScraper,
+    extraClasses: Seq[ApiClass] = Seq())
   val baseApi = ImportLink(
     url = "https://developers.google.com/apps-script/reference/base/",
     pkg = "com.google.appsscript.base")

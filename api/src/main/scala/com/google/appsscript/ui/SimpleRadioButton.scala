@@ -1,77 +1,79 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /** SimpleRadioButton Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A simple radio button widget, with no label. SimpleRadioButtons are grouped according to the same rules as RadioButtons. Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the SimpleRadioButton documentation here. */
-trait SimpleRadioButton {
+trait SimpleRadioButton extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addBlurHandler(handler: Handler): SimpleRadioButton = ???
+  def addBlurHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addClickHandler(handler: Handler): SimpleRadioButton = ???
+  def addClickHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addFocusHandler(handler: Handler): SimpleRadioButton = ???
+  def addFocusHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyDownHandler(handler: Handler): SimpleRadioButton = ???
+  def addKeyDownHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyPressHandler(handler: Handler): SimpleRadioButton = ???
+  def addKeyPressHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyUpHandler(handler: Handler): SimpleRadioButton = ???
+  def addKeyUpHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseDownHandler(handler: Handler): SimpleRadioButton = ???
+  def addMouseDownHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseMoveHandler(handler: Handler): SimpleRadioButton = ???
+  def addMouseMoveHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOutHandler(handler: Handler): SimpleRadioButton = ???
+  def addMouseOutHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOverHandler(handler: Handler): SimpleRadioButton = ???
+  def addMouseOverHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseUpHandler(handler: Handler): SimpleRadioButton = ???
+  def addMouseUpHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseWheelHandler(handler: Handler): SimpleRadioButton = ???
+  def addMouseWheelHandler(handler: Handler): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): SimpleRadioButton = ???
+  def addStyleDependentName(styleName: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): SimpleRadioButton = ???
+  def addStyleName(styleName: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setAccessKey(accessKey: Char): SimpleRadioButton = ???
+  def setAccessKey(accessKey: Char): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setChecked(checked: Boolean): SimpleRadioButton = ???
+  def setChecked(checked: Boolean): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setEnabled(enabled: Boolean): SimpleRadioButton = ???
+  def setEnabled(enabled: Boolean): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setFocus(focus: Boolean): SimpleRadioButton = ???
+  def setFocus(focus: Boolean): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): SimpleRadioButton = ???
+  def setHeight(height: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): SimpleRadioButton = ???
+  def setId(id: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): SimpleRadioButton = ???
+  def setLayoutData(layout: AnyRef): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setName(name: String): SimpleRadioButton = ???
+  def setName(name: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): SimpleRadioButton = ???
+  def setPixelSize(width: Int, height: Int): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): SimpleRadioButton = ???
+  def setSize(width: String, height: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): SimpleRadioButton = ???
+  def setStyleAttribute(attribute: String, value: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): SimpleRadioButton = ???
+  def setStyleAttributes(attributes: AnyRef): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): SimpleRadioButton = ???
+  def setStyleName(styleName: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): SimpleRadioButton = ???
+  def setStylePrimaryName(styleName: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTabIndex(index: Int): SimpleRadioButton = ???
+  def setTabIndex(index: Int): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): SimpleRadioButton = ???
+  def setTag(tag: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): SimpleRadioButton = ???
+  def setTitle(title: String): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): SimpleRadioButton = ???
+  def setVisible(visible: Boolean): SimpleRadioButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): SimpleRadioButton = ???
+  def setWidth(width: String): SimpleRadioButton = js.native
 }

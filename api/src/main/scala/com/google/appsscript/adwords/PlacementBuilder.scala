@@ -12,40 +12,42 @@ import com.google.appsscript.spreadsheet._
 
 import com.google.appsscript.drive._
 
+import scala.scalajs.js
+
 /**
- * 
- *  Builder for 
+ *
+ *  Builder for
  * <a href="adwordsapp_placement.html">Placement</a>
- *  objects. 
+ *  objects.
  * <p>Example usage:</p>
- *  
+ *
  * <pre class="prettyprint">
  *  var placementBuilder = adGroup.display().newPlacementBuilder()
  *      .withUrl("http://www.site.com")  // required
  *      .withCpc(0.50)                   // optional
  *      .build()                         // create the placement</pre>
  */
-trait PlacementBuilder {
+trait PlacementBuilder extends js.Object {
   /**
-   *  Builds the placement. Returns a 
+   *  Builds the placement. Returns a
    * <a href="adwordsapp_placementoperation.html">PlacementOperation</a>
-   *  that corresponds to the creation of the 
+   *  that corresponds to the creation of the
    * <a href="adwordsapp_placement.html">Placement</a>
    * .
    */
-  def build: PlacementOperation = ???
+  def build: PlacementOperation = js.native
   /**
-   *  Builds the excluded placement. Returns an 
+   *  Builds the excluded placement. Returns an
    * <a href="adwordsapp_excludedplacementoperation.html">ExcludedPlacementOperation</a>
-   *  that corresponds to the creation of the 
+   *  that corresponds to the creation of the
    * <a href="adwordsapp_excludedplacement.html">ExcludedPlacement</a>
    * .
    */
-  def exclude: ExcludedPlacementOperation = ???
+  def exclude: ExcludedPlacementOperation = js.native
   /**  Sets the max CPC bid of the new placement to the specified value. */
-  def withCpc(cpc: Double): PlacementBuilder = ???
+  def withCpc(cpc: Double): PlacementBuilder = js.native
   /**  Sets the max CPM bid of the new placement to the specified value. */
-  def withCpm(cpm: Double): PlacementBuilder = ???
+  def withCpm(cpm: Double): PlacementBuilder = js.native
   /**  Sets the URL of the placement. This field is required. */
-  def withUrl(url: String): PlacementBuilder = ???
+  def withUrl(url: String): PlacementBuilder = js.native
 }

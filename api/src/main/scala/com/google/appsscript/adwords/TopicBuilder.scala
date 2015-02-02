@@ -12,13 +12,15 @@ import com.google.appsscript.spreadsheet._
 
 import com.google.appsscript.drive._
 
+import scala.scalajs.js
+
 /**
- * 
- *  Builder for 
+ *
+ *  Builder for
  * <a href="adwordsapp_topic.html">Topic</a>
- *  objects. 
+ *  objects.
  * <p>Example usage:</p>
- *  
+ *
  * <pre class="prettyprint">
  *  var topicBuilder = adGroup.display().newTopicBuilder();
  *  var topic = topicBuilder
@@ -26,31 +28,31 @@ import com.google.appsscript.drive._
  *    .withCpc(0.50)                  // optional
  *    .build()                        // create the topic</pre>
  */
-trait TopicBuilder {
+trait TopicBuilder extends js.Object {
   /**
-   *  Builds the topic. Returns a 
+   *  Builds the topic. Returns a
    * <a href="adwordsapp_topicoperation.html">TopicOperation</a>
-   *  that corresponds to the creation of the 
+   *  that corresponds to the creation of the
    * <a href="adwordsapp_topic.html">Topic</a>
    * .
    */
-  def build: TopicOperation = ???
+  def build: TopicOperation = js.native
   /**
-   *  Builds the excluded topic. Returns an 
+   *  Builds the excluded topic. Returns an
    * <a href="adwordsapp_excludedtopicoperation.html">ExcludedTopicOperation</a>
-   *  that corresponds to the creation of the 
+   *  that corresponds to the creation of the
    * <a href="adwordsapp_excludedtopic.html">ExcludedTopic</a>
    * .
    */
-  def exclude: ExcludedTopicOperation = ???
+  def exclude: ExcludedTopicOperation = js.native
   /**  Sets the max CPC bid of the new topic to the specified value. */
-  def withCpc(cpc: Double): TopicBuilder = ???
+  def withCpc(cpc: Double): TopicBuilder = js.native
   /**  Sets the max CPM bid of the new topic to the specified value. */
-  def withCpm(cpm: Double): TopicBuilder = ???
+  def withCpm(cpm: Double): TopicBuilder = js.native
   /**
-   *  Sets the topic ID of the topic. This field is required. The topic ID identifies the topic category. A list of valid topic IDs is available on our 
+   *  Sets the topic ID of the topic. This field is required. The topic ID identifies the topic category. A list of valid topic IDs is available on our
    * <a href="/adwords/api/docs/appendix/verticals">Verticals</a>
    *  page.
    */
-  def withTopicId(topicId: Long): TopicBuilder = ???
+  def withTopicId(topicId: Long): TopicBuilder = js.native
 }

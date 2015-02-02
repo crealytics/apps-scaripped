@@ -1,42 +1,44 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /**
- * DocsListDialog Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A "file-open" dialog for Google Drive. Unlike most UiApp objects, DocsListDialog should not be added to the UiInstance. The example below shows how to display a DocsListDialog in the new version of Google Sheets. Note that HTML service offers a similar but superior feature, Google Picker. In almost all cases, using Google Picker is preferable. 
- *  
- * 
- * 
+ * DocsListDialog Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A "file-open" dialog for Google Drive. Unlike most UiApp objects, DocsListDialog should not be added to the UiInstance. The example below shows how to display a DocsListDialog in the new version of Google Sheets. Note that HTML service offers a similar but superior feature, Google Picker. In almost all cases, using Google Picker is preferable.
+ *
+ *
+ *
  *  function onOpen() {
  *    SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
  *        .createMenu('Custom Menu')
  *        .addItem('Select file', 'showDialog')
  *        .addToUi();
  *  }
- * 
+ *
  *  function showDialog() {
  *    // Dummy call to DriveApp to ensure the OAuth dialog requests Google Drive scope, so that the
  *    // getOAuthToken() call below returns a token with the necessary permissions.
  *    DriveApp.getRootFolder();
- * 
+ *
  *    var app = UiApp.createApplication()
  *        .setWidth(570)
  *        .setHeight(352);
- * 
+ *
  *    var serverHandler = app.createServerHandler('pickerHandler');
- * 
+ *
  *    app.createDocsListDialog()
  *       .addCloseHandler(serverHandler)
  *       .addSelectionHandler(serverHandler)
  *       .setOAuthToken(ScriptApp.getOAuthToken())
  *       .showDocsPicker();
- * 
+ *
  *    SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
  *       .showModalDialog(app,' ');
  *  }
- * 
+ *
  *  function pickerHandler(e) {
  *    var action = e.parameter.eventType;
  *    var app = UiApp.getActiveApplication();
- * 
+ *
  *    if (action == 'selection') {
  *      var doc = e.parameter.items[0];
  *      var id = doc.id;
@@ -48,33 +50,33 @@ package com.google.appsscript.ui
  *    } else if (action == 'close') {
  *      app.add(app.createLabel('You clicked "Cancel".'));
  *    }
- *  
+ *
  *    return app;
  *  }
  */
-trait DocsListDialog {
+trait DocsListDialog extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addCloseHandler(handler: Handler): DocsListDialog = ???
+  def addCloseHandler(handler: Handler): DocsListDialog = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addSelectionHandler(handler: Handler): DocsListDialog = ???
+  def addSelectionHandler(handler: Handler): DocsListDialog = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addView(fileType: FileType): DocsListDialog = ???
+  def addView(fileType: FileType): DocsListDialog = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setDialogTitle(title: String): DocsListDialog = ???
+  def setDialogTitle(title: String): DocsListDialog = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: Int): DocsListDialog = ???
+  def setHeight(height: Int): DocsListDialog = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setInitialView(fileType: FileType): DocsListDialog = ???
+  def setInitialView(fileType: FileType): DocsListDialog = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setMultiSelectEnabled(multiSelectEnabled: Boolean): DocsListDialog = ???
+  def setMultiSelectEnabled(multiSelectEnabled: Boolean): DocsListDialog = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setOAuthToken(oAuthToken: String): DocsListDialog = ???
+  def setOAuthToken(oAuthToken: String): DocsListDialog = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: Int): DocsListDialog = ???
+  def setWidth(width: Int): DocsListDialog = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def showDocsPicker: DocsListDialog = ???
+  def showDocsPicker: DocsListDialog = js.native
 }

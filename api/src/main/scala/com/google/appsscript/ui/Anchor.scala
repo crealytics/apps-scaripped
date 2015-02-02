@@ -1,9 +1,11 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /**
- * Anchor Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A widget that represents a simple <a> element. That is, a hyperlink to a different page. By design, these hyperlinks always open in a new page. Links that reload the current page are not allowed. Here is an example of how to use this widget: 
- *  
- * 
+ * Anchor Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A widget that represents a simple <a> element. That is, a hyperlink to a different page. By design, these hyperlinks always open in a new page. Links that reload the current page are not allowed. Here is an example of how to use this widget:
+ *
+ *
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    // Creates a link to your favorite search engine.
@@ -11,92 +13,92 @@ package com.google.appsscript.ui
  *    app.add(anchor);
  *    return app;
  *  }
- *  
+ *
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the Anchor documentation here.
  */
-trait Anchor {
+trait Anchor extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addBlurHandler(handler: Handler): Anchor = ???
+  def addBlurHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addClickHandler(handler: Handler): Anchor = ???
+  def addClickHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addFocusHandler(handler: Handler): Anchor = ???
+  def addFocusHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyDownHandler(handler: Handler): Anchor = ???
+  def addKeyDownHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyPressHandler(handler: Handler): Anchor = ???
+  def addKeyPressHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyUpHandler(handler: Handler): Anchor = ???
+  def addKeyUpHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseDownHandler(handler: Handler): Anchor = ???
+  def addMouseDownHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseMoveHandler(handler: Handler): Anchor = ???
+  def addMouseMoveHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOutHandler(handler: Handler): Anchor = ???
+  def addMouseOutHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOverHandler(handler: Handler): Anchor = ???
+  def addMouseOverHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseUpHandler(handler: Handler): Anchor = ???
+  def addMouseUpHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseWheelHandler(handler: Handler): Anchor = ???
+  def addMouseWheelHandler(handler: Handler): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): Anchor = ???
+  def addStyleDependentName(styleName: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): Anchor = ???
+  def addStyleName(styleName: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setAccessKey(accessKey: Char): Anchor = ???
+  def setAccessKey(accessKey: Char): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setDirection(direction: Component): Anchor = ???
+  def setDirection(direction: Component): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setEnabled(enabled: Boolean): Anchor = ???
+  def setEnabled(enabled: Boolean): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setFocus(focus: Boolean): Anchor = ???
+  def setFocus(focus: Boolean): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHTML(html: String): Anchor = ???
+  def setHTML(html: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): Anchor = ???
+  def setHeight(height: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHorizontalAlignment(horizontalAlignment: HorizontalAlignment): Anchor = ???
+  def setHorizontalAlignment(horizontalAlignment: HorizontalAlignment): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHref(href: String): Anchor = ???
+  def setHref(href: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): Anchor = ???
+  def setId(id: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): Anchor = ???
+  def setLayoutData(layout: AnyRef): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setName(name: String): Anchor = ???
+  def setName(name: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): Anchor = ???
+  def setPixelSize(width: Int, height: Int): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): Anchor = ???
+  def setSize(width: String, height: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): Anchor = ???
+  def setStyleAttribute(attribute: String, value: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): Anchor = ???
+  def setStyleAttributes(attributes: AnyRef): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): Anchor = ???
+  def setStyleName(styleName: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): Anchor = ???
+  def setStylePrimaryName(styleName: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTabIndex(index: Int): Anchor = ???
+  def setTabIndex(index: Int): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): Anchor = ???
+  def setTag(tag: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTarget(target: String): Anchor = ???
+  def setTarget(target: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setText(text: String): Anchor = ???
+  def setText(text: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): Anchor = ???
+  def setTitle(title: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): Anchor = ???
+  def setVisible(visible: Boolean): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): Anchor = ???
+  def setWidth(width: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWordWrap(wordWrap: Boolean): Anchor = ???
+  def setWordWrap(wordWrap: Boolean): Anchor = js.native
 }

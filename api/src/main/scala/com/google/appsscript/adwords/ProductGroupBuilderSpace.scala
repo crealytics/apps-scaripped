@@ -12,28 +12,30 @@ import com.google.appsscript.spreadsheet._
 
 import com.google.appsscript.drive._
 
+import scala.scalajs.js
+
 /**
- * 
- *  Access to product group builders via the 
+ *
+ *  Access to product group builders via the
  * <a href="adwordsapp_productgroup.html#newChild_0">ProductGroup.newChild()</a>
- *  method. 
+ *  method.
  * <p>For instance, to create a new product category, you might use:</p>
- *  
+ *
  * <pre class="prettyprint">
  *  var root = AdWordsApp.shoppingAdGroups().get().next().rootProductGroup();
  *  root.newChild().categoryBuilder().withName('Electronics').build();</pre>
  */
-trait ProductGroupBuilderSpace {
+trait ProductGroupBuilderSpace extends js.Object {
   /**  Returns a product brand builder. */
-  def brandBuilder: ProductBrandBuilder = ???
+  def brandBuilder: ProductBrandBuilder = js.native
   /**  Returns a product category builder. */
-  def categoryBuilder: ProductCategoryBuilder = ???
+  def categoryBuilder: ProductCategoryBuilder = js.native
   /**  Returns a product condition builder. */
-  def conditionBuilder: ProductConditionBuilder = ???
+  def conditionBuilder: ProductConditionBuilder = js.native
   /**  Returns a product custom label builder. */
-  def customLabelBuilder: ProductCustomLabelBuilder = ???
+  def customLabelBuilder: ProductCustomLabelBuilder = js.native
   /**  Returns a product item ID builder. */
-  def itemIdBuilder: ProductItemIdBuilder = ???
+  def itemIdBuilder: ProductItemIdBuilder = js.native
   /**  Returns a product type builder. */
-  def productTypeBuilder: ProductTypeBuilder = ???
+  def productTypeBuilder: ProductTypeBuilder = js.native
 }

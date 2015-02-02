@@ -1,9 +1,11 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /**
- * PasswordTextBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A text box that visually masks its input to prevent eavesdropping. Here is an example of how to use this widget: 
- *  
- * 
+ * PasswordTextBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A text box that visually masks its input to prevent eavesdropping. Here is an example of how to use this widget:
+ *
+ *
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var text = app.createPasswordTextBox().setName("text");
@@ -13,7 +15,7 @@ package com.google.appsscript.ui
  *    app.add(app.createLabel("0 characters").setId("label"));
  *    return app;
  *  }
- * 
+ *
  *  function test(eventInfo) {
  *    var app = UiApp.createApplication();
  *    // Because the text box was named "text" and added as a callback element to the
@@ -31,102 +33,102 @@ package com.google.appsscript.ui
  *    }
  *    return app;
  *  }
- *  
+ *
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the PasswordTextBox documentation here.
  */
-trait PasswordTextBox {
+trait PasswordTextBox extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addBlurHandler(handler: Handler): PasswordTextBox = ???
+  def addBlurHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addChangeHandler(handler: Handler): PasswordTextBox = ???
+  def addChangeHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addClickHandler(handler: Handler): PasswordTextBox = ???
+  def addClickHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addFocusHandler(handler: Handler): PasswordTextBox = ???
+  def addFocusHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyDownHandler(handler: Handler): PasswordTextBox = ???
+  def addKeyDownHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyPressHandler(handler: Handler): PasswordTextBox = ???
+  def addKeyPressHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyUpHandler(handler: Handler): PasswordTextBox = ???
+  def addKeyUpHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseDownHandler(handler: Handler): PasswordTextBox = ???
+  def addMouseDownHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseMoveHandler(handler: Handler): PasswordTextBox = ???
+  def addMouseMoveHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOutHandler(handler: Handler): PasswordTextBox = ???
+  def addMouseOutHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOverHandler(handler: Handler): PasswordTextBox = ???
+  def addMouseOverHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseUpHandler(handler: Handler): PasswordTextBox = ???
+  def addMouseUpHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseWheelHandler(handler: Handler): PasswordTextBox = ???
+  def addMouseWheelHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): PasswordTextBox = ???
+  def addStyleDependentName(styleName: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): PasswordTextBox = ???
+  def addStyleName(styleName: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addValueChangeHandler(handler: Handler): PasswordTextBox = ???
+  def addValueChangeHandler(handler: Handler): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setAccessKey(accessKey: Char): PasswordTextBox = ???
+  def setAccessKey(accessKey: Char): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setCursorPos(position: Int): PasswordTextBox = ???
+  def setCursorPos(position: Int): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setDirection(direction: Component): PasswordTextBox = ???
+  def setDirection(direction: Component): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setEnabled(enabled: Boolean): PasswordTextBox = ???
+  def setEnabled(enabled: Boolean): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setFocus(focus: Boolean): PasswordTextBox = ???
+  def setFocus(focus: Boolean): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): PasswordTextBox = ???
+  def setHeight(height: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): PasswordTextBox = ???
+  def setId(id: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): PasswordTextBox = ???
+  def setLayoutData(layout: AnyRef): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setMaxLength(length: Int): PasswordTextBox = ???
+  def setMaxLength(length: Int): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setName(name: String): PasswordTextBox = ???
+  def setName(name: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): PasswordTextBox = ???
+  def setPixelSize(width: Int, height: Int): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setReadOnly(readOnly: Boolean): PasswordTextBox = ???
+  def setReadOnly(readOnly: Boolean): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSelectionRange(position: Int, length: Int): PasswordTextBox = ???
+  def setSelectionRange(position: Int, length: Int): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): PasswordTextBox = ???
+  def setSize(width: String, height: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): PasswordTextBox = ???
+  def setStyleAttribute(attribute: String, value: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): PasswordTextBox = ???
+  def setStyleAttributes(attributes: AnyRef): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): PasswordTextBox = ???
+  def setStyleName(styleName: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): PasswordTextBox = ???
+  def setStylePrimaryName(styleName: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTabIndex(index: Int): PasswordTextBox = ???
+  def setTabIndex(index: Int): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): PasswordTextBox = ???
+  def setTag(tag: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setText(text: String): PasswordTextBox = ???
+  def setText(text: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTextAlignment(textAlign: Component): PasswordTextBox = ???
+  def setTextAlignment(textAlign: Component): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): PasswordTextBox = ???
+  def setTitle(title: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setValue(value: String): PasswordTextBox = ???
+  def setValue(value: String): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setValue(value: String, fireEvents: Boolean): PasswordTextBox = ???
+  def setValue(value: String, fireEvents: Boolean): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): PasswordTextBox = ???
+  def setVisible(visible: Boolean): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisibleLength(length: Int): PasswordTextBox = ???
+  def setVisibleLength(length: Int): PasswordTextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): PasswordTextBox = ???
+  def setWidth(width: String): PasswordTextBox = js.native
 }

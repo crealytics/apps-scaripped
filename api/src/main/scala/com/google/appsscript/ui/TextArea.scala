@@ -1,9 +1,11 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /**
- * TextArea Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A text box that allows multiple lines of text to be entered. Here is an example of how to use this widget: 
- *  
- * 
+ * TextArea Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A text box that allows multiple lines of text to be entered. Here is an example of how to use this widget:
+ *
+ *
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var text = app.createTextArea().setName("text");
@@ -13,7 +15,7 @@ package com.google.appsscript.ui
  *    app.add(app.createLabel("0 characters").setId("label"));
  *    return app;
  *  }
- * 
+ *
  *  function count(eventInfo) {
  *    var app = UiApp.createApplication();
  *    // Because the text area was named "text" and added as a callback element to the
@@ -21,102 +23,102 @@ package com.google.appsscript.ui
  *    app.getElementById("label").setText(eventInfo.parameter.text.length + " characters");
  *    return app;
  *  }
- *  
+ *
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the TextArea documentation here.
  */
-trait TextArea {
+trait TextArea extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addBlurHandler(handler: Handler): TextArea = ???
+  def addBlurHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addChangeHandler(handler: Handler): TextArea = ???
+  def addChangeHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addClickHandler(handler: Handler): TextArea = ???
+  def addClickHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addFocusHandler(handler: Handler): TextArea = ???
+  def addFocusHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyDownHandler(handler: Handler): TextArea = ???
+  def addKeyDownHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyPressHandler(handler: Handler): TextArea = ???
+  def addKeyPressHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyUpHandler(handler: Handler): TextArea = ???
+  def addKeyUpHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseDownHandler(handler: Handler): TextArea = ???
+  def addMouseDownHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseMoveHandler(handler: Handler): TextArea = ???
+  def addMouseMoveHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOutHandler(handler: Handler): TextArea = ???
+  def addMouseOutHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOverHandler(handler: Handler): TextArea = ???
+  def addMouseOverHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseUpHandler(handler: Handler): TextArea = ???
+  def addMouseUpHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseWheelHandler(handler: Handler): TextArea = ???
+  def addMouseWheelHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): TextArea = ???
+  def addStyleDependentName(styleName: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): TextArea = ???
+  def addStyleName(styleName: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addValueChangeHandler(handler: Handler): TextArea = ???
+  def addValueChangeHandler(handler: Handler): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setAccessKey(accessKey: Char): TextArea = ???
+  def setAccessKey(accessKey: Char): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setCharacterWidth(width: Int): TextArea = ???
+  def setCharacterWidth(width: Int): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setCursorPos(position: Int): TextArea = ???
+  def setCursorPos(position: Int): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setDirection(direction: Component): TextArea = ???
+  def setDirection(direction: Component): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setEnabled(enabled: Boolean): TextArea = ???
+  def setEnabled(enabled: Boolean): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setFocus(focus: Boolean): TextArea = ???
+  def setFocus(focus: Boolean): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): TextArea = ???
+  def setHeight(height: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): TextArea = ???
+  def setId(id: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): TextArea = ???
+  def setLayoutData(layout: AnyRef): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setName(name: String): TextArea = ???
+  def setName(name: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): TextArea = ???
+  def setPixelSize(width: Int, height: Int): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setReadOnly(readOnly: Boolean): TextArea = ???
+  def setReadOnly(readOnly: Boolean): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSelectionRange(position: Int, length: Int): TextArea = ???
+  def setSelectionRange(position: Int, length: Int): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): TextArea = ???
+  def setSize(width: String, height: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): TextArea = ???
+  def setStyleAttribute(attribute: String, value: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): TextArea = ???
+  def setStyleAttributes(attributes: AnyRef): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): TextArea = ???
+  def setStyleName(styleName: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): TextArea = ???
+  def setStylePrimaryName(styleName: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTabIndex(index: Int): TextArea = ???
+  def setTabIndex(index: Int): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): TextArea = ???
+  def setTag(tag: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setText(text: String): TextArea = ???
+  def setText(text: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTextAlignment(textAlign: Component): TextArea = ???
+  def setTextAlignment(textAlign: Component): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): TextArea = ???
+  def setTitle(title: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setValue(value: String): TextArea = ???
+  def setValue(value: String): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setValue(value: String, fireEvents: Boolean): TextArea = ???
+  def setValue(value: String, fireEvents: Boolean): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): TextArea = ???
+  def setVisible(visible: Boolean): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisibleLines(lines: Int): TextArea = ???
+  def setVisibleLines(lines: Int): TextArea = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): TextArea = ???
+  def setWidth(width: String): TextArea = js.native
 }

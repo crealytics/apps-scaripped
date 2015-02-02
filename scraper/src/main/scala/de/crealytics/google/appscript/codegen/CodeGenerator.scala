@@ -13,12 +13,12 @@ object CodeGenerator {
       val withoutParams = DEF(m.name.replace("\\(.*\\)", ""), m.returnType)
       val params = m.parameters.map { param => PARAM(param.name, param.tpe): ValDef }
       val withParams = withoutParams.withParams(params)
-      ((withParams := REF("???")): Tree).withDoc(m.description)
+      ((withParams := REF("js.native")): Tree).withDoc(m.description)
     }
-    val traitDef = (TRAITDEF(cls.name) := BLOCK(methodDefs)).withDoc(cls.description)
+    val traitDef = (TRAITDEF(cls.name) withParents ("js.Object") := BLOCK(methodDefs)).withDoc(cls.description)
     val compilationUnitDef = BLOCK(
       imports.map(i => IMPORT(i)) ++
-        Seq(traitDef)) inPackage (pkg)
+        Seq(IMPORT("scala.scalajs.js"), traitDef)) inPackage (pkg)
     treeToString(compilationUnitDef)
   }
 }

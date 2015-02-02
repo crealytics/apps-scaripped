@@ -1,9 +1,11 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /**
- * FlexTable Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A flexible table that creates cells on demand. It can be jagged (that is, each row can contain a different number of cells) and individual cells can be set to span multiple rows or columns. Here is an example of how to use this widget: 
- *  
- * 
+ * FlexTable Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A flexible table that creates cells on demand. It can be jagged (that is, each row can contain a different number of cells) and individual cells can be set to span multiple rows or columns. Here is an example of how to use this widget:
+ *
+ *
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    app.add(app.createFlexTable()
@@ -17,82 +19,82 @@ package com.google.appsscript.ui
  *      .setBorderWidth(5).setCellPadding(10).setCellSpacing(10));
  *    return app;
  *  }
- *  
+ *
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the FlexTable documentation here.
  */
-trait FlexTable {
+trait FlexTable extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addCell(row: Int): FlexTable = ???
+  def addCell(row: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addClickHandler(handler: Handler): FlexTable = ???
+  def addClickHandler(handler: Handler): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): FlexTable = ???
+  def addStyleDependentName(styleName: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): FlexTable = ???
+  def addStyleName(styleName: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: FlexTable = ???
+  def clear: FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def insertCell(beforeRow: Int, beforeColumn: Int): FlexTable = ???
+  def insertCell(beforeRow: Int, beforeColumn: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def insertRow(beforeRow: Int): FlexTable = ???
+  def insertRow(beforeRow: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def removeCell(row: Int, column: Int): FlexTable = ???
+  def removeCell(row: Int, column: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def removeCells(row: Int, column: Int, num: Int): FlexTable = ???
+  def removeCells(row: Int, column: Int, num: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def removeRow(row: Int): FlexTable = ???
+  def removeRow(row: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setBorderWidth(width: Int): FlexTable = ???
+  def setBorderWidth(width: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setCellPadding(padding: Int): FlexTable = ???
+  def setCellPadding(padding: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setCellSpacing(spacing: Int): FlexTable = ???
+  def setCellSpacing(spacing: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setColumnStyleAttribute(column: Int, attribute: String, value: String): FlexTable = ???
+  def setColumnStyleAttribute(column: Int, attribute: String, value: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setColumnStyleAttributes(column: Int, attributes: AnyRef): FlexTable = ???
+  def setColumnStyleAttributes(column: Int, attributes: AnyRef): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): FlexTable = ???
+  def setHeight(height: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): FlexTable = ???
+  def setId(id: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): FlexTable = ???
+  def setLayoutData(layout: AnyRef): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): FlexTable = ???
+  def setPixelSize(width: Int, height: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setRowStyleAttribute(row: Int, attribute: String, value: String): FlexTable = ???
+  def setRowStyleAttribute(row: Int, attribute: String, value: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setRowStyleAttributes(row: Int, attributes: AnyRef): FlexTable = ???
+  def setRowStyleAttributes(row: Int, attributes: AnyRef): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): FlexTable = ???
+  def setSize(width: String, height: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(row: Int, column: Int, attribute: String, value: String): FlexTable = ???
+  def setStyleAttribute(row: Int, column: Int, attribute: String, value: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): FlexTable = ???
+  def setStyleAttribute(attribute: String, value: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(row: Int, column: Int, attributes: AnyRef): FlexTable = ???
+  def setStyleAttributes(row: Int, column: Int, attributes: AnyRef): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): FlexTable = ???
+  def setStyleAttributes(attributes: AnyRef): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): FlexTable = ???
+  def setStyleName(styleName: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): FlexTable = ???
+  def setStylePrimaryName(styleName: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): FlexTable = ???
+  def setTag(tag: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setText(row: Int, column: Int, text: String): FlexTable = ???
+  def setText(row: Int, column: Int, text: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): FlexTable = ???
+  def setTitle(title: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): FlexTable = ???
+  def setVisible(visible: Boolean): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidget(row: Int, column: Int, widget: Widget): FlexTable = ???
+  def setWidget(row: Int, column: Int, widget: Widget): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): FlexTable = ???
+  def setWidth(width: String): FlexTable = js.native
 }

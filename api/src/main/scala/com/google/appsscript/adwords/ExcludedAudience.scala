@@ -12,31 +12,33 @@ import com.google.appsscript.spreadsheet._
 
 import com.google.appsscript.drive._
 
+import scala.scalajs.js
+
 /**
- * 
+ *
  *  Represents an AdWords excluded audience.
  */
-trait ExcludedAudience {
+trait ExcludedAudience extends js.Object {
   /**  Returns the ad group to which this excluded audience belongs. */
-  def getAdGroup: AdGroup = ???
+  def getAdGroup: AdGroup = js.native
   /**  Returns the audience ID of the excluded audience. */
-  def getAudienceId: Long = ???
+  def getAudienceId: Long = js.native
   /**
-   *  Returns the type of the excluded audience, either 
+   *  Returns the type of the excluded audience, either
    * <code>USER_INTEREST</code>
-   *  or 
+   *  or
    * <code>USER_LIST</code>
    * .
    */
-  def getAudienceType: String = ???
+  def getAudienceType: String = js.native
   /**  Returns the campaign to which this excluded audience belongs. */
-  def getCampaign: Campaign = ???
+  def getCampaign: Campaign = js.native
   /**  Returns the ID of the excluded audience. */
-  def getId: Long = ???
+  def getId: Long = js.native
   /**
-   *  Removes the excluded audience from the account. 
+   *  Removes the excluded audience from the account.
    * <p>Returns nothing.</p>
-   *  
+   *
    */
-  def remove: Unit = ???
+  def remove: Unit = js.native
 }

@@ -12,7 +12,9 @@ import com.google.appsscript.spreadsheet._
 
 import com.google.appsscript.drive._
 
+import scala.scalajs.js
+
 /** Unknown type which is not further speficied in API */
-trait Operation {
+trait Operation extends js.Object {
   ()
 }

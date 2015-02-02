@@ -1,9 +1,11 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /**
- * Grid Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A rectangular grid that can contain text, html, or a child widget within its cells. It must be resized explicitly to the desired number of rows and columns. Here is an example of how to use this widget: 
- *  
- * 
+ * Grid Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A rectangular grid that can contain text, html, or a child widget within its cells. It must be resized explicitly to the desired number of rows and columns. Here is an example of how to use this widget:
+ *
+ *
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    app.add(app.createGrid(3, 3)
@@ -22,72 +24,72 @@ package com.google.appsscript.ui
  *        .setStyleAttribute(0, 2, "color", "blue"));
  *    return app;
  *  }
- *  
+ *
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the Grid documentation here.
  */
-trait Grid {
+trait Grid extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addClickHandler(handler: Handler): Grid = ???
+  def addClickHandler(handler: Handler): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): Grid = ???
+  def addStyleDependentName(styleName: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): Grid = ???
+  def addStyleName(styleName: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: Grid = ???
+  def clear: Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def resize(rows: Int, columns: Int): Grid = ???
+  def resize(rows: Int, columns: Int): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setBorderWidth(width: Int): Grid = ???
+  def setBorderWidth(width: Int): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setCellPadding(padding: Int): Grid = ???
+  def setCellPadding(padding: Int): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setCellSpacing(spacing: Int): Grid = ???
+  def setCellSpacing(spacing: Int): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setColumnStyleAttribute(column: Int, attribute: String, value: String): Grid = ???
+  def setColumnStyleAttribute(column: Int, attribute: String, value: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setColumnStyleAttributes(column: Int, attributes: AnyRef): Grid = ???
+  def setColumnStyleAttributes(column: Int, attributes: AnyRef): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): Grid = ???
+  def setHeight(height: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): Grid = ???
+  def setId(id: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): Grid = ???
+  def setLayoutData(layout: AnyRef): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): Grid = ???
+  def setPixelSize(width: Int, height: Int): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setRowStyleAttribute(row: Int, attribute: String, value: String): Grid = ???
+  def setRowStyleAttribute(row: Int, attribute: String, value: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setRowStyleAttributes(row: Int, attributes: AnyRef): Grid = ???
+  def setRowStyleAttributes(row: Int, attributes: AnyRef): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): Grid = ???
+  def setSize(width: String, height: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(row: Int, column: Int, attribute: String, value: String): Grid = ???
+  def setStyleAttribute(row: Int, column: Int, attribute: String, value: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): Grid = ???
+  def setStyleAttribute(attribute: String, value: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(row: Int, column: Int, attributes: AnyRef): Grid = ???
+  def setStyleAttributes(row: Int, column: Int, attributes: AnyRef): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): Grid = ???
+  def setStyleAttributes(attributes: AnyRef): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): Grid = ???
+  def setStyleName(styleName: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): Grid = ???
+  def setStylePrimaryName(styleName: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): Grid = ???
+  def setTag(tag: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setText(row: Int, column: Int, text: String): Grid = ???
+  def setText(row: Int, column: Int, text: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): Grid = ???
+  def setTitle(title: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): Grid = ???
+  def setVisible(visible: Boolean): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidget(row: Int, column: Int, widget: Widget): Grid = ???
+  def setWidget(row: Int, column: Int, widget: Widget): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): Grid = ???
+  def setWidth(width: String): Grid = js.native
 }

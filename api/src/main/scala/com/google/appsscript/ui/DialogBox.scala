@@ -1,9 +1,11 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /**
- * DialogBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A form of popup that has a caption area at the top and can be dragged by the user. Unlike a PopupPanel, calls to setWidth(width) and setHeight(height) will set the width and height of the dialog box itself, even if a widget has not been added as yet. In general it's not recommended to add this panel as a child of another widget or of the app as that will make it behave like any other inline panel and not act as a popup. Instead, create the popup and then use its show() and hide() methods to show and hide it. See the example below. Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the DialogBox documentation here. Here is an example showing how to use the dialog box widget: 
- *  
- * 
+ * DialogBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A form of popup that has a caption area at the top and can be dragged by the user. Unlike a PopupPanel, calls to setWidth(width) and setHeight(height) will set the width and height of the dialog box itself, even if a widget has not been added as yet. In general it's not recommended to add this panel as a child of another widget or of the app as that will make it behave like any other inline panel and not act as a popup. Instead, create the popup and then use its show() and hide() methods to show and hide it. See the example below. Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the DialogBox documentation here. Here is an example showing how to use the dialog box widget:
+ *
+ *
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    // Create a dialog box.
@@ -15,75 +17,75 @@ package com.google.appsscript.ui
  *    return app;
  *  }
  */
-trait DialogBox {
+trait DialogBox extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def add(widget: Widget): DialogBox = ???
+  def add(widget: Widget): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addAutoHidePartner(partner: Component): DialogBox = ???
+  def addAutoHidePartner(partner: Component): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addCloseHandler(handler: Handler): DialogBox = ???
+  def addCloseHandler(handler: Handler): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): DialogBox = ???
+  def addStyleDependentName(styleName: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): DialogBox = ???
+  def addStyleName(styleName: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: DialogBox = ???
+  def clear: DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def hide: DialogBox = ???
+  def hide: DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setAnimationEnabled(animationEnabled: Boolean): DialogBox = ???
+  def setAnimationEnabled(animationEnabled: Boolean): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setAutoHideEnabled(enabled: Boolean): DialogBox = ???
+  def setAutoHideEnabled(enabled: Boolean): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setGlassEnabled(enabled: Boolean): DialogBox = ???
+  def setGlassEnabled(enabled: Boolean): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setGlassStyleName(styleName: String): DialogBox = ???
+  def setGlassStyleName(styleName: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHTML(html: String): DialogBox = ???
+  def setHTML(html: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): DialogBox = ???
+  def setHeight(height: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): DialogBox = ???
+  def setId(id: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): DialogBox = ???
+  def setLayoutData(layout: AnyRef): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setModal(modal: Boolean): DialogBox = ???
+  def setModal(modal: Boolean): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): DialogBox = ???
+  def setPixelSize(width: Int, height: Int): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPopupPosition(left: Int, top: Int): DialogBox = ???
+  def setPopupPosition(left: Int, top: Int): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPopupPositionAndShow(a: Component): DialogBox = ???
+  def setPopupPositionAndShow(a: Component): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPreviewingAllNativeEvents(previewing: Boolean): DialogBox = ???
+  def setPreviewingAllNativeEvents(previewing: Boolean): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): DialogBox = ???
+  def setSize(width: String, height: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): DialogBox = ???
+  def setStyleAttribute(attribute: String, value: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): DialogBox = ???
+  def setStyleAttributes(attributes: AnyRef): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): DialogBox = ???
+  def setStyleName(styleName: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): DialogBox = ???
+  def setStylePrimaryName(styleName: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): DialogBox = ???
+  def setTag(tag: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setText(text: String): DialogBox = ???
+  def setText(text: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): DialogBox = ???
+  def setTitle(title: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): DialogBox = ???
+  def setVisible(visible: Boolean): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidget(widget: Widget): DialogBox = ???
+  def setWidget(widget: Widget): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): DialogBox = ???
+  def setWidth(width: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def show: DialogBox = ???
+  def show: DialogBox = js.native
 }

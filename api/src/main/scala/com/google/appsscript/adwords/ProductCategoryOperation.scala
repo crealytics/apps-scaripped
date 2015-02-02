@@ -12,29 +12,31 @@ import com.google.appsscript.spreadsheet._
 
 import com.google.appsscript.drive._
 
+import scala.scalajs.js
+
 /**
- * 
+ *
  *  An operation representing creation of a new product category. Calling any method (
  * <a href="adwordsapp_productcategoryoperation.html#getErrors_0">getErrors</a>
- * , 
+ * ,
  * <a href="adwordsapp_productcategoryoperation.html#getResult_0">getResult</a>
- * , or 
+ * , or
  * <a href="adwordsapp_productcategoryoperation.html#isSuccessful_0">isSuccessful</a>
  * ) will cause the operation to execute and create the product category. To make the script more efficient, it's recommended that you store the operations in an array and only call these methods once you've constructed all the operations you want.
  */
-trait ProductCategoryOperation {
+trait ProductCategoryOperation extends js.Object {
   /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the ProductCategory. */
-  def getErrors: Seq[String] = ???
+  def getErrors: Seq[String] = js.native
   /**
-   *  Returns the newly created ProductCategory, or 
+   *  Returns the newly created ProductCategory, or
    * <code>null</code>
    *  if the operation was unsuccessful.
    */
-  def getResult: ProductCategory = ???
+  def getResult: ProductCategory = js.native
   /**
-   *  Returns 
+   *  Returns
    * <code>true</code>
    *  if the operation was successful.
    */
-  def isSuccessful: Boolean = ???
+  def isSuccessful: Boolean = js.native
 }

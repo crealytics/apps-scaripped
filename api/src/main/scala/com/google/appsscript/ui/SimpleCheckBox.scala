@@ -1,77 +1,79 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /** SimpleCheckBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A simple checkbox widget, with no label. Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the SimpleCheckBox documentation here. */
-trait SimpleCheckBox {
+trait SimpleCheckBox extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addBlurHandler(handler: Handler): SimpleCheckBox = ???
+  def addBlurHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addClickHandler(handler: Handler): SimpleCheckBox = ???
+  def addClickHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addFocusHandler(handler: Handler): SimpleCheckBox = ???
+  def addFocusHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyDownHandler(handler: Handler): SimpleCheckBox = ???
+  def addKeyDownHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyPressHandler(handler: Handler): SimpleCheckBox = ???
+  def addKeyPressHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addKeyUpHandler(handler: Handler): SimpleCheckBox = ???
+  def addKeyUpHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseDownHandler(handler: Handler): SimpleCheckBox = ???
+  def addMouseDownHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseMoveHandler(handler: Handler): SimpleCheckBox = ???
+  def addMouseMoveHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOutHandler(handler: Handler): SimpleCheckBox = ???
+  def addMouseOutHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseOverHandler(handler: Handler): SimpleCheckBox = ???
+  def addMouseOverHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseUpHandler(handler: Handler): SimpleCheckBox = ???
+  def addMouseUpHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addMouseWheelHandler(handler: Handler): SimpleCheckBox = ???
+  def addMouseWheelHandler(handler: Handler): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): SimpleCheckBox = ???
+  def addStyleDependentName(styleName: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): SimpleCheckBox = ???
+  def addStyleName(styleName: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setAccessKey(accessKey: Char): SimpleCheckBox = ???
+  def setAccessKey(accessKey: Char): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setChecked(checked: Boolean): SimpleCheckBox = ???
+  def setChecked(checked: Boolean): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setEnabled(enabled: Boolean): SimpleCheckBox = ???
+  def setEnabled(enabled: Boolean): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setFocus(focus: Boolean): SimpleCheckBox = ???
+  def setFocus(focus: Boolean): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): SimpleCheckBox = ???
+  def setHeight(height: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): SimpleCheckBox = ???
+  def setId(id: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): SimpleCheckBox = ???
+  def setLayoutData(layout: AnyRef): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setName(name: String): SimpleCheckBox = ???
+  def setName(name: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): SimpleCheckBox = ???
+  def setPixelSize(width: Int, height: Int): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): SimpleCheckBox = ???
+  def setSize(width: String, height: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): SimpleCheckBox = ???
+  def setStyleAttribute(attribute: String, value: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): SimpleCheckBox = ???
+  def setStyleAttributes(attributes: AnyRef): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): SimpleCheckBox = ???
+  def setStyleName(styleName: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): SimpleCheckBox = ???
+  def setStylePrimaryName(styleName: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTabIndex(index: Int): SimpleCheckBox = ???
+  def setTabIndex(index: Int): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): SimpleCheckBox = ???
+  def setTag(tag: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): SimpleCheckBox = ???
+  def setTitle(title: String): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): SimpleCheckBox = ???
+  def setVisible(visible: Boolean): SimpleCheckBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): SimpleCheckBox = ???
+  def setWidth(width: String): SimpleCheckBox = js.native
 }

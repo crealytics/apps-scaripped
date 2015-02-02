@@ -1,9 +1,11 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /**
- * ScrollPanel Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A panel that wraps its contents in a scrollable element. Note that this panel can contain at most one direct child widget. To add more children, make the child of this panel a different panel that can contain more than one child. Here is an example of how to use this widget: 
- *  
- * 
+ * ScrollPanel Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A panel that wraps its contents in a scrollable element. Note that this panel can contain at most one direct child widget. To add more children, make the child of this panel a different panel that can contain more than one child. Here is an example of how to use this widget:
+ *
+ *
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    // Create some long content.
@@ -16,58 +18,58 @@ package com.google.appsscript.ui
  *    app.add(scroll);
  *    return app;
  *  }
- *  
+ *
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the ScrollPanel documentation here.
  */
-trait ScrollPanel {
+trait ScrollPanel extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def add(widget: Widget): ScrollPanel = ???
+  def add(widget: Widget): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addScrollHandler(handler: Handler): ScrollPanel = ???
+  def addScrollHandler(handler: Handler): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): ScrollPanel = ???
+  def addStyleDependentName(styleName: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): ScrollPanel = ???
+  def addStyleName(styleName: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: ScrollPanel = ???
+  def clear: ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setAlwaysShowScrollBars(alwaysShow: Boolean): ScrollPanel = ???
+  def setAlwaysShowScrollBars(alwaysShow: Boolean): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): ScrollPanel = ???
+  def setHeight(height: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHorizontalScrollPosition(position: Int): ScrollPanel = ???
+  def setHorizontalScrollPosition(position: Int): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): ScrollPanel = ???
+  def setId(id: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): ScrollPanel = ???
+  def setLayoutData(layout: AnyRef): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): ScrollPanel = ???
+  def setPixelSize(width: Int, height: Int): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setScrollPosition(position: Int): ScrollPanel = ???
+  def setScrollPosition(position: Int): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): ScrollPanel = ???
+  def setSize(width: String, height: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): ScrollPanel = ???
+  def setStyleAttribute(attribute: String, value: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): ScrollPanel = ???
+  def setStyleAttributes(attributes: AnyRef): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): ScrollPanel = ???
+  def setStyleName(styleName: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): ScrollPanel = ???
+  def setStylePrimaryName(styleName: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): ScrollPanel = ???
+  def setTag(tag: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): ScrollPanel = ???
+  def setTitle(title: String): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): ScrollPanel = ???
+  def setVisible(visible: Boolean): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidget(widget: Widget): ScrollPanel = ???
+  def setWidget(widget: Widget): ScrollPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): ScrollPanel = ???
+  def setWidth(width: String): ScrollPanel = js.native
 }

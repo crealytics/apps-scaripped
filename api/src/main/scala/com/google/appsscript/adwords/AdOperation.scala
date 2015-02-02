@@ -12,17 +12,19 @@ import com.google.appsscript.spreadsheet._
 
 import com.google.appsscript.drive._
 
+import scala.scalajs.js
+
 /**
- * 
+ *
  *  An operation representing creation of a new ad. Calling any method (
  * <a href="adwordsapp_adoperation.html#getErrors_0">getErrors</a>
- * , 
+ * ,
  * <a href="adwordsapp_adoperation.html#getResult_0">getResult</a>
- * , or 
+ * , or
  * <a href="adwordsapp_adoperation.html#isSuccessful_0">isSuccessful</a>
- * ) will cause the operation to execute and create the ad. To make the script more efficient, it's recommended that you store the operations in an array and only call these methods once you've constructed all the operations you want. 
+ * ) will cause the operation to execute and create the ad. To make the script more efficient, it's recommended that you store the operations in an array and only call these methods once you've constructed all the operations you want.
  * <p>For instance, this is how you would assign a label to newly created ads in an efficient manner: </p>
- *  
+ *
  * <pre class="prettyprint">
  *  // For the purpose of this example, suppose that the fetchAdText() function
  *  // fetches text ad data from your data source of choice, so that
@@ -49,19 +51,19 @@ import com.google.appsscript.drive._
  *    }
  *  }</pre>
  */
-trait AdOperation {
+trait AdOperation extends js.Object {
   /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the Ad. */
-  def getErrors: Seq[String] = ???
+  def getErrors: Seq[String] = js.native
   /**
-   *  Returns the newly created Ad, or 
+   *  Returns the newly created Ad, or
    * <code>null</code>
    *  if the operation was unsuccessful.
    */
-  def getResult: Ad = ???
+  def getResult: Ad = js.native
   /**
-   *  Returns 
+   *  Returns
    * <code>true</code>
    *  if the operation was successful.
    */
-  def isSuccessful: Boolean = ???
+  def isSuccessful: Boolean = js.native
 }

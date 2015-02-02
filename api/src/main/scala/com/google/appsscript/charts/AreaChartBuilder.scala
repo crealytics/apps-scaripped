@@ -4,10 +4,12 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.ui._
 
+import scala.scalajs.js
+
 /**
- * AreaChartBuilder Builder for area charts. For more details, see the Google Charts documentation. Here is an example that shows how to build an area chart. 
- *  
- * 
+ * AreaChartBuilder Builder for area charts. For more details, see the Google Charts documentation. Here is an example that shows how to build an area chart.
+ *
+ *
  *  function doGet() {
  *    // Create a data table with some sample data.
  *    var sampleData = Charts.newDataTable()
@@ -27,7 +29,7 @@ import com.google.appsscript.ui._
  *        .addRow(["Nov", 58, 388])
  *        .addRow(["Dec", 63, 400])
  *        .build();
- *    
+ *
  *    var chart = Charts.newAreaChart()
  *        .setTitle('Yearly Spending')
  *        .setXAxisTitle('Month')
@@ -37,58 +39,58 @@ import com.google.appsscript.ui._
  *        .setColors(['red', 'green'])
  *        .setDataTable(sampleData)
  *        .build();
- *    
+ *
  *    return UiApp.createApplication().add(chart);
  *  }
  */
-trait AreaChartBuilder {
+trait AreaChartBuilder extends js.Object {
   /** Builds the chart. */
-  def build: Chart = ???
+  def build: Chart = js.native
   /** Reverses the drawing of series in the domain axis. For vertical-range charts (such as line, area or column charts), this means the horizontal axis is drawn from right to left. For horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to bottom. For pie charts, this means the slices are drawn counterclockwise. */
-  def reverseCategories: AreaChartBuilder = ???
+  def reverseCategories: AreaChartBuilder = js.native
   /** Sets the background color for the chart. */
-  def setBackgroundColor(cssValue: String): AreaChartBuilder = ???
+  def setBackgroundColor(cssValue: String): AreaChartBuilder = js.native
   /** Sets the colors for the lines in the chart. */
-  def setColors(cssValues: Seq[String]): AreaChartBuilder = ???
+  def setColors(cssValues: Seq[String]): AreaChartBuilder = js.native
   /** Sets the data source URL that will be used to pull data in from an external source, such as Google Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored. For more information about querying data sources, check out the Google Charts documentation. */
-  def setDataSourceUrl(url: String): AreaChartBuilder = ???
+  def setDataSourceUrl(url: String): AreaChartBuilder = js.native
   /** Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method for setting the data table without needing to call build(). */
-  def setDataTable(tableBuilder: DataTableBuilder): AreaChartBuilder = ???
+  def setDataTable(tableBuilder: DataTableBuilder): AreaChartBuilder = js.native
   /** Sets the data table which contains the lines for the chart, as well as the X-axis labels. The first column should be a string, and contain the horizontal axis labels. Any number of columns can follow, all must be numeric. Each column is displayed as a separate line. */
-  def setDataTable(table: DataTableSource): AreaChartBuilder = ???
+  def setDataTable(table: DataTableSource): AreaChartBuilder = js.native
   /** Sets the data view definition to use for the chart. */
-  def setDataViewDefinition(dataViewDefinition: DataViewDefinition): AreaChartBuilder = ???
+  def setDataViewDefinition(dataViewDefinition: DataViewDefinition): AreaChartBuilder = js.native
   /** Sets the dimensions for the chart. */
-  def setDimensions(width: Int, height: Int): AreaChartBuilder = ???
+  def setDimensions(width: Int, height: Int): AreaChartBuilder = js.native
   /** Sets the position of the legend with respect to the chart. By default, there will be no legend. */
-  def setLegendPosition(position: Position): AreaChartBuilder = ???
+  def setLegendPosition(position: Position): AreaChartBuilder = js.native
   /** Sets the text style of the chart legend. */
-  def setLegendTextStyle(textStyle: TextStyle): AreaChartBuilder = ???
+  def setLegendTextStyle(textStyle: TextStyle): AreaChartBuilder = js.native
   /**
    */
-  def setOption(option: String, value: AnyRef): AreaChartBuilder = ???
+  def setOption(option: String, value: AnyRef): AreaChartBuilder = js.native
   /** Sets the style for points in the line. By default, points will have no particular styles, and only the line will be visible. */
-  def setPointStyle(style: PointStyle): AreaChartBuilder = ???
+  def setPointStyle(style: PointStyle): AreaChartBuilder = js.native
   /** Sets the range for the chart. */
-  def setRange(start: Number, end: Number): AreaChartBuilder = ???
+  def setRange(start: Number, end: Number): AreaChartBuilder = js.native
   /** Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default, there is no stacking. */
-  def setStacked: AreaChartBuilder = ???
+  def setStacked: AreaChartBuilder = js.native
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
-  def setTitle(chartTitle: String): AreaChartBuilder = ???
+  def setTitle(chartTitle: String): AreaChartBuilder = js.native
   /** Sets the text style of the chart title. */
-  def setTitleTextStyle(textStyle: TextStyle): AreaChartBuilder = ???
+  def setTitleTextStyle(textStyle: TextStyle): AreaChartBuilder = js.native
   /** Sets the horizontal axis text style. */
-  def setXAxisTextStyle(textStyle: TextStyle): AreaChartBuilder = ???
+  def setXAxisTextStyle(textStyle: TextStyle): AreaChartBuilder = js.native
   /** Adds a title to the horizontal axis. The title will be centered and will appear below the axis value labels. */
-  def setXAxisTitle(title: String): AreaChartBuilder = ???
+  def setXAxisTitle(title: String): AreaChartBuilder = js.native
   /** Sets the horizontal axis title text style. */
-  def setXAxisTitleTextStyle(textStyle: TextStyle): AreaChartBuilder = ???
+  def setXAxisTitleTextStyle(textStyle: TextStyle): AreaChartBuilder = js.native
   /** Sets the vertical axis text style. */
-  def setYAxisTextStyle(textStyle: TextStyle): AreaChartBuilder = ???
+  def setYAxisTextStyle(textStyle: TextStyle): AreaChartBuilder = js.native
   /** Adds a title to the vertical axis. The title will be centered and will appear to the left of the value labels. */
-  def setYAxisTitle(title: String): AreaChartBuilder = ???
+  def setYAxisTitle(title: String): AreaChartBuilder = js.native
   /** Sets the vertical axis title text style. */
-  def setYAxisTitleTextStyle(textStyle: TextStyle): AreaChartBuilder = ???
+  def setYAxisTitleTextStyle(textStyle: TextStyle): AreaChartBuilder = js.native
   /** Makes the range axis into a logarithmic scale (requires all values to be positive). The range axis will be the vertical axis for vertical charts (line, area, column, etc.) and the horizontal axis for horizontal charts (bar, etc.) */
-  def useLogScale: AreaChartBuilder = ???
+  def useLogScale: AreaChartBuilder = js.native
 }

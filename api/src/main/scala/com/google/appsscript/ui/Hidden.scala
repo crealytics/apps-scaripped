@@ -1,9 +1,11 @@
 package com.google.appsscript.ui
 
+import scala.scalajs.js
+
 /**
- * Hidden Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. Represents a hidden field for storing data in the user's browser that can be passed back to a handler as a "callback element". Here is an example of how to use this widget: 
- *  
- * 
+ * Hidden Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. Represents a hidden field for storing data in the user's browser that can be passed back to a handler as a "callback element". Here is an example of how to use this widget:
+ *
+ *
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    // Note that the name "appState" for callbacks, and the id "hidden" for
@@ -15,7 +17,7 @@ package com.google.appsscript.ui
  *    app.add(app.createLabel("clicked 0 times").setId("label"));
  *    return app;
  *  }
- * 
+ *
  *  function click(eventInfo) {
  *    var app = UiApp.createApplication();
  *    // We have the value of the hidden field because it was a callback element.
@@ -28,52 +30,52 @@ package com.google.appsscript.ui
  *    app.getElementById("label").setText("clicked " + numClicks + " times");
  *    return app;
  *  }
- *  
+ *
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the Hidden documentation here.
  */
-trait Hidden {
+trait Hidden extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleDependentName(styleName: String): Hidden = ???
+  def addStyleDependentName(styleName: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def addStyleName(styleName: String): Hidden = ???
+  def addStyleName(styleName: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = ???
+  def getId: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = ???
+  def getTag: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = ???
+  def getType: String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setDefaultValue(value: String): Hidden = ???
+  def setDefaultValue(value: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setHeight(height: String): Hidden = ???
+  def setHeight(height: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setID(id: String): Hidden = ???
+  def setID(id: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setId(id: String): Hidden = ???
+  def setId(id: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setLayoutData(layout: AnyRef): Hidden = ???
+  def setLayoutData(layout: AnyRef): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setName(name: String): Hidden = ???
+  def setName(name: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setPixelSize(width: Int, height: Int): Hidden = ???
+  def setPixelSize(width: Int, height: Int): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setSize(width: String, height: String): Hidden = ???
+  def setSize(width: String, height: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttribute(attribute: String, value: String): Hidden = ???
+  def setStyleAttribute(attribute: String, value: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleAttributes(attributes: AnyRef): Hidden = ???
+  def setStyleAttributes(attributes: AnyRef): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStyleName(styleName: String): Hidden = ???
+  def setStyleName(styleName: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setStylePrimaryName(styleName: String): Hidden = ???
+  def setStylePrimaryName(styleName: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTag(tag: String): Hidden = ???
+  def setTag(tag: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setTitle(title: String): Hidden = ???
+  def setTitle(title: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setValue(value: String): Hidden = ???
+  def setValue(value: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setVisible(visible: Boolean): Hidden = ???
+  def setVisible(visible: Boolean): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def setWidth(width: String): Hidden = ???
+  def setWidth(width: String): Hidden = js.native
 }

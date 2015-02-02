@@ -12,23 +12,25 @@ import com.google.appsscript.spreadsheet._
 
 import com.google.appsscript.drive._
 
+import scala.scalajs.js
+
 /**
- * 
- *  Builder for 
+ *
+ *  Builder for
  * <a href="adwordsapp_productitemid.html">ProductItemId</a>
  *  objects.
  */
-trait ProductItemIdBuilder {
+trait ProductItemIdBuilder extends js.Object {
   /**
-   *  Builds the product item id. Returns a 
+   *  Builds the product item id. Returns a
    * <a href="adwordsapp_productitemidoperation.html">ProductItemIdOperation</a>
-   *  that corresponds to the creation of the 
+   *  that corresponds to the creation of the
    * <a href="adwordsapp_productitemid.html">ProductItemId</a>
    * .
    */
-  def build: ProductItemIdOperation = ???
+  def build: ProductItemIdOperation = js.native
   /**  Specifies the bid of the product item id. If this is unspecified, will use the bid of the parent product group. */
-  def withBid(bid: Double): ProductItemIdBuilder = ???
+  def withBid(bid: Double): ProductItemIdBuilder = js.native
   /**  Specifies the value of the product item id. */
-  def withValue(value: String): ProductItemIdBuilder = ???
+  def withValue(value: String): ProductItemIdBuilder = js.native
 }
