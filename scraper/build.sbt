@@ -1,8 +1,7 @@
-scalaVersion := "2.11.5"
-
 resolvers += Resolver.sonatypeRepo("public")
 
 libraryDependencies ++= Seq(
+  "org.scala-lang" % "scala-reflect" % scalaVersion.value,
   "net.ruippeixotog" %% "scala-scraper" % "0.1.1",
   "com.lihaoyi" %% "ammonite" % "0.1.4",
   "com.typesafe" % "config" % "1.2.1",

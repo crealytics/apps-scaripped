@@ -1,3 +1,5 @@
+package de.crealytics.google.appscript.scraper
+
 import de.crealytics.google.appscript.api._
 import de.crealytics.google.appscript.scraper._
 import de.crealytics.google.appscript.codegen._
@@ -13,10 +15,11 @@ import ammonite.all._
 import net.ceedubs.ficus.Ficus._
 import net.ceedubs.ficus.readers.ArbitraryTypeReader._
 
-object GoogleAppScriptApiScraper {
-  println("Welcome to the Scala worksheet")
-
-  val wd = root / 'Users / 'moe / 'Workspaces / 'bidmanagement / 'google_apps_script_scala_js / 'api / 'src / 'main / 'scala
+object BigTimeScraper extends App {
+  if(args.length != 1)
+    throw new IllegalArgumentException("Provide the path in which sources should be generated")
+  val path = args(0)
+  val wd = path.replaceFirst("^/", "").split("/").foldLeft(root)(_ / _)
   import com.typesafe.config.ConfigFactory
   case class ImportLink(
     url: String,
