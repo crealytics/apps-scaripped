@@ -19,13 +19,13 @@ trait SplitLayoutPanel extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addWest(widget: Widget, width: Number): SplitLayoutPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: SplitLayoutPanel = js.native
+  def clear(): SplitLayoutPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def remove(index: Int): SplitLayoutPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

@@ -29,7 +29,7 @@ trait Spreadsheet extends js.Object {
   /** Copies the spreadsheet and returns the new one. */
   def copy(name: String): Spreadsheet = js.native
   /** Deletes the currently active sheet. */
-  def deleteActiveSheet: Sheet = js.native
+  def deleteActiveSheet(): Sheet = js.native
   /** Deletes the column at the given column position. */
   def deleteColumn(columnPosition: Int): Sheet = js.native
   /** Deletes a number of columns starting at the given column position. */
@@ -41,41 +41,41 @@ trait Spreadsheet extends js.Object {
   /** Deletes the specified sheet. */
   def deleteSheet(sheet: Sheet): Unit = js.native
   /** Duplicates the active sheet and makes it the active sheet. */
-  def duplicateActiveSheet: Sheet = js.native
+  def duplicateActiveSheet(): Sheet = js.native
   /** Returns the active cell in this sheet. */
-  def getActiveCell: Range = js.native
+  def getActiveCell(): Range = js.native
   /** Returns the active range for the active sheet. Returns the range of cells that is currently considered active. This generally means the range that a user has selected in the active sheet, but in a custom function it refers to the cell being actively recalculated. Note that when called on a SpreadsheetApp it effectively calls getActiveSpreadsheet and then getActiveSheet to act on the active Sheet. */
-  def getActiveRange: Range = js.native
+  def getActiveRange(): Range = js.native
   /** Gets the active sheet in a spreadsheet. The active sheet in a spreadsheet is the sheet that is being displayed in the spreadsheet UI. */
-  def getActiveSheet: Sheet = js.native
+  def getActiveSheet(): Sheet = js.native
   /** Return the data inside this object as a blob converted to the specified content type. This method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it assumes that the part of the filename that follows the last period (if any) is an existing extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become "ChristmasList.12.25.pdf". */
   def getAs(contentType: String): Blob = js.native
   /** Return the data inside this object as a blob. */
-  def getBlob: Blob = js.native
+  def getBlob(): Blob = js.native
   /** Gets the width in pixels of the given column. */
   def getColumnWidth(columnPosition: Int): Int = js.native
   /** Returns a Range corresponding to the dimensions in which data is present. This is functionally equivalent to creating a Range bounded by A1 and (Range.getLastColumn(), Range.getLastRow()). */
-  def getDataRange: Range = js.native
+  def getDataRange(): Range = js.native
   /** Gets the list of editors for this Spreadsheet. If the user who executes the script does not have edit access to the Spreadsheet, this method throws an exception. */
-  def getEditors: Seq[User] = js.native
+  def getEditors(): Seq[User] = js.native
   /** Returns the url for the form attached to the spreadsheet, null if there is no form. */
-  def getFormUrl: String = js.native
+  def getFormUrl(): String = js.native
   /** Returns the number of frozen columns. */
-  def getFrozenColumns: Int = js.native
+  def getFrozenColumns(): Int = js.native
   /** Returns the number of frozen rows. */
-  def getFrozenRows: Int = js.native
+  def getFrozenRows(): Int = js.native
   /** Gets a unique identifier for this spreadsheet. A spreadsheet ID can be extracted from its URL. For example, the spreadsheet ID in the URL https://docs.google.com/spreadsheets/d/abc1234567/edit#gid=0 is "abc1234567". */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Returns the position of the last column that has content. */
-  def getLastColumn: Int = js.native
+  def getLastColumn(): Int = js.native
   /** Returns the position of the last row that has content. */
-  def getLastRow: Int = js.native
+  def getLastRow(): Int = js.native
   /** Gets the name of the document. */
-  def getName: String = js.native
+  def getName(): String = js.native
   /** Returns the number of sheets in this spreadsheet. */
-  def getNumSheets: Int = js.native
+  def getNumSheets(): Int = js.native
   /** Returns the owner of the document. */
-  def getOwner: User = js.native
+  def getOwner(): User = js.native
   /** Returns the range as specified in A1 notation or R1C1 notation. */
   def getRange(a1Notation: String): Range = js.native
   /** Returns a named range, or null if no range with the given name is found. If multiple sheets of the spreadsheet use the same range name, specify the sheet name without additional quotation marks — for example, getRangeByName('TaxRates') or getRangeByName('Sheet Name!TaxRates'), but not getRangeByName('"Sheet Name"!TaxRates'). */
@@ -85,23 +85,23 @@ trait Spreadsheet extends js.Object {
   /** Returns a sheet with the given name. If multiple sheets have the same name, the leftmost one is returned. Returns null if there is no sheet with the given name. */
   def getSheetByName(name: String): Sheet = js.native
   /** Returns the ID of the sheet represented by this object. This is an ID for the sheet that is unique to the spreadsheet. The ID is a monotonically increasing integer assigned at sheet creation time that is independent of sheet position. This is useful in conjunction with methods such as Range.copyFormatToRange(gridId, column, columnEnd, row, rowEnd) that take a gridId parameter rather than a Sheet instance. */
-  def getSheetId: Int = js.native
+  def getSheetId(): Int = js.native
   /** Returns the sheet name. */
-  def getSheetName: String = js.native
+  def getSheetName(): String = js.native
   /** Returns a PageProtection instance describing the permissions for the current sheet. */
-  def getSheetProtection: PageProtection = js.native
+  def getSheetProtection(): PageProtection = js.native
   /** Returns the rectangular grid of values for this range starting at the given coordinates. A -1 value given as the row or column position is equivalent to getting the very last row or column that has data in the sheet. */
   def getSheetValues(startRow: Int, startColumn: Int, numRows: Int, numColumns: Int): Seq[Seq[AnyRef]] = js.native
   /** Gets all the sheets in this spreadsheet. */
-  def getSheets: Seq[Sheet] = js.native
+  def getSheets(): Seq[Sheet] = js.native
   /** Gets the spreadsheet locale. */
-  def getSpreadsheetLocale: String = js.native
+  def getSpreadsheetLocale(): String = js.native
   /** Gets the time zone for the spreadsheet. */
-  def getSpreadsheetTimeZone: String = js.native
+  def getSpreadsheetTimeZone(): String = js.native
   /** Returns the url for the given spreadsheet. */
-  def getUrl: String = js.native
+  def getUrl(): String = js.native
   /** Gets the list of viewers and commenters for this Spreadsheet. If the user who executes the script does not have edit access to the Spreadsheet, this method throws an exception. */
-  def getViewers: Seq[User] = js.native
+  def getViewers(): Seq[User] = js.native
   /** Hides the columns in the given range. */
   def hideColumn(column: Range): Unit = js.native
   /** Hides the rows in the given range. */
@@ -131,7 +131,7 @@ trait Spreadsheet extends js.Object {
   /** Inserts a number of rows before the given row position. */
   def insertRowsBefore(beforePosition: Int, howMany: Int): Sheet = js.native
   /** Inserts a new sheet in the spreadsheet, with a default name. As a side effect, it makes it the active sheet. */
-  def insertSheet: Sheet = js.native
+  def insertSheet(): Sheet = js.native
   /** Inserts a new sheet in the spreadsheet at the given index. As a side effect, it makes it the active sheet. */
   def insertSheet(sheetIndex: Int): Sheet = js.native
   /** Inserts a new sheet in the spreadsheet at the given index and uses optional advanced arguments. As a side effect, it makes it the active sheet. */
@@ -207,9 +207,9 @@ trait Spreadsheet extends js.Object {
   /** Updates a menu that was added by addMenu(name, subMenus). Works exactly like addMenu(name, subMenus). */
   def updateMenu(name: String, subMenus: Seq[AnyRef]): Unit = js.native
   /** Deprecated. As of January 2014 this function is deprecated and not available in the new version of Google Sheets. */
-  def isAnonymousView: Boolean = js.native
+  def isAnonymousView(): Boolean = js.native
   /** Deprecated. As of January 2014 this function is deprecated and not available in the new version of Google Sheets. */
-  def isAnonymousWrite: Boolean = js.native
+  def isAnonymousWrite(): Boolean = js.native
   /** Deprecated. As of January 2014 this function is deprecated and not available in the new version of Google Sheets. */
   def setAnonymousAccess(anonymousReadAllowed: Boolean, anonymousWriteAllowed: Boolean): Unit = js.native
 }

@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * FlexTable Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A flexible table that creates cells on demand. It can be jagged (that is, each row can contain a different number of cells) and individual cells can be set to span multiple rows or columns. Here is an example of how to use this widget:
- *
- *
+ * FlexTable Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A flexible table that creates cells on demand. It can be jagged (that is, each row can contain a different number of cells) and individual cells can be set to span multiple rows or columns. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    app.add(app.createFlexTable()
@@ -19,7 +19,7 @@ import scala.scalajs.js
  *      .setBorderWidth(5).setCellPadding(10).setCellSpacing(10));
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the FlexTable documentation here.
  */
 trait FlexTable extends js.Object {
@@ -32,13 +32,13 @@ trait FlexTable extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: FlexTable = js.native
+  def clear(): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def insertCell(beforeRow: Int, beforeColumn: Int): FlexTable = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

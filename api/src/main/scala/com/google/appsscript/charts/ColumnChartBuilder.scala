@@ -7,9 +7,9 @@ import com.google.appsscript.ui._
 import scala.scalajs.js
 
 /**
- * ColumnChartBuilder Builder for column charts. For more details, see the Google Charts documentation. This example shows how to create a column chart with data from a data table.
- *
- *
+ * ColumnChartBuilder Builder for column charts. For more details, see the Google Charts documentation. This example shows how to create a column chart with data from a data table. 
+ *  
+ * 
  *   function doGet() {
  *    var sampleData = Charts.newDataTable()
  *        .addColumn(Charts.ColumnType.STRING, "Year")
@@ -25,7 +25,7 @@ import scala.scalajs.js
  *        .addRow(["2011", 910, 700])
  *        .addRow(["2012", 1230, 840])
  *        .build();
- *
+ *    
  *    var chart = Charts.newColumnChart()
  *        .setTitle('Sales vs. Expenses')
  *        .setXAxisTitle('Year')
@@ -33,15 +33,15 @@ import scala.scalajs.js
  *        .setDimensions(600, 500)
  *        .setDataTable(sampleData)
  *        .build();
- *
+ *    
  *    return UiApp.createApplication().add(chart);
  *  }
  */
 trait ColumnChartBuilder extends js.Object {
   /** Builds the chart. */
-  def build: Chart = js.native
+  def build(): Chart = js.native
   /** Reverses the drawing of series in the domain axis. For vertical-range charts (such as line, area or column charts), this means the horizontal axis is drawn from right to left. For horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to bottom. For pie charts, this means the slices are drawn counterclockwise. */
-  def reverseCategories: ColumnChartBuilder = js.native
+  def reverseCategories(): ColumnChartBuilder = js.native
   /** Sets the background color for the chart. */
   def setBackgroundColor(cssValue: String): ColumnChartBuilder = js.native
   /** Sets the colors for the lines in the chart. */
@@ -66,7 +66,7 @@ trait ColumnChartBuilder extends js.Object {
   /** Sets the range for the chart. */
   def setRange(start: Number, end: Number): ColumnChartBuilder = js.native
   /** Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default, there is no stacking. */
-  def setStacked: ColumnChartBuilder = js.native
+  def setStacked(): ColumnChartBuilder = js.native
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
   def setTitle(chartTitle: String): ColumnChartBuilder = js.native
   /** Sets the text style of the chart title. */
@@ -84,5 +84,5 @@ trait ColumnChartBuilder extends js.Object {
   /** Sets the vertical axis title text style. */
   def setYAxisTitleTextStyle(textStyle: TextStyle): ColumnChartBuilder = js.native
   /** Makes the range axis into a logarithmic scale (requires all values to be positive). The range axis will be the vertical axis for vertical charts (line, area, column, etc.) and the horizontal axis for horizontal charts (bar, etc.) */
-  def useLogScale: ColumnChartBuilder = js.native
+  def useLogScale(): ColumnChartBuilder = js.native
 }

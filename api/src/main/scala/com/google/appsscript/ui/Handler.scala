@@ -5,11 +5,11 @@ import scala.scalajs.js
 /** Handler Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. Base interface for client and server handlers. Implementing classes Name Brief description ClientHandler An event handler that runs in the user's browser without needing a call back to the server. ServerHandler An event handler that runs on the server. */
 trait Handler extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setId(id: String): Handler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

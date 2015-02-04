@@ -7,14 +7,14 @@ import com.google.appsscript.ui._
 import scala.scalajs.js
 
 /**
- * BarChartBuilder Builder for bar charts. For more details, see the Google Charts documentation. Here is an example that shows how to build a bar chart. The data is imported from a Google spreadsheet.
- *
- *
+ * BarChartBuilder Builder for bar charts. For more details, see the Google Charts documentation. Here is an example that shows how to build a bar chart. The data is imported from a Google spreadsheet. 
+ *  
+ * 
  *  function doGet() {
  *   // Get sample data from a spreadsheet.
  *   var dataSourceUrl = 'https://docs.google.com/spreadsheet/tq?range=B1%3AC11' +
  *       '&key=0Aq4s9w_HxMs7dHpfX05JdmVSb1FpT21sbXd4NVE3UEE&gid=0&headers=-1';
- *
+ * 
  *   var chartBuilder = Charts.newBarChart()
  *       .setTitle('Top Grossing Films in US and Canada')
  *       .setXAxisTitle('USD')
@@ -22,18 +22,18 @@ import scala.scalajs.js
  *       .setDimensions(600, 500)
  *       .setLegendPosition(Charts.Position.BOTTOM)
  *       .setDataSourceUrl(dataSourceUrl);
- *
+ * 
  *   var chart = chartBuilder.build();
  *   return UiApp.createApplication().add(chart);
  *  }
  */
 trait BarChartBuilder extends js.Object {
   /** Builds the chart. */
-  def build: Chart = js.native
+  def build(): Chart = js.native
   /** Reverses the drawing of series in the domain axis. For vertical-range charts (such as line, area or column charts), this means the horizontal axis is drawn from right to left. For horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to bottom. For pie charts, this means the slices are drawn counterclockwise. */
-  def reverseCategories: BarChartBuilder = js.native
+  def reverseCategories(): BarChartBuilder = js.native
   /** Reverses the direction in which the bars grow along the horizontal axis. By default, values grow from left to right. Calling this method will cause them to grow from right to left. */
-  def reverseDirection: BarChartBuilder = js.native
+  def reverseDirection(): BarChartBuilder = js.native
   /** Sets the background color for the chart. */
   def setBackgroundColor(cssValue: String): BarChartBuilder = js.native
   /** Sets the colors for the lines in the chart. */
@@ -58,7 +58,7 @@ trait BarChartBuilder extends js.Object {
   /** Sets the range for the chart. */
   def setRange(start: Number, end: Number): BarChartBuilder = js.native
   /** Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default, there is no stacking. */
-  def setStacked: BarChartBuilder = js.native
+  def setStacked(): BarChartBuilder = js.native
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
   def setTitle(chartTitle: String): BarChartBuilder = js.native
   /** Sets the text style of the chart title. */
@@ -76,5 +76,5 @@ trait BarChartBuilder extends js.Object {
   /** Sets the vertical axis title text style. */
   def setYAxisTitleTextStyle(textStyle: TextStyle): BarChartBuilder = js.native
   /** Makes the range axis into a logarithmic scale (requires all values to be positive). The range axis will be the vertical axis for vertical charts (line, area, column, etc.) and the horizontal axis for horizontal charts (bar, etc.) */
-  def useLogScale: BarChartBuilder = js.native
+  def useLogScale(): BarChartBuilder = js.native
 }

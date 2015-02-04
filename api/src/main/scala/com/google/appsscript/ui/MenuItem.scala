@@ -9,11 +9,11 @@ trait MenuItem extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): MenuItem = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setCommand(handler: Handler): MenuItem = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

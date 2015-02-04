@@ -13,9 +13,9 @@ trait PageProtection extends js.Object {
   /** Adds a user to the list of users who can edit the sheet, if it is protected. */
   def addUser(email: String): Unit = js.native
   /** Returns a list of the email addresses of the users who can edit this sheet. If sheet protection is disabled, the value returned by this call is meaningless. */
-  def getUsers: Seq[String] = js.native
+  def getUsers(): Seq[String] = js.native
   /** Indicates whether the sheet has sheet protection enabled or not. */
-  def isProtected: Boolean = js.native
+  def isProtected(): Boolean = js.native
   /** Removes a user from the list of users who can edit the sheet. */
   def removeUser(user: String): Unit = js.native
   /** Sets the protection status for the sheet. */

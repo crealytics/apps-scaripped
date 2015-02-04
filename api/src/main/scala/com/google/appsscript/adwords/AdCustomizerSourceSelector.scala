@@ -13,13 +13,13 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- *
- *  Fetches ad customizer sources. Does not support filtering or sorting.
+ * 
+ *  Fetches ad customizer sources. Does not support filtering or sorting. 
  * <p>Typical usage:</p>
- *
+ *  
  * <pre class="prettyprint">
  *  var adCustomizerSourceSelector = AdWordsApp.adCustomizerSources();
- *
+ * 
  *  var adCustomizerSourceIterator = adCustomizerSourceSelector.withLimit(5).get();
  *  while (adCustomizerSourceIterator.hasNext()) {
  *    var adCustomizerSource = adCustomizerSourceIterator.next();
@@ -27,9 +27,9 @@ import scala.scalajs.js
  */
 trait AdCustomizerSourceSelector extends js.Object {
   /**  Fetches the requested ad customizer sources and returns an iterator. */
-  def get: AdCustomizerSourceIterator = js.native
+  def get(): AdCustomizerSourceIterator = js.native
   /**
-   *  Specifies limit for the selector to use. For instance,
+   *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>
    *  returns only the first 50 entities.
    */

@@ -3,12 +3,12 @@ package com.google.appsscript.base
 import scala.scalajs.js
 
 /**
- * Ui An instance of the user-interface environment for a Google App that allows the script to add features like menus, dialogs, and sidebars. A script can only interact with the UI for the current instance of an open editor, and only if the script is container-bound to the editor.
+ * Ui An instance of the user-interface environment for a Google App that allows the script to add features like menus, dialogs, and sidebars. A script can only interact with the UI for the current instance of an open editor, and only if the script is container-bound to the editor. 
  *  // Display a dialog box with a title, message, input field, and "Yes" and "No" buttons. The
  *  // user can also close the dialog by clicking the close button in its title bar.
  *  var ui = SpreadsheetApp.getUi();
  *  var response = ui.prompt('Getting to know you', 'May I know your name?', ui.ButtonSet.YES_NO);
- *
+ * 
  *  // Process the user's response.
  *  if (response.getSelectedButton() == ui.Button.YES) {
  *    Logger.log('The user\'s name is %s.', response.getResponseText());
@@ -26,7 +26,7 @@ trait Ui extends js.Object {
   /** Opens a dialog box in the user's editor with the given title, message, and set of buttons. This method suspends the server-side script while the dialog is open. The script will resume after the user dismisses the dialog, but Jdbc connections will not persist across the suspension. For more information, see the guide to dialogs and sidebars. */
   def alert(title: String, prompt: String, buttons: ButtonSet): Button = js.native
   /** Creates a builder that can be used to insert a sub-menu into the editor's Add-on menu. The menu will not actually be updated until Menu.addToUi() is called. If the script is running as an add-on, the sub-menu name will match the add-on's name in the web store; if the script is bound to the document directly, the sub-menu name will match the script's name. For more information, see the guide to menus. */
-  def createAddonMenu: Menu = js.native
+  def createAddonMenu(): Menu = js.native
   /** Creates a builder that can be used to add a menu to the editor's user interface. The menu will not actually be added until Menu.addToUi() is called. For more information, see the guide to menus. The label for a top-level menu should be in headline case (all major words capitalized), although the label for a sub-menu should be in sentence case (only the first word capitalized). If the script is published as an add-on, the caption parameter is ignored and the menu is added as a sub-menu of the Add-ons menu, equivalent to createAddonMenu(). */
   def createMenu(caption: String): Menu = js.native
   /** Opens an input dialog box in the user's editor with the given message and an "OK" button. This method suspends the server-side script while the dialog is open. The script will resume after the user dismisses the dialog, but Jdbc connections will not persist across the suspension. For more information, see the guide to dialogs and sidebars. */

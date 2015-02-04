@@ -15,19 +15,19 @@ trait SpreadsheetApp extends js.Object {
   /** Creates a new spreadsheet with the given name and the specified number of rows and columns. */
   def create(name: String, rows: Int, columns: Int): Spreadsheet = js.native
   /** Applies all pending Spreadsheet changes. Spreadsheet operations are sometimes bundled together to improve performance, such as when doing multiple calls to Range.getValue(). However, sometimes you may want to make sure that all pending changes are made right away, for instance to show users data as a script is executing. */
-  def flush: Unit = js.native
+  def flush(): Unit = js.native
   /** Returns the currently active spreadsheet, or null if there is none. Functions that are run in the context of a spreadsheet can get a reference to the corresponding Spreadsheet object by calling this function. */
-  def getActive: Spreadsheet = js.native
+  def getActive(): Spreadsheet = js.native
   /** Returns the range of cells that is currently considered active. This generally means the range that a user has selected in the active sheet, but in a custom function it refers to the cell being actively recalculated. */
-  def getActiveRange: Range = js.native
+  def getActiveRange(): Range = js.native
   /** Gets the active sheet in a spreadsheet. The active sheet in a spreadsheet is the sheet that is being displayed in the spreadsheet UI. */
-  def getActiveSheet: Sheet = js.native
+  def getActiveSheet(): Sheet = js.native
   /** Returns the currently active spreadsheet, or null if there is none. Functions that are run in the context of a spreadsheet can get a reference to the corresponding Spreadsheet object by calling this function. */
-  def getActiveSpreadsheet: Spreadsheet = js.native
+  def getActiveSpreadsheet(): Spreadsheet = js.native
   /** Returns an instance of the spreadsheet's user-interface environment that allows the script to add features like menus, dialogs, and sidebars. A script can only interact with the UI for the current instance of an open spreadsheet, and only if the script is bound to the spreadsheet. For more information, see the guides to menus and dialogs and sidebars. */
-  def getUi: Ui = js.native
+  def getUi(): Ui = js.native
   /** Creates a builder for a data-validation rule. */
-  def newDataValidation: DataValidationBuilder = js.native
+  def newDataValidation(): DataValidationBuilder = js.native
   /** Opens the spreadsheet that corresponds to the given File object. */
   def open(file: File): Spreadsheet = js.native
   /** Opens the spreadsheet with the given ID. A spreadsheet ID can be extracted from its URL. For example, the spreadsheet ID in the URL https://docs.google.com/spreadsheets/d/abc1234567/edit#gid=0 is "abc1234567". */

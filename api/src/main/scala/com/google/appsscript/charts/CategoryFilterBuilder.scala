@@ -7,9 +7,9 @@ import com.google.appsscript.ui._
 import scala.scalajs.js
 
 /**
- * CategoryFilterBuilder A builder for category filter controls. A category filter is a picker to choose one or more between a set of defined values. Given a column of type string, this control will filter out the rows that don't match any of the picked values. Here is an example that creates a table chart a binds a category filter to it. This allows the user to filter the data the table displays.
- *
- *
+ * CategoryFilterBuilder A builder for category filter controls. A category filter is a picker to choose one or more between a set of defined values. Given a column of type string, this control will filter out the rows that don't match any of the picked values. Here is an example that creates a table chart a binds a category filter to it. This allows the user to filter the data the table displays. 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var sampleData = Charts.newDataTable()
@@ -29,11 +29,11 @@ import scala.scalajs.js
  *        .addRow(["Nov", 58, 388])
  *        .addRow(["Dec", 63, 400])
  *        .build();
- *
+ *        
  *    var chart = Charts.newTableChart()
  *        .setDimensions(600, 500)
  *        .build();
- *
+ *        
  *    var categoryFilter = Charts.newCategoryFilter()
  *        .setFilterColumnLabel("Month")
  *        .setAllowMultiple(true)
@@ -42,25 +42,25 @@ import scala.scalajs.js
  *        .setCaption('Choose categories...')
  *        .setSortValues(true)
  *        .build();
- *
+ *    
  *    var panel = app.createVerticalPanel().setSpacing(10);
  *    panel.add(categoryFilter).add(chart);
- *
+ *    
  *    var dashboard = Charts.newDashboardPanel()
  *        .setDataTable(sampleData)
  *        .bind(categoryFilter, chart)
  *        .build();
- *
+ *        
  *    dashboard.add(panel);
  *    app.add(dashboard);
  *    return app;
  *  }
- *
+ *  
  *  For more details, see the Gviz documentation
  */
 trait CategoryFilterBuilder extends js.Object {
   /** Builds a control. */
-  def build: Control = js.native
+  def build(): Control = js.native
   /** Sets whether multiple values can be selected, rather than just one. The default value of this option is true (allowing multiple selection). */
   def setAllowMultiple(allowMultiple: Boolean): CategoryFilterBuilder = js.native
   /** Sets whether the user is allowed not to choose any value. If false the user must choose at least one value from the available ones. The default value of this option is true. */

@@ -5,7 +5,7 @@ import com.google.appsscript.base._
 import scala.scalajs.js
 
 /**
- * Folder A folder in Google Drive. Folders can be accessed or created from DriveApp.
+ * Folder A folder in Google Drive. Folders can be accessed or created from DriveApp. 
  *  // Log the name of every folder in the user's Drive.
  *  var folders = DriveApp.getFolders();
  *  while (folders.hasNext()) {
@@ -43,47 +43,47 @@ trait Folder extends js.Object {
   /** Gets the permission granted to the given user. */
   def getAccess(user: User): Permission = js.native
   /** Gets the date the Folder was created. */
-  def getDateCreated: scala.scalajs.js.Date = js.native
+  def getDateCreated(): scala.scalajs.js.Date = js.native
   /** Gets the description for the Folder. */
-  def getDescription: String = js.native
+  def getDescription(): String = js.native
   /** Gets the list of editors for this Folder. If the user who executes the script does not have edit access to the Folder, this method returns an empty array. */
-  def getEditors: Seq[User] = js.native
+  def getEditors(): Seq[User] = js.native
   /** Gets a collection of all files that are children of the current folder. */
-  def getFiles: FileIterator = js.native
+  def getFiles(): FileIterator = js.native
   /** Gets a collection of all files that are children of the current folder and have the given name. */
   def getFilesByName(name: String): FileIterator = js.native
   /** Gets a collection of all files that are children of the current folder and have the given MIME type. */
   def getFilesByType(mimeType: String): FileIterator = js.native
   /** Gets a collection of all folders that are children of the current folder. */
-  def getFolders: FolderIterator = js.native
+  def getFolders(): FolderIterator = js.native
   /** Gets a collection of all folders that are children of the current folder and have the given name. */
   def getFoldersByName(name: String): FolderIterator = js.native
   /** Gets the ID of the Folder. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Gets the date the Folder was last updated. */
-  def getLastUpdated: scala.scalajs.js.Date = js.native
+  def getLastUpdated(): scala.scalajs.js.Date = js.native
   /** Gets the name of the Folder. */
-  def getName: String = js.native
+  def getName(): String = js.native
   /** Gets the owner of the Folder. */
-  def getOwner: User = js.native
+  def getOwner(): User = js.native
   /** Gets a collection of folders that are immediate parents of the Folder. */
-  def getParents: FolderIterator = js.native
+  def getParents(): FolderIterator = js.native
   /** Gets which class of users can access the Folder, besides any individual users who have been explicitly given access. */
-  def getSharingAccess: Access = js.native
+  def getSharingAccess(): Access = js.native
   /** Gets the permission granted to those users who can access the Folder, besides any individual users who have been explicitly given access. */
-  def getSharingPermission: Permission = js.native
+  def getSharingPermission(): Permission = js.native
   /** Gets the number of bytes used to store the Folder in Drive. Note that Google Apps files do not count toward Drive storage limits and thus return 0 bytes. */
-  def getSize: Int = js.native
+  def getSize(): Int = js.native
   /** Gets the URL that can be used to open the Folder in a Google App like Drive or Docs. */
-  def getUrl: String = js.native
+  def getUrl(): String = js.native
   /** Gets the list of viewers and commenters for this Folder. If the user who executes the script does not have edit access to the Folder, this method returns an empty array. */
-  def getViewers: Seq[User] = js.native
+  def getViewers(): Seq[User] = js.native
   /** Determines whether users with edit permissions to the Folder are allowed to share with other users or change the permissions. */
-  def isShareableByEditors: Boolean = js.native
+  def isShareableByEditors(): Boolean = js.native
   /** Determines whether the Folder has been starred in the user's Drive. */
-  def isStarred: Boolean = js.native
+  def isStarred(): Boolean = js.native
   /** Determines whether the Folder is in the trash of the user's Drive. */
-  def isTrashed: Boolean = js.native
+  def isTrashed(): Boolean = js.native
   /** Removes the given user from the list of editors for the Folder. This method does not block users from accessing the Folder if they belong to a class of users who have general access — for example, if the Folder is shared with the user's entire domain. */
   def removeEditor(emailAddress: String): Folder = js.native
   /** Removes the given user from the list of editors for the Folder. This method does not block users from accessing the Folder if they belong to a class of users who have general access — for example, if the Folder is shared with the user's entire domain. */

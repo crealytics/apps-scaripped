@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * HorizontalPanel Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A panel that lays all of its widgets out in a single horizontal column. Here is an example of how to use this widget:
- *
- *
+ * HorizontalPanel Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A panel that lays all of its widgets out in a single horizontal column. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var panel = app.createHorizontalPanel();
@@ -14,7 +14,7 @@ import scala.scalajs.js
  *    app.add(panel);
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the HorizontalPanel documentation here.
  */
 trait HorizontalPanel extends js.Object {
@@ -25,13 +25,13 @@ trait HorizontalPanel extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): HorizontalPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: HorizontalPanel = js.native
+  def clear(): HorizontalPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def remove(index: Int): HorizontalPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

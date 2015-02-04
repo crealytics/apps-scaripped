@@ -3,16 +3,16 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * ListBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A widget that presents a list of choices to the user, either as a list box or as a drop-down list. Here is an example usage, which should be executed from within a spreadsheet bound script.
- *
- *
+ * ListBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A widget that presents a list of choices to the user, either as a list box or as a drop-down list. Here is an example usage, which should be executed from within a spreadsheet bound script. 
+ *  
+ * 
  *  // execute this in a spreadsheet
  *  function show() {
  *    var doc = SpreadsheetApp.getActiveSpreadsheet();
  *    var app = UiApp.createApplication().setTitle('My Application');
  *    var panel = app.createVerticalPanel();
  *    var lb = app.createListBox(true).setId('myId').setName('myLbName');
- *
+ * 
  *    // add items to ListBox
  *    lb.setVisibleItemCount(3);
  *    lb.addItem('first');
@@ -21,7 +21,7 @@ import scala.scalajs.js
  *    lb.addItem('fourth');
  *    lb.addItem('fifth');
  *    lb.addItem('sixth');
- *
+ * 
  *    panel.add(lb);
  *    var button = app.createButton('press me');
  *    var handler = app.createServerClickHandler('click').addCallbackElement(panel);
@@ -30,21 +30,21 @@ import scala.scalajs.js
  *    app.add(panel);
  *    doc.show(app);
  *  }
- *
- *
+ * 
+ * 
  *  function click(eventInfo) {
  *    var app = UiApp.getActiveApplication();
  *    // get values of ListBox
  *    var value = eventInfo.parameter.myLbName;
  *    // multi select box returns a comma separated string
  *    var n = value.split(',');
- *
+ * 
  *    var doc = SpreadsheetApp.getActiveSpreadsheet();
  *    doc.getRange('a1').setValue(value);
  *    doc.getRange('b1').setValue('there are ' + n.length + ' items selected');
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the ListBox documentation here.
  */
 trait ListBox extends js.Object {
@@ -83,13 +83,13 @@ trait ListBox extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): ListBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: ListBox = js.native
+  def clear(): ListBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def removeItem(index: Int): ListBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

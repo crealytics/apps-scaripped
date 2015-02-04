@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * DialogBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A form of popup that has a caption area at the top and can be dragged by the user. Unlike a PopupPanel, calls to setWidth(width) and setHeight(height) will set the width and height of the dialog box itself, even if a widget has not been added as yet. In general it's not recommended to add this panel as a child of another widget or of the app as that will make it behave like any other inline panel and not act as a popup. Instead, create the popup and then use its show() and hide() methods to show and hide it. See the example below. Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the DialogBox documentation here. Here is an example showing how to use the dialog box widget:
- *
- *
+ * DialogBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A form of popup that has a caption area at the top and can be dragged by the user. Unlike a PopupPanel, calls to setWidth(width) and setHeight(height) will set the width and height of the dialog box itself, even if a widget has not been added as yet. In general it's not recommended to add this panel as a child of another widget or of the app as that will make it behave like any other inline panel and not act as a popup. Instead, create the popup and then use its show() and hide() methods to show and hide it. See the example below. Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the DialogBox documentation here. Here is an example showing how to use the dialog box widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    // Create a dialog box.
@@ -29,15 +29,15 @@ trait DialogBox extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: DialogBox = js.native
+  def clear(): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def hide: DialogBox = js.native
+  def hide(): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setAnimationEnabled(animationEnabled: Boolean): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
@@ -87,5 +87,5 @@ trait DialogBox extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setWidth(width: String): DialogBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def show: DialogBox = js.native
+  def show(): DialogBox = js.native
 }

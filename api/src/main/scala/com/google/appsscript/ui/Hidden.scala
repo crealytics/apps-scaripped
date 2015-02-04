@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * Hidden Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. Represents a hidden field for storing data in the user's browser that can be passed back to a handler as a "callback element". Here is an example of how to use this widget:
- *
- *
+ * Hidden Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. Represents a hidden field for storing data in the user's browser that can be passed back to a handler as a "callback element". Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    // Note that the name "appState" for callbacks, and the id "hidden" for
@@ -17,7 +17,7 @@ import scala.scalajs.js
  *    app.add(app.createLabel("clicked 0 times").setId("label"));
  *    return app;
  *  }
- *
+ * 
  *  function click(eventInfo) {
  *    var app = UiApp.createApplication();
  *    // We have the value of the hidden field because it was a callback element.
@@ -30,7 +30,7 @@ import scala.scalajs.js
  *    app.getElementById("label").setText("clicked " + numClicks + " times");
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the Hidden documentation here.
  */
 trait Hidden extends js.Object {
@@ -39,11 +39,11 @@ trait Hidden extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setDefaultValue(value: String): Hidden = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

@@ -9,7 +9,7 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * DataValidationBuilder Builder for data-validation rules.
+ * DataValidationBuilder Builder for data-validation rules. 
  *  // Set the data validation for cell A1 to require a value from B1:B10.
  *  var cell = SpreadsheetApp.getActive().getRange('A1');
  *  var range = SpreadsheetApp.getActive().getRange('B1:B10');
@@ -18,19 +18,19 @@ import scala.scalajs.js
  */
 trait DataValidationBuilder extends js.Object {
   /** Constructs a data-validation rule from the settings applied to the builder. */
-  def build: DataValidation = js.native
+  def build(): DataValidation = js.native
   /** Creates a builder for a data-validation rule based on this rule's settings. */
-  def copy: DataValidationBuilder = js.native
+  def copy(): DataValidationBuilder = js.native
   /** Returns true if the rule shows a warning when input fails data validation, or false if it rejects the input entirely. The default for new data-validation rules is true. */
-  def getAllowInvalid: Boolean = js.native
+  def getAllowInvalid(): Boolean = js.native
   /** Gets the rule's criteria type as defined in the DataValidationCriteria enum. To get the arguments for the criteria, use getCriteriaValues(). To use these values to create or modify a data-validation rule, see withCriteria(criteria, args). */
-  def getCriteriaType: DataValidationCriteria = js.native
+  def getCriteriaType(): DataValidationCriteria = js.native
   /** Gets an array of arguments for the rule's criteria. To get the criteria type, use getCriteriaType(). To use these values to create or modify a data-validation rule, see withCriteria(criteria, args). */
-  def getCriteriaValues: Seq[AnyRef] = js.native
+  def getCriteriaValues(): Seq[AnyRef] = js.native
   /** Gets the rule's help text, or null if no help text is set. */
-  def getHelpText: String = js.native
+  def getHelpText(): String = js.native
   /** Sets the data-validation rule to require a date. */
-  def requireDate: DataValidationBuilder = js.native
+  def requireDate(): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require a date after the given value. The time fields of the Date object are ignored; only the day, month, and year fields are used. */
   def requireDateAfter(date: scala.scalajs.js.Date): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require a date before the given value. The time fields of the Date object are ignored; only the day, month, and year fields are used. */
@@ -70,9 +70,9 @@ trait DataValidationBuilder extends js.Object {
   /** Sets the data-validation rule to require that the input is equal to the given value. */
   def requireTextEqualTo(text: String): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require that the input is in the form of an email address. */
-  def requireTextIsEmail: DataValidationBuilder = js.native
+  def requireTextIsEmail(): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require that the input is in the form of a URL. */
-  def requireTextIsUrl: DataValidationBuilder = js.native
+  def requireTextIsUrl(): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require that the input is equal to one of the given values. */
   def requireValueInList(values: Seq[String]): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require that the input is equal to one of the given values, with an option to hide the dropdown menu. */

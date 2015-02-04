@@ -13,10 +13,10 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- *
- *  An iterator of campaigns.
+ * 
+ *  An iterator of campaigns. 
  * <p>Typical usage:</p>
- *
+ *  
  * <pre class="prettyprint">
  *  while (campaignIterator.hasNext()) {
  *    var campaign = campaignIterator.next();
@@ -24,20 +24,20 @@ import scala.scalajs.js
  */
 trait CampaignIterator extends js.Object {
   /**
-   *  Returns
+   *  Returns 
    * <code>true</code>
    *  if the iterator has more elements.
    */
-  def hasNext: Boolean = js.native
+  def hasNext(): Boolean = js.native
   /**
-   *  Returns the next
+   *  Returns the next 
    * <a href="adwordsapp_campaign.html">Campaign</a>
    *  in the iterator.
    */
-  def next: Campaign = js.native
+  def next(): Campaign = js.native
   /**
-   *  Returns the total number of entities matched by the selector which generated this iterator.
+   *  Returns the total number of entities matched by the selector which generated this iterator. 
    * <p>Note that the returned number disregards limits, and that the iterator is not guaranteed to have this many elements — <code>hasNext</code> will start to return <code>false</code> and <code>next</code> will start to throw exceptions as soon as the limit for entity reads has been reached, even if the selector matched more entities.</p>
    */
-  def totalNumEntities: Int = js.native
+  def totalNumEntities(): Int = js.native
 }

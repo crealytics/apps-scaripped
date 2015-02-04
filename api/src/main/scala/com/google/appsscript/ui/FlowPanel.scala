@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * FlowPanel Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A panel that formats its child widgets using the default HTML layout behavior. Here is an example of how to use this widget:
- *
- *
+ * FlowPanel Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A panel that formats its child widgets using the default HTML layout behavior. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var panel = app.createFlowPanel();
@@ -14,7 +14,7 @@ import scala.scalajs.js
  *    app.add(panel);
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the FlowPanel documentation here.
  */
 trait FlowPanel extends js.Object {
@@ -25,13 +25,13 @@ trait FlowPanel extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): FlowPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: FlowPanel = js.native
+  def clear(): FlowPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def insert(widget: Widget, beforeIndex: Int): FlowPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * TextBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A standard single-line text box. Here is an example of how to use this widget:
- *
- *
+ * TextBox Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A standard single-line text box. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var text = app.createTextBox().setName("text");
@@ -15,7 +15,7 @@ import scala.scalajs.js
  *    app.add(app.createLabel("0 characters").setId("label"));
  *    return app;
  *  }
- *
+ * 
  *  function count(eventInfo) {
  *    var app = UiApp.createApplication();
  *    // Because the text box was named "text" and added as a callback element to the
@@ -23,7 +23,7 @@ import scala.scalajs.js
  *    app.getElementById("label").setText(eventInfo.parameter.text.length + " characters");
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the TextBox documentation here.
  */
 trait TextBox extends js.Object {
@@ -60,11 +60,11 @@ trait TextBox extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addValueChangeHandler(handler: Handler): TextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setAccessKey(accessKey: Char): TextBox = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

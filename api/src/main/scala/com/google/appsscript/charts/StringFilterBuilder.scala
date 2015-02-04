@@ -7,9 +7,9 @@ import com.google.appsscript.ui._
 import scala.scalajs.js
 
 /**
- * StringFilterBuilder A builder for string filter controls. A string filter is a simple text input field that lets the user filter data via string matching. Given a column of type string and matching options, this control will filter out the rows that don't match the term that's in the input field. This example creates a table chart and binds it to a string filter. Using the filter, it is possible to change the table chart to display a subset of its data.
- *
- *
+ * StringFilterBuilder A builder for string filter controls. A string filter is a simple text input field that lets the user filter data via string matching. Given a column of type string and matching options, this control will filter out the rows that don't match the term that's in the input field. This example creates a table chart and binds it to a string filter. Using the filter, it is possible to change the table chart to display a subset of its data. 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var sampleData = Charts.newDataTable()
@@ -29,37 +29,37 @@ import scala.scalajs.js
  *        .addRow(["Nov", 58, 388])
  *        .addRow(["Dec", 63, 400])
  *        .build();
- *
+ *        
  *    var chart = Charts.newTableChart()
  *        .setDimensions(600, 500)
  *        .build();
- *
+ *        
  *    var stringFilter = Charts.newStringFilter()
  *        .setFilterColumnLabel("Month")
  *        .setRealtimeTrigger(true)
  *        .setCaseSensitive(true)
  *        .setLabel("Filter months shown")
  *        .build();
- *
+ *    
  *    var panel = app.createVerticalPanel().setSpacing(10);
  *    panel.add(stringFilter).add(chart);
- *
+ *    
  *    // Create a dashboard panel to bind the filter and the chart together.
  *    var dashboard = Charts.newDashboardPanel()
  *        .setDataTable(sampleData)
  *        .bind(stringFilter, chart)
  *        .build();
- *
+ *        
  *    dashboard.add(panel);
  *    app.add(dashboard);
  *    return app;
  *  }
- *
+ *  
  *  For more details, see the Gviz documentation.
  */
 trait StringFilterBuilder extends js.Object {
   /** Builds a control. */
-  def build: Control = js.native
+  def build(): Control = js.native
   /** Sets whether matching should be case sensitive or not. */
   def setCaseSensitive(caseSensitive: Boolean): StringFilterBuilder = js.native
   /** Sets the data table to use for the control using a DataTableBuilder. This is a convenience method for setting the data table without needing to call build(). */

@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * Grid Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A rectangular grid that can contain text, html, or a child widget within its cells. It must be resized explicitly to the desired number of rows and columns. Here is an example of how to use this widget:
- *
- *
+ * Grid Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A rectangular grid that can contain text, html, or a child widget within its cells. It must be resized explicitly to the desired number of rows and columns. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    app.add(app.createGrid(3, 3)
@@ -24,7 +24,7 @@ import scala.scalajs.js
  *        .setStyleAttribute(0, 2, "color", "blue"));
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the Grid documentation here.
  */
 trait Grid extends js.Object {
@@ -35,13 +35,13 @@ trait Grid extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: Grid = js.native
+  def clear(): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def resize(rows: Int, columns: Int): Grid = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

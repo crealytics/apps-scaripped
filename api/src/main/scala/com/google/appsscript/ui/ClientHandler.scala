@@ -3,16 +3,16 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * ClientHandler Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. An event handler that runs in the user's browser without needing a call back to the server. These will, in general, run much faster than ServerHandlers but they are also more limited in what they can do. Any method that accepts a "Handler" parameter can accept a ClientHandler. If you set validators on a ClientHandler, they will be checked before the handler performs its actions. The actions will only be performed if the validators succeed. If you have multiple ClientHandlers for the same event on the same widget, they will perform their actions in the order that they were added. An example of using client handlers:
- *
- *
+ * ClientHandler Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. An event handler that runs in the user's browser without needing a call back to the server. These will, in general, run much faster than ServerHandlers but they are also more limited in what they can do. Any method that accepts a "Handler" parameter can accept a ClientHandler. If you set validators on a ClientHandler, they will be checked before the handler performs its actions. The actions will only be performed if the validators succeed. If you have multiple ClientHandlers for the same event on the same widget, they will perform their actions in the order that they were added. An example of using client handlers: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var button = app.createButton("Say Hello");
- *
+ * 
  *    // Create a label with the "Hello World!" text and hide it for now
  *    var label = app.createLabel("Hello World!").setVisible(false);
- *
+ * 
  *    // Create a new handler that does not require the server.
  *    // We give the handler two actions to perform on different targets.
  *    // The first action disables the widget that invokes the handler
@@ -20,10 +20,10 @@ import scala.scalajs.js
  *    var handler = app.createClientHandler()
  *      .forEventSource().setEnabled(false)
  *      .forTargets(label).setVisible(true);
- *
+ * 
  *    // Add our new handler to be invoked when the button is clicked
  *    button.addClickHandler(handler);
- *
+ * 
  *    app.add(button);
  *    app.add(label);
  *    return app;
@@ -31,15 +31,15 @@ import scala.scalajs.js
  */
 trait ClientHandler extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def forEventSource: ClientHandler = js.native
+  def forEventSource(): ClientHandler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def forTargets(widgets: AnyRef*): ClientHandler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setEnabled(enabled: Boolean): ClientHandler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

@@ -13,22 +13,22 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- *
+ * 
  *  Represents an AdWords excluded placement.
  */
 trait ExcludedPlacement extends js.Object {
   /**  Returns the ad group to which this excluded placement belongs. */
-  def getAdGroup: AdGroup = js.native
+  def getAdGroup(): AdGroup = js.native
   /**  Returns the campaign to which this excluded placement belongs. */
-  def getCampaign: Campaign = js.native
+  def getCampaign(): Campaign = js.native
   /**  Returns the ID of the excluded placement. */
-  def getId: Long = js.native
+  def getId(): Long = js.native
   /**  Returns the URL of the excluded placement. */
-  def getUrl: String = js.native
+  def getUrl(): String = js.native
   /**
-   *  Removes the excluded placement from the account.
+   *  Removes the excluded placement from the account. 
    * <p>Returns nothing.</p>
-   *
+   *  
    */
-  def remove: Unit = js.native
+  def remove(): Unit = js.native
 }

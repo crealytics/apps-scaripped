@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * FocusPanel Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A simple panel that makes its contents focusable, and adds the ability to catch mouse and keyboard events. Note that this panel can contain at most one direct child widget. To add more children, make the child of this panel a different panel that can contain more than one child. Here is an example of how to use this widget:
- *
- *
+ * FocusPanel Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A simple panel that makes its contents focusable, and adds the ability to catch mouse and keyboard events. Note that this panel can contain at most one direct child widget. To add more children, make the child of this panel a different panel that can contain more than one child. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var focus = app.createFocusPanel();
@@ -16,7 +16,7 @@ import scala.scalajs.js
  *    app.add(focus);
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the FocusPanel documentation here.
  */
 trait FocusPanel extends js.Object {
@@ -51,13 +51,13 @@ trait FocusPanel extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): FocusPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def clear: FocusPanel = js.native
+  def clear(): FocusPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setAccessKey(accessKey: Char): FocusPanel = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

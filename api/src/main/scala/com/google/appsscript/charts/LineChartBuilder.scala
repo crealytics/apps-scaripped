@@ -7,14 +7,14 @@ import com.google.appsscript.ui._
 import scala.scalajs.js
 
 /**
- * LineChartBuilder Builder for line charts. For more details, see the Google Charts documentation. Here is an example that shows how to build a line chart. The data is imported from a Google spreadsheet.
- *
- *
+ * LineChartBuilder Builder for line charts. For more details, see the Google Charts documentation. Here is an example that shows how to build a line chart. The data is imported from a Google spreadsheet. 
+ *  
+ * 
  *  function doGet() {
  *    // Get sample data from a spreadsheet.
  *    var dataSourceUrl = 'https://docs.google.com/spreadsheet/tq?range=A1%3AG5' +
  *        '&key=0Aq4s9w_HxMs7dHpfX05JdmVSb1FpT21sbXd4NVE3UEE&gid=2&headers=-1';
- *
+ *    
  *    var chartBuilder = Charts.newLineChart()
  *        .setTitle('Yearly Rainfall')
  *        .setXAxisTitle('Month')
@@ -23,16 +23,16 @@ import scala.scalajs.js
  *        .setCurveStyle(Charts.CurveStyle.SMOOTH)
  *        .setPointStyle(Charts.PointStyle.MEDIUM)
  *        .setDataSourceUrl(dataSourceUrl);
- *
+ *    
  *    var chart = chartBuilder.build();
  *    return UiApp.createApplication().add(chart);
  *  }
  */
 trait LineChartBuilder extends js.Object {
   /** Builds the chart. */
-  def build: Chart = js.native
+  def build(): Chart = js.native
   /** Reverses the drawing of series in the domain axis. For vertical-range charts (such as line, area or column charts), this means the horizontal axis is drawn from right to left. For horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to bottom. For pie charts, this means the slices are drawn counterclockwise. */
-  def reverseCategories: LineChartBuilder = js.native
+  def reverseCategories(): LineChartBuilder = js.native
   /** Sets the background color for the chart. */
   def setBackgroundColor(cssValue: String): LineChartBuilder = js.native
   /** Sets the colors for the lines in the chart. */
@@ -77,5 +77,5 @@ trait LineChartBuilder extends js.Object {
   /** Sets the vertical axis title text style. */
   def setYAxisTitleTextStyle(textStyle: TextStyle): LineChartBuilder = js.native
   /** Makes the range axis into a logarithmic scale (requires all values to be positive). The range axis will be the vertical axis for vertical charts (line, area, column, etc.) and the horizontal axis for horizontal charts (bar, etc.) */
-  def useLogScale: LineChartBuilder = js.native
+  def useLogScale(): LineChartBuilder = js.native
 }

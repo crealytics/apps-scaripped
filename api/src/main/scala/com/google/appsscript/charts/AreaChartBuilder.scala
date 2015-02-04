@@ -7,9 +7,9 @@ import com.google.appsscript.ui._
 import scala.scalajs.js
 
 /**
- * AreaChartBuilder Builder for area charts. For more details, see the Google Charts documentation. Here is an example that shows how to build an area chart.
- *
- *
+ * AreaChartBuilder Builder for area charts. For more details, see the Google Charts documentation. Here is an example that shows how to build an area chart. 
+ *  
+ * 
  *  function doGet() {
  *    // Create a data table with some sample data.
  *    var sampleData = Charts.newDataTable()
@@ -29,7 +29,7 @@ import scala.scalajs.js
  *        .addRow(["Nov", 58, 388])
  *        .addRow(["Dec", 63, 400])
  *        .build();
- *
+ *    
  *    var chart = Charts.newAreaChart()
  *        .setTitle('Yearly Spending')
  *        .setXAxisTitle('Month')
@@ -39,15 +39,15 @@ import scala.scalajs.js
  *        .setColors(['red', 'green'])
  *        .setDataTable(sampleData)
  *        .build();
- *
+ *    
  *    return UiApp.createApplication().add(chart);
  *  }
  */
 trait AreaChartBuilder extends js.Object {
   /** Builds the chart. */
-  def build: Chart = js.native
+  def build(): Chart = js.native
   /** Reverses the drawing of series in the domain axis. For vertical-range charts (such as line, area or column charts), this means the horizontal axis is drawn from right to left. For horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to bottom. For pie charts, this means the slices are drawn counterclockwise. */
-  def reverseCategories: AreaChartBuilder = js.native
+  def reverseCategories(): AreaChartBuilder = js.native
   /** Sets the background color for the chart. */
   def setBackgroundColor(cssValue: String): AreaChartBuilder = js.native
   /** Sets the colors for the lines in the chart. */
@@ -74,7 +74,7 @@ trait AreaChartBuilder extends js.Object {
   /** Sets the range for the chart. */
   def setRange(start: Number, end: Number): AreaChartBuilder = js.native
   /** Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default, there is no stacking. */
-  def setStacked: AreaChartBuilder = js.native
+  def setStacked(): AreaChartBuilder = js.native
   /** Sets the title of the chart. The title will be displayed centered above the chart. */
   def setTitle(chartTitle: String): AreaChartBuilder = js.native
   /** Sets the text style of the chart title. */
@@ -92,5 +92,5 @@ trait AreaChartBuilder extends js.Object {
   /** Sets the vertical axis title text style. */
   def setYAxisTitleTextStyle(textStyle: TextStyle): AreaChartBuilder = js.native
   /** Makes the range axis into a logarithmic scale (requires all values to be positive). The range axis will be the vertical axis for vertical charts (line, area, column, etc.) and the horizontal axis for horizontal charts (bar, etc.) */
-  def useLogScale: AreaChartBuilder = js.native
+  def useLogScale(): AreaChartBuilder = js.native
 }

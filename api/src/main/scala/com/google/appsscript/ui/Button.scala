@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * Button Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A standard push-button widget. Here is an example of how to use this widget:
- *
- *
+ * Button Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A standard push-button widget. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    // create a button and give it a click handler
@@ -14,13 +14,13 @@ import scala.scalajs.js
  *    app.add(button);
  *    return app;
  *  }
- *
+ * 
  *  function handlerFunction(eventInfo) {
  *    var app = UiApp.getActiveApplication();
  *    app.getElementById("button").setText("I was clicked!");
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the Button documentation here.
  */
 trait Button extends js.Object {
@@ -53,11 +53,11 @@ trait Button extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): Button = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setAccessKey(accessKey: Char): Button = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

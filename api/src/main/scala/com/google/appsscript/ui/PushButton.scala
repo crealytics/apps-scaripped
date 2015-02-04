@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * PushButton Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A normal push button with custom styling. Here is an example of how to use this widget:
- *
- *
+ * PushButton Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A normal push button with custom styling. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    // create a button and give it a click handler
@@ -14,13 +14,13 @@ import scala.scalajs.js
  *    app.add(button);
  *    return app;
  *  }
- *
+ * 
  *  function handlerFunction(eventInfo) {
  *    var app = UiApp.getActiveApplication();
  *    app.add(app.createLabel("The button was clicked!"));
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the PushButton documentation here.
  */
 trait PushButton extends js.Object {
@@ -53,11 +53,11 @@ trait PushButton extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): PushButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setAccessKey(accessKey: Char): PushButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

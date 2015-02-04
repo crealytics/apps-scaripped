@@ -13,22 +13,22 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- *
+ * 
  *  Represents an AdWords excluded display keyword.
  */
 trait ExcludedDisplayKeyword extends js.Object {
   /**  Returns the ad group to which this excluded display keyword belongs. */
-  def getAdGroup: AdGroup = js.native
+  def getAdGroup(): AdGroup = js.native
   /**  Returns the campaign to which this excluded display keyword belongs. */
-  def getCampaign: Campaign = js.native
+  def getCampaign(): Campaign = js.native
   /**  Returns the ID of the excluded display keyword. */
-  def getId: Long = js.native
+  def getId(): Long = js.native
   /**  Returns the text of the excluded display keyword. */
-  def getText: String = js.native
+  def getText(): String = js.native
   /**
-   *  Removes the excluded display keyword from the account.
+   *  Removes the excluded display keyword from the account. 
    * <p>Returns nothing.</p>
-   *
+   *  
    */
-  def remove: Unit = js.native
+  def remove(): Unit = js.native
 }

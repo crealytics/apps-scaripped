@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * SubmitButton Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A standard push-button widget which will automatically submit its enclosing FormPanel if any. Here is an example of how to use this widget:
- *
- *
+ * SubmitButton Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A standard push-button widget which will automatically submit its enclosing FormPanel if any. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    var form = app.createFormPanel();
@@ -16,14 +16,14 @@ import scala.scalajs.js
  *    app.add(form);
  *    return app;
  *  }
- *
+ * 
  *  function doPost(eventInfo) {
  *    var app = UiApp.getActiveApplication();
  *    app.add(app.createLabel("Form submitted. The text box's value was '" +
  *        eventInfo.parameter.textBox + "'"));
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the SubmitButton documentation here.
  */
 trait SubmitButton extends js.Object {
@@ -56,11 +56,11 @@ trait SubmitButton extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): SubmitButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setAccessKey(accessKey: Char): SubmitButton = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

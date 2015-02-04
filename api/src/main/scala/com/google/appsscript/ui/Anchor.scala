@@ -3,9 +3,9 @@ package com.google.appsscript.ui
 import scala.scalajs.js
 
 /**
- * Anchor Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A widget that represents a simple <a> element. That is, a hyperlink to a different page. By design, these hyperlinks always open in a new page. Links that reload the current page are not allowed. Here is an example of how to use this widget:
- *
- *
+ * Anchor Deprecated. The UI service was deprecated on December 11, 2014. To create user interfaces, use the HTML service instead. A widget that represents a simple <a> element. That is, a hyperlink to a different page. By design, these hyperlinks always open in a new page. Links that reload the current page are not allowed. Here is an example of how to use this widget: 
+ *  
+ * 
  *  function doGet() {
  *    var app = UiApp.createApplication();
  *    // Creates a link to your favorite search engine.
@@ -13,7 +13,7 @@ import scala.scalajs.js
  *    app.add(anchor);
  *    return app;
  *  }
- *
+ *  
  *  Internally, UiApp widgets are built on top of the Google Web Toolkit, and it can sometimes be helpful to look at the GWT documentation directly. You can find the Anchor documentation here.
  */
 trait Anchor extends js.Object {
@@ -46,11 +46,11 @@ trait Anchor extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def addStyleName(styleName: String): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getId: String = js.native
+  def getId(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getTag: String = js.native
+  def getTag(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def getType: String = js.native
+  def getType(): String = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setAccessKey(accessKey: Char): Anchor = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */

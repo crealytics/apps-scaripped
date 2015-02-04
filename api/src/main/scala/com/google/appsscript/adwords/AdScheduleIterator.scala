@@ -13,10 +13,10 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- *
- *  An iterator of ad schedules.
+ * 
+ *  An iterator of ad schedules. 
  * <p>Typical usage:</p>
- *
+ *  
  * <pre class="prettyprint">
  *  while (adScheduleIterator.hasNext()) {
  *    var adSchedule = adScheduleIterator.next();
@@ -24,20 +24,20 @@ import scala.scalajs.js
  */
 trait AdScheduleIterator extends js.Object {
   /**
-   *  Returns
+   *  Returns 
    * <code>true</code>
    *  if the iterator has more elements.
    */
-  def hasNext: Boolean = js.native
+  def hasNext(): Boolean = js.native
   /**
-   *  Returns the next
+   *  Returns the next 
    * <a href="adwordsapp_adschedule.html">AdSchedule</a>
    *  in the iterator.
    */
-  def next: AdSchedule = js.native
+  def next(): AdSchedule = js.native
   /**
-   *  Returns the total number of entities matched by the selector which generated this iterator.
+   *  Returns the total number of entities matched by the selector which generated this iterator. 
    * <p>Note that the returned number disregards limits, and that the iterator is not guaranteed to have this many elements — <code>hasNext</code> will start to return <code>false</code> and <code>next</code> will start to throw exceptions as soon as the limit for entity reads has been reached, even if the selector matched more entities.</p>
    */
-  def totalNumEntities: Int = js.native
+  def totalNumEntities(): Int = js.native
 }

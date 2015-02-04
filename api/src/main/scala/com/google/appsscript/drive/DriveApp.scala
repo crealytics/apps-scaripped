@@ -5,7 +5,7 @@ import com.google.appsscript.base._
 import scala.scalajs.js
 
 /**
- * DriveApp Allows scripts to create, find, and modify files and folders in Google Drive.
+ * DriveApp Allows scripts to create, find, and modify files and folders in Google Drive. 
  *  // Log the name of every file in the user's Drive.
  *  var files = DriveApp.getFiles();
  *  while (files.hasNext()) {
@@ -33,7 +33,7 @@ trait DriveApp extends js.Object {
   /** Gets the file with the given ID. Throws a scripting exception if the file does not exist or the user does not have permission to access it. */
   def getFileById(id: String): File = js.native
   /** Gets a collection of all files in the user's Drive. */
-  def getFiles: FileIterator = js.native
+  def getFiles(): FileIterator = js.native
   /** Gets a collection of all files in the user's Drive that have the given name. */
   def getFilesByName(name: String): FileIterator = js.native
   /** Gets a collection of all files in the user's Drive that have the given MIME type. */
@@ -41,19 +41,19 @@ trait DriveApp extends js.Object {
   /** Gets the folder with the given ID. Throws a scripting exception if the folder does not exist or the user does not have permission to access it. */
   def getFolderById(id: String): Folder = js.native
   /** Gets a collection of all folders in the user's Drive. */
-  def getFolders: FolderIterator = js.native
+  def getFolders(): FolderIterator = js.native
   /** Gets a collection of all folders in the user's Drive that have the given name. */
   def getFoldersByName(name: String): FolderIterator = js.native
   /** Gets the folder at the root of the user's Drive. */
-  def getRootFolder: Folder = js.native
+  def getRootFolder(): Folder = js.native
   /** Gets the number of bytes the user is allowed to store in Drive. */
-  def getStorageLimit: Int = js.native
+  def getStorageLimit(): Int = js.native
   /** Gets the number of bytes the user is currently storing in Drive. */
-  def getStorageUsed: Int = js.native
+  def getStorageUsed(): Int = js.native
   /** Gets a collection of all the files in the trash of the user's Drive. */
-  def getTrashedFiles: FileIterator = js.native
+  def getTrashedFiles(): FileIterator = js.native
   /** Gets a collection of all the folders in the trash of the user's Drive. */
-  def getTrashedFolders: FolderIterator = js.native
+  def getTrashedFolders(): FolderIterator = js.native
   /** Removes the given file from the root of the user's Drive. This method does not delete the file, but if a file is removed from all of its parents, it cannot be seen in Drive except by searching for it or using the "All items" view. */
   def removeFile(child: File): Folder = js.native
   /** Removes the given folder from the root of the user's Drive. This method does not delete the folder or its contents, but if a folder is removed from all of its parents, it cannot be seen in Drive except by searching for it or using the "All items" view. */
