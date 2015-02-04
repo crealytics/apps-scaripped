@@ -21,7 +21,7 @@ import scala.scalajs.js
  *  <li>Accessing information about the state of the current execution</li> 
  * </ul>
  */
-object AdWordsApp extends js.Object {
+trait AdWordsApp extends js.Object {
   /**  Returns the selector of all ad customizer data sources in the account. */
   def adCustomizerSources(): AdCustomizerSourceSelector = js.native
   /**  Returns the selector of all ad groups in the account. */
@@ -160,4 +160,9 @@ object AdWordsApp extends js.Object {
   def shoppingCampaigns(): ShoppingCampaignSelector = js.native
   /**  Provides access to campaign-level targeting criteria: device targeting, ad scheduling, and location targeting. */
   def targeting(): Targeting = js.native
+}
+
+/** Entry point for the AdWords API */
+object AdWordsApp extends AdWordsApp {
+  ()
 }

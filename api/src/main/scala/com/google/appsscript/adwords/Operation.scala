@@ -12,7 +12,7 @@ import com.google.appsscript.drive._
 
 import scala.scalajs.js
 
-/** Unknown type which is not further speficied in API */
+/** Unknown type which is not further specified in API */
 trait Operation extends js.Object {
   ()
 }

@@ -7,18 +7,30 @@ import definitions._
 import treehuggerDSL._
 
 object CodeGenerator {
-  
-  def codeForClass(cls: ApiClass, pkg: String = "", imports: Seq[String] = Seq()): String = {
-    val methodDefs = cls.methods.map { m =>
-      val withoutParams = DEF(m.name.replace("\\(.*\\)", ""), m.returnType)
-      val params = m.parameters.map { param => PARAM(param.name, param.tpe): ValDef }
-      val withParams = withoutParams.withParams(params)
-      ((withParams := REF("js.native")): Tree).withDoc(m.description)
+
+  def codeForClass(classes: Seq[ApiClass], pkg: String = "", imports: Seq[String] = Seq()): String = {
+    val classDefs = classes.map { cls =>
+      val methodDefs = cls.methods.map { m =>
+        val withoutParams = DEF(m.name.replace("\\(.*\\)", ""), m.returnType)
+        val paramsWithDummy = if (m.parameters.isEmpty)
+          Seq(ApiParam("dummyDontUse", "String", ""))
+        else
+          m.parameters
+        val params = paramsWithDummy.map { param =>
+          PARAM(param.name, param.tpe): ValDef
+        }
+        val withParams = withoutParams.withParams(params)
+        ((withParams := REF("js.native")): Tree).withDoc(m.description)
+      }
+      val baseClassDef = cls.tpe match {
+        case "object" => OBJECTDEF(cls.name)
+        case _ => TRAITDEF(cls.name)
+      }
+      (baseClassDef withParents (cls.parents) := BLOCK(methodDefs)).withDoc(cls.description)
     }
-    val traitDef = (TRAITDEF(cls.name) withParents ("js.Object") := BLOCK(methodDefs)).withDoc(cls.description)
     val compilationUnitDef = BLOCK(
       imports.map(i => IMPORT(i)) ++
-        Seq(IMPORT("scala.scalajs.js"), traitDef)) inPackage (pkg)
-    treeToString(compilationUnitDef)
+        Seq(IMPORT("scala.scalajs.js")) ++ classDefs) inPackage (pkg)
+    treeToString(compilationUnitDef).replace("dummyDontUse: String", "") + "\n"
   }
 }

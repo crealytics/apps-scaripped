@@ -3,7 +3,7 @@ package com.google.appsscript.base
 import scala.scalajs.js
 
 /** Logger This class allows the developer to write out text to the debugging logs. */
-class Logger extends js.Object {
+trait Logger extends js.Object {
   /** Clears the log. */
   def clear(): Unit = js.native
   /** Returns a complete list of messages in the current log. This method can be used to save or email the entire log output generated during script execution. */
@@ -14,4 +14,7 @@ class Logger extends js.Object {
   def log(format: String, values: AnyRef*): Logger = js.native
 }
 
-object Logger extends Logger
+/** Logger singleton */
+object Logger extends Logger {
+  ()
+}

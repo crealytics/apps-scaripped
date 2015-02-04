@@ -41,3 +41,8 @@ trait SpreadsheetApp extends js.Object {
   /** Sets the active spreadsheet. */
   def setActiveSpreadsheet(newActiveSpreadsheet: Spreadsheet): Unit = js.native
 }
+
+/** Entry point for the Spreadsheet API */
+object SpreadsheetApp extends SpreadsheetApp {
+  ()
+}

@@ -16,10 +16,8 @@ import net.ceedubs.ficus.Ficus._
 import net.ceedubs.ficus.readers.ArbitraryTypeReader._
 
 object BigTimeScraper extends App {
-  if(args.length != 1)
+  if (args.length != 1)
     throw new IllegalArgumentException("Provide the path in which sources should be generated")
-  val path = args(0)
-  val wd = path.replaceFirst("^/", "").split("/").foldLeft(root)(_ / _)
   import com.typesafe.config.ConfigFactory
   case class ImportLink(
     url: String,
@@ -35,38 +33,50 @@ object BigTimeScraper extends App {
       obj.instance.asInstanceOf[ApiScraper]
     }
   }
+  def loadConfigs: Map[String, ImportLink] = {
+    val conf = ConfigFactory.load()
+    conf.as[Map[String, ImportLink]]("scraping")
+  }
+  val scrapingConfigs = loadConfigs
 
-  val conf = ConfigFactory.load()
-  val scrapingConfigs = conf.as[Map[String, ImportLink]]("scraping")
-
-  rm ! wd
   def allFromPackage(pkg: String) = s"$pkg._"
 
-  val overviewUrls = scrapingConfigs.values.toList
+  scrapeOverviewUrls(scrapingConfigs.values.toList, args(0))
+  def scrapeOverviewUrls(overviewUrls: List[ImportLink], path: String): Unit = {
 
-  overviewUrls.par.foreach { importLink =>
-    import importLink._
-    val detailPages = scraper.scrapeOverview(url)
-    val basePage = new java.net.URL(url)
-    val classes = detailPages.par.map { dp =>
-      import basePage._
-      val subUrl = if (dp.startsWith("/")) {
-        getProtocol + "://" + getHost +
-          (if (getPort == -1) "" else ":" + getPort) + dp
-      } else {
-        url + dp
+    val wd = path.replaceFirst("^/", "").split("/").foldLeft(root)(_ / _)
+    rm ! wd
+
+    overviewUrls.par.foreach { importLink =>
+      import importLink._
+      val detailPages = scraper.scrapeOverview(url)
+      val basePage = new java.net.URL(url)
+      val classes = detailPages.par.map { dp =>
+        import basePage._
+        val subUrl = if (dp.startsWith("/")) {
+          getProtocol + "://" + getHost +
+            (if (getPort == -1) "" else ":" + getPort) + dp
+        } else {
+          url + dp
+        }
+        println(s"Scraping $subUrl")
+        scraper.scrapeClass(subUrl)
       }
-      println(s"Scraping $subUrl")
-      scraper.scrapeClass(subUrl)
-    }
-    (importLink.extraClasses ++ classes).foreach { scrapedClass =>
-      val code = CodeGenerator.codeForClass(scrapedClass, pkg, imports.map(allFromPackage))
-      val spkg = pkg.split("\\.").toList
-      val path = spkg.foldLeft(wd)(_ / _)
-      mkdir ! path
-      val filePath = path / s"${scrapedClass.name}.scala"
-      write.over(filePath, code)
-      println(s"Wrote $filePath")
+      def generateCode(classes: Seq[ApiClass]): String = {
+        CodeGenerator.codeForClass(classes, pkg, imports.map(allFromPackage))
+      }
+      def persistWith(w: (ammonite.ops.Path, String) => Unit)(classes: Seq[ApiClass]): Unit = {
+        val code = generateCode(classes)
+        val spkg = pkg.split("\\.").toList
+        val path = spkg.foldLeft(wd)(_ / _)
+        mkdir ! path
+        val filePath = path / s"${classes.head.name}.scala"
+        w(filePath, code)
+        println(s"Wrote $filePath")
+      }
+      val groupedClasses = (classes ++ importLink.extraClasses).toSeq.groupBy(_.name).values.map(_.toList.distinct)
+      groupedClasses.foreach(persistWith(write.over(_, _)))
     }
   }
+
 }
