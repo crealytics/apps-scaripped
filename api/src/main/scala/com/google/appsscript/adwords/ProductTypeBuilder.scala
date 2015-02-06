@@ -18,15 +18,7 @@ import scala.scalajs.js
  * <a href="adwordsapp_producttype.html">ProductType</a>
  *  objects.
  */
-trait ProductTypeBuilder extends js.Object {
-  /**
-   *  Builds the product type. Returns a 
-   * <a href="adwordsapp_producttypeoperation.html">ProductTypeOperation</a>
-   *  that corresponds to the creation of the 
-   * <a href="adwordsapp_producttype.html">ProductType</a>
-   * .
-   */
-  def build(): ProductTypeOperation = js.native
+trait ProductTypeBuilder extends ProductGroupBuilder[ProductTypeOperation] {
   /**  Specifies the bid of the product type. If this is unspecified, will use the bid of the parent product group. */
   def withBid(bid: Double): ProductTypeBuilder = js.native
   /**  Specifies the value of the product type. */

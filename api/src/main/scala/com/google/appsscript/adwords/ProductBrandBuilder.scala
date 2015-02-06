@@ -18,15 +18,7 @@ import scala.scalajs.js
  * <a href="adwordsapp_productbrand.html">ProductBrand</a>
  *  objects.
  */
-trait ProductBrandBuilder extends js.Object {
-  /**
-   *  Builds the product brand. Returns a 
-   * <a href="adwordsapp_productbrandoperation.html">ProductBrandOperation</a>
-   *  that corresponds to the creation of the 
-   * <a href="adwordsapp_productbrand.html">ProductBrand</a>
-   * .
-   */
-  def build(): ProductBrandOperation = js.native
+trait ProductBrandBuilder extends ProductGroupBuilder[ProductBrandOperation] {
   /**  Specifies the bid of the product brand. If this is unspecified, will use the bid of the parent product group. */
   def withBid(bid: Double): ProductBrandBuilder = js.native
   /**

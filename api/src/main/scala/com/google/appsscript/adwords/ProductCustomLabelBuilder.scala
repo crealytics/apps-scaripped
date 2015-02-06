@@ -18,15 +18,7 @@ import scala.scalajs.js
  * <a href="adwordsapp_productcustomlabel.html">ProductCustomLabel</a>
  *  objects.
  */
-trait ProductCustomLabelBuilder extends js.Object {
-  /**
-   *  Builds the product custom label. Returns a 
-   * <a href="adwordsapp_productcustomlabeloperation.html">ProductCustomLabelOperation</a>
-   *  that corresponds to the creation of the 
-   * <a href="adwordsapp_productcustomlabel.html">ProductCustomLabel</a>
-   * .
-   */
-  def build(): ProductCustomLabelOperation = js.native
+trait ProductCustomLabelBuilder extends ProductGroupBuilder[ProductCustomLabelOperation] {
   /**  Specifies the bid of the product custom label. If this is unspecified, will use the bid of the parent product group. */
   def withBid(bid: Double): ProductCustomLabelBuilder = js.native
   /**  Specifies the type of custom label and return the product custom label builder. */

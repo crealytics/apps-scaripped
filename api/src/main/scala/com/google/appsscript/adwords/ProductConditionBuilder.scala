@@ -18,15 +18,7 @@ import scala.scalajs.js
  * <a href="adwordsapp_productcondition.html">ProductCondition</a>
  *  objects.
  */
-trait ProductConditionBuilder extends js.Object {
-  /**
-   *  Builds the product condition. Returns a 
-   * <a href="adwordsapp_productconditionoperation.html">ProductConditionOperation</a>
-   *  that corresponds to the creation of the 
-   * <a href="adwordsapp_productcondition.html">ProductCondition</a>
-   * .
-   */
-  def build(): ProductConditionOperation = js.native
+trait ProductConditionBuilder extends ProductGroupBuilder[ProductConditionOperation] {
   /**  Specifies the bid of the product condition. If this is unspecified, will use the bid of the parent product group. */
   def withBid(bid: Double): ProductConditionBuilder = js.native
   /**  Specifies the condition of the new product condition. If the condition is unspecified before calling 'build', the condition will fail to build. */
