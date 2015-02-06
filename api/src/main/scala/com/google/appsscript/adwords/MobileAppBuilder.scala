@@ -110,7 +110,7 @@ trait MobileAppBuilder extends js.Object {
    * 
    *   mobileAppBuilder.withSchedules([mondayMorning, tuesdayMorning]);</pre>
    */
-  def withSchedules(schedules: Seq[ExtensionSchedule]): MobileAppBuilder = js.native
+  def withSchedules(schedules: js.Array[ExtensionSchedule]): MobileAppBuilder = js.native
   /**
    *  Sets the mobile app's start date from either an object containing year, month, and day fields, or an 8-digit string in 
    * <code>YYYYMMDD</code>

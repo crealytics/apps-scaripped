@@ -298,7 +298,7 @@ trait PlacementSelector extends js.Object {
    * , since it would be the only placement that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Seq[Long]]): PlacementSelector = js.native
+  def withIds(ids: js.Array[js.Array[Long]]): PlacementSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

@@ -24,7 +24,7 @@ import scala.scalajs.js
  */
 trait TopicOperation extends js.Object {
   /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the Topic. */
-  def getErrors(): Seq[String] = js.native
+  def getErrors(): js.Array[String] = js.native
   /**
    *  Returns the newly created Topic, or 
    * <code>null</code>

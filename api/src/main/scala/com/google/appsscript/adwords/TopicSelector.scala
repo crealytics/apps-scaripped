@@ -293,7 +293,7 @@ trait TopicSelector extends js.Object {
    * , since it would be the only topic that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Seq[Long]]): TopicSelector = js.native
+  def withIds(ids: js.Array[js.Array[Long]]): TopicSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

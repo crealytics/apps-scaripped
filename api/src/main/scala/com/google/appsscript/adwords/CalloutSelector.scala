@@ -226,7 +226,7 @@ trait CalloutSelector extends js.Object {
    * , since it would be the only callout that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): CalloutSelector = js.native
+  def withIds(ids: js.Array[Long]): CalloutSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

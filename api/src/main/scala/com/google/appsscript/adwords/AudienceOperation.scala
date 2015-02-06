@@ -24,7 +24,7 @@ import scala.scalajs.js
  */
 trait AudienceOperation extends js.Object {
   /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the Audience. */
-  def getErrors(): Seq[String] = js.native
+  def getErrors(): js.Array[String] = js.native
   /**
    *  Returns the newly created Audience, or 
    * <code>null</code>

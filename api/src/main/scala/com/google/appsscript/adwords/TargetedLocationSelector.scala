@@ -248,7 +248,7 @@ trait TargetedLocationSelector extends js.Object {
    * , since it would be the only targeted location that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Seq[Long]]): TargetedLocationSelector = js.native
+  def withIds(ids: js.Array[js.Array[Long]]): TargetedLocationSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

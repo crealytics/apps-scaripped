@@ -226,7 +226,7 @@ trait AdGroupPhoneNumberSelector extends js.Object {
    * , since it would be the only ad group-level phone number that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): AdGroupPhoneNumberSelector = js.native
+  def withIds(ids: js.Array[Long]): AdGroupPhoneNumberSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

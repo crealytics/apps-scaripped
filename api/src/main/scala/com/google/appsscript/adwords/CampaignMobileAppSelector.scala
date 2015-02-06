@@ -226,7 +226,7 @@ trait CampaignMobileAppSelector extends js.Object {
    * , since it would be the only campaign-level mobile app that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): CampaignMobileAppSelector = js.native
+  def withIds(ids: js.Array[Long]): CampaignMobileAppSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

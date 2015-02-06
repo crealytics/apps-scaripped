@@ -26,7 +26,7 @@ trait DataValidationBuilder extends js.Object {
   /** Gets the rule's criteria type as defined in the DataValidationCriteria enum. To get the arguments for the criteria, use getCriteriaValues(). To use these values to create or modify a data-validation rule, see withCriteria(criteria, args). */
   def getCriteriaType(): DataValidationCriteria = js.native
   /** Gets an array of arguments for the rule's criteria. To get the criteria type, use getCriteriaType(). To use these values to create or modify a data-validation rule, see withCriteria(criteria, args). */
-  def getCriteriaValues(): Seq[AnyRef] = js.native
+  def getCriteriaValues(): js.Array[AnyRef] = js.native
   /** Gets the rule's help text, or null if no help text is set. */
   def getHelpText(): String = js.native
   /** Sets the data-validation rule to require a date. */
@@ -74,9 +74,9 @@ trait DataValidationBuilder extends js.Object {
   /** Sets the data-validation rule to require that the input is in the form of a URL. */
   def requireTextIsUrl(): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require that the input is equal to one of the given values. */
-  def requireValueInList(values: Seq[String]): DataValidationBuilder = js.native
+  def requireValueInList(values: js.Array[String]): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require that the input is equal to one of the given values, with an option to hide the dropdown menu. */
-  def requireValueInList(values: Seq[String], showDropdown: Boolean): DataValidationBuilder = js.native
+  def requireValueInList(values: js.Array[String], showDropdown: Boolean): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require that the input is equal to a value in the given range. */
   def requireValueInRange(range: Range): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require that the input is equal to a value in the given range, with an option to hide the dropdown menu. */
@@ -86,5 +86,5 @@ trait DataValidationBuilder extends js.Object {
   /** Sets the help text shown when the user hovers over the cell on which data-validation is set. */
   def setHelpText(helpText: String): DataValidationBuilder = js.native
   /** Sets the data-validation rule to require criteria defined in the DataValidationCriteria enum. This is an advanced method used primarily to create a new data-validation rule based on the criteria and arguments of an existing rule; in most other cases, the require...() methods are easier to use. */
-  def withCriteria(criteria: DataValidationCriteria, args: Seq[AnyRef]): DataValidationBuilder = js.native
+  def withCriteria(criteria: DataValidationCriteria, args: js.Array[AnyRef]): DataValidationBuilder = js.native
 }

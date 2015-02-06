@@ -47,7 +47,7 @@ trait EmbeddedChartBuilder extends js.Object {
   /** Return the ContainerInfo, which encapsulates where the chart appears on the sheet. */
   def getContainer(): ContainerInfo = js.native
   /** Returns a copy of the list of ranges currently providing data for this chart. Use addRange and removeRange to modify this list. */
-  def getRanges(): Seq[Range] = js.native
+  def getRanges(): js.Array[Range] = js.native
   /** Removes the specified Range from the chart represented by this builder. Will not throw an error if the Range is not in this chart. The range removed must match up with a range added via addRange(range), or it will not be removed, and it will not throw an exception. This method cannot be used to partially remove values from a range. */
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   /** Changes the type of chart. Not all embedded chart types are currently supported. See ChartType. */

@@ -41,5 +41,5 @@ trait DataViewDefinitionBuilder extends js.Object {
   /** Builds and returns the data view definition object that was built using this builder. */
   def build(): DataViewDefinition = js.native
   /** Sets the indexes of the column to include in the data view. This subset of column indexes refer to the columns of the data source that the data view will be derived from. */
-  def setColumns(columns: Seq[Int]): DataViewDefinitionBuilder = js.native
+  def setColumns(columns: js.Array[Int]): DataViewDefinitionBuilder = js.native
 }

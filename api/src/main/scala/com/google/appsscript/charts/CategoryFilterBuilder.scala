@@ -88,5 +88,5 @@ trait CategoryFilterBuilder extends js.Object {
   /** Sets whether the values to choose from should be sorted. */
   def setSortValues(sortValues: Boolean): CategoryFilterBuilder = js.native
   /** Sets the list of values (categories) the user can choose from. */
-  def setValues(values: Seq[String]): CategoryFilterBuilder = js.native
+  def setValues(values: js.Array[String]): CategoryFilterBuilder = js.native
 }

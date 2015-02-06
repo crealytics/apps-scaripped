@@ -226,7 +226,7 @@ trait AdGroupSitelinkSelector extends js.Object {
    * , since it would be the only ad group-level sitelink that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): AdGroupSitelinkSelector = js.native
+  def withIds(ids: js.Array[Long]): AdGroupSitelinkSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

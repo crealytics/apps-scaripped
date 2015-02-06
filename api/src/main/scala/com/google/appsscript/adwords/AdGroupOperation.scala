@@ -24,7 +24,7 @@ import scala.scalajs.js
  */
 trait AdGroupOperation extends js.Object {
   /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the AdGroup. */
-  def getErrors(): Seq[String] = js.native
+  def getErrors(): js.Array[String] = js.native
   /**
    *  Returns the newly created AdGroup, or 
    * <code>null</code>

@@ -226,7 +226,7 @@ trait CampaignSitelinkSelector extends js.Object {
    * , since it would be the only campaign-level sitelink that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): CampaignSitelinkSelector = js.native
+  def withIds(ids: js.Array[Long]): CampaignSitelinkSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

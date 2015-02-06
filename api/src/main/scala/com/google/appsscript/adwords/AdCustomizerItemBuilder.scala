@@ -149,7 +149,7 @@ trait AdCustomizerItemBuilder extends js.Object {
    * 
    *   adCustomizerItemBuilder.withSchedules([mondayMorning, tuesdayMorning]);</pre>
    */
-  def withSchedules(schedules: Seq[ExtensionSchedule]): AdCustomizerItemBuilder = js.native
+  def withSchedules(schedules: js.Array[ExtensionSchedule]): AdCustomizerItemBuilder = js.native
   /**
    *  Sets the ad customizer item's start date from either an object containing year, month, and day fields, or an 8-digit string in 
    * <code>YYYYMMDD</code>

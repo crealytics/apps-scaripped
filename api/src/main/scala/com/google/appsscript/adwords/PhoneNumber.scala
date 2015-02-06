@@ -40,7 +40,7 @@ trait PhoneNumber extends js.Object {
   /**  Returns the advertiser's phone number that gets appended to the ad. */
   def getPhoneNumber(): String = js.native
   /**  Returns the scheduling of the phone number. */
-  def getSchedules(): Seq[ExtensionSchedule] = js.native
+  def getSchedules(): js.Array[ExtensionSchedule] = js.native
   /**
    *  Returns the start date of the phone number. For instance, if the start date of the phone number is May 3, 2013, this would return the following object: 
    * <code>{year: 2013, month: 5, day: 3}</code>
@@ -158,7 +158,7 @@ trait PhoneNumber extends js.Object {
    * <p>Returns nothing.</p>
    *  
    */
-  def setSchedules(schedules: Seq[ExtensionSchedule]): Unit = js.native
+  def setSchedules(schedules: js.Array[ExtensionSchedule]): Unit = js.native
   /**
    *  Sets the phone number's start date from either an object containing year, month, and day fields, or an 8-digit string in 
    * <code>YYYYMMDD</code>

@@ -298,7 +298,7 @@ trait AudienceSelector extends js.Object {
    * , since it would be the only audience that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Seq[Long]]): AudienceSelector = js.native
+  def withIds(ids: js.Array[js.Array[Long]]): AudienceSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

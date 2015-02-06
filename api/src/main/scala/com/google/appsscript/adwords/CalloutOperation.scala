@@ -24,7 +24,7 @@ import scala.scalajs.js
  */
 trait CalloutOperation extends js.Object {
   /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the Callout. */
-  def getErrors(): Seq[String] = js.native
+  def getErrors(): js.Array[String] = js.native
   /**
    *  Returns the newly created Callout, or 
    * <code>null</code>

@@ -24,7 +24,7 @@ import scala.scalajs.js
  */
 trait ReviewOperation extends js.Object {
   /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the Review. */
-  def getErrors(): Seq[String] = js.native
+  def getErrors(): js.Array[String] = js.native
   /**
    *  Returns the newly created Review, or 
    * <code>null</code>

@@ -115,7 +115,7 @@ trait PhoneNumberBuilder extends js.Object {
    * 
    *   phoneNumberBuilder.withSchedules([mondayMorning, tuesdayMorning]);</pre>
    */
-  def withSchedules(schedules: Seq[ExtensionSchedule]): PhoneNumberBuilder = js.native
+  def withSchedules(schedules: js.Array[ExtensionSchedule]): PhoneNumberBuilder = js.native
   /**
    *  Sets the phone number's start date from either an object containing year, month, and day fields, or an 8-digit string in 
    * <code>YYYYMMDD</code>

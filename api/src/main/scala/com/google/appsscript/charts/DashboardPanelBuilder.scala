@@ -11,7 +11,7 @@ trait DashboardPanelBuilder extends js.Object {
   /** Binds a control to a chart, so that the chart is redrawn whenever the control collects a user interaction that affects the data managed by the dashboard. */
   def bind(control: Control, chart: Chart): DashboardPanelBuilder = js.native
   /** Binds multiple controls to multiple charts, so that the charts are redrawn whenever the controls collect a user interaction that affects the data managed by the dashboard. When binding multiple controls to a chart (or multiple charts), the data that's displayed in the chart is that which passes the filters of all of the controls (of this specific binding). */
-  def bind(controls: Seq[Control], charts: Seq[Chart]): DashboardPanelBuilder = js.native
+  def bind(controls: js.Array[Control], charts: js.Array[Chart]): DashboardPanelBuilder = js.native
   /** Builds a dashboard. */
   def build(): DashboardPanel = js.native
   /** Sets the data table to use for the dashboard using a DataTableBuilder. This is a convenience method for setting the data table without needing to call build(). */

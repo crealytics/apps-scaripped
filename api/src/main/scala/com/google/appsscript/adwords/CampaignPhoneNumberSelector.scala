@@ -226,7 +226,7 @@ trait CampaignPhoneNumberSelector extends js.Object {
    * , since it would be the only campaign-level phone number that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): CampaignPhoneNumberSelector = js.native
+  def withIds(ids: js.Array[Long]): CampaignPhoneNumberSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

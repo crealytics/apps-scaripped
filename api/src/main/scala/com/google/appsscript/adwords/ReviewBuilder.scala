@@ -106,7 +106,7 @@ trait ReviewBuilder extends js.Object {
    * 
    *   reviewBuilder.withSchedules([mondayMorning, tuesdayMorning]);</pre>
    */
-  def withSchedules(schedules: Seq[ExtensionSchedule]): ReviewBuilder = js.native
+  def withSchedules(schedules: js.Array[ExtensionSchedule]): ReviewBuilder = js.native
   /**  Sets the name of the source of the new review to the specified value. The combined length of sourceName and text is limited to 67 characters. This field is required. */
   def withSourceName(sourceName: String): ReviewBuilder = js.native
   /**  Sets the source URL of the new review to the specified value. This field is required. */

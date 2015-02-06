@@ -226,7 +226,7 @@ trait CampaignCalloutSelector extends js.Object {
    * , since it would be the only campaign-level callout that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): CampaignCalloutSelector = js.native
+  def withIds(ids: js.Array[Long]): CampaignCalloutSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

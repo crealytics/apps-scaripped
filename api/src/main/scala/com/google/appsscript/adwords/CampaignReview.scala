@@ -38,7 +38,7 @@ trait CampaignReview extends js.Object {
   /**  Returns the ID of the campaign-level review. */
   def getId(): Long = js.native
   /**  Returns the scheduling of the campaign-level review. */
-  def getSchedules(): Seq[ExtensionSchedule] = js.native
+  def getSchedules(): js.Array[ExtensionSchedule] = js.native
   /**  Returns the name of the source of the campaign-level review. */
   def getSourceName(): String = js.native
   /**  Returns the source URL of the campaign-level review. */
@@ -148,7 +148,7 @@ trait CampaignReview extends js.Object {
    * <p>Returns nothing.</p>
    *  
    */
-  def setSchedules(schedules: Seq[ExtensionSchedule]): Unit = js.native
+  def setSchedules(schedules: js.Array[ExtensionSchedule]): Unit = js.native
   /**
    *  Sets the name of the source of the campaign-level review. The combined length of sourceName and text is limited to 67 characters. 
    * <p>Returns nothing.</p>

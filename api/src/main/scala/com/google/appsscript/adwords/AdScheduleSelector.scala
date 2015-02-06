@@ -248,7 +248,7 @@ trait AdScheduleSelector extends js.Object {
    * , since it would be the only ad schedule that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Seq[Long]]): AdScheduleSelector = js.native
+  def withIds(ids: js.Array[js.Array[Long]]): AdScheduleSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

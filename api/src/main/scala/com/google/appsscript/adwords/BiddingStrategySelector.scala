@@ -226,7 +226,7 @@ trait BiddingStrategySelector extends js.Object {
    * , since it would be the only bidding strategy that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): BiddingStrategySelector = js.native
+  def withIds(ids: js.Array[Long]): BiddingStrategySelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

@@ -226,7 +226,7 @@ trait AdGroupMobileAppSelector extends js.Object {
    * , since it would be the only ad group-level mobile app that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): AdGroupMobileAppSelector = js.native
+  def withIds(ids: js.Array[Long]): AdGroupMobileAppSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

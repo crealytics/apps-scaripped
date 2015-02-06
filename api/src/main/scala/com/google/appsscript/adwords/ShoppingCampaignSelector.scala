@@ -252,7 +252,7 @@ trait ShoppingCampaignSelector extends js.Object {
    * , since it would be the only shopping campaign that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): ShoppingCampaignSelector = js.native
+  def withIds(ids: js.Array[Long]): ShoppingCampaignSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

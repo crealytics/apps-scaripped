@@ -48,7 +48,7 @@ trait AdGroupSitelink extends js.Object {
   /**  Returns the link URL of the ad group-level sitelink. */
   def getLinkUrl(): String = js.native
   /**  Returns the scheduling of the ad group-level sitelink. */
-  def getSchedules(): Seq[ExtensionSchedule] = js.native
+  def getSchedules(): js.Array[ExtensionSchedule] = js.native
   /**
    *  Returns the start date of the ad group-level sitelink. For instance, if the start date of the ad group-level sitelink is May 3, 2013, this would return the following object: 
    * <code>{year: 2013, month: 5, day: 3}</code>
@@ -158,7 +158,7 @@ trait AdGroupSitelink extends js.Object {
    * <p>Returns nothing.</p>
    *  
    */
-  def setSchedules(schedules: Seq[ExtensionSchedule]): Unit = js.native
+  def setSchedules(schedules: js.Array[ExtensionSchedule]): Unit = js.native
   /**
    *  Sets the ad group-level sitelink's start date from either an object containing year, month, and day fields, or an 8-digit string in 
    * <code>YYYYMMDD</code>

@@ -13,17 +13,17 @@ trait Spreadsheet extends js.Object {
   /** Adds the given user to the list of editors for the Spreadsheet. If the user was already on the list of viewers, this method promotes the user out of the list of viewers. */
   def addEditor(user: User): Unit = js.native
   /** Adds the given array of users to the list of editors for the Spreadsheet. If any of the users were already on the list of viewers, this method promotes them out of the list of viewers. */
-  def addEditors(emailAddresses: Seq[String]): Unit = js.native
+  def addEditors(emailAddresses: js.Array[String]): Unit = js.native
   /** Creates a new menu in the Spreadsheet UI. Each menu entry runs a user-defined function. Usually, you will want to call it from the onOpen function so that the menu is automatically created when the Spreadsheet is loaded. */
-  def addMenu(name: String, subMenus: Seq[AnyRef]): Unit = js.native
+  def addMenu(name: String, subMenus: js.Array[AnyRef]): Unit = js.native
   /** Adds the given user to the list of viewers for the Spreadsheet. If the user was already on the list of editors, this method has no effect. */
   def addViewer(emailAddress: String): Unit = js.native
   /** Adds the given user to the list of viewers for the Spreadsheet. If the user was already on the list of editors, this method has no effect. */
   def addViewer(user: User): Unit = js.native
   /** Adds the given array of users to the list of viewers for the Spreadsheet. If any of the users were already on the list of editors, this method has no effect for them. */
-  def addViewers(emailAddresses: Seq[String]): Unit = js.native
+  def addViewers(emailAddresses: js.Array[String]): Unit = js.native
   /** Appends a row to the spreadsheet. This operation is atomic; it prevents issues where a user asks for the last row, and then writes to that row, and an intervening mutation occurs between getting the last row and writing to it. */
-  def appendRow(rowContents: Seq[AnyRef]): Sheet = js.native
+  def appendRow(rowContents: js.Array[AnyRef]): Sheet = js.native
   /** Sets the width of the given column to fit its contents */
   def autoResizeColumn(columnPosition: Int): Sheet = js.native
   /** Copies the spreadsheet and returns the new one. */
@@ -57,7 +57,7 @@ trait Spreadsheet extends js.Object {
   /** Returns a Range corresponding to the dimensions in which data is present. This is functionally equivalent to creating a Range bounded by A1 and (Range.getLastColumn(), Range.getLastRow()). */
   def getDataRange(): Range = js.native
   /** Gets the list of editors for this Spreadsheet. If the user who executes the script does not have edit access to the Spreadsheet, this method throws an exception. */
-  def getEditors(): Seq[User] = js.native
+  def getEditors(): js.Array[User] = js.native
   /** Returns the url for the form attached to the spreadsheet, null if there is no form. */
   def getFormUrl(): String = js.native
   /** Returns the number of frozen columns. */
@@ -91,9 +91,9 @@ trait Spreadsheet extends js.Object {
   /** Returns a PageProtection instance describing the permissions for the current sheet. */
   def getSheetProtection(): PageProtection = js.native
   /** Returns the rectangular grid of values for this range starting at the given coordinates. A -1 value given as the row or column position is equivalent to getting the very last row or column that has data in the sheet. */
-  def getSheetValues(startRow: Int, startColumn: Int, numRows: Int, numColumns: Int): Seq[Seq[AnyRef]] = js.native
+  def getSheetValues(startRow: Int, startColumn: Int, numRows: Int, numColumns: Int): js.Array[js.Array[AnyRef]] = js.native
   /** Gets all the sheets in this spreadsheet. */
-  def getSheets(): Seq[Sheet] = js.native
+  def getSheets(): js.Array[Sheet] = js.native
   /** Gets the spreadsheet locale. */
   def getSpreadsheetLocale(): String = js.native
   /** Gets the time zone for the spreadsheet. */
@@ -101,7 +101,7 @@ trait Spreadsheet extends js.Object {
   /** Returns the url for the given spreadsheet. */
   def getUrl(): String = js.native
   /** Gets the list of viewers and commenters for this Spreadsheet. If the user who executes the script does not have edit access to the Spreadsheet, this method throws an exception. */
-  def getViewers(): Seq[User] = js.native
+  def getViewers(): js.Array[User] = js.native
   /** Hides the columns in the given range. */
   def hideColumn(column: Range): Unit = js.native
   /** Hides the rows in the given range. */
@@ -205,7 +205,7 @@ trait Spreadsheet extends js.Object {
   /** Unhides the row in the given range. */
   def unhideRow(row: Range): Unit = js.native
   /** Updates a menu that was added by addMenu(name, subMenus). Works exactly like addMenu(name, subMenus). */
-  def updateMenu(name: String, subMenus: Seq[AnyRef]): Unit = js.native
+  def updateMenu(name: String, subMenus: js.Array[AnyRef]): Unit = js.native
   /** Deprecated. As of January 2014 this function is deprecated and not available in the new version of Google Sheets. */
   def isAnonymousView(): Boolean = js.native
   /** Deprecated. As of January 2014 this function is deprecated and not available in the new version of Google Sheets. */

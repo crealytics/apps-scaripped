@@ -35,7 +35,7 @@ trait PieChartBuilder extends js.Object {
   /** Sets the background color for the chart. */
   def setBackgroundColor(cssValue: String): PieChartBuilder = js.native
   /** Sets the colors for the lines in the chart. */
-  def setColors(cssValues: Seq[String]): PieChartBuilder = js.native
+  def setColors(cssValues: js.Array[String]): PieChartBuilder = js.native
   /** Sets the data source URL that will be used to pull data in from an external source, such as Google Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored. For more information about querying data sources, check out the Google Charts documentation. */
   def setDataSourceUrl(url: String): PieChartBuilder = js.native
   /** Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method for setting the data table without needing to call build(). */

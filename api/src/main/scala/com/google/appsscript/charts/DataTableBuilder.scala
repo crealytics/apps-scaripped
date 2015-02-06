@@ -23,7 +23,7 @@ trait DataTableBuilder extends js.Object {
   /** Adds a column to the data table. Columns will be added from 0 to n. */
   def addColumn(`type`: ColumnType, label: String): DataTableBuilder = js.native
   /** Adds a row to the data table. */
-  def addRow(values: Seq[AnyRef]): DataTableBuilder = js.native
+  def addRow(values: js.Array[AnyRef]): DataTableBuilder = js.native
   /** Builds and returns a data table. */
   def build(): DataTable = js.native
   /** Sets a specific value in the table. */

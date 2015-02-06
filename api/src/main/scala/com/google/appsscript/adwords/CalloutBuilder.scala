@@ -93,7 +93,7 @@ trait CalloutBuilder extends js.Object {
    * 
    *   calloutBuilder.withSchedules([mondayMorning, tuesdayMorning]);</pre>
    */
-  def withSchedules(schedules: Seq[ExtensionSchedule]): CalloutBuilder = js.native
+  def withSchedules(schedules: js.Array[ExtensionSchedule]): CalloutBuilder = js.native
   /**
    *  Sets the callout's start date from either an object containing year, month, and day fields, or an 8-digit string in 
    * <code>YYYYMMDD</code>

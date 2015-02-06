@@ -252,7 +252,7 @@ trait BudgetSelector extends js.Object {
    * , since it would be the only budget that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): BudgetSelector = js.native
+  def withIds(ids: js.Array[Long]): BudgetSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

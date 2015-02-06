@@ -36,7 +36,7 @@ trait LineChartBuilder extends js.Object {
   /** Sets the background color for the chart. */
   def setBackgroundColor(cssValue: String): LineChartBuilder = js.native
   /** Sets the colors for the lines in the chart. */
-  def setColors(cssValues: Seq[String]): LineChartBuilder = js.native
+  def setColors(cssValues: js.Array[String]): LineChartBuilder = js.native
   /** Sets the style to use for curves in the chart. See CurveStyle for allowed curve styles. */
   def setCurveStyle(style: CurveStyle): LineChartBuilder = js.native
   /** Sets the data source URL that will be used to pull data in from an external source, such as Google Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored. For more information about querying data sources, check out the Google Charts documentation. */

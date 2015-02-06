@@ -29,7 +29,7 @@ trait DataValidation extends js.Object {
   /** Gets the rule's criteria type as defined in the DataValidationCriteria enum. To get the arguments for the criteria, use getCriteriaValues(). To use these values to create or modify a data-validation rule, see DataValidationBuilder.withCriteria(criteria, args). */
   def getCriteriaType(): DataValidationCriteria = js.native
   /** Gets an array of arguments for the rule's criteria. To get the criteria type, use getCriteriaType(). To use these values to create or modify a data-validation rule, see DataValidationBuilder.withCriteria(criteria, args). */
-  def getCriteriaValues(): Seq[AnyRef] = js.native
+  def getCriteriaValues(): js.Array[AnyRef] = js.native
   /** Gets the rule's help text, or null if no help text is set. */
   def getHelpText(): String = js.native
 }

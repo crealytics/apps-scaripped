@@ -252,7 +252,7 @@ trait CampaignSelector extends js.Object {
    * , since it would be the only campaign that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): CampaignSelector = js.native
+  def withIds(ids: js.Array[Long]): CampaignSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

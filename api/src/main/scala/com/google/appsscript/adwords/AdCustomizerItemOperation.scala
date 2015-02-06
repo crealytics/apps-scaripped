@@ -24,7 +24,7 @@ import scala.scalajs.js
  */
 trait AdCustomizerItemOperation extends js.Object {
   /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the AdCustomizerItem. */
-  def getErrors(): Seq[String] = js.native
+  def getErrors(): js.Array[String] = js.native
   /**
    *  Returns the newly created AdCustomizerItem, or 
    * <code>null</code>

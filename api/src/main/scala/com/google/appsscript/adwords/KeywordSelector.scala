@@ -319,7 +319,7 @@ trait KeywordSelector extends js.Object {
    * , since it would be the only keyword that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Seq[Long]]): KeywordSelector = js.native
+  def withIds(ids: js.Array[js.Array[Long]]): KeywordSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

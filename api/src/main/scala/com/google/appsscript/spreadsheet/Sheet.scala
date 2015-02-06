@@ -13,7 +13,7 @@ trait Sheet extends js.Object {
   /** Activates this sheet. Does not alter the sheet itself, only the parent's notion of the active sheet. */
   def activate(): Sheet = js.native
   /** Appends a row to the spreadsheet. This operation is atomic; it prevents issues where a user asks for the last row, and then writes to that row, and an intervening mutation occurs between getting the last row and writing to it. */
-  def appendRow(rowContents: Seq[AnyRef]): Sheet = js.native
+  def appendRow(rowContents: js.Array[AnyRef]): Sheet = js.native
   /** Sets the width of the given column to fit its contents */
   def autoResizeColumn(columnPosition: Int): Sheet = js.native
   /** Clears the sheet of content and formatting information. */
@@ -41,7 +41,7 @@ trait Sheet extends js.Object {
   /** Returns the active range for the active sheet. Returns the range of cells that is currently considered active. This generally means the range that a user has selected in the active sheet, but in a custom function it refers to the cell being actively recalculated. Note that when called on a SpreadsheetApp it effectively calls getActiveSpreadsheet and then getActiveSheet to act on the active Sheet. */
   def getActiveRange(): Range = js.native
   /** Returns an array of charts on this sheet. */
-  def getCharts(): Seq[EmbeddedChart] = js.native
+  def getCharts(): js.Array[EmbeddedChart] = js.native
   /** Gets the width in pixels of the given column. */
   def getColumnWidth(columnPosition: Int): Int = js.native
   /** Returns a Range corresponding to the dimensions in which data is present. This is functionally equivalent to creating a Range bounded by A1 and (Range.getLastColumn(), Range.getLastRow()). */
@@ -81,7 +81,7 @@ trait Sheet extends js.Object {
   /** Returns a PageProtection instance describing the permissions for the current sheet. */
   def getSheetProtection(): PageProtection = js.native
   /** Returns the rectangular grid of values for this range starting at the given coordinates. A -1 value given as the row or column position is equivalent to getting the very last row or column that has data in the sheet. */
-  def getSheetValues(startRow: Int, startColumn: Int, numRows: Int, numColumns: Int): Seq[Seq[AnyRef]] = js.native
+  def getSheetValues(startRow: Int, startColumn: Int, numRows: Int, numColumns: Int): js.Array[js.Array[AnyRef]] = js.native
   /** Hides the columns in the given range. */
   def hideColumn(column: Range): Unit = js.native
   /** Hides the column at the given index. */

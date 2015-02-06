@@ -226,7 +226,7 @@ trait MobileAppSelector extends js.Object {
    * , since it would be the only mobile app that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): MobileAppSelector = js.native
+  def withIds(ids: js.Array[Long]): MobileAppSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

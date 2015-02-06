@@ -254,7 +254,7 @@ trait PlatformSelector extends js.Object {
    * , since it would be the only platform that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Seq[Long]]): PlatformSelector = js.native
+  def withIds(ids: js.Array[js.Array[Long]]): PlatformSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

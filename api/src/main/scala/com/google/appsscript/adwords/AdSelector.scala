@@ -319,7 +319,7 @@ trait AdSelector extends js.Object {
    * , since it would be the only ad that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Seq[Long]]): AdSelector = js.native
+  def withIds(ids: js.Array[js.Array[Long]]): AdSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

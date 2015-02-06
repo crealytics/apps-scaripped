@@ -68,7 +68,7 @@ trait BulkUploads extends js.Object {
    *        moneyInMicros: false
    *      });</pre>
    */
-  def newCsvUpload(columnNames: Seq[String], optArgs: AnyRef): CsvUpload = js.native
+  def newCsvUpload(columnNames: js.Array[String], optArgs: AnyRef): CsvUpload = js.native
   /**
    *  Creates a 
    * <a href="adwordsapp_fileupload.html">FileUpload</a>

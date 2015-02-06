@@ -21,19 +21,19 @@ trait File extends js.Object {
   /** Add the given user to the list of commenters for the File. If the user was already on the list of viewers, this method promotes the user out of the list of viewers. */
   def addCommenter(user: User): File = js.native
   /** Add the given array of users to the list of commenters for the File. If any of the users were already on the list of viewers, this method promotes them out of the list of viewers. */
-  def addCommenters(emailAddresses: Seq[String]): File = js.native
+  def addCommenters(emailAddresses: js.Array[String]): File = js.native
   /** Adds the given user to the list of editors for the File. If the user was already on the list of viewers, this method promotes the user out of the list of viewers. */
   def addEditor(emailAddress: String): File = js.native
   /** Adds the given user to the list of editors for the File. If the user was already on the list of viewers, this method promotes the user out of the list of viewers. */
   def addEditor(user: User): File = js.native
   /** Adds the given array of users to the list of editors for the File. If any of the users were already on the list of viewers, this method promotes them out of the list of viewers. */
-  def addEditors(emailAddresses: Seq[String]): File = js.native
+  def addEditors(emailAddresses: js.Array[String]): File = js.native
   /** Adds the given user to the list of viewers for the File. If the user was already on the list of editors, this method has no effect. */
   def addViewer(emailAddress: String): File = js.native
   /** Adds the given user to the list of viewers for the File. If the user was already on the list of editors, this method has no effect. */
   def addViewer(user: User): File = js.native
   /** Adds the given array of users to the list of viewers for the File. If any of the users were already on the list of editors, this method has no effect for them. */
-  def addViewers(emailAddresses: Seq[String]): File = js.native
+  def addViewers(emailAddresses: js.Array[String]): File = js.native
   /** Gets the permission granted to the given user. */
   def getAccess(email: String): Permission = js.native
   /** Gets the permission granted to the given user. */
@@ -49,7 +49,7 @@ trait File extends js.Object {
   /** Gets the URL that can be used to download the file. Only users with permission to open the file in Google Drive can access the URL. */
   def getDownloadUrl(): String = js.native
   /** Gets the list of editors for this File. If the user who executes the script does not have edit access to the File, this method returns an empty array. */
-  def getEditors(): Seq[User] = js.native
+  def getEditors(): js.Array[User] = js.native
   /** Gets the ID of the File. */
   def getId(): String = js.native
   /** Gets the date the File was last updated. */
@@ -73,7 +73,7 @@ trait File extends js.Object {
   /** Gets the URL that can be used to open the File in a Google App like Drive or Docs. */
   def getUrl(): String = js.native
   /** Gets the list of viewers and commenters for this File. If the user who executes the script does not have edit access to the File, this method returns an empty array. */
-  def getViewers(): Seq[User] = js.native
+  def getViewers(): js.Array[User] = js.native
   /** Determines whether users with edit permissions to the File are allowed to share with other users or change the permissions. */
   def isShareableByEditors(): Boolean = js.native
   /** Determines whether the File has been starred in the user's Drive. */

@@ -262,7 +262,7 @@ trait AdGroupSelector extends js.Object {
    * , since it would be the only ad group that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): AdGroupSelector = js.native
+  def withIds(ids: js.Array[Long]): AdGroupSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

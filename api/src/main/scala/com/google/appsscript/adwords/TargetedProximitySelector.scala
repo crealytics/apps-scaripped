@@ -248,7 +248,7 @@ trait TargetedProximitySelector extends js.Object {
    * , since it would be the only targeted proximity that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Seq[Long]]): TargetedProximitySelector = js.native
+  def withIds(ids: js.Array[js.Array[Long]]): TargetedProximitySelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

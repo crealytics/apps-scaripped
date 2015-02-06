@@ -3,7 +3,7 @@ import scala.scalajs.js
 
 trait ProductGroupOperation[T] extends js.Object {
   /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the ProductItemId. */
-  def getErrors(): Seq[String] = js.native
+  def getErrors(): js.Array[String] = js.native
   /**
    *  Returns 
    * <code>true</code>

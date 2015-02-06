@@ -226,7 +226,7 @@ trait AdCustomizerItemSelector extends js.Object {
    * , since it would be the only ad customizer item that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): AdCustomizerItemSelector = js.native
+  def withIds(ids: js.Array[Long]): AdCustomizerItemSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

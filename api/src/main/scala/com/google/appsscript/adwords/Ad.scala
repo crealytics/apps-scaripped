@@ -60,7 +60,7 @@ trait Ad extends js.Object {
    *  Returns the array of disapproval reasons. 
    * <p>The returned array will contain entries like 'Editorial Standards-Spacing', 'Inaccurate Display URL', etc. An empty array will be returned if the ad has not been disapproved.</p>
    */
-  def getDisapprovalReasons(): Seq[String] = js.native
+  def getDisapprovalReasons(): js.Array[String] = js.native
   /**
    *  Returns the display URL of the ad. May return 
    * <code>null</code>

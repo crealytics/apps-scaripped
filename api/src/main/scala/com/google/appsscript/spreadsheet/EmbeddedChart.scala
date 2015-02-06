@@ -46,7 +46,7 @@ trait EmbeddedChart extends js.Object {
   /** Returns the options for this chart, such as height, colors, axes, etc. */
   def getOptions(): ChartOptions = js.native
   /** Returns the Ranges that this chart uses as a data source. */
-  def getRanges(): Seq[Range] = js.native
+  def getRanges(): js.Array[Range] = js.native
   /** Gets the type of this object. */
   def getType(): String = js.native
   /** Returns an EmbeddedChartBuilder that can be used to modify this chart. Remember to invoke sheet.updateChart(chart) to save your changes. */

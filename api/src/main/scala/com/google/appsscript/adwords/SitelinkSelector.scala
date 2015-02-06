@@ -226,7 +226,7 @@ trait SitelinkSelector extends js.Object {
    * , since it would be the only sitelink that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): SitelinkSelector = js.native
+  def withIds(ids: js.Array[Long]): SitelinkSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

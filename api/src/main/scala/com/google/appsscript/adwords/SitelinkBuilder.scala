@@ -110,7 +110,7 @@ trait SitelinkBuilder extends js.Object {
    * 
    *   sitelinkBuilder.withSchedules([mondayMorning, tuesdayMorning]);</pre>
    */
-  def withSchedules(schedules: Seq[ExtensionSchedule]): SitelinkBuilder = js.native
+  def withSchedules(schedules: js.Array[ExtensionSchedule]): SitelinkBuilder = js.native
   /**
    *  Sets the sitelink's start date from either an object containing year, month, and day fields, or an 8-digit string in 
    * <code>YYYYMMDD</code>

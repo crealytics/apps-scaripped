@@ -19,7 +19,7 @@ trait Folder extends js.Object {
   /** Adds the given user to the list of editors for the Folder. If the user was already on the list of viewers, this method promotes the user out of the list of viewers. */
   def addEditor(user: User): Folder = js.native
   /** Adds the given array of users to the list of editors for the Folder. If any of the users were already on the list of viewers, this method promotes them out of the list of viewers. */
-  def addEditors(emailAddresses: Seq[String]): Folder = js.native
+  def addEditors(emailAddresses: js.Array[String]): Folder = js.native
   /** Adds the given file to the current folder. This method does not move the file out of its existing parent folder; a file can have more than one parent simultaneously. */
   def addFile(child: File): Folder = js.native
   /** Adds the given folder to the current folder. This method does not move the folder out of its existing parent folder; a folder can have more than one parent simultaneously. */
@@ -29,7 +29,7 @@ trait Folder extends js.Object {
   /** Adds the given user to the list of viewers for the Folder. If the user was already on the list of editors, this method has no effect. */
   def addViewer(user: User): Folder = js.native
   /** Adds the given array of users to the list of viewers for the Folder. If any of the users were already on the list of editors, this method has no effect for them. */
-  def addViewers(emailAddresses: Seq[String]): Folder = js.native
+  def addViewers(emailAddresses: js.Array[String]): Folder = js.native
   /** Creates a file in the current folder from a given Blob of arbitrary data. */
   def createFile(blob: BlobSource): File = js.native
   /** Creates a text file in the current folder with the given name and contents. Throws an exception if content is larger than 10MB. */
@@ -47,7 +47,7 @@ trait Folder extends js.Object {
   /** Gets the description for the Folder. */
   def getDescription(): String = js.native
   /** Gets the list of editors for this Folder. If the user who executes the script does not have edit access to the Folder, this method returns an empty array. */
-  def getEditors(): Seq[User] = js.native
+  def getEditors(): js.Array[User] = js.native
   /** Gets a collection of all files that are children of the current folder. */
   def getFiles(): FileIterator = js.native
   /** Gets a collection of all files that are children of the current folder and have the given name. */
@@ -77,7 +77,7 @@ trait Folder extends js.Object {
   /** Gets the URL that can be used to open the Folder in a Google App like Drive or Docs. */
   def getUrl(): String = js.native
   /** Gets the list of viewers and commenters for this Folder. If the user who executes the script does not have edit access to the Folder, this method returns an empty array. */
-  def getViewers(): Seq[User] = js.native
+  def getViewers(): js.Array[User] = js.native
   /** Determines whether users with edit permissions to the Folder are allowed to share with other users or change the permissions. */
   def isShareableByEditors(): Boolean = js.native
   /** Determines whether the Folder has been starred in the user's Drive. */

@@ -33,7 +33,7 @@ trait EmbeddedScatterChartBuilder extends js.Object {
   /** Return the ContainerInfo, which encapsulates where the chart appears on the sheet. */
   def getContainer(): ContainerInfo = js.native
   /** Returns a copy of the list of ranges currently providing data for this chart. Use addRange and removeRange to modify this list. */
-  def getRanges(): Seq[Range] = js.native
+  def getRanges(): js.Array[Range] = js.native
   /** Removes the specified Range from the chart represented by this builder. Will not throw an error if the Range is not in this chart. The range removed must match up with a range added via addRange(range), or it will not be removed, and it will not throw an exception. This method cannot be used to partially remove values from a range. */
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   /** Sets the background color for the chart. */
@@ -41,7 +41,7 @@ trait EmbeddedScatterChartBuilder extends js.Object {
   /** Changes the type of chart. Not all embedded chart types are currently supported. See ChartType. */
   def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   /** Sets the colors for the lines in the chart. */
-  def setColors(cssValues: Seq[String]): EmbeddedScatterChartBuilder = js.native
+  def setColors(cssValues: js.Array[String]): EmbeddedScatterChartBuilder = js.native
   /** Sets the position of the legend with respect to the chart. By default, there will be no legend. */
   def setLegendPosition(position: Position): EmbeddedScatterChartBuilder = js.native
   /** Sets the text style of the chart legend. */

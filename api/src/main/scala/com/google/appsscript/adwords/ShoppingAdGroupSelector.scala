@@ -262,7 +262,7 @@ trait ShoppingAdGroupSelector extends js.Object {
    * , since it would be the only shopping ad group that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): ShoppingAdGroupSelector = js.native
+  def withIds(ids: js.Array[Long]): ShoppingAdGroupSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

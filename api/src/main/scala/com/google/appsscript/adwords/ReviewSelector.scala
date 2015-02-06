@@ -226,7 +226,7 @@ trait ReviewSelector extends js.Object {
    * , since it would be the only review that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): ReviewSelector = js.native
+  def withIds(ids: js.Array[Long]): ReviewSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

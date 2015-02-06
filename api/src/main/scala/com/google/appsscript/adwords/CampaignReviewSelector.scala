@@ -226,7 +226,7 @@ trait CampaignReviewSelector extends js.Object {
    * , since it would be the only campaign-level review that satisfies both ID conditions.
    * <p></p>
    */
-  def withIds(ids: Seq[Long]): CampaignReviewSelector = js.native
+  def withIds(ids: js.Array[Long]): CampaignReviewSelector = js.native
   /**
    *  Specifies limit for the selector to use. For instance, 
    * <code>withLimit(50)</code>

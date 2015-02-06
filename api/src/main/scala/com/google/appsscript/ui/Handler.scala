@@ -37,17 +37,17 @@ trait Handler extends js.Object {
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def validateNotNumber(widget: Widget): Handler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def validateNotOptions(widget: Widget, options: Seq[String]): Handler = js.native
+  def validateNotOptions(widget: Widget, options: js.Array[String]): Handler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def validateNotRange(widget: Widget, min: Number, max: Number): Handler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def validateNotSum(widgets: Seq[Widget], sum: Int): Handler = js.native
+  def validateNotSum(widgets: js.Array[Widget], sum: Int): Handler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def validateNumber(widget: Widget): Handler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def validateOptions(widget: Widget, options: Seq[String]): Handler = js.native
+  def validateOptions(widget: Widget, options: js.Array[String]): Handler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def validateRange(widget: Widget, min: Number, max: Number): Handler = js.native
   /** Deprecated. This function is deprecated and should not be used in new scripts. */
-  def validateSum(widgets: Seq[Widget], sum: Int): Handler = js.native
+  def validateSum(widgets: js.Array[Widget], sum: Int): Handler = js.native
 }
