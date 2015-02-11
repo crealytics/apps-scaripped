@@ -18,3 +18,10 @@ trait SizeAwareIterator[T] extends js.Object {
    */
   def totalNumEntities(): Int = js.native
 }
+
+object SizeAwareIterator {
+  implicit def asScala[T](iter: SizeAwareIterator[T]) = new scala.collection.Iterator[T] {
+    def hasNext = iter.hasNext()
+    def next = iter.next()
+  }
+}
