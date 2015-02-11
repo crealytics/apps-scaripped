@@ -23,13 +23,7 @@ import scala.scalajs.js
  *    var row = rows.next();
  *  }</pre>
  */
-trait ReportRowIterator extends js.Object {
-  /**
-   *  Returns 
-   * <code>true</code>
-   *  if the report has more rows.
-   */
-  def hasNext(): Boolean = js.native
+trait ReportRowIterator extends SizeAwareIterator[ReportRow] {
   /**
    *  Returns the next row in the report. 
    * <p>Report rows are returned as plain Javascript objects — in other words, associative arrays. Individual columns can be accessed by indexing by AWQL column names: </p>
@@ -46,5 +40,5 @@ trait ReportRowIterator extends js.Object {
    *    var ctr = row['Ctr'];
    *  }</pre>
    */
-  def next(): ReportRow = js.native
+  override def next(): ReportRow = js.native
 }

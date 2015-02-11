@@ -22,22 +22,4 @@ import scala.scalajs.js
  *    var callout = calloutIterator.next();
  *  }</pre>
  */
-trait CalloutIterator extends js.Object {
-  /**
-   *  Returns 
-   * <code>true</code>
-   *  if the iterator has more elements.
-   */
-  def hasNext(): Boolean = js.native
-  /**
-   *  Returns the next 
-   * <a href="adwordsapp_callout.html">Callout</a>
-   *  in the iterator.
-   */
-  def next(): Callout = js.native
-  /**
-   *  Returns the total number of entities matched by the selector which generated this iterator. 
-   * <p>Note that the returned number disregards limits, and that the iterator is not guaranteed to have this many elements — <code>hasNext</code> will start to return <code>false</code> and <code>next</code> will start to throw exceptions as soon as the limit for entity reads has been reached, even if the selector matched more entities.</p>
-   */
-  def totalNumEntities(): Int = js.native
-}
+trait CalloutIterator extends SizeAwareIterator[Callout]
