@@ -1,3 +1,5 @@
+name := "apps-scaripped-scraper"
+
 resolvers += Resolver.sonatypeRepo("public")
 
 libraryDependencies ++= Seq(
@@ -8,3 +10,7 @@ libraryDependencies ++= Seq(
   "net.ceedubs" %% "ficus" % "1.1.2",
   "com.eed3si9n" %% "treehugger" % "0.3.0"
 )
+
+seq(bintraySettings:_*)
+
+licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))

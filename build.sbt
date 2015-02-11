@@ -1,4 +1,4 @@
-name := "google-apps-script-scala-js"
+name := "apps-scaripped"
 
 organization in ThisBuild := "de.crealytics"
 
@@ -23,4 +23,10 @@ generateApi in (Compile) := Def.taskDyn {
 }.value
 
 
-generatorPath in Compile := (scalaSource in (api, Compile)).value
+generatorPath in Compile := (sourceManaged in (api, Compile)).value / "scala"
+
+seq(bintraySettings:_*)
+
+bintray.Keys.bintrayOrganization in ThisBuild := Some("crealytics")
+
+licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
