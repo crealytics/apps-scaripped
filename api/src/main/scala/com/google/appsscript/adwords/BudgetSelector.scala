@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var budget = budgetIterator.next();
  *  }</pre>
  */
-trait BudgetSelector extends js.Object {
+trait BudgetSelector extends Selector[BudgetSelector] {
   /**
    *  Sets a predefined date range onto the selector. Supported values: 
    * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code>.</p>
@@ -235,7 +235,7 @@ trait BudgetSelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_budgetselector.html#forDateRange_1">BudgetSelector.forDateRange(String)</a> or <a href="adwordsapp_budgetselector.html#forDateRange_2">BudgetSelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): BudgetSelector = js.native
+  override def withCondition(condition: String): BudgetSelector = js.native
   /**
    *  Restricts this selector to return only budgets with the given budget IDs. 
    * <pre class="prettyprint">
@@ -253,10 +253,4 @@ trait BudgetSelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[Long]): BudgetSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): BudgetSelector = js.native
 }

@@ -26,7 +26,7 @@ import scala.scalajs.js
  *    var negativeKeyword = negativeKeywordIterator.next();
  *  }</pre>
  */
-trait NegativeKeywordSelector extends js.Object {
+trait NegativeKeywordSelector extends Selector[NegativeKeywordSelector] {
   /**  Fetches the requested negative keywords and returns an iterator. */
   def get(): NegativeKeywordIterator = js.native
   /**
@@ -142,11 +142,6 @@ trait NegativeKeywordSelector extends js.Object {
    *  </tbody>
    * </table>
    */
-  def withCondition(condition: String): NegativeKeywordSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): NegativeKeywordSelector = js.native
+  override def withCondition(condition: String): NegativeKeywordSelector = js.native
+
 }

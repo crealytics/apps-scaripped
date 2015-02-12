@@ -26,7 +26,7 @@ import scala.scalajs.js
  *    var excludedPlacement = excludedPlacementIterator.next();
  *  }</pre>
  */
-trait ExcludedPlacementSelector extends js.Object {
+trait ExcludedPlacementSelector extends Selector[ExcludedPlacementSelector] {
   /**  Fetches the requested excluded placements and returns an iterator. */
   def get(): ExcludedPlacementIterator = js.native
   /**
@@ -137,11 +137,6 @@ trait ExcludedPlacementSelector extends js.Object {
    *  </tbody>
    * </table>
    */
-  def withCondition(condition: String): ExcludedPlacementSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): ExcludedPlacementSelector = js.native
+  override def withCondition(condition: String): ExcludedPlacementSelector = js.native
+
 }

@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var proximity = proximityIterator.next();
  *  }</pre>
  */
-trait TargetedProximitySelector extends js.Object {
+trait TargetedProximitySelector extends Selector[TargetedProximitySelector] {
   /**
    *  Sets a predefined date range onto the selector. Supported values: 
    * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code>.</p>
@@ -209,7 +209,7 @@ trait TargetedProximitySelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_targetedproximityselector.html#forDateRange_1">TargetedProximitySelector.forDateRange(String)</a> or <a href="adwordsapp_targetedproximityselector.html#forDateRange_2">TargetedProximitySelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): TargetedProximitySelector = js.native
+  override def withCondition(condition: String): TargetedProximitySelector = js.native
   /**
    *  Restricts this selector to return only targeted proximities with the given targeted proximity IDs. 
    * <p>All targeted proximities are uniquely identified by the combination of their campaign ID and targeted proximity ID. The IDs for this selector are thus represented as two-element arrays, with the first element being the campaign ID and the second being the targeted proximity ID: </p>
@@ -249,10 +249,5 @@ trait TargetedProximitySelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[js.Array[Long]]): TargetedProximitySelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): TargetedProximitySelector = js.native
+
 }

@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var shoppingCampaign = shoppingCampaignIterator.next();
  *  }</pre>
  */
-trait ShoppingCampaignSelector extends js.Object {
+trait ShoppingCampaignSelector extends Selector[ShoppingCampaignSelector] {
   /**
    *  Sets a predefined date range onto the selector. Supported values: 
    * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code>.</p>
@@ -235,7 +235,7 @@ trait ShoppingCampaignSelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_shoppingcampaignselector.html#forDateRange_1">ShoppingCampaignSelector.forDateRange(String)</a> or <a href="adwordsapp_shoppingcampaignselector.html#forDateRange_2">ShoppingCampaignSelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): ShoppingCampaignSelector = js.native
+  override def withCondition(condition: String): ShoppingCampaignSelector = js.native
   /**
    *  Restricts this selector to return only shopping campaigns with the given shopping campaign IDs. 
    * <pre class="prettyprint">
@@ -253,10 +253,5 @@ trait ShoppingCampaignSelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[Long]): ShoppingCampaignSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): ShoppingCampaignSelector = js.native
+
 }

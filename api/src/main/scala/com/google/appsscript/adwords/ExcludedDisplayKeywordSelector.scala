@@ -26,7 +26,7 @@ import scala.scalajs.js
  *    var excludedDisplayKeyword = excludedDisplayKeywordIterator.next();
  *  }</pre>
  */
-trait ExcludedDisplayKeywordSelector extends js.Object {
+trait ExcludedDisplayKeywordSelector extends Selector[ExcludedDisplayKeywordSelector] {
   /**  Fetches the requested excluded display keywords and returns an iterator. */
   def get(): ExcludedDisplayKeywordIterator = js.native
   /**
@@ -142,11 +142,6 @@ trait ExcludedDisplayKeywordSelector extends js.Object {
    *  </tbody>
    * </table>
    */
-  def withCondition(condition: String): ExcludedDisplayKeywordSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): ExcludedDisplayKeywordSelector = js.native
+  override def withCondition(condition: String): ExcludedDisplayKeywordSelector = js.native
+
 }

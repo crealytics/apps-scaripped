@@ -27,7 +27,7 @@ import scala.scalajs.js
  *    var label = labelIterator.next();
  *  }</pre>
  */
-trait LabelSelector extends js.Object {
+trait LabelSelector extends Selector[LabelSelector] {
   /**  Fetches the requested labels and returns an iterator. */
   def get(): LabelIterator = js.native
   /**
@@ -117,11 +117,6 @@ trait LabelSelector extends js.Object {
    *  </tbody>
    * </table>
    */
-  def withCondition(condition: String): LabelSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): LabelSelector = js.native
+  override def withCondition(condition: String): LabelSelector = js.native
+
 }

@@ -26,7 +26,7 @@ import scala.scalajs.js
  *    var excludedTopic = excludedTopicIterator.next();
  *  }</pre>
  */
-trait ExcludedTopicSelector extends js.Object {
+trait ExcludedTopicSelector extends Selector[ExcludedTopicSelector] {
   /**  Fetches the requested excluded topics and returns an iterator. */
   def get(): ExcludedTopicIterator = js.native
   /**
@@ -132,11 +132,6 @@ trait ExcludedTopicSelector extends js.Object {
    *  </tbody>
    * </table>
    */
-  def withCondition(condition: String): ExcludedTopicSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): ExcludedTopicSelector = js.native
+  override def withCondition(condition: String): ExcludedTopicSelector = js.native
+
 }

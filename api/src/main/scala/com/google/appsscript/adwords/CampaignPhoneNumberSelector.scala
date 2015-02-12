@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var campaignPhoneNumber = campaignPhoneNumberIterator.next();
  *  }</pre>
  */
-trait CampaignPhoneNumberSelector extends js.Object {
+trait CampaignPhoneNumberSelector extends Selector[CampaignPhoneNumberSelector] {
   /**
    *  Sets a predefined date range onto the selector. Supported values: 
    * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code>.</p>
@@ -209,7 +209,7 @@ trait CampaignPhoneNumberSelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_campaignphonenumberselector.html#forDateRange_1">CampaignPhoneNumberSelector.forDateRange(String)</a> or <a href="adwordsapp_campaignphonenumberselector.html#forDateRange_2">CampaignPhoneNumberSelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): CampaignPhoneNumberSelector = js.native
+  override def withCondition(condition: String): CampaignPhoneNumberSelector = js.native
   /**
    *  Restricts this selector to return only campaign-level phone numbers with the given campaign-level phone number IDs. 
    * <pre class="prettyprint">
@@ -227,10 +227,5 @@ trait CampaignPhoneNumberSelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[Long]): CampaignPhoneNumberSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): CampaignPhoneNumberSelector = js.native
+
 }

@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var productAd = productAdIterator.next();
  *  }</pre>
  */
-trait ProductAdSelector extends js.Object {
+trait ProductAdSelector extends Selector[ProductAdSelector] {
   /**
    *  Sets a predefined date range onto the selector. Supported values: 
    * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code> </p>
@@ -250,7 +250,7 @@ trait ProductAdSelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_productadselector.html#forDateRange_1">ProductAdSelector.forDateRange(String)</a> or <a href="adwordsapp_productadselector.html#forDateRange_2">ProductAdSelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): ProductAdSelector = js.native
+  override def withCondition(condition: String): ProductAdSelector = js.native
   /**
    *  Restricts this selector to return only product ads with the given product ad IDs. 
    * <p>All product ads are uniquely identified by the combination of their shopping ad group ID and product ad ID. The IDs for this selector are thus represented as two-element arrays, with the first element being the shopping ad group ID and the second being the product ad ID: </p>
@@ -284,10 +284,5 @@ trait ProductAdSelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[js.Array[Long]]): ProductAdSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): ProductAdSelector = js.native
+
 }

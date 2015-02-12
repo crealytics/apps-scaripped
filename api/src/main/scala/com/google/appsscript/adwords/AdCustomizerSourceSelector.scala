@@ -25,13 +25,8 @@ import scala.scalajs.js
  *    var adCustomizerSource = adCustomizerSourceIterator.next();
  *  }</pre>
  */
-trait AdCustomizerSourceSelector extends js.Object {
+trait AdCustomizerSourceSelector extends Selector[AdCustomizerSourceSelector] {
   /**  Fetches the requested ad customizer sources and returns an iterator. */
   def get(): AdCustomizerSourceIterator = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): AdCustomizerSourceSelector = js.native
+
 }

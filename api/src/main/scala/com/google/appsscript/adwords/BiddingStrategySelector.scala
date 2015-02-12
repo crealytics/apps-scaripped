@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var biddingStrategy = biddingStrategyIterator.next();
  *  }</pre>
  */
-trait BiddingStrategySelector extends js.Object {
+trait BiddingStrategySelector extends Selector[BiddingStrategySelector] {
   /**
    *  Sets a predefined date range onto the selector. Supported values: 
    * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code>.</p>
@@ -209,7 +209,7 @@ trait BiddingStrategySelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_biddingstrategyselector.html#forDateRange_1">BiddingStrategySelector.forDateRange(String)</a> or <a href="adwordsapp_biddingstrategyselector.html#forDateRange_2">BiddingStrategySelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): BiddingStrategySelector = js.native
+  override def withCondition(condition: String): BiddingStrategySelector = js.native
   /**
    *  Restricts this selector to return only bidding strategies with the given bidding strategy IDs. 
    * <pre class="prettyprint">
@@ -227,10 +227,5 @@ trait BiddingStrategySelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[Long]): BiddingStrategySelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): BiddingStrategySelector = js.native
+
 }

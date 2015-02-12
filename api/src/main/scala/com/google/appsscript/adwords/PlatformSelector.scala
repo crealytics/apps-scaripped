@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var platform = platformIterator.next();
  *  }</pre>
  */
-trait PlatformSelector extends js.Object {
+trait PlatformSelector extends Selector[PlatformSelector] {
   /**  Restricts this selector to only select desktop targets. */
   def desktop(): PlatformSelector = js.native
   /**
@@ -215,7 +215,7 @@ trait PlatformSelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_platformselector.html#forDateRange_1">PlatformSelector.forDateRange(String)</a> or <a href="adwordsapp_platformselector.html#forDateRange_2">PlatformSelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): PlatformSelector = js.native
+  override def withCondition(condition: String): PlatformSelector = js.native
   /**
    *  Restricts this selector to return only platforms with the given platform IDs. 
    * <p>All platforms are uniquely identified by the combination of their campaign ID and platform ID. The IDs for this selector are thus represented as two-element arrays, with the first element being the campaign ID and the second being the platform ID: </p>
@@ -255,10 +255,5 @@ trait PlatformSelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[js.Array[Long]]): PlatformSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): PlatformSelector = js.native
+
 }

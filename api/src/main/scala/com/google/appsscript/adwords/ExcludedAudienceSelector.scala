@@ -26,7 +26,7 @@ import scala.scalajs.js
  *    var excludedAudience = excludedAudienceIterator.next();
  *  }</pre>
  */
-trait ExcludedAudienceSelector extends js.Object {
+trait ExcludedAudienceSelector extends Selector[ExcludedAudienceSelector] {
   /**  Fetches the requested excluded audiences and returns an iterator. */
   def get(): ExcludedAudienceIterator = js.native
   /**
@@ -139,11 +139,6 @@ trait ExcludedAudienceSelector extends js.Object {
    *  </tbody>
    * </table>
    */
-  def withCondition(condition: String): ExcludedAudienceSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): ExcludedAudienceSelector = js.native
+  override def withCondition(condition: String): ExcludedAudienceSelector = js.native
+
 }

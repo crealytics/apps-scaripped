@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var campaignReview = campaignReviewIterator.next();
  *  }</pre>
  */
-trait CampaignReviewSelector extends js.Object {
+trait CampaignReviewSelector extends Selector[CampaignReviewSelector] {
   /**
    *  Sets a predefined date range onto the selector. Supported values: 
    * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code>.</p>
@@ -209,7 +209,7 @@ trait CampaignReviewSelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_campaignreviewselector.html#forDateRange_1">CampaignReviewSelector.forDateRange(String)</a> or <a href="adwordsapp_campaignreviewselector.html#forDateRange_2">CampaignReviewSelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): CampaignReviewSelector = js.native
+  override def withCondition(condition: String): CampaignReviewSelector = js.native
   /**
    *  Restricts this selector to return only campaign-level reviews with the given campaign-level review IDs. 
    * <pre class="prettyprint">
@@ -227,10 +227,5 @@ trait CampaignReviewSelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[Long]): CampaignReviewSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): CampaignReviewSelector = js.native
+
 }

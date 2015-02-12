@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var placement = placementIterator.next();
  *  }</pre>
  */
-trait PlacementSelector extends js.Object {
+trait PlacementSelector extends Selector[PlacementSelector] {
   /**
    *  Sets a predefined date range onto the selector. Supported values: 
    * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code>.</p>
@@ -265,7 +265,7 @@ trait PlacementSelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_placementselector.html#forDateRange_1">PlacementSelector.forDateRange(String)</a> or <a href="adwordsapp_placementselector.html#forDateRange_2">PlacementSelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): PlacementSelector = js.native
+  override def withCondition(condition: String): PlacementSelector = js.native
   /**
    *  Restricts this selector to return only placements with the given placement IDs. 
    * <p>All placements are uniquely identified by the combination of their "ad group" ID and placement ID. The IDs for this selector are thus represented as two-element arrays, with the first element being the "ad group" ID and the second being the placement ID: </p>
@@ -299,10 +299,5 @@ trait PlacementSelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[js.Array[Long]]): PlacementSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): PlacementSelector = js.native
+
 }

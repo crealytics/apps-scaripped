@@ -25,13 +25,8 @@ import scala.scalajs.js
  *    var location = locationIterator.next();
  *  }</pre>
  */
-trait ExcludedLocationSelector extends js.Object {
+trait ExcludedLocationSelector extends Selector[ExcludedLocationSelector] {
   /**  Fetches the requested excluded locations and returns an iterator. */
   def get(): ExcludedLocationIterator = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): ExcludedLocationSelector = js.native
+
 }

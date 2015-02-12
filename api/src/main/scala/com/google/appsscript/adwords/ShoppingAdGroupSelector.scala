@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var shoppingAdGroup = shoppingAdGroupIterator.next();
  *  }</pre>
  */
-trait ShoppingAdGroupSelector extends js.Object {
+trait ShoppingAdGroupSelector extends Selector[ShoppingAdGroupSelector] {
   /**
    *  Sets a predefined date range onto the selector. Supported values: 
    * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code>.</p>
@@ -245,7 +245,7 @@ trait ShoppingAdGroupSelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_shoppingadgroupselector.html#forDateRange_1">ShoppingAdGroupSelector.forDateRange(String)</a> or <a href="adwordsapp_shoppingadgroupselector.html#forDateRange_2">ShoppingAdGroupSelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): ShoppingAdGroupSelector = js.native
+  override def withCondition(condition: String): ShoppingAdGroupSelector = js.native
   /**
    *  Restricts this selector to return only shopping ad groups with the given shopping ad group IDs. 
    * <pre class="prettyprint">
@@ -263,10 +263,5 @@ trait ShoppingAdGroupSelector extends js.Object {
    * <p></p>
    */
   def withIds(ids: js.Array[Long]): ShoppingAdGroupSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): ShoppingAdGroupSelector = js.native
+
 }
