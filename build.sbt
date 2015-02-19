@@ -2,7 +2,7 @@ name := "apps-scaripped"
 
 organization in ThisBuild := "de.crealytics"
 
-version in ThisBuild := "0.1.0"
+version in ThisBuild := "0.1.1"
 
 scalaVersion in ThisBuild := "2.11.5"
 
