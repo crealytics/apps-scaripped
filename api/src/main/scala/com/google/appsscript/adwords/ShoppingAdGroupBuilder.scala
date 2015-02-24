@@ -25,7 +25,7 @@ import scala.scalajs.js
  *     .build();
  *  var shoppingAdGroup = shoppingAdGroupOperation.getResult();</pre>
  */
-trait ShoppingAdGroupBuilder extends js.Object {
+trait ShoppingAdGroupBuilder extends Builder[ShoppingAdGroup] {
   /**
    *  Creates a 
    * <a href="adwordsapp_shoppingadgroup.html">ShoppingAdGroup</a>
@@ -33,7 +33,7 @@ trait ShoppingAdGroupBuilder extends js.Object {
    * <a href="adwordsapp_shoppingadgroupoperation.html">ShoppingAdGroupOperation</a>
    *  that can be used to get the new shopping ad group (or access any associated errors if creation failed).
    */
-  def build(): ShoppingAdGroupOperation = js.native
+  override def build(): Operation[ShoppingAdGroup] = js.native
   /**  Sets the bidding strategy of the new shopping ad group to the specified value. */
   def withBiddingStrategy(biddingStrategy: BiddingStrategy): ShoppingAdGroupBuilder = js.native
   /**

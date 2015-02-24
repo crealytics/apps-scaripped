@@ -41,7 +41,7 @@ import scala.scalajs.js
  *    var errors = phoneNumberOperation.getErrors();
  *  }</pre>
  */
-trait PhoneNumberBuilder extends js.Object {
+trait PhoneNumberBuilder extends Builder[PhoneNumber] {
   /**
    *  Creates a 
    * <a href="adwordsapp_phonenumber.html">PhoneNumber</a>
@@ -49,7 +49,7 @@ trait PhoneNumberBuilder extends js.Object {
    * <a href="adwordsapp_phonenumberoperation.html">PhoneNumberOperation</a>
    *  that can be used to get the new phone number (or access any associated errors if creation failed).
    */
-  def build(): PhoneNumberOperation = js.native
+  override def build(): Operation[PhoneNumber] = js.native
   /**
    *  Returns the newly created phone number.
    * <aside class="warning">

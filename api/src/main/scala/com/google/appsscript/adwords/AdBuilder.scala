@@ -29,7 +29,7 @@ import scala.scalajs.js
  *  
  * <p>Note that it is only necessary to call <a href="adwordsapp_adoperation.html#getResult_0">AdOperation.getResult()</a> if you need to access the actual ad for further processing (for instance, one can attach a label to the newly created ad), otherwise, calling <a href="adwordsapp_adbuilder.html#build_0">AdBuilder.build()</a> on the <code>AdBuilder</code> is sufficient to ensure that the ad is created. </p>
  */
-trait AdBuilder extends js.Object {
+trait AdBuilder extends Builder[Ad] {
   /**
    *  Creates an 
    * <a href="adwordsapp_ad.html">Ad</a>
@@ -37,7 +37,7 @@ trait AdBuilder extends js.Object {
    * <code>AdOperation</code>
    *  that can be used to get the new ad (or access any associated errors if creation failed).
    */
-  def build(): AdOperation = js.native
+  override def build(): Operation[Ad] = js.native
   /**  Sets the first line of the new ad's description to the specified value. This field is required. */
   def withDescription1(description1: String): AdBuilder = js.native
   /**  Sets the second line of the new ad's description to the specified value. This field is required. */

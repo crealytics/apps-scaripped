@@ -33,7 +33,7 @@ trait ProductAdBuilder extends js.Object {
    * <code>ProductAdOperation</code>
    *  that can be used to get the new product ad (or access any associated errors if creation failed).
    */
-  def build(): ProductAdOperation = js.native
+  def build(): Operation[ProductAd] = js.native
   /**
    *  Sets the new product ad's device preference to mobile or clears it. This field is optional and defaults to 
    * <code>false</code>

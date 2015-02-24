@@ -39,7 +39,7 @@ import scala.scalajs.js
  *    var errors = calloutOperation.getErrors();
  *  }</pre>
  */
-trait CalloutBuilder extends js.Object {
+trait CalloutBuilder extends Builder[Callout] {
   /**
    *  Creates a 
    * <a href="adwordsapp_callout.html">Callout</a>
@@ -47,7 +47,7 @@ trait CalloutBuilder extends js.Object {
    * <a href="adwordsapp_calloutoperation.html">CalloutOperation</a>
    *  that can be used to get the new callout (or access any associated errors if creation failed).
    */
-  def build(): CalloutOperation = js.native
+  override def build(): Operation[Callout] = js.native
   /**
    *  Sets the callout's end date from either an object containing year, month, and day fields, or an 8-digit string in 
    * <code>YYYYMMDD</code>

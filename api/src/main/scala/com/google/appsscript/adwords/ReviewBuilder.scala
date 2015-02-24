@@ -42,7 +42,7 @@ import scala.scalajs.js
  *    var errors = reviewOperation.getErrors();
  *  }</pre>
  */
-trait ReviewBuilder extends js.Object {
+trait ReviewBuilder extends Builder[Review] {
   /**
    *  Creates a 
    * <a href="adwordsapp_review.html">Review</a>
@@ -50,7 +50,7 @@ trait ReviewBuilder extends js.Object {
    * <a href="adwordsapp_reviewoperation.html">ReviewOperation</a>
    *  that can be used to get the new review (or access any associated errors if creation failed).
    */
-  def build(): ReviewOperation = js.native
+  override def build(): Operation[Review] = js.native
   /**
    *  Sets the review's end date from either an object containing year, month, and day fields, or an 8-digit string in 
    * <code>YYYYMMDD</code>

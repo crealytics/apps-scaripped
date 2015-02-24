@@ -25,7 +25,7 @@ import scala.scalajs.js
  *     .build();
  *  var adGroup = adGroupOperation.getResult();</pre>
  */
-trait AdGroupBuilder extends js.Object {
+trait AdGroupBuilder extends Builder[AdGroup] {
   /**
    *  Creates an 
    * <a href="adwordsapp_adgroup.html">AdGroup</a>
@@ -33,7 +33,7 @@ trait AdGroupBuilder extends js.Object {
    * <a href="adwordsapp_adgroupoperation.html">AdGroupOperation</a>
    *  that can be used to get the new ad group (or access any associated errors if creation failed).
    */
-  def build(): AdGroupOperation = js.native
+  override def build(): Operation[AdGroup] = js.native
   /**
    *  Returns the newly created ad group.
    * <aside class="warning">

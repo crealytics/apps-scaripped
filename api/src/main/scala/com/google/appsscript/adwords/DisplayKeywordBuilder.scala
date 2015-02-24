@@ -26,7 +26,7 @@ import scala.scalajs.js
  *    .withCpc(0.50)                // optional
  *    .build()                      // create the display keyword</pre>
  */
-trait DisplayKeywordBuilder extends js.Object {
+trait DisplayKeywordBuilder extends Builder[DisplayKeyword] {
   /**
    *  Builds the display keyword. Returns a 
    * <a href="adwordsapp_displaykeywordoperation.html">DisplayKeywordOperation</a>
@@ -34,7 +34,7 @@ trait DisplayKeywordBuilder extends js.Object {
    * <a href="adwordsapp_displaykeyword.html">DisplayKeyword</a>
    * .
    */
-  def build(): DisplayKeywordOperation = js.native
+  override def build(): Operation[DisplayKeyword] = js.native
   /**
    *  Builds the excluded display keyword. Returns an 
    * <a href="adwordsapp_excludeddisplaykeywordoperation.html">ExcludedDisplayKeywordOperation</a>

@@ -40,7 +40,7 @@ import scala.scalajs.js
  *    var errors = sitelinkOperation.getErrors();
  *  }</pre>
  */
-trait SitelinkBuilder extends js.Object {
+trait SitelinkBuilder extends Builder[Sitelink] {
   /**
    *  Creates a 
    * <a href="adwordsapp_sitelink.html">Sitelink</a>
@@ -48,7 +48,7 @@ trait SitelinkBuilder extends js.Object {
    * <a href="adwordsapp_sitelinkoperation.html">SitelinkOperation</a>
    *  that can be used to get the new sitelink (or access any associated errors if creation failed).
    */
-  def build(): SitelinkOperation = js.native
+  override def build(): Operation[Sitelink] = js.native
   /**
    *  Returns the newly created sitelink.
    * <aside class="warning">

@@ -42,7 +42,7 @@ import scala.scalajs.js
  *    var errors = mobileAppOperation.getErrors();
  *  }</pre>
  */
-trait MobileAppBuilder extends js.Object {
+trait MobileAppBuilder extends Builder[MobileApp] {
   /**
    *  Creates a 
    * <a href="adwordsapp_mobileapp.html">MobileApp</a>
@@ -50,7 +50,7 @@ trait MobileAppBuilder extends js.Object {
    * <a href="adwordsapp_mobileappoperation.html">MobileAppOperation</a>
    *  that can be used to get the new mobile app (or access any associated errors if creation failed).
    */
-  def build(): MobileAppOperation = js.native
+  override def build(): Operation[MobileApp] = js.native
   /**
    *  Returns the newly created mobile app.
    * <aside class="warning">

@@ -27,7 +27,7 @@ import scala.scalajs.js
  *  
  * <p> Note that it is only necessary to call <a href="adwordsapp_keywordoperation.html#getResult_0">KeywordOperation.getResult()</a> if you need to access the actual keyword for further processing (for instance, one can attach a label to the newly created keyword), otherwise, calling <a href="adwordsapp_keywordbuilder.html#build_0">KeywordBuilder.build()</a> on the <code>KeywordBuilder</code> is sufficient to ensure that the Keyword is created.</p>
  */
-trait KeywordBuilder extends js.Object {
+trait KeywordBuilder extends Builder[Keyword] {
   /**
    *  Creates a 
    * <a href="adwordsapp_keyword.html">Keyword</a>
@@ -35,7 +35,7 @@ trait KeywordBuilder extends js.Object {
    * <a href="adwordsapp_keywordoperation.html">KeywordOperation</a>
    *  that can be used to get the new keyword (or access any associated errors if creation failed).
    */
-  def build(): KeywordOperation = js.native
+  override def build(): Operation[Keyword] = js.native
   /**  Sets the bidding strategy of the new keyword to the specified value. */
   def withBiddingStrategy(biddingStrategy: BiddingStrategy): KeywordBuilder = js.native
   /**
