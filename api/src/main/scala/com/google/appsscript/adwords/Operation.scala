@@ -1,18 +1,22 @@
 package com.google.appsscript.adwords
 
-import com.google.appsscript.base._
-
-import com.google.appsscript.charts._
-
-import com.google.appsscript.drive._
-
-import com.google.appsscript.spreadsheet._
-
-import com.google.appsscript.drive._
-
 import scala.scalajs.js
 
 /** Unknown type which is not further specified in API */
-trait Operation extends js.Object {
-  ()
+trait Operation[T] extends js.Object {
+  /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the AdCustomizerItem. */
+  def getErrors(): js.Array[String] = js.native
+  /**
+   *  Returns the newly created item, or
+   * <code>null</code>
+   *  if the operation was unsuccessful.
+   */
+  def getResult(): T = js.native
+  /**
+   *  Returns
+   * <code>true</code>
+   *  if the operation was successful.
+   */
+  def isSuccessful(): Boolean = js.native
+
 }

@@ -22,19 +22,4 @@ import scala.scalajs.js
  * <a href="adwordsapp_shoppingadgroupoperation.html#isSuccessful_0">isSuccessful</a>
  * ) will cause the operation to execute and create the shopping ad group. To make the script more efficient, it's recommended that you store the operations in an array and only call these methods once you've constructed all the operations you want.
  */
-trait ShoppingAdGroupOperation extends js.Object {
-  /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the ShoppingAdGroup. */
-  def getErrors(): js.Array[String] = js.native
-  /**
-   *  Returns the newly created ShoppingAdGroup, or 
-   * <code>null</code>
-   *  if the operation was unsuccessful.
-   */
-  def getResult(): ShoppingAdGroup = js.native
-  /**
-   *  Returns 
-   * <code>true</code>
-   *  if the operation was successful.
-   */
-  def isSuccessful(): Boolean = js.native
-}
+trait ShoppingAdGroupOperation extends Operation[ShoppingAdGroup]

@@ -49,19 +49,4 @@ import scala.scalajs.js
  *    }
  *  }</pre>
  */
-trait AdOperation extends js.Object {
-  /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the Ad. */
-  def getErrors(): js.Array[String] = js.native
-  /**
-   *  Returns the newly created Ad, or 
-   * <code>null</code>
-   *  if the operation was unsuccessful.
-   */
-  def getResult(): Ad = js.native
-  /**
-   *  Returns 
-   * <code>true</code>
-   *  if the operation was successful.
-   */
-  def isSuccessful(): Boolean = js.native
-}
+trait AdOperation extends Operation[Ad]

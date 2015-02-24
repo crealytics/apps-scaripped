@@ -44,19 +44,4 @@ import scala.scalajs.js
  *    }
  *  }</pre>
  */
-trait KeywordOperation extends js.Object {
-  /**  Returns an empty array if the operation was successful, otherwise returns the list of errors encountered when trying to create the Keyword. */
-  def getErrors(): js.Array[String] = js.native
-  /**
-   *  Returns the newly created Keyword, or 
-   * <code>null</code>
-   *  if the operation was unsuccessful.
-   */
-  def getResult(): Keyword = js.native
-  /**
-   *  Returns 
-   * <code>true</code>
-   *  if the operation was successful.
-   */
-  def isSuccessful(): Boolean = js.native
-}
+trait KeywordOperation extends Operation[Keyword]

@@ -31,7 +31,7 @@ trait ShoppingAdGroup extends js.Object {
   /**  Provides access to this shopping ad group's bidding fields. */
   def bidding(): ShoppingAdGroupBidding = js.native
   /**  Creates the root product group of the shopping ad group (if one doesn't already exist). Newly constructed shopping ad groups as well as ones modified by other means may not have any product groups. */
-  def createRootProductGroup(): Operation = js.native
+  def createRootProductGroup(): Operation[ProductGroup] = js.native
   /**
    *  Enables the shopping ad group. 
    * <p>Returns nothing.</p>
