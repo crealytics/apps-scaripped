@@ -42,7 +42,7 @@ trait TopicBuilder extends Builder[Topic] {
    * <a href="adwordsapp_excludedtopic.html">ExcludedTopic</a>
    * .
    */
-  def exclude(): ExcludedTopicOperation = js.native
+  def exclude(): Operation[ExcludedTopic] = js.native
   /**  Sets the max CPC bid of the new topic to the specified value. */
   def withCpc(cpc: Double): TopicBuilder = js.native
   /**  Sets the max CPM bid of the new topic to the specified value. */

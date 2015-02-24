@@ -43,7 +43,7 @@ trait AudienceBuilder extends Builder[Audience] {
    * <a href="adwordsapp_excludedaudience.html">ExcludedAudience</a>
    * .
    */
-  def exclude(): ExcludedAudienceOperation = js.native
+  def exclude(): Operation[ExcludedAudience] = js.native
   /**  Sets the audience ID of the audience. This field is required. User List IDs (List IDs) are available on the details page of a User List (found under the Audiences section of the Shared Library). */
   def withAudienceId(audienceId: Long): AudienceBuilder = js.native
   /**

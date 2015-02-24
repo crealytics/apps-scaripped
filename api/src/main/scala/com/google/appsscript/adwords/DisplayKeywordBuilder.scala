@@ -42,7 +42,7 @@ trait DisplayKeywordBuilder extends Builder[DisplayKeyword] {
    * <a href="adwordsapp_excludeddisplaykeyword.html">ExcludedDisplayKeyword</a>
    * .
    */
-  def exclude(): ExcludedDisplayKeywordOperation = js.native
+  def exclude(): Operation[ExcludedDisplayKeyword] = js.native
   /**  Sets the max CPC bid of the new display keyword to the specified value. */
   def withCpc(cpc: Double): DisplayKeywordBuilder = js.native
   /**  Sets the max CPM bid of the new display keyword to the specified value. */

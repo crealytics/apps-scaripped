@@ -41,7 +41,7 @@ trait PlacementBuilder extends Builder[Placement] {
    * <a href="adwordsapp_excludedplacement.html">ExcludedPlacement</a>
    * .
    */
-  def exclude(): ExcludedPlacementOperation = js.native
+  def exclude(): Operation[ExcludedPlacement] = js.native
   /**  Sets the max CPC bid of the new placement to the specified value. */
   def withCpc(cpc: Double): PlacementBuilder = js.native
   /**  Sets the max CPM bid of the new placement to the specified value. */

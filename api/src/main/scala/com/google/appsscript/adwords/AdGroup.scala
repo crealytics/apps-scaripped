@@ -23,27 +23,27 @@ trait AdGroup extends js.Object {
    *  Adds a callout to this ad group. See also 
    * <a href="adwordsapp_extensions.html#newCalloutBuilder_0">Extensions.newCalloutBuilder()</a>
    */
-  def addCallout(calloutExtension: Callout): CalloutOperation = js.native
+  def addCallout(calloutExtension: Callout): Operation[Callout] = js.native
   /**
    *  Adds a mobile app to this ad group. See also 
    * <a href="adwordsapp_extensions.html#newMobileAppBuilder_0">Extensions.newMobileAppBuilder()</a>
    */
-  def addMobileApp(mobileAppExtension: MobileApp): MobileAppOperation = js.native
+  def addMobileApp(mobileAppExtension: MobileApp): Operation[MobileApp] = js.native
   /**
    *  Adds a phone number to this ad group. See also 
    * <a href="adwordsapp_extensions.html#newPhoneNumberBuilder_0">Extensions.newPhoneNumberBuilder()</a>
    */
-  def addPhoneNumber(phoneNumberExtension: PhoneNumber): PhoneNumberOperation = js.native
+  def addPhoneNumber(phoneNumberExtension: PhoneNumber): Operation[PhoneNumber] = js.native
   /**
    *  Adds a review to this ad group. See also 
    * <a href="adwordsapp_extensions.html#newReviewBuilder_0">Extensions.newReviewBuilder()</a>
    */
-  def addReview(reviewExtension: Review): ReviewOperation = js.native
+  def addReview(reviewExtension: Review): Operation[Review] = js.native
   /**
    *  Adds a sitelink to this ad group. See also 
    * <a href="adwordsapp_extensions.html#newSitelinkBuilder_0">Extensions.newSitelinkBuilder()</a>
    */
-  def addSitelink(sitelinkExtension: Sitelink): SitelinkOperation = js.native
+  def addSitelink(sitelinkExtension: Sitelink): Operation[Sitelink] = js.native
   /**  Returns the selector of all ads in the ad group. */
   def ads(): AdSelector = js.native
   /**

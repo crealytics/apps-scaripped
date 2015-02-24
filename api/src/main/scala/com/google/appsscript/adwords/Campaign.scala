@@ -82,7 +82,7 @@ trait Campaign extends js.Object {
    *  Adds a callout extension to this campaign. See also 
    * <a href="adwordsapp_extensions.html#newCalloutBuilder_0">Extensions.newCalloutBuilder()</a>
    */
-  def addCallout(calloutExtension: Callout): CalloutOperation = js.native
+  def addCallout(calloutExtension: Callout): Operation[Callout] = js.native
   /**
    *  Creates a location target in this campaign from a location object. Once created, the campaign will start showing ads to the location with the given location ID. 
    * <p>When called with one argument, <code>addLocation</code> supports three kinds of input: </p>
@@ -127,12 +127,12 @@ trait Campaign extends js.Object {
    *  Adds a mobile app extension to this campaign. See also 
    * <a href="adwordsapp_extensions.html#newMobileAppBuilder_0">Extensions.newMobileAppBuilder()</a>
    */
-  def addMobileApp(mobileAppExtension: MobileApp): MobileAppOperation = js.native
+  def addMobileApp(mobileAppExtension: MobileApp): Operation[MobileApp] = js.native
   /**
    *  Adds a phone number extension to this campaign. See also 
    * <a href="adwordsapp_extensions.html#newPhoneNumberBuilder_0">Extensions.newPhoneNumberBuilder()</a>
    */
-  def addPhoneNumber(phoneNumberExtension: PhoneNumber): PhoneNumberOperation = js.native
+  def addPhoneNumber(phoneNumberExtension: PhoneNumber): Operation[PhoneNumber] = js.native
   /**
    *  Creates a proximity target in this campaign from a proximity object. Once created, the campaign will start showing ads to geographical points within the specified radius of the specified central point. 
    * <p>When called with one argument, <code>addProximity</code> supports two kinds of input: </p>
@@ -203,12 +203,12 @@ trait Campaign extends js.Object {
    *  Adds a review extension to this campaign. See also 
    * <a href="adwordsapp_extensions.html#newReviewBuilder_0">Extensions.newReviewBuilder()</a>
    */
-  def addReview(reviewExtension: Review): ReviewOperation = js.native
+  def addReview(reviewExtension: Review): Operation[Review] = js.native
   /**
    *  Adds a sitelink extension to this campaign. See also 
    * <a href="adwordsapp_extensions.html#newSitelinkBuilder_0">Extensions.newSitelinkBuilder()</a>
    */
-  def addSitelink(sitelinkExtension: Sitelink): SitelinkOperation = js.native
+  def addSitelink(sitelinkExtension: Sitelink): Operation[Sitelink] = js.native
   /**  Returns the selector of all ads in the campaign. */
   def ads(): AdSelector = js.native
   /**
