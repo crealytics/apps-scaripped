@@ -17,12 +17,12 @@ object CodeGenerator {
         else
           m.parameters
         val params = paramsWithDummy.map { param =>
-          PARAM(param.name, param.tpe): ValDef
+          PARAM(param.name, param.`type`): ValDef
         }
         val withParams = withoutParams.withParams(params)
         ((withParams := REF("js.native")): Tree).withDoc(m.description)
       }
-      val baseClassDef = cls.tpe match {
+      val baseClassDef = cls.`type` match {
         case "object" => OBJECTDEF(cls.name)
         case _ => TRAITDEF(cls.name)
       }
