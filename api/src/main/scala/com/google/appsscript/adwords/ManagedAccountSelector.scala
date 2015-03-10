@@ -29,7 +29,7 @@ import scala.scalajs.js
  *    var account = accountIterator.next();
  *  }</pre>
  */
-trait ManagedAccountSelector extends js.Object {
+trait ManagedAccountSelector extends Selector[ManagedAccountSelector] {
   /**
    *  Executes the function specified by 
    * <code>functionName</code>
@@ -270,7 +270,7 @@ trait ManagedAccountSelector extends js.Object {
    *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="mccapp_managedaccountselector.html#forDateRange_1">ManagedAccountSelector.forDateRange(String)</a> or <a href="mccapp_managedaccountselector.html#forDateRange_2">ManagedAccountSelector.forDateRange(Object, Object)</a>. </p>
    */
-  def withCondition(condition: String): ManagedAccountSelector = js.native
+  override def withCondition(condition: String): ManagedAccountSelector = js.native
   /**
    *  Restricts this selector to return only customers with the given customer IDs. 
    * <pre class="prettyprint">
@@ -300,10 +300,4 @@ trait ManagedAccountSelector extends js.Object {
    * </aside>
    */
   def withIds(ids: Seq[Long]): ManagedAccountSelector = js.native
-  /**
-   *  Specifies limit for the selector to use. For instance, 
-   * <code>withLimit(50)</code>
-   *  returns only the first 50 entities.
-   */
-  def withLimit(limit: Int): ManagedAccountSelector = js.native
 }

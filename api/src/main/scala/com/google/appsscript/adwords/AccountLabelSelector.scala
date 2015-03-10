@@ -26,7 +26,7 @@ import scala.scalajs.js
  *    var accountLabel = accountLabelIterator.next();
  *  }</pre>
  */
-trait AccountLabelSelector extends js.Object {
+trait AccountLabelSelector extends Selector[AccountLabelSelector] {
   /**  Fetches the requested account labels and returns an iterator. */
   def get(): AccountLabelIterator = js.native
   /**
@@ -75,7 +75,7 @@ trait AccountLabelSelector extends js.Object {
    *  </tbody>
    * </table>
    */
-  def withCondition(condition: String): AccountLabelSelector = js.native
+  override def withCondition(condition: String): AccountLabelSelector = js.native
   /**
    *  Restricts this selector to return only account labels with the given account label IDs. 
    * <pre class="prettyprint">
