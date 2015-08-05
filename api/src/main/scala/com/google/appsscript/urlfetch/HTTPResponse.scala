@@ -13,7 +13,7 @@ trait HTTPResponse extends js.Object {
   /** Return the data inside this object as a blob. */
   def getBlob(): Blob = js.native
   /** Gets the raw binary content of an HTTP response. */
-  def getContent(): Seq[Byte] = js.native
+  def getContent(): js.Array[Byte] = js.native
   /** Gets the content of an HTTP response encoded as a string. */
   def getContentText(): String = js.native
   /** Returns the content of an HTTP response encoded as a string of the given charset. */

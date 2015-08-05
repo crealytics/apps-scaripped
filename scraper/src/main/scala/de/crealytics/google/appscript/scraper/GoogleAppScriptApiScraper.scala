@@ -33,7 +33,7 @@ trait ApiScraper {
     val renamedClass = ClassRenamings(className)
     Option(arrayBrackets) match {
       case None => renamedClass
-      case Some("[]") => s"Seq[${renameType(renamedClass)}]"
+      case Some("[]") => s"js.Array[${renameType(renamedClass)}]"
       case Some("...") => s"${renameType(renamedClass)}*"
       case _ => throw new RuntimeException(s"Unknown type: tpe")
     }
