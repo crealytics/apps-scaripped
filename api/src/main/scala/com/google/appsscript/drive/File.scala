@@ -6,7 +6,7 @@ import scala.scalajs.js
 
 /**
  * File A file in Google Drive. Files can be accessed or created from DriveApp. 
- *  // Trash every untitled spreadsheet that hasn't been updated in a week. 
+ *  // Trash every untitled spreadsheet that hasn't been updated in a week.
  *  var files = DriveApp.getFilesByName('Untitled spreadsheet');
  *  while (files.hasNext()) {
  *    var file = files.next();

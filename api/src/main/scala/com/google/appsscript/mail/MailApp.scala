@@ -18,7 +18,7 @@ trait MailApp extends js.Object {
   def sendEmail(to: String, replyTo: String, subject: String, body: String): Unit = js.native
 }
 
-/** Entry point for the Mcc API */
+/** Entry point for the Mail API */
 object MailApp extends MailApp {
   ()
 }

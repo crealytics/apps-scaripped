@@ -40,7 +40,6 @@ import scala.scalajs.js
  *        .setSortValues(true)
  *        .setLabelStacking(Charts.Orientation.VERTICAL)
  *        .setCaption('Choose categories...')
- *        .setSortValues(true)
  *        .build();
  *    
  *    var panel = app.createVerticalPanel().setSpacing(10);

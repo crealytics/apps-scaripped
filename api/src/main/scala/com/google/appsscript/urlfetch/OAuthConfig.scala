@@ -4,32 +4,32 @@ import com.google.appsscript.base._
 
 import scala.scalajs.js
 
-/** OAuthConfig Represents configuration settings for an OAuth-enabled remote service. See also UrlFetchApp */
+/** OAuthConfig Deprecated. This class is deprecated and should not be used in new scripts. Represents configuration settings for an OAuth-enabled remote service. See also UrlFetchApp */
 trait OAuthConfig extends js.Object {
-  /** Returns the URL used to get the access token from. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def getAccessTokenUrl(): String = js.native
-  /** Returns the authorization URL. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def getAuthorizationUrl(): String = js.native
-  /** Returns the HTTP method used to complete the OAuth protocol. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def getMethod(): String = js.native
-  /** Returns the location of the parameters in the request when retreiving the request token. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def getParamLocation(): String = js.native
-  /** Returns the URL used to get the request token. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def getRequestTokenUrl(): String = js.native
-  /** Returns the name used to reference this service. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def getServiceName(): String = js.native
-  /** Sets the URL to get an OAuth access token from. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setAccessTokenUrl(url: String): Unit = js.native
-  /** Sets the URL for the OAuth authorization service. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setAuthorizationUrl(url: String): Unit = js.native
-  /** Sets the consumer key (provided when you register with an OAuth service). */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setConsumerKey(consumerKey: String): Unit = js.native
-  /** Sets the consumer secret (provided when you register with an OAuth service). */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setConsumerSecret(consumerSecret: String): Unit = js.native
-  /** Sets the HTTP method used to complete the OAuth protocol. The default method is 'get'. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setMethod(method: String): Unit = js.native
-  /** Sets the parameter location in OAuth protocol requests. The default parameter location is 'auth-header'. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setParamLocation(location: String): Unit = js.native
-  /** Sets the request URL for the OAuth service. */
+  /** Deprecated. This function is deprecated and should not be used in new scripts. */
   def setRequestTokenUrl(url: String): Unit = js.native
 }

@@ -9,19 +9,19 @@ import scala.scalajs.js
 /** Spreadsheet This class allows users to access and modify Google Sheets files. Common operations are adding new sheets and adding collaborators. */
 trait Spreadsheet extends js.Object {
   /** Adds the given user to the list of editors for the Spreadsheet. If the user was already on the list of viewers, this method promotes the user out of the list of viewers. */
-  def addEditor(emailAddress: String): Unit = js.native
+  def addEditor(emailAddress: String): Spreadsheet = js.native
   /** Adds the given user to the list of editors for the Spreadsheet. If the user was already on the list of viewers, this method promotes the user out of the list of viewers. */
-  def addEditor(user: User): Unit = js.native
+  def addEditor(user: User): Spreadsheet = js.native
   /** Adds the given array of users to the list of editors for the Spreadsheet. If any of the users were already on the list of viewers, this method promotes them out of the list of viewers. */
-  def addEditors(emailAddresses: js.Array[String]): Unit = js.native
+  def addEditors(emailAddresses: js.Array[String]): Spreadsheet = js.native
   /** Creates a new menu in the Spreadsheet UI. Each menu entry runs a user-defined function. Usually, you will want to call it from the onOpen function so that the menu is automatically created when the Spreadsheet is loaded. */
   def addMenu(name: String, subMenus: js.Array[AnyRef]): Unit = js.native
   /** Adds the given user to the list of viewers for the Spreadsheet. If the user was already on the list of editors, this method has no effect. */
-  def addViewer(emailAddress: String): Unit = js.native
+  def addViewer(emailAddress: String): Spreadsheet = js.native
   /** Adds the given user to the list of viewers for the Spreadsheet. If the user was already on the list of editors, this method has no effect. */
-  def addViewer(user: User): Unit = js.native
+  def addViewer(user: User): Spreadsheet = js.native
   /** Adds the given array of users to the list of viewers for the Spreadsheet. If any of the users were already on the list of editors, this method has no effect for them. */
-  def addViewers(emailAddresses: js.Array[String]): Unit = js.native
+  def addViewers(emailAddresses: js.Array[String]): Spreadsheet = js.native
   /** Appends a row to the spreadsheet. This operation is atomic; it prevents issues where a user asks for the last row, and then writes to that row, and an intervening mutation occurs between getting the last row and writing to it. */
   def appendRow(rowContents: js.Array[AnyRef]): Sheet = js.native
   /** Sets the width of the given column to fit its contents */
@@ -76,6 +76,8 @@ trait Spreadsheet extends js.Object {
   def getNumSheets(): Int = js.native
   /** Returns the owner of the document. */
   def getOwner(): User = js.native
+  /** Gets an array of objects representing all protected ranges or sheets in the spreadsheet. */
+  def getProtections(`type`: ProtectionType): js.Array[Protection] = js.native
   /** Returns the range as specified in A1 notation or R1C1 notation. */
   def getRange(a1Notation: String): Range = js.native
   /** Returns a named range, or null if no range with the given name is found. If multiple sheets of the spreadsheet use the same range name, specify the sheet name without additional quotation marks — for example, getRangeByName('TaxRates') or getRangeByName('Sheet Name!TaxRates'), but not getRangeByName('"Sheet Name"!TaxRates'). */
@@ -88,8 +90,6 @@ trait Spreadsheet extends js.Object {
   def getSheetId(): Int = js.native
   /** Returns the sheet name. */
   def getSheetName(): String = js.native
-  /** Returns a PageProtection instance describing the permissions for the current sheet. */
-  def getSheetProtection(): PageProtection = js.native
   /** Returns the rectangular grid of values for this range starting at the given coordinates. A -1 value given as the row or column position is equivalent to getting the very last row or column that has data in the sheet. */
   def getSheetValues(startRow: Int, startColumn: Int, numRows: Int, numColumns: Int): js.Array[js.Array[AnyRef]] = js.native
   /** Gets all the sheets in this spreadsheet. */
@@ -149,17 +149,17 @@ trait Spreadsheet extends js.Object {
   /** Moves the active sheet to the given position in the list of sheets. Throws an exception if the position is negative or greater than the number of sheets. */
   def moveActiveSheet(pos: Int): Unit = js.native
   /** Removes the given user from the list of editors for the Spreadsheet. This method does not block users from accessing the Spreadsheet if they belong to a class of users who have general access — for example, if the Spreadsheet is shared with the user's entire domain. */
-  def removeEditor(emailAddress: String): Unit = js.native
+  def removeEditor(emailAddress: String): Spreadsheet = js.native
   /** Removes the given user from the list of editors for the Spreadsheet. This method does not block users from accessing the Spreadsheet if they belong to a class of users who have general access — for example, if the Spreadsheet is shared with the user's entire domain. */
-  def removeEditor(user: User): Unit = js.native
+  def removeEditor(user: User): Spreadsheet = js.native
   /** Removes a menu that was added by addMenu(name, subMenus). The name argument should have the same value as the corresponding call to addMenu(name, subMenus). */
   def removeMenu(name: String): Unit = js.native
   /** Deletes a named range with the given name. Throws an exception if no range with the given name is found in the spreadsheet. */
   def removeNamedRange(name: String): Unit = js.native
   /** Removes the given user from the list of viewers and commenters for the Spreadsheet. This method has no effect if the user is an editor, not a viewer or commenter. This method also does not block users from accessing the Spreadsheet if they belong to a class of users who have general access — for example, if the Spreadsheet is shared with the user's entire domain. */
-  def removeViewer(emailAddress: String): Unit = js.native
+  def removeViewer(emailAddress: String): Spreadsheet = js.native
   /** Removes the given user from the list of viewers and commenters for the Spreadsheet. This method has no effect if the user is an editor, not a viewer. This method also does not block users from accessing the Spreadsheet if they belong to a class of users who have general access — for example, if the Spreadsheet is shared with the user's entire domain. */
-  def removeViewer(user: User): Unit = js.native
+  def removeViewer(user: User): Spreadsheet = js.native
   /** Renames the document. */
   def rename(newName: String): Unit = js.native
   /** Renames the current active sheet to the given new name. */
@@ -182,8 +182,6 @@ trait Spreadsheet extends js.Object {
   def setNamedRange(name: String, range: Range): Unit = js.native
   /** Sets the row height of the given row in pixels. */
   def setRowHeight(rowPosition: Int, height: Int): Sheet = js.native
-  /** Sets the permissions for the current sheet. */
-  def setSheetProtection(permissions: PageProtection): Unit = js.native
   /** Sets the spreadsheet locale. */
   def setSpreadsheetLocale(locale: String): Unit = js.native
   /** Sets the time zone for the spreadsheet. */
@@ -206,10 +204,14 @@ trait Spreadsheet extends js.Object {
   def unhideRow(row: Range): Unit = js.native
   /** Updates a menu that was added by addMenu(name, subMenus). Works exactly like addMenu(name, subMenus). */
   def updateMenu(name: String, subMenus: js.Array[AnyRef]): Unit = js.native
+  /** Deprecated. For spreadsheets created in the newer version of Google Sheets, use Sheet.getProtections(type), which returns the more powerful Protection class. Although this method is deprecated, it will remain available for compatibility with the older version of Sheets */
+  def getSheetProtection(): PageProtection = js.native
   /** Deprecated. As of January 2014 this function is deprecated and not available in the new version of Google Sheets. */
   def isAnonymousView(): Boolean = js.native
   /** Deprecated. As of January 2014 this function is deprecated and not available in the new version of Google Sheets. */
   def isAnonymousWrite(): Boolean = js.native
   /** Deprecated. As of January 2014 this function is deprecated and not available in the new version of Google Sheets. */
   def setAnonymousAccess(anonymousReadAllowed: Boolean, anonymousWriteAllowed: Boolean): Unit = js.native
+  /** Deprecated. For spreadsheets created in the newer version of Google Sheets, use Sheet.protect(), which returns the more powerful Protection class. Although this method is deprecated, it will remain available for compatibility with the older version of Sheets */
+  def setSheetProtection(permissions: PageProtection): Unit = js.native
 }

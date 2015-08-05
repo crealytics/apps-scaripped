@@ -14,6 +14,8 @@ trait Range extends js.Object {
   def activate(): Range = js.native
   /** Break any multi-column cells in the range into individual cells again. Calling this function on a range is equivalent to selecting a range and clicking Format -> Merge -> Unmerge. */
   def breakApart(): Range = js.native
+  /** Determines whether the user has permission to edit every cell in the range. The spreadsheet owner is always able to edit protected ranges and sheets. */
+  def canEdit(): Boolean = js.native
   /** Clears the range of contents, formats, and data-validation rules. */
   def clear(): Range = js.native
   /** Clears the range of contents, format, data-validation rules, and/or comments, as specified with the given advanced options. By default all data will be cleared. */
@@ -136,6 +138,14 @@ trait Range extends js.Object {
   def getWraps(): js.Array[js.Array[Boolean]] = js.native
   /** Returns true if the range is totally blank. */
   def isBlank(): Boolean = js.native
+  /** Determines whether the end of the range is bound to a particular column. For example, for the ranges A1:B10 or B:B, which are bound to columns at the end of the range, this method returns true; for the ranges 3:7 or A1:5, which are bound only to particular rows at the end of the range, this method returns false. */
+  def isEndColumnBounded(): Boolean = js.native
+  /** Determines whether the end of the range is bound to a particular row. For example, for the ranges A1:B10 or 3:7, which are bound to rows at the end of the range, this method returns true; for the ranges B:B or A1:C, which are bound only to particular columns at the end of the range, this method returns false. */
+  def isEndRowBounded(): Boolean = js.native
+  /** Determines whether the start of the range is bound to a particular column. For example, for the ranges A1:B10 or B:B, which are bound to columns at the start of the range, this method returns true; for the range 3:7, which is bound only to a row at the start of the range, this method returns false. */
+  def isStartColumnBounded(): Boolean = js.native
+  /** Determines whether the start of the range is bound to a particular row. For example, for the ranges A1:B10 or 3:7, which are bound to rows at the start of the range, this method returns true; for the range B:B, which is bound only to a particular column at the start of the range, this method returns false. */
+  def isStartRowBounded(): Boolean = js.native
   /** Merges the cells in the range together into a single block. */
   def merge(): Range = js.native
   /** Merge the cells in the range across the columns of the range. */
@@ -150,6 +160,8 @@ trait Range extends js.Object {
   def offset(rowOffset: Int, columnOffset: Int, numRows: Int): Range = js.native
   /** Returns a new range that is relative to the current range, whose upper left point is offset from the current range by the given rows and columns, and with the given height and width in cells. */
   def offset(rowOffset: Int, columnOffset: Int, numRows: Int, numColumns: Int): Range = js.native
+  /** Creates an object that can protect the range from being edited except by users who have permission. Until the script actually changes the list of editors for the range (by calling Protection.removeEditor(emailAddress), Protection.removeEditor(user), Protection.removeEditors(emailAddresses), Protection.addEditor(emailAddress), Protection.addEditor(user), Protection.addEditors(emailAddresses), or setting a new value for Protection.setDomainEdit(editable)), the permissions will mirror those of the spreadsheet itself, which effectively means that the range remains unprotected. If the range is already protected, this method creates a new protected range that overlaps the existing one. If a cell is covered by two protected ranges and one of the protected ranges allows a particular user to edit the cell and the other does not, the user will not be able to edit. */
+  def protect(): Protection = js.native
   /** Sets the background color of all cells in the range in CSS notation (like '#ffffff' or 'white'). */
   def setBackground(color: String): Range = js.native
   /** Sets the background to the given RGB color. This is a convenience wrapper for the setBackground call that takes a string color. */

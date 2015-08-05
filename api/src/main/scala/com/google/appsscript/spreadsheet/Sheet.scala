@@ -64,6 +64,8 @@ trait Sheet extends js.Object {
   def getName(): String = js.native
   /** Returns the Spreadsheet that contains this sheet. */
   def getParent(): Spreadsheet = js.native
+  /** Gets an array of objects representing all protected ranges in the sheet, or a single-element array representing the protection on the sheet itself. */
+  def getProtections(`type`: ProtectionType): js.Array[Protection] = js.native
   /** Returns the range with the top left cell at the given coordinates. */
   def getRange(row: Int, column: Int): Range = js.native
   /** Returns the range with the top left cell at the given coordinates, and with the given number of rows. */
@@ -78,8 +80,6 @@ trait Sheet extends js.Object {
   def getSheetId(): Int = js.native
   /** Returns the sheet name. */
   def getSheetName(): String = js.native
-  /** Returns a PageProtection instance describing the permissions for the current sheet. */
-  def getSheetProtection(): PageProtection = js.native
   /** Returns the rectangular grid of values for this range starting at the given coordinates. A -1 value given as the row or column position is equivalent to getting the very last row or column that has data in the sheet. */
   def getSheetValues(startRow: Int, startColumn: Int, numRows: Int, numColumns: Int): js.Array[js.Array[AnyRef]] = js.native
   /** Hides the columns in the given range. */
@@ -134,6 +134,8 @@ trait Sheet extends js.Object {
   def isSheetHidden(): Boolean = js.native
   /** Returns a builder to create a new chart for this sheet. */
   def newChart(): EmbeddedChartBuilder = js.native
+  /** Creates an object that can protect the sheet from being edited except by users who have permission. Until the script actually changes the list of editors for the sheet (by calling Protection.removeEditor(emailAddress), Protection.removeEditor(user), Protection.removeEditors(emailAddresses), Protection.addEditor(emailAddress), Protection.addEditor(user), Protection.addEditors(emailAddresses), or setting a new value for Protection.setDomainEdit(editable)), the permissions will mirror those of the spreadsheet itself, which effectively means that the sheet remains unprotected. If the sheet is already protected, this method returns an object representing its existing protection settings. A protected sheet may include unprotected regions. */
+  def protect(): Protection = js.native
   /** Removes a chart from the parent sheet. */
   def removeChart(chart: EmbeddedChart): Unit = js.native
   /** Sets the active range for the active sheet. */
@@ -152,8 +154,6 @@ trait Sheet extends js.Object {
   def setName(name: String): Sheet = js.native
   /** Sets the row height of the given row in pixels. */
   def setRowHeight(rowPosition: Int, height: Int): Sheet = js.native
-  /** Sets the permissions for the current sheet. */
-  def setSheetProtection(permissions: PageProtection): Unit = js.native
   /** Unhides the column at the given index. */
   def showColumns(columnIndex: Int): Unit = js.native
   /** Unhides one or more consecutive columns starting at the given index. */
@@ -174,4 +174,8 @@ trait Sheet extends js.Object {
   def unhideRow(row: Range): Unit = js.native
   /** Updates the chart on this sheet. */
   def updateChart(chart: EmbeddedChart): Unit = js.native
+  /** Deprecated. For spreadsheets created in the newer version of Google Sheets, use getProtections(type), which returns the more powerful Protection class. Although this method is deprecated, it will remain available for compatibility with the older version of Sheets */
+  def getSheetProtection(): PageProtection = js.native
+  /** Deprecated. For spreadsheets created in the newer version of Google Sheets, use protect(), which returns the more powerful Protection class. Although this method is deprecated, it will remain available for compatibility with the older version of Sheets */
+  def setSheetProtection(permissions: PageProtection): Unit = js.native
 }
