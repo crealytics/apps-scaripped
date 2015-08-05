@@ -62,7 +62,7 @@ object GoogleAppScriptClassScraper extends ApiScraper {
   def scrapeClass(url: String): ApiClass = {
     val browser = new Browser
     val doc = browser.get(url)
-    val apiClassText = (doc >> element("h1.page-title")).text
+    val apiClassText = (doc >> element("h1.devsite-page-title")).text
     val (tpe, apiClassName) = apiClassText.split(" ") match {
       case Array(tpe, apiClassName) => (renameType(tpe), apiClassName)
       case Array(apiClassName) => ("class", apiClassName)
@@ -92,13 +92,13 @@ object GoogleAdWordsScriptScraper extends ApiScraper {
   def scrapeOverview(url: String): Seq[String] = {
     val browser = new Browser
     val doc = browser.get(url)
-    val treeRoot = new Elements((doc >> elements("[title=AdWordsApp],[title=MccApp]")).map(_.parent): _*)
+    val treeRoot = new Elements((doc >> elements("a:contains(AdWordsApp),a:contains(MccApp)")).map(_.parent): _*)
     (treeRoot >> elements("a")).map(_.attr("href"))
   }
   def scrapeClass(url: String): ApiClass = {
     val browser = new Browser
     val doc = browser.get(url)
-    val apiClassText = (doc >> element("h1.page-title")).text
+    val apiClassText = (doc >> element("h1.devsite-page-title")).text
     val (surroundingClass, apiClassName) = apiClassText.split("\\.") match {
       case Array(surroundingClass, apiClassName) => (surroundingClass, apiClassName)
       case Array(apiClassName) => ("", apiClassName)
