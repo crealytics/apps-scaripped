@@ -16,7 +16,7 @@ import net.ceedubs.ficus.Ficus._
 import net.ceedubs.ficus.readers.ArbitraryTypeReader._
 
 object BigTimeScraper extends App {
-  if (args.length != 1)
+  if (args.length < 1)
     throw new IllegalArgumentException("Provide the path in which sources should be generated")
   import com.typesafe.config.ConfigFactory
   case class ImportLink(
@@ -40,10 +40,13 @@ object BigTimeScraper extends App {
   val scrapingConfigs = loadConfigs
 
   def allFromPackage(pkg: String) = s"$pkg._"
-
-  scrapeOverviewUrls(scrapingConfigs.values.toList, args(0))
+  val chosenApis = if(args.length < 2)
+    scrapingConfigs.values.toList
+  else
+    args(1).split(",").map(scrapingConfigs).toList
+  scrapeOverviewUrls(chosenApis.sortBy(_.url), args(0))
   def scrapeOverviewUrls(overviewUrls: List[ImportLink], path: String): Unit = {
-
+    println(s"Scraping the following API URLs:\n${overviewUrls.map(_.url).mkString("\n")}")
     val wd = path.replaceFirst("^/", "").split("/").foldLeft(root)(_ / _)
     rm ! wd
 

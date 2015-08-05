@@ -16,13 +16,16 @@ lazy val exporter = project.dependsOn(scraper)
 
 lazy val generatorPath = settingKey[File]("The path in which to generate API sources.")
 
-lazy val generateApi = taskKey[Unit]("Scrapes the APIs and generates the corresponding Scala code.")
+lazy val generateApi = inputKey[Unit]("Scrapes the APIs and generates the corresponding Scala code.")
 
-generateApi in (Compile) := Def.taskDyn {
+import sbt.complete.DefaultParsers._
+
+generateApi in (Compile) := Def.inputTaskDyn {
+  val apis: Seq[String] = spaceDelimited("<arg>").parsed
   val path = (generatorPath in Compile).value
-  println(s"Generating API files in $path")
-  (runMain in (scraper, Compile)).toTask(s" de.crealytics.google.appscript.scraper.BigTimeScraper ${path}")
-}.value
+  println(s"Generating API files for ${if (apis.isEmpty) "all" else apis.mkString(", ")} in $path")
+  (runMain in (scraper, Compile)).toTask(s" de.crealytics.google.appscript.scraper.BigTimeScraper $path ${apis.mkString(",")}")
+}.evaluated
 
 
 generatorPath in Compile := (sourceManaged in (api, Compile)).value / "scala"
