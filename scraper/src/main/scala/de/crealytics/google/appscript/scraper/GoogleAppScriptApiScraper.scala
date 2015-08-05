@@ -93,7 +93,7 @@ object GoogleAdWordsScriptScraper extends ApiScraper {
     val browser = new Browser
     val doc = browser.get(url)
     val treeRoot = new Elements((doc >> elements("a:contains(AdWordsApp),a:contains(MccApp)")).map(_.parent): _*)
-    (treeRoot >> elements("a")).map(_.attr("href"))
+    (treeRoot >> elements("a.devsite-nav-item")).map(_.attr("href"))
   }
   def scrapeClass(url: String): ApiClass = {
     val browser = new Browser
