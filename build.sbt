@@ -4,7 +4,7 @@ organization in ThisBuild := "de.crealytics"
 
 version in ThisBuild := "0.1.2"
 
-scalaVersion in ThisBuild := "2.11.5"
+scalaVersion in ThisBuild := "2.11.6"
 
 resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
 
@@ -27,8 +27,6 @@ generateApi in (Compile) := Def.taskDyn {
 
 generatorPath in Compile := (sourceManaged in (api, Compile)).value / "scala"
 
-seq(bintraySettings:_*)
-
-bintray.Keys.bintrayOrganization in ThisBuild := Some("crealytics")
+bintrayOrganization in ThisBuild := Some("crealytics")
 
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))

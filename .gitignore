@@ -4,3 +4,4 @@ target/
 .worksheet
 .cache
 .settings/
+.DS_Store
