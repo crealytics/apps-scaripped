@@ -12,6 +12,8 @@ lazy val scraper = project
 
 lazy val api = project.enablePlugins(ScalaJSPlugin)
 
+lazy val exporter = project.dependsOn(scraper)
+
 lazy val generatorPath = settingKey[File]("The path in which to generate API sources.")
 
 lazy val generateApi = taskKey[Unit]("Scrapes the APIs and generates the corresponding Scala code.")
