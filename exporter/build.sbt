@@ -1,7 +1,7 @@
 name := "apps-scaripped-exporter"
 
 libraryDependencies ++= Seq(
-  "com.github.begeric" % "tqlscalameta_2.11" % "0.1-SNAPSHOT",
+  "org.scalameta" %% "scalameta" % "0.1.0-SNAPSHOT",
   "org.json4s" %% "json4s-native" % "3.2.11"
 )
 

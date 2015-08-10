@@ -34,12 +34,5 @@ object ParseAdWordsApi {
     }
     classes
   }
-  import org.json4s.native.Serialization.{ writePretty => toJson }
-  import org.json4s.native.Printer._
-  import native.JsonMethods.render
-
-  implicit val formats = Serialization.formats(NoTypeHints)
-  val ser = toJson(allClasses)
-  write.over(appsScarippedDir / "api" / "src" / "main" / "resources" / "api.json", ser)
 
 }
