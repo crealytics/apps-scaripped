@@ -8,8 +8,7 @@ import scala.language.reflectiveCalls
 import scala.meta.dialects.Scala211
 import scala.collection.mutable.HashMap
 import de.crealytics.google.appscript.api._
-import ammonite.all._
-import ammonite.ops.Path
+import ammonite.ops._
 
 import org.json4s._
 import org.json4s.JsonDSL._

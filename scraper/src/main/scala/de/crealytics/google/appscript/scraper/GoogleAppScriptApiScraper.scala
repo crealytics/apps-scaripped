@@ -10,8 +10,8 @@ import scala.util._
 import scala.collection.JavaConverters._
 
 trait ApiScraper {
-  def scrapeOverview(url: String): Seq[String]
-  def scrapeClass(url: String): ApiClass
+  def scrapeOverview(doc: Document): Seq[String]
+  def scrapeClass(doc: Document): ApiClass
   implicit class RichNodes(val nodes: Seq[Node]) {
     def splitAtType(tpe: String) = nodes.span(!_.nodeName().equals(tpe))
     def findElement(elemType: String) = nodes.find(_.nodeName().equals(elemType)).map(_.asInstanceOf[Element])
@@ -44,24 +44,22 @@ trait ApiScraper {
 }
 
 object GoogleAppScriptClassScraper extends ApiScraper {
-  def scrapeOverview(url: String): Seq[String] = {
-    val browser = new Browser
-    val doc = browser.get(url)
+  def scrapeOverview(doc: Document): Seq[String] = {
     (doc >> elements("table.member.type tr td a")).map(_.attr("href")).filter(_.endsWith(".html"))
   }
   def scrapeAllFromOverview(url: String): Seq[ApiClass] = {
-    val detailUrls = scrapeOverview(url)
+    val browser = new Browser
+    val detailUrls = scrapeOverview(browser.get(url))
     detailUrls.flatMap { du =>
       Try {
-        scrapeClass(url + du)
+        val doc = browser.get(url + du)
+        scrapeClass(doc)
       }.recoverWith {
         case e => Failure(new RuntimeException(s"Could not scrape $du"))
       }.toOption
     }
   }
-  def scrapeClass(url: String): ApiClass = {
-    val browser = new Browser
-    val doc = browser.get(url)
+  def scrapeClass(doc: Document): ApiClass = {
     val apiClassText = (doc >> element("h1.devsite-page-title")).text
     val (tpe, apiClassName) = apiClassText.split(" ") match {
       case Array(tpe, apiClassName) => (renameType(tpe), apiClassName)
@@ -73,8 +71,8 @@ object GoogleAppScriptClassScraper extends ApiScraper {
     val methodElements = (doc >?> elementList("div.function.doc"))
     val apiMethods = methodElements.getOrElse(List()).map { div =>
       val name = stripMethodArguments(div >> text("h3 code"))
-      val description = (div >?> text("p")).getOrElse("")
-      val returnType = renameType((div >?> text("h4 + p > code")).getOrElse("void"))
+      val description = (div >?> text("p")).getOrElse("").trim
+      val returnType = renameType((div >?> text("h4 + p > code")).getOrElse("void")).trim
       val paramRows = (div >> elementList("table.function.param tr")).drop(1)
       val params = paramRows.flatMap { row =>
         row >> texts("td") match {
@@ -89,15 +87,11 @@ object GoogleAppScriptClassScraper extends ApiScraper {
 }
 
 object GoogleAdWordsScriptScraper extends ApiScraper {
-  def scrapeOverview(url: String): Seq[String] = {
-    val browser = new Browser
-    val doc = browser.get(url)
+  def scrapeOverview(doc: Document): Seq[String] = {
     val treeRoot = new Elements((doc >> elements("a:contains(AdWordsApp),a:contains(MccApp)")).map(_.parent): _*)
-    (treeRoot >> elements("a.devsite-nav-item")).map(_.attr("href"))
+    (treeRoot >> elements("a.devsite-nav-title")).map(_.attr("href"))
   }
-  def scrapeClass(url: String): ApiClass = {
-    val browser = new Browser
-    val doc = browser.get(url)
+  def scrapeClass(doc: Document): ApiClass = {
     val apiClassText = (doc >> element("h1.devsite-page-title")).text
     val (surroundingClass, apiClassName) = apiClassText.split("\\.") match {
       case Array(surroundingClass, apiClassName) => (surroundingClass, apiClassName)
@@ -110,7 +104,7 @@ object GoogleAdWordsScriptScraper extends ApiScraper {
       List("Related", "Methods").exists(p => n.toString().contains(p))
     }
     val (descriptionNodes, contentNodes) = children.span(n => !isEndOfClassDescription(n))
-    val classDescription = descriptionNodes.mkString("\n")
+    val classDescription = descriptionNodes.map(_.toString.trim).mkString("\n")
     val methodNameElements = doc >> elementList("h2 code")
     def readApiMethod(thisMethod: Element): ApiMethod = {
       val name = stripMethodArguments(thisMethod.text)
@@ -122,7 +116,7 @@ object GoogleAdWordsScriptScraper extends ApiScraper {
       val (parameterNodes, returnTypeNodes) = signatureNodes.span(n => !(n.nodeName().equals("h3") && n.toString().contains("Return")))
       //println(s"Description nodes for $thisMethod:\n$descriptionNodes\nParameter nodes:\n$parameterNodes\nReturn type Nodes:\n$returnTypeNodes")
       val returnType = renameType(returnTypeNodes.findElement("table").map(t => stripNamespace(t >> text("tr td"))).getOrElse("void"))
-      val description = descriptionNodes.mkString("\n")
+      val description = descriptionNodes.map(_.toString.trim).mkString("\n")
       val params = parameterNodes.findElement("table").map { table =>
         (table >> elementList("tr")).flatMap { row =>
           row >> texts("td") match {
