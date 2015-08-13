@@ -273,5 +273,5 @@ trait ManagedAccountSelector extends Selector[ManagedAccountSelector] {
    *  <code>withCondition("ManagerCustomerId IN ['123-456-7890']")</code>
    * </aside>
    */
-  def withIds(ids: Seq[Long]): ManagedAccountSelector = js.native
+  def withIds(ids: js.Array[Long]): ManagedAccountSelector = js.native
 }

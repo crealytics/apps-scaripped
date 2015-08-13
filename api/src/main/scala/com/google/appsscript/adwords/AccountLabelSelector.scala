@@ -84,5 +84,5 @@ trait AccountLabelSelector extends Selector[AccountLabelSelector] {
    * <p></p>
    * <p>The selector can only support up to 10,000 IDs. If more than 10,000 IDs are specified, the corresponding get() call will fail with a runtime error.</p>
    */
-  def withIds(ids: Seq[Long]): AccountLabelSelector = js.native
+  def withIds(ids: js.Array[Long]): AccountLabelSelector = js.native
 }
