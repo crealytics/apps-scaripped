@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of topics. 
+ * An iterator of topics.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (topicIterator.hasNext()) {
  *    var topic = topicIterator.next();

@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of account labels. 
+ * An iterator of account labels.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (accountLabelIterator.hasNext()) {
  *    var accountLabel = accountLabelIterator.next();

@@ -13,16 +13,15 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  Builder for 
+ * Builder for
  * <a href="adwordsapp_productcustomlabel.html">ProductCustomLabel</a>
- *  objects.
+ * objects.
  */
 trait ProductCustomLabelBuilder extends ProductGroupBuilder[ProductCustomLabelOperation] {
-  /**  Specifies the bid of the product custom label. If this is unspecified, will use the bid of the parent product group. */
+  /** Specifies the bid of the product custom label. If this is unspecified, will use the bid of the parent product group. */
   def withBid(bid: Double): ProductCustomLabelBuilder = js.native
-  /**  Specifies the type of custom label and return the product custom label builder. */
+  /** Specifies the type of custom label and return the product custom label builder. */
   def withType(`type`: String): ProductCustomLabelBuilder = js.native
-  /**  Specifies the value of the product custom label. */
+  /** Specifies the value of the product custom label. */
   def withValue(value: String): ProductCustomLabelBuilder = js.native
 }

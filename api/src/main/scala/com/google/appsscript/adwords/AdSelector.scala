@@ -13,17 +13,14 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  Fetches text ads (except from shared libraries). Supports filtering and sorting. 
+ * Fetches text ads (except from shared libraries). Supports filtering and sorting.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  var adSelector = AdWordsApp
  *      .ads()
  *      .withCondition("Impressions &gt; 100")
  *      .forDateRange("LAST_MONTH")
  *      .orderBy("Clicks DESC");
- * 
  *  var adIterator = adSelector.get();
  *  while (adIterator.hasNext()) {
  *    var ad = adIterator.next();
@@ -31,258 +28,246 @@ import scala.scalajs.js
  */
 trait AdSelector extends Selector[AdSelector] {
   /**
-   *  Sets a predefined date range onto the selector. Supported values: 
-   * <p><code>TODAY, YESTERDAY, LAST_7_DAYS, THIS_WEEK_SUN_TODAY, LAST_WEEK, LAST_14_DAYS, LAST_30_DAYS, LAST_BUSINESS_WEEK, LAST_WEEK_SUN_SAT, THIS_MONTH, LAST_MONTH, ALL_TIME</code> </p>
-   *  Example: 
-   * <pre class="prettyprint">
-   *  selector.forDateRange("THIS_WEEK_SUN_TODAY");</pre>
-   *  
-   * <p>Date range must be specified if the selector has conditions or ordering for a stat field. Note that only the last date range specified for the selector will take effect.</p>
-   */
-  def forDateRange(dateRange: String): AdSelector = js.native
-  /**
-   *  Sets a custom date range onto the selector. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in 
+   * Sets a custom date range onto the selector. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in
    * <code>YYYYMMDD</code>
-   *  form. For instance, 
+   * form. For instance,
    * <code>March 24th, 2013</code>
-   *  is represented as either 
+   * is represented as either
    * <code>{year: 2013, month: 3, day: 24}</code>
-   *  or 
+   * or
    * <code>"20130324"</code>
-   * . The date range is inclusive on both ends, so 
+   * . The date range is inclusive on both ends, so
    * <code>forDateRange("20130324", "20130324")</code>
-   *  sets the range of one day. 
+   * sets the range of one day.
    * <p>Date range must be specified if the selector has conditions or ordering for a stat field. Note that only the last date range specified for the selector will take effect.</p>
    */
   def forDateRange(dateFrom: AnyRef, dateTo: AnyRef): AdSelector = js.native
-  /**  Fetches the requested ads and returns an iterator. */
+  /** Fetches the requested ads and returns an iterator. */
   def get(): AdIterator = js.native
   /**
-   *  Specifies the ordering of the resulting entities. 
+   * Specifies the ordering of the resulting entities.
    * <code>orderBy</code>
-   *  parameter can have one of the following forms: 
-   * <ul> 
-   *  <li><code>orderBy("Cost")</code> - orders results by Cost, in ascending order.</li> 
-   *  <li><code>orderBy("Ctr ASC")</code> - orders results by Ctr, in ascending order.</li> 
-   *  <li><code>orderBy("MaxCpc DESC")</code> - orders results by MaxCpc, in descending order.</li> 
+   * parameter can have one of the following forms:
+   * <ul>
+   *  <li><code>orderBy("Cost")</code> - orders results by Cost, in ascending order.</li>
+   *  <li><code>orderBy("Ctr ASC")</code> - orders results by Ctr, in ascending order.</li>
+   *  <li><code>orderBy("MaxCpc DESC")</code> - orders results by MaxCpc, in descending order.</li>
    * </ul>
-   *  
    * <p>See <a href="adwordsapp_adselector.html#withCondition_1">AdSelector.withCondition(String)</a> for enumeration of columns that can be used.</p>
-   *  
    * <p><code>orderBy()</code> may be called multiple times. Consider the following example:</p>
-   *  
    * <pre class="prettyprint">
    *  selector = selector.forDateRange("LAST_14_DAYS")
    *      .orderBy("Clicks DESC")
    *      .orderBy("CTR ASC");</pre>
-   *  
    * <p>The results will be ordered by Clicks in descending order. Results with equal Clicks value will be ordered by Ctr in ascending order.</p>
-   *  
    * <p>If a stats column is used in the ordering, date range must be specified via <a href="adwordsapp_adselector.html#forDateRange_1">AdSelector.forDateRange(String)</a> or <a href="adwordsapp_adselector.html#forDateRange_2">AdSelector.forDateRange(Object, Object)</a>.</p>
-   *  
    * <p><code>LabelNames</code> column cannot be used for ordering.</p>
    */
   def orderBy(orderBy: String): AdSelector = js.native
   /**
-   *  Adds the specified condition to the selector in order to narrow down the results. 
+   * Adds the specified condition to the selector in order to narrow down the results.
    * <p>Multiple conditions may be added to the same selector: </p>
    * <pre class="prettyprint">
    *  selector = selector.forDateRange("LAST_MONTH")
    *      .withCondition("Clicks &gt; 5")
    *      .withCondition("Impressions &gt; 100");</pre>
-   *  All specified conditions are 
+   * All specified conditions are
    * <code>AND</code>
-   * -ed together. The above example will retrieve entities that observed over 100 impressions AND more than 5 clicks. 
+   * -ed together. The above example will retrieve entities that observed over 100 impressions AND more than 5 clicks.
    * <p></p>
-   *  
    * <p>The parameter to be passed into this method must be of the following form: </p>
    * <pre class="prettyprint">
    *  "COLUMN_NAME OPERATOR VALUE"</pre>
-   *  
    * <p></p>
-   *  
    * <h4>Operators</h4>
-   *  The operator that can be used in a condition depends on the type of column. 
-   * <ul> 
-   *  <li>For <code>Integer</code> and <code>Long</code> columns (e.g. Impressions, Clicks): <strong><pre class="prettyprint">&lt;  &lt;=  &gt;  &gt;=  =  !=</pre></strong></li> 
-   *  <li>For <code>Double</code> columns (e.g. Ctr, AveragePosition): <strong><pre class="prettyprint">&lt;  &gt;</pre></strong></li> 
+   * The operator that can be used in a condition depends on the type of column.
+   * <ul>
+   *  <li>For <code>Integer</code> and <code>Long</code> columns (e.g. Impressions, Clicks): <strong><pre class="prettyprint">&lt;  &lt;=  &gt;  &gt;=  =  !=</pre></strong></li>
+   *  <li>For <code>Double</code> columns (e.g. Ctr, AveragePosition): <strong><pre class="prettyprint">&lt;  &gt;</pre></strong></li>
    *  <li>For <code>String</code> columns (e.g. Name): <strong><pre class="prettyprint">=  !=  STARTS_WITH  STARTS_WITH_IGNORE_CASE  CONTAINS
-   *  CONTAINS_IGNORE_CASE  DOES_NOT_CONTAIN  DOES_NOT_CONTAIN_IGNORE_CASE</pre></strong></li> 
-   *  <li>For <code>Enumeration</code> columns (ones that can only take one value from a predefined list, such as Status): <strong><pre class="prettyprint">=  !=  IN []  NOT_IN []</pre></strong></li> 
-   *  <li>For <code>StringSet</code> columns (e.g. LabelNames): <strong><pre class="prettyprint">CONTAINS_ALL []  CONTAINS_ANY []  CONTAINS_NONE []</pre> </strong></li> 
+   *  CONTAINS_IGNORE_CASE  DOES_NOT_CONTAIN  DOES_NOT_CONTAIN_IGNORE_CASE</pre></strong></li>
+   *  <li>For <code>Enumeration</code> columns (ones that can only take one value from a predefined list, such as Status): <strong><pre class="prettyprint">=  !=  IN []  NOT_IN []</pre></strong></li>
+   *  <li>For <code>StringSet</code> columns (e.g. LabelNames): <strong><pre class="prettyprint">CONTAINS_ALL []  CONTAINS_ANY []  CONTAINS_NONE []</pre> </strong></li>
    * </ul>
-   *  Conditions using 
+   * Conditions using
    * <code>IN</code>
-   * , 
+   * ,
    * <code>NOT_IN</code>
-   * , 
+   * ,
    * <code>CONTAINS_ALL</code>
-   * , 
+   * ,
    * <code>CONTAINS_ANY</code>
-   *  and 
+   * and
    * <code>CONTAINS_NONE</code>
-   *  operators look as follows: 
+   * operators look as follows:
    * <pre class="prettyprint">
    *  withCondition("ColumnName IN [Value1, Value2]")</pre>
-   *  Operators are case-sensitive: 
+   * Operators are case-sensitive:
    * <code>starts_with</code>
-   *  won't work. 
+   * won't work.
    * <h4>Columns</h4>
-   *  
    * <p>All column names are case-sensitive, and so are all values of enumerated columns (such as Status).</p>
-   *  
-   * <table border="1" cellspacing="0" cellpadding="3"> 
+   * <table border="1" cellspacing="0" cellpadding="3">
    *  <tbody>
-   *   <tr> 
-   *    <th>Column</th> 
-   *    <th>Type</th> 
-   *    <th>Example</th> 
-   *   </tr> 
+   *   <tr>
+   *    <th>Column</th>
+   *    <th>Type</th>
+   *    <th>Example</th>
+   *   </tr>
    *   <tr>
    *    <td colspan="3">
    *     <center>
    *      <strong><i>Stats</i></strong>
    *     </center></td>
-   *   </tr> 
-   *   <tr> 
-   *    <td>AverageCpc</td> 
-   *    <td>Double</td> 
-   *    <td><code>withCondition("AverageCpc &lt; 1.45")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>AverageCpm</td> 
-   *    <td>Double</td> 
-   *    <td><code>withCondition("AverageCpm &gt; 0.48")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>AveragePageviews</td> 
-   *    <td>Double</td> 
-   *    <td><code>withCondition("AveragePageviews &gt; 0")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>AveragePosition</td> 
-   *    <td>Double</td> 
-   *    <td><code>withCondition("AveragePosition &gt; 7.5")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>AverageTimeOnSite</td> 
-   *    <td>Double</td> 
-   *    <td><code>withCondition("AverageTimeOnSite &gt; 3.5")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>BounceRate</td> 
-   *    <td>Double</td> 
-   *    <td><code>withCondition("BounceRate &lt; 0.5")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>Clicks</td> 
-   *    <td>Long</td> 
-   *    <td><code>withCondition("Clicks &gt;= 21")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>ConversionRate</td> 
-   *    <td>Double</td> 
-   *    <td><code>withCondition("ConversionRate &gt; 0.1")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>Conversions</td> 
-   *    <td>Long</td> 
-   *    <td><code>withCondition("Conversions &lt;= 4")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>Cost</td> 
-   *    <td>Double</td> 
-   *    <td><code>withCondition("Cost &gt; 4.48")</code>. The value is in the currency of the account.</td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>Ctr</td> 
-   *    <td>Double</td> 
-   *    <td><code>withCondition("Ctr &gt; 0.01")</code>. Note that Ctr is returned in <code>0..1</code> range, so 5% Ctr is represented as 0.05.</td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>Impressions</td> 
-   *    <td>Long</td> 
-   *    <td><code>withCondition("Impressions != 0")</code></td> 
-   *   </tr> 
+   *   </tr>
+   *   <tr>
+   *    <td>AverageCpc</td>
+   *    <td>Double</td>
+   *    <td><code>withCondition("AverageCpc &lt; 1.45")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>AverageCpm</td>
+   *    <td>Double</td>
+   *    <td><code>withCondition("AverageCpm &gt; 0.48")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>AveragePageviews</td>
+   *    <td>Double</td>
+   *    <td><code>withCondition("AveragePageviews &gt; 0")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>AveragePosition</td>
+   *    <td>Double</td>
+   *    <td><code>withCondition("AveragePosition &gt; 7.5")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>AverageTimeOnSite</td>
+   *    <td>Double</td>
+   *    <td><code>withCondition("AverageTimeOnSite &gt; 3.5")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>BounceRate</td>
+   *    <td>Double</td>
+   *    <td><code>withCondition("BounceRate &lt; 0.5")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>ClickConversionRate</td>
+   *    <td>Double</td>
+   *    <td><code>withCondition("ClickConversionRate &gt; 0.1")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>Clicks</td>
+   *    <td>Long</td>
+   *    <td><code>withCondition("Clicks &gt;= 21")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>ConvertedClicks</td>
+   *    <td>Long</td>
+   *    <td><code>withCondition("ConvertedClicks &lt;= 4")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>Cost</td>
+   *    <td>Double</td>
+   *    <td><code>withCondition("Cost &gt; 4.48")</code>. The value is in the currency of the account.</td>
+   *   </tr>
+   *   <tr>
+   *    <td>Ctr</td>
+   *    <td>Double</td>
+   *    <td><code>withCondition("Ctr &gt; 0.01")</code>. Note that Ctr is returned in <code>0..1</code> range, so 5% Ctr is represented as 0.05.</td>
+   *   </tr>
+   *   <tr>
+   *    <td>Impressions</td>
+   *    <td>Long</td>
+   *    <td><code>withCondition("Impressions != 0")</code></td>
+   *   </tr>
    *   <tr>
    *    <td colspan="3">
    *     <center>
    *      <strong><i>Ad attributes</i></strong>
    *     </center></td>
-   *   </tr> 
-   *   <tr> 
-   *    <td>Status</td> 
-   *    <td>Enumeration: <code>ENABLED</code>, <code>PAUSED</code>, <code>DISABLED</code></td> 
-   *    <td><code>withCondition("Status = PAUSED")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>ApprovalStatus</td> 
-   *    <td>Enumeration: <code>APPROVED</code>, <code>DISAPPROVED</code>, <code>FAMILY_SAFE</code>, <code>NON_FAMILY_SAFE</code>, <code>PORN</code>, <code>UNCHECKED</code></td>  
-   *    <td><code>withCondition("ApprovalStatus NOT_IN [DISAPPROVED, UNCHECKED]")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>Type</td> 
-   *    <td>Enumeration: <code>IMAGE_AD</code>, <code>MOBILE_AD</code>, <code>MOBILE_IMAGE_AD</code>, <code>PRODUCT_AD</code>, <code>RICH_MEDIA_AD</code>, <code>TEMPLATE_AD</code>, <code>TEXT_AD</code></td> 
-   *    <td><code>withCondition("Type NOT_IN [IMAGE_AD, RICH_MEDIA_AD]")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>Headline</td> 
-   *    <td>String</td> 
+   *   </tr>
+   *   <tr>
+   *    <td>Status</td>
+   *    <td>Enumeration: <code>ENABLED</code>, <code>PAUSED</code>, <code>DISABLED</code></td>
+   *    <td><code>withCondition("Status = PAUSED")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>ApprovalStatus</td>
+   *    <td>Enumeration: <code>APPROVED</code>, <code>DISAPPROVED</code>, <code>FAMILY_SAFE</code>, <code>NON_FAMILY_SAFE</code>, <code>PORN</code>, <code>UNCHECKED</code></td>
+   *    <td><code>withCondition("ApprovalStatus NOT_IN [DISAPPROVED, UNCHECKED]")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>Type</td>
+   *    <td>Enumeration: <code>IMAGE_AD</code>, <code>MOBILE_AD</code>, <code>MOBILE_IMAGE_AD</code>, <code>PRODUCT_AD</code>, <code>RICH_MEDIA_AD</code>, <code>TEMPLATE_AD</code>, <code>TEXT_AD</code></td>
+   *    <td><code>withCondition("Type NOT_IN [IMAGE_AD, RICH_MEDIA_AD]")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>Headline</td>
+   *    <td>String</td>
    *    <td><code>withCondition("Headline CONTAINS_IGNORE_CASE 'leather shoes'")</code> </td>
-   *   </tr> 
-   *   <tr> 
-   *    <td>Description1</td> 
-   *    <td>String</td> 
+   *   </tr>
+   *   <tr>
+   *    <td>Description1</td>
+   *    <td>String</td>
    *    <td><code>withCondition("Description1 STARTS_WITH 'Leather'")</code> </td>
-   *   </tr> 
-   *   <tr> 
-   *    <td>Description2</td> 
-   *    <td>String</td> 
+   *   </tr>
+   *   <tr>
+   *    <td>Description2</td>
+   *    <td>String</td>
    *    <td><code>withCondition("Description2 = 'Hurry to buy'")</code> </td>
-   *   </tr> 
-   *   <tr> 
-   *    <td>DisplayUrl</td> 
-   *    <td>String</td> 
+   *   </tr>
+   *   <tr>
+   *    <td>DisplayUrl</td>
+   *    <td>String</td>
    *    <td><code>withCondition("DisplayUrl STARTS_WITH 'www.example.com'")</code> </td>
-   *   </tr> 
-   *   <tr> 
-   *    <td>DestinationUrl</td> 
-   *    <td>String</td> 
+   *   </tr>
+   *   <tr>
+   *    <td>DestinationUrl</td>
+   *    <td>String</td>
    *    <td><code>withCondition("DestinationUrl STARTS_WITH 'http://www.example.com'")</code> </td>
-   *   </tr> 
-   *   <tr> 
-   *    <td>AdGroupName</td> 
-   *    <td>String</td> 
-   *    <td><code>withCondition("AdGroupName CONTAINS_IGNORE_CASE 'shoes'")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>AdGroupStatus</td> 
-   *    <td>Enumeration: <code>ENABLED</code>, <code>PAUSED</code>, <code>REMOVED</code></td> 
-   *    <td><code>withCondition("AdGroupStatus = ENABLED")</code>. Use to fetch ads from only <code>ENABLED</code> ad groups.</td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>CampaignName</td> 
-   *    <td>String</td> 
-   *    <td><code>withCondition("CampaignName CONTAINS_IGNORE_CASE 'promotion'")</code></td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>CampaignStatus</td> 
-   *    <td>Enumeration: <code>ENABLED</code>, <code>PAUSED</code>, <code>REMOVED</code></td> 
-   *    <td><code>withCondition("CampaignStatus = ENABLED")</code>. Use to fetch ads from only <code>ENABLED</code> campaigns.</td> 
-   *   </tr> 
-   *   <tr> 
-   *    <td>LabelNames</td> 
-   *    <td>StringSet</td> 
-   *    <td><code>withCondition("LabelNames CONTAINS_ANY ['Xmas', 'New Year']")</code>. The value is a list of exact, case-sensitive label names.</td> 
-   *   </tr> 
+   *   </tr>
+   *   <tr>
+   *    <td>CreativeFinalUrls</td>
+   *    <td>String</td>
+   *    <td><code>withCondition("CreativeFinalUrls CONTAINS 'http://www.example.com'")</code> </td>
+   *   </tr>
+   *   <tr>
+   *    <td>AdGroupName</td>
+   *    <td>String</td>
+   *    <td><code>withCondition("AdGroupName CONTAINS_IGNORE_CASE 'shoes'")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>AdGroupStatus</td>
+   *    <td>Enumeration: <code>ENABLED</code>, <code>PAUSED</code>, <code>REMOVED</code></td>
+   *    <td><code>withCondition("AdGroupStatus = ENABLED")</code>. Use to fetch ads from only <code>ENABLED</code> ad groups.</td>
+   *   </tr>
+   *   <tr>
+   *    <td>CampaignName</td>
+   *    <td>String</td>
+   *    <td><code>withCondition("CampaignName CONTAINS_IGNORE_CASE 'promotion'")</code></td>
+   *   </tr>
+   *   <tr>
+   *    <td>CampaignStatus</td>
+   *    <td>Enumeration: <code>ENABLED</code>, <code>PAUSED</code>, <code>REMOVED</code></td>
+   *    <td><code>withCondition("CampaignStatus = ENABLED")</code>. Use to fetch ads from only <code>ENABLED</code> campaigns.</td>
+   *   </tr>
+   *   <tr>
+   *    <td>LabelNames</td>
+   *    <td>StringSet</td>
+   *    <td><code>withCondition("LabelNames CONTAINS_ANY ['Xmas', 'New Year']")</code>. The value is a list of exact, case-sensitive label names.</td>
+   *   </tr>
+   *   <tr>
+   *    <td>DevicePreferenceType</td>
+   *    <td>Enumeration: <code>MOBILE</code>, <code>ALL</code></td>
+   *    <td><code>withCondition("DevicePreferenceType = MOBILE")</code>. Use to fetch only mobile-preferred ads.</td>
+   *   </tr>
    *  </tbody>
    * </table>
-   *  
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_adselector.html#forDateRange_1">AdSelector.forDateRange(String)</a> or <a href="adwordsapp_adselector.html#forDateRange_2">AdSelector.forDateRange(Object, Object)</a>. </p>
    */
   override def withCondition(condition: String): AdSelector = js.native
   /**
-   *  Restricts this selector to return only ads with the given ad IDs. 
+   * Restricts this selector to return only ads with the given ad IDs.
    * <p>All ads are uniquely identified by the combination of their "ad group" ID and ad ID. The IDs for this selector are thus represented as two-element arrays, with the first element being the "ad group" ID and the second being the ad ID: </p>
    * <pre class="prettyprint">
    *  var adIds = [
@@ -292,13 +277,11 @@ trait AdSelector extends Selector[AdSelector] {
    *  ];
    *  selector = selector.withIds(adIds);</pre>
    * <p></p>
-   *  
    * <p>In cases where the ad group ID is already known, the IDs for this selector can then be just an array of ad IDs. Any provided ad group ID and ad ID combination will override the embedded ad group ID. For instance, the following will select the ads with the given ad IDs in the given ad group: </p>
    * <pre class="prettyprint">
    *  var ids = [12345, 23456, 34567];
    *  var ads = adGroup.ads().withIds(ids);</pre>
    * <p></p>
-   *  
    * <p>The resulting selector can be further refined by applying additional conditions to it. The ID-based condition will then be AND-ed together with all the other conditions, including any other ID-based conditions. So, for instance, the following selector: </p>
    * <pre class="prettyprint">
    *  var ids1 = [
@@ -314,11 +297,10 @@ trait AdSelector extends Selector[AdSelector] {
    *  AdWordsApp.ads()
    *     .withIds(ids1)
    *     .withIds(ids2);</pre>
-   *  will only get the ad with ID 
+   * will only get the ad with ID
    * <code>[34567, 765765]</code>
    * , since it would be the only ad that satisfies both ID conditions.
    * <p></p>
    */
   def withIds(ids: js.Array[js.Array[Long]]): AdSelector = js.native
-
 }

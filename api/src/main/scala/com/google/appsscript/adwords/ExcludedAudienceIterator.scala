@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of excluded audiences. 
+ * An iterator of excluded audiences.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (excludedAudienceIterator.hasNext()) {
  *    var excludedAudience = excludedAudienceIterator.next();

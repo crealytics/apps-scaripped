@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of campaign-level reviews. 
+ * An iterator of campaign-level reviews.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (campaignReviewIterator.hasNext()) {
  *    var campaignReview = campaignReviewIterator.next();

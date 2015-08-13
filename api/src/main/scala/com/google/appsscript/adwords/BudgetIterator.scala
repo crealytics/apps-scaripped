@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of budgets. 
+ * An iterator of budgets.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (budgetIterator.hasNext()) {
  *    var budget = budgetIterator.next();

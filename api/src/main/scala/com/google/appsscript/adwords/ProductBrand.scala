@@ -12,11 +12,8 @@ import com.google.appsscript.drive._
 
 import scala.scalajs.js
 
-/**
- * 
- *  Represents a product brand.
- */
+/** Represents a product brand. */
 trait ProductBrand extends ProductGroup {
-  /**  Returns the name of the product brand. */
+  /** Returns the name of the product brand. */
   def getName(): String = js.native
 }

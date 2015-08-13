@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of phone numbers. 
+ * An iterator of phone numbers.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (phoneNumberIterator.hasNext()) {
  *    var phoneNumber = phoneNumberIterator.next();

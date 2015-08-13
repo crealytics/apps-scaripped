@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of audiences. 
+ * An iterator of audiences.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (audienceIterator.hasNext()) {
  *    var audience = audienceIterator.next();

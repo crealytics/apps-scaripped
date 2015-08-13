@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of negative keywords. 
+ * An iterator of negative keywords.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (negativeKeywordIterator.hasNext()) {
  *    var negativeKeyword = negativeKeywordIterator.next();

@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of sitelinks. 
+ * An iterator of sitelinks.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (sitelinkIterator.hasNext()) {
  *    var sitelink = sitelinkIterator.next();

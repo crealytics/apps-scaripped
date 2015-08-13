@@ -13,12 +13,10 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  Builder for 
+ * Builder for
  * <a href="adwordsapp_displaykeyword.html">DisplayKeyword</a>
- *  objects. 
+ * objects.
  * <p>Example usage:</p>
- *  
  * <pre class="prettyprint">
  *  var displayKeywordBuilder = adGroup.display().newKeywordBuilder();
  *  var displayKeyword = displayKeywordBuilder
@@ -28,25 +26,28 @@ import scala.scalajs.js
  */
 trait DisplayKeywordBuilder extends Builder[DisplayKeyword] {
   /**
-   *  Builds the display keyword. Returns a 
+   * Builds the display keyword. Returns a
    * <a href="adwordsapp_displaykeywordoperation.html">DisplayKeywordOperation</a>
-   *  that corresponds to the creation of the 
+   * that corresponds to the creation of the
    * <a href="adwordsapp_displaykeyword.html">DisplayKeyword</a>
    * .
    */
   override def build(): Operation[DisplayKeyword] = js.native
   /**
-   *  Builds the excluded display keyword. Returns an 
+   * Builds the excluded display keyword. Returns an
    * <a href="adwordsapp_excludeddisplaykeywordoperation.html">ExcludedDisplayKeywordOperation</a>
-   *  that corresponds to the creation of the 
+   * that corresponds to the creation of the
    * <a href="adwordsapp_excludeddisplaykeyword.html">ExcludedDisplayKeyword</a>
    * .
    */
   def exclude(): Operation[ExcludedDisplayKeyword] = js.native
-  /**  Sets the max CPC bid of the new display keyword to the specified value. */
+  /** Sets the max CPC bid of the new display keyword to the specified value. */
   def withCpc(cpc: Double): DisplayKeywordBuilder = js.native
-  /**  Sets the max CPM bid of the new display keyword to the specified value. */
+  /**
+   * Sets the CPM bid of the new display keyword to the specified value.
+   * <p>See <a href="https://support.google.com/adwords/answer/6310"> Cost-per-thousand impressions (CPM)</a> for more information.</p>
+   */
   def withCpm(cpm: Double): DisplayKeywordBuilder = js.native
-  /**  Sets the text of the display keyword. This field is required. */
+  /** Sets the text of the display keyword. This field is required. */
   def withText(text: String): DisplayKeywordBuilder = js.native
 }

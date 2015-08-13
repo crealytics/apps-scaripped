@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of ad group-level mobile apps. 
+ * An iterator of ad group-level mobile apps.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (adGroupMobileAppIterator.hasNext()) {
  *    var adGroupMobileApp = adGroupMobileAppIterator.next();

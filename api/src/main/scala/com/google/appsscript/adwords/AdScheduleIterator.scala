@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of ad schedules. 
+ * An iterator of ad schedules.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (adScheduleIterator.hasNext()) {
  *    var adSchedule = adScheduleIterator.next();

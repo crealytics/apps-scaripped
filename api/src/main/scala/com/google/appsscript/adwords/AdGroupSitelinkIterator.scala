@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of ad group-level sitelinks. 
+ * An iterator of ad group-level sitelinks.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (adGroupSitelinkIterator.hasNext()) {
  *    var adGroupSitelink = adGroupSitelinkIterator.next();

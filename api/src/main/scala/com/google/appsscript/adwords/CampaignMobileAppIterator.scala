@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of campaign-level mobile apps. 
+ * An iterator of campaign-level mobile apps.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (campaignMobileAppIterator.hasNext()) {
  *    var campaignMobileApp = campaignMobileAppIterator.next();

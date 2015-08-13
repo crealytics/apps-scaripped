@@ -13,12 +13,10 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  Builder for 
+ * Builder for
  * <a href="adwordsapp_topic.html">Topic</a>
- *  objects. 
+ * objects.
  * <p>Example usage:</p>
- *  
  * <pre class="prettyprint">
  *  var topicBuilder = adGroup.display().newTopicBuilder();
  *  var topic = topicBuilder
@@ -28,29 +26,32 @@ import scala.scalajs.js
  */
 trait TopicBuilder extends Builder[Topic] {
   /**
-   *  Builds the topic. Returns a 
+   * Builds the topic. Returns a
    * <a href="adwordsapp_topicoperation.html">TopicOperation</a>
-   *  that corresponds to the creation of the 
+   * that corresponds to the creation of the
    * <a href="adwordsapp_topic.html">Topic</a>
    * .
    */
   override def build(): Operation[Topic] = js.native
   /**
-   *  Builds the excluded topic. Returns an 
+   * Builds the excluded topic. Returns an
    * <a href="adwordsapp_excludedtopicoperation.html">ExcludedTopicOperation</a>
-   *  that corresponds to the creation of the 
+   * that corresponds to the creation of the
    * <a href="adwordsapp_excludedtopic.html">ExcludedTopic</a>
    * .
    */
   def exclude(): Operation[ExcludedTopic] = js.native
-  /**  Sets the max CPC bid of the new topic to the specified value. */
+  /** Sets the max CPC bid of the new topic to the specified value. */
   def withCpc(cpc: Double): TopicBuilder = js.native
-  /**  Sets the max CPM bid of the new topic to the specified value. */
+  /**
+   * Sets the CPM bid of the new topic to the specified value.
+   * <p>See <a href="https://support.google.com/adwords/answer/6310"> Cost-per-thousand impressions (CPM)</a> for more information.</p>
+   */
   def withCpm(cpm: Double): TopicBuilder = js.native
   /**
-   *  Sets the topic ID of the topic. This field is required. The topic ID identifies the topic category. A list of valid topic IDs is available on our 
+   * Sets the topic ID of the topic. This field is required. The topic ID identifies the topic category. A list of valid topic IDs is available on our
    * <a href="/adwords/api/docs/appendix/verticals">Verticals</a>
-   *  page.
+   * page.
    */
   def withTopicId(topicId: Long): TopicBuilder = js.native
 }

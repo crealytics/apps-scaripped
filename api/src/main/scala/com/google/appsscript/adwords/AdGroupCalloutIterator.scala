@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of ad group-level callouts. 
+ * An iterator of ad group-level callouts.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (adGroupCalloutIterator.hasNext()) {
  *    var adGroupCallout = adGroupCalloutIterator.next();

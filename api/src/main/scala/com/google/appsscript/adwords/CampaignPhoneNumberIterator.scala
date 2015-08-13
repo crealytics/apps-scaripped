@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of campaign-level phone numbers. 
+ * An iterator of campaign-level phone numbers.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (campaignPhoneNumberIterator.hasNext()) {
  *    var campaignPhoneNumber = campaignPhoneNumberIterator.next();

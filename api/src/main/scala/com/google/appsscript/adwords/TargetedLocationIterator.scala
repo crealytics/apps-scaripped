@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of locations. 
+ * An iterator of locations.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (locationIterator.hasNext()) {
  *    var location = locationIterator.next();

@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of proximities. 
+ * An iterator of proximities.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (proximityIterator.hasNext()) {
  *    var proximity = proximityIterator.next();

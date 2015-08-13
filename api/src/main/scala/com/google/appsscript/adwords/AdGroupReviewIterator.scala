@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of ad group-level reviews. 
+ * An iterator of ad group-level reviews.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (adGroupReviewIterator.hasNext()) {
  *    var adGroupReview = adGroupReviewIterator.next();

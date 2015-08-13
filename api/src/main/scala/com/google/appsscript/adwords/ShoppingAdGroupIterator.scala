@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of shopping ad groups. 
+ * An iterator of shopping ad groups.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (shoppingAdGroupIterator.hasNext()) {
  *    var shoppingAdGroup = shoppingAdGroupIterator.next();

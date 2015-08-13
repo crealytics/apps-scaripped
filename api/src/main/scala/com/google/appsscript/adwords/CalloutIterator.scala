@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of callouts. 
+ * An iterator of callouts.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (calloutIterator.hasNext()) {
  *    var callout = calloutIterator.next();

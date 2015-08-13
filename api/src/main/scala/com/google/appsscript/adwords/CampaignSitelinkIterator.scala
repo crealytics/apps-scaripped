@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of campaign-level sitelinks. 
+ * An iterator of campaign-level sitelinks.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (campaignSitelinkIterator.hasNext()) {
  *    var campaignSitelink = campaignSitelinkIterator.next();

@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of placements. 
+ * An iterator of placements.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (placementIterator.hasNext()) {
  *    var placement = placementIterator.next();

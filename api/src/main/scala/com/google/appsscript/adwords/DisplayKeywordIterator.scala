@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of display keywords. 
+ * An iterator of display keywords.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (displayKeywordIterator.hasNext()) {
  *    var displayKeyword = displayKeywordIterator.next();

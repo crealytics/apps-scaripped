@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of campaigns. 
+ * An iterator of campaigns.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (campaignIterator.hasNext()) {
  *    var campaign = campaignIterator.next();

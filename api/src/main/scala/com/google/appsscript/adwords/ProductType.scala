@@ -12,11 +12,8 @@ import com.google.appsscript.drive._
 
 import scala.scalajs.js
 
-/**
- * 
- *  Represents a product type.
- */
+/** Represents a product type. */
 trait ProductType extends ProductGroup {
-  /**  Returns the name of the product type. */
+  /** Returns the name of the product type. */
   def getType(): String = js.native
 }

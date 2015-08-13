@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of labels. 
+ * An iterator of labels.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (labelIterator.hasNext()) {
  *    var label = labelIterator.next();

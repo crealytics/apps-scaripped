@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of mobile apps. 
+ * An iterator of mobile apps.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (mobileAppIterator.hasNext()) {
  *    var mobileApp = mobileAppIterator.next();

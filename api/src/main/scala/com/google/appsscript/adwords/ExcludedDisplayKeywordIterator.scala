@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of excluded display keywords. 
+ * An iterator of excluded display keywords.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (excludedDisplayKeywordIterator.hasNext()) {
  *    var excludedDisplayKeyword = excludedDisplayKeywordIterator.next();

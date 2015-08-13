@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of campaign-level callouts. 
+ * An iterator of campaign-level callouts.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (campaignCalloutIterator.hasNext()) {
  *    var campaignCallout = campaignCalloutIterator.next();

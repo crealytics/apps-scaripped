@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of product groups. 
+ * An iterator of product groups.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (productGroupIterator.hasNext()) {
  *    var productGroup = productGroupIterator.next();

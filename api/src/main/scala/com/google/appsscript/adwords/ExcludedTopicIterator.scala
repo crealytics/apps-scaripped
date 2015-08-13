@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of excluded topics. 
+ * An iterator of excluded topics.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (excludedTopicIterator.hasNext()) {
  *    var excludedTopic = excludedTopicIterator.next();

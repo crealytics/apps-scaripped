@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of ad customizer sources. 
+ * An iterator of ad customizer sources.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (adCustomizerSourceIterator.hasNext()) {
  *    var adCustomizerSource = adCustomizerSourceIterator.next();

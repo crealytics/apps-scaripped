@@ -13,16 +13,15 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  Builder for 
+ * Builder for
  * <a href="adwordsapp_productcategory.html">ProductCategory</a>
- *  objects.
+ * objects.
  */
 trait ProductCategoryBuilder extends ProductGroupBuilder[ProductCategoryOperation] {
-  /**  Specifies the bid of the product category. If this is unspecified, will use the bid of the parent product group. */
+  /** Specifies the bid of the product category. If this is unspecified, will use the bid of the parent product group. */
   def withBid(bid: Double): ProductCategoryBuilder = js.native
-  /**  Specifies the name of the new product category. If the name is unspecified before calling 'build', the category will fail to build. */
+  /** Specifies the name of the new product category. If the name is unspecified before calling 'build', the category will fail to build. */
   def withName(productCategoryName: String): ProductCategoryBuilder = js.native
-  /**  Specifies the value of the product category. */
+  /** Specifies the value of the product category. */
   def withValue(value: String): ProductCategoryBuilder = js.native
 }

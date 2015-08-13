@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of ad params. 
+ * An iterator of ad params.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (adParamIterator.hasNext()) {
  *    var adParam = adParamIterator.next();

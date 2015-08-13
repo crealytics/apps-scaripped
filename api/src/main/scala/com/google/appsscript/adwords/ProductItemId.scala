@@ -12,8 +12,5 @@ import com.google.appsscript.drive._
 
 import scala.scalajs.js
 
-/**
- * 
- *  Represents a product item ID.
- */
+/** Represents a product item ID. */
 trait ProductItemId extends ProductGroup

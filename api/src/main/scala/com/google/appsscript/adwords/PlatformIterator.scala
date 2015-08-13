@@ -13,10 +13,8 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /**
- * 
- *  An iterator of platforms. 
+ * An iterator of platforms.
  * <p>Typical usage:</p>
- *  
  * <pre class="prettyprint">
  *  while (platformIterator.hasNext()) {
  *    var platform = platformIterator.next();
