@@ -2,6 +2,7 @@ package de.crealytics.google.appscript.scraper
 
 import de.crealytics.google.appscript.api._
 import de.crealytics.google.appscript.scraper._
+import de.crealytics.google.appscript.parser._
 import de.crealytics.google.appscript.codegen._
 import net.ruippeixotog.scalascraper.browser.Browser
 import net.ruippeixotog.scalascraper.dsl.DSL._
@@ -15,6 +16,7 @@ import java.nio.charset.StandardCharsets
 import ammonite.ops._
 import net.ceedubs.ficus.Ficus._
 import net.ceedubs.ficus.readers.ArbitraryTypeReader._
+import extensions._
 
 object BigTimeScraper extends App {
   if (args.length < 1)
@@ -93,20 +95,32 @@ object BigTimeScraper extends App {
     overviewUrls.par.foreach { importLink =>
       import importLink._
       val classes = scrapeOverviewUrl(importLink, cacheDir)
+      val existingClasses = new ApiParser(wd).readClasses
       val groupedClasses = (classes ++ importLink.extraClasses).toSeq.groupBy(_.name).values.map(_.toList.distinct)
-      groupedClasses.filterNot(_.isEmpty).foreach(cs => persistWith(write.over(_, _))(generateCode(cs, importLink), wd, pkg + "." + cs.head.name))
+      groupedClasses.filterNot(_.isEmpty).foreach(cs => persistWith(write.over(_, _))(generateCode(cs, importLink, existingClasses), wd, pkg + "." + cs.head.name))
     }
   }
 
-  def generateCode(classes: Seq[ApiClass], importLink: ImportLink): String = {
+  def generateCode(classes: Seq[ApiClass], importLink: ImportLink, existingClasses: Seq[ApiClass] = Seq.empty): String = {
+    val classesByName = existingClasses.map(c => (c.name, c)).toMap
     import importLink._
-    val modifiedClasses = classes.flatMap { cl =>
-      classModifications.filter(_.className.r.unanchored.findFirstIn(cl.name).isDefined).foldLeft[Option[ApiClass]](Some(cl)) { case (mc, mod) =>
-        mod match {
-          case ClassModification(_, "removeMethod", methodName) => Some(cl.copy(methods = cl.methods.filterNot(_._1 == methodName)))
-          case ClassModification(_, "removeClass", _) => None
-          case _ => Some(cl)
-        }
+    val modifiedClasses = classes.flatMap { classToModify =>
+      classModifications.foldLeft[Option[ApiClass]](Some(classToModify)) {
+        case (None, _) => None
+        case (Some(cl), mod) if mod.className.r.findFirstIn(cl.name).isDefined =>
+          mod match {
+            case ClassModification(_, "removeMethod", methodName) => Some(cl.copy(methods = cl.methods.filterNot(_._1 == methodName)))
+            case ClassModification(_, "removeClass", _) => None
+            case ClassModification(className, "extends", superClassName) =>
+              val cleanedSuperClassName = superClassName.replaceAll("""\[.*?\]""", "")
+              val classRegex = className.r
+              val classRegex(subName) = cl.name
+              val extendsClass = classRegex.replaceFirstIn(cl.name, superClassName)
+              val superClass = classesByName(cleanedSuperClassName)
+              Some(cl.copy(methods = cl.methods.filterNot { case (methodName, _) => superClass.methods.keys.toSet.contains(methodName)}, parents = cl.parents ++ Seq(extendsClass)))
+            case _ => Some(cl)
+          }
+        case (unmatched, _) => unmatched
       }
     }
     val code = if(modifiedClasses.isEmpty)
