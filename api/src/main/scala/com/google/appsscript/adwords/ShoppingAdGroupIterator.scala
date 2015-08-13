@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var shoppingAdGroup = shoppingAdGroupIterator.next();
  *  }</pre>
  */
-trait ShoppingAdGroupIterator extends SizeAwareIterator[ShoppingAdGroup]
+trait ShoppingAdGroupIterator extends js.Object with SizeAwareIterator[ShoppingAdGroup]

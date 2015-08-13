@@ -17,15 +17,7 @@ import scala.scalajs.js
  * <a href="adwordsapp_productcategory.html">ProductCategory</a>
  * objects.
  */
-trait ProductCategoryBuilder extends Builder[ProductCategory] {
-  /**
-   * Builds the product category. Returns a
-   * <a href="adwordsapp_productcategoryoperation.html">ProductCategoryOperation</a>
-   * that corresponds to the creation of the
-   * <a href="adwordsapp_productcategory.html">ProductCategory</a>
-   * .
-   */
-  override def build(): Operation[ProductCategory] = js.native
+trait ProductCategoryBuilder extends js.Object with Builder[ProductCategory] {
   /** Specifies the bid of the product category. If this is unspecified, will use the bid of the parent product group. */
   def withBid(bid: Double): ProductCategoryBuilder = js.native
   /** Specifies the name of the new product category. If the name is unspecified before calling 'build', the category will fail to build. */

@@ -17,7 +17,7 @@ import scala.scalajs.js
  * <a href="https://support.google.com/adwords/answer/2979071"> Using flexible bid strategies</a>
  * .
  */
-trait BiddingStrategy extends js.Object {
+trait BiddingStrategy extends js.Object with HasStatistics {
   /** Returns the selector of all ad groups that use this bidding strategy. */
   def adGroups(): AdGroupSelector = js.native
   /** Returns the selector of all campaigns that use this bidding strategy. */
@@ -26,20 +26,6 @@ trait BiddingStrategy extends js.Object {
   def getId(): Long = js.native
   /** Returns the name of the bidding strategy. */
   def getName(): String = js.native
-  /**
-   * Returns stats for the specified custom date range. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in
-   * <code>YYYYMMDD</code>
-   * form. For instance,
-   * <code>March 24th, 2013</code>
-   * is represented as either
-   * <code>{year: 2013, month: 3, day: 24}</code>
-   * or
-   * <code>"20130324"</code>
-   * . The date range is inclusive on both ends, so
-   * <code>forDateRange("20130324", "20130324")</code>
-   * defines a range of a single day.
-   */
-  def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
   /** Returns the type of the bidding strategy. */
   def getType(): String = js.native
   /** Returns the selector of all keywords that use this bidding strategy. */

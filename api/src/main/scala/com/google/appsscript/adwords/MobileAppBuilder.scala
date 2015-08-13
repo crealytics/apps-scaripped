@@ -38,26 +38,9 @@ import scala.scalajs.js
  *    var errors = mobileAppOperation.getErrors();
  *  }</pre>
  */
-trait MobileAppBuilder extends Builder[MobileApp] {
-  /**
-   * Creates a
-   * <a href="adwordsapp_mobileapp.html">MobileApp</a>
-   * . Returns a
-   * <a href="adwordsapp_mobileappoperation.html">MobileAppOperation</a>
-   * that can be used to get the new mobile app (or access any associated errors if creation failed).
-   */
-  override def build(): Operation[MobileApp] = js.native
+trait MobileAppBuilder extends js.Object with Builder[MobileApp] with BuilderWithCustomParameters {
   /** Sets the mobile app's app ID. Takes a string representing the store-specific ID for the target application. This field is required. */
   def withAppId(appId: String): MobileAppBuilder = js.native
-  /**
-   * Sets the custom parameters of the new mobile app to the specified value.
-   * <p>Custom parameters enable you to create your own <a href="//support.google.com/adwords/answer/2375447">ValueTrack</a> parameters that you can assign your own IDs to.</p>
-   * <p>The name of a custom parameter can contain only alphanumeric characters, and custom parameter values may not contain white space. When referring to the custom parameter in final URLs and tracking template, you should surround the custom parameter in braces, and prefix an underscore to its name, e.g. <code>{_param}</code>.</p>
-   * <p>You can have up to 3 custom parameters for an entity. The key and value must not exceed 16 and 200 bytes respectively.</p>
-   * <p>Custom parameters specified at a lower level entity will override the setting specified at a higher level entity, e.g., setting custom parameters at the ad group level overrides the setting at the campaign level, and and custom parameters specified at the ad level override the setting at the ad group level.</p>
-   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
-   */
-  def withCustomParameters(customParameters: AnyRef): MobileAppBuilder = js.native
   /**
    * Sets the mobile app's end date from either an object containing year, month, and day fields, or an 8-digit string in
    * <code>YYYYMMDD</code>

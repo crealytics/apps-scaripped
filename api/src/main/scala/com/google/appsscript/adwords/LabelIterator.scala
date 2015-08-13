@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var label = labelIterator.next();
  *  }</pre>
  */
-trait LabelIterator extends SizeAwareIterator[Label]
+trait LabelIterator extends js.Object with SizeAwareIterator[Label]

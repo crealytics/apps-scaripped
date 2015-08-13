@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var excludedPlacement = excludedPlacementIterator.next();
  *  }</pre>
  */
-trait ExcludedPlacementIterator extends SizeAwareIterator[ExcludedPlacement]
+trait ExcludedPlacementIterator extends js.Object with SizeAwareIterator[ExcludedPlacement]

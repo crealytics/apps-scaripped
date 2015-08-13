@@ -22,7 +22,7 @@ import scala.scalajs.js
  *    var location = locationIterator.next();
  *  }</pre>
  */
-trait ExcludedLocationSelector extends Selector[ExcludedLocationSelector] {
+trait ExcludedLocationSelector extends js.Object with Selector[ExcludedLocationSelector] {
   /** Fetches the requested excluded locations and returns an iterator. */
   def get(): ExcludedLocationIterator = js.native
 }

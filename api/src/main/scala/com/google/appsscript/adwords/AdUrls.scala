@@ -17,7 +17,7 @@ import scala.scalajs.js
  * <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a>
  * for more information.
  */
-trait AdUrls extends js.Object {
+trait AdUrls extends js.Object with HasFinalUrl {
   /**
    * Returns the custom parameters of the ad.
    * <p>Custom parameters enable you to create your own <a href="//support.google.com/adwords/answer/2375447">ValueTrack</a> parameters that you can assign your own IDs to.</p>
@@ -27,13 +27,6 @@ trait AdUrls extends js.Object {
    * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
    */
   def getCustomParameters(): AnyRef = js.native
-  /**
-   * Returns the final URL of the ad.
-   * <p>The final URL represents the actual landing page for your ad. The final URL must be the URL of the page that the user ends up on after clicking on your ad, once all the redirects have taken place.</p>
-   * <p>Final URLs follow the same override rules as destination URLs. For example, a final URL at the keyword level overrides a final URL at an ad level.</p>
-   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
-   */
-  def getFinalUrl(): String = js.native
   /**
    * Returns the mobile final URL of the ad.
    * <p>The mobile final URL represents the actual landing page for your ad on a mobile device. The final mobile URL must be the URL of the page that the user ends up on after clicking on your ad on a mobile device, once all the redirects have taken place.</p>

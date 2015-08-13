@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var account = accountIterator.next();
  *  }</pre>
  */
-trait ManagedAccountIterator extends SizeAwareIterator[ManagedAccount]
+trait ManagedAccountIterator extends js.Object with SizeAwareIterator[ManagedAccount]

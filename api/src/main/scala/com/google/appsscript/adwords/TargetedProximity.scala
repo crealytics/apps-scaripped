@@ -13,49 +13,13 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /** Represents an AdWords targeted proximity — some radius around a geographical point. */
-trait TargetedProximity extends js.Object {
+trait TargetedProximity extends js.Object with HasBidModifier with HasStatistics {
   /**
    * Returns the address of the central point, or
    * <code>null</code>
    * if unknown.
    */
   def getAddress(): Address = js.native
-  /**
-   * Returns the bid modifier for this proximity.
-   * <p>The bid modifier is a multiplier applied to bids which match this proximity. So, for instance, a bid modifier of <code>1.1</code> increases the bid to 110% of its original value, and changes a bid of $5.00 to a bid of $5.50.</p>
-   * <p> </p>
-   * <p>The bid modifiers for all matching criteria are multiplied together to calculate the actual bid modification. A campaign with the following bid modifiers: </p>
-   * <table>
-   *  <tbody>
-   *   <tr>
-   *    <th>Type</th>
-   *    <th>Value</th>
-   *    <th>Bid Modifier</th>
-   *   </tr>
-   *   <tr>
-   *    <td>Location</td>
-   *    <td>Laos</td>
-   *    <td><code>1.3</code></td>
-   *   </tr>
-   *   <tr>
-   *    <td>Ad Schedule</td>
-   *    <td>Saturday 6AM-10AM</td>
-   *    <td><code>0.9</code></td>
-   *   </tr>
-   *   <tr>
-   *    <td>Platform</td>
-   *    <td>Mobile</td>
-   *    <td><code>1.1</code></td>
-   *   </tr>
-   *  </tbody>
-   * </table>
-   * would have a combined bid modifier of
-   * <code>1.3 * 0.9 * 1.1 = 1.287</code>
-   * , so a bid of $10 would get increased to $12.87 for clicks by Laotian smartphone users on Saturday mornings in the account timezone.
-   * <p></p>
-   * <p>For more information about bid modifiers, please see the <a href="https://support.google.com/adwords/answer/2732132?hl=en">AdWords Help Center article</a>.</p>
-   */
-  def getBidModifier(): Double = js.native
   /** Returns the campaign to which this proximity belongs. */
   def getCampaign(): Campaign = js.native
   /**
@@ -88,60 +52,8 @@ trait TargetedProximity extends js.Object {
    */
   def getRadiusUnits(): String = js.native
   /**
-   * Returns stats for the specified custom date range. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in
-   * <code>YYYYMMDD</code>
-   * form. For instance,
-   * <code>March 24th, 2013</code>
-   * is represented as either
-   * <code>{year: 2013, month: 3, day: 24}</code>
-   * or
-   * <code>"20130324"</code>
-   * . The date range is inclusive on both ends, so
-   * <code>forDateRange("20130324", "20130324")</code>
-   * defines a range of a single day.
-   */
-  def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
-  /**
    * Removes the proximity.
    * <p>Returns nothing.</p>
    */
   def remove(): Unit = js.native
-  /**
-   * Sets the bid modifier for this proximity.
-   * <p>The bid modifier is a multiplier applied to bids which match this proximity. So, for instance, a bid modifier of <code>1.1</code> increases the bid to 110% of its original value, and changes a bid of <code>$5.00</code> to a bid of <code>$5.50</code>.</p>
-   * <p> </p>
-   * <p>The bid modifiers for all matching criteria are multiplied together to calculate the actual bid modification. A campaign with the following bid modifiers: </p>
-   * <table>
-   *  <tbody>
-   *   <tr>
-   *    <th>Type</th>
-   *    <th>Value</th>
-   *    <th>Bid Modifier</th>
-   *   </tr>
-   *   <tr>
-   *    <td>Location</td>
-   *    <td>Laos</td>
-   *    <td><code>1.3</code></td>
-   *   </tr>
-   *   <tr>
-   *    <td>Ad Schedule</td>
-   *    <td>Saturday 6AM-10AM</td>
-   *    <td><code>0.9</code></td>
-   *   </tr>
-   *   <tr>
-   *    <td>Platform</td>
-   *    <td>Mobile</td>
-   *    <td><code>1.1</code></td>
-   *   </tr>
-   *  </tbody>
-   * </table>
-   * would have a combined bid modifier of
-   * <code>1.3 * 0.9 * 1.1 = 1.287</code>
-   * , so a bid of $10 would get increased to $12.87 for clicks by Laotian smartphone users on Saturday mornings in the account timezone.
-   * <p></p>
-   * <p>For more information about bid modifiers, please see the <a href="https://support.google.com/adwords/answer/2732132?hl=en">AdWords Help Center article</a>.</p>
-   * <p>For proximities, acceptable bid modifiers are in the range <code>0.1</code> to <code>10</code>.</p>
-   * <p>Returns nothing.</p>
-   */
-  def setBidModifier(modifier: Double): Unit = js.native
 }

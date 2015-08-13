@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var adGroupMobileApp = adGroupMobileAppIterator.next();
  *  }</pre>
  */
-trait AdGroupMobileAppIterator extends SizeAwareIterator[AdGroupMobileApp]
+trait AdGroupMobileAppIterator extends js.Object with SizeAwareIterator[AdGroupMobileApp]

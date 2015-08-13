@@ -24,15 +24,7 @@ import scala.scalajs.js
  *  var keyword = keywordOperation.getResult();</pre>
  * <p> Note that it is only necessary to call <a href="adwordsapp_keywordoperation.html#getResult_0">KeywordOperation.getResult()</a> if you need to access the actual keyword for further processing (for instance, one can attach a label to the newly created keyword), otherwise, calling <a href="adwordsapp_keywordbuilder.html#build_0">KeywordBuilder.build()</a> on the <code>KeywordBuilder</code> is sufficient to ensure that the Keyword is created.</p>
  */
-trait KeywordBuilder extends Builder[Keyword] {
-  /**
-   * Creates a
-   * <a href="adwordsapp_keyword.html">Keyword</a>
-   * . Returns a
-   * <a href="adwordsapp_keywordoperation.html">KeywordOperation</a>
-   * that can be used to get the new keyword (or access any associated errors if creation failed).
-   */
-  override def build(): Operation[Keyword] = js.native
+trait KeywordBuilder extends js.Object with Builder[Keyword] with BuilderWithCustomParameters {
   /** Sets the bidding strategy of the new keyword to the specified value. */
   def withBiddingStrategy(biddingStrategy: BiddingStrategy): KeywordBuilder = js.native
   /** Sets the max CPC bid of the new keyword to the specified value. */
@@ -42,15 +34,6 @@ trait KeywordBuilder extends Builder[Keyword] {
    * <p>See <a href="https://support.google.com/adwords/answer/6310"> Cost-per-thousand impressions (CPM)</a> for more information.</p>
    */
   def withCpm(cpm: Double): KeywordBuilder = js.native
-  /**
-   * Sets the custom parameters of the new keyword to the specified value.
-   * <p>Custom parameters enable you to create your own <a href="//support.google.com/adwords/answer/2375447">ValueTrack</a> parameters that you can assign your own IDs to.</p>
-   * <p>The name of a custom parameter can contain only alphanumeric characters, and custom parameter values may not contain white space. When referring to the custom parameter in final URLs and tracking template, you should surround the custom parameter in braces, and prefix an underscore to its name, e.g. <code>{_param}</code>.</p>
-   * <p>You can have up to 3 custom parameters for an entity. The key and value must not exceed 16 and 200 bytes respectively.</p>
-   * <p>Custom parameters specified at a lower level entity will override the setting specified at a higher level entity, e.g., setting custom parameters at the ad group level overrides the setting at the campaign level, and and custom parameters specified at the ad level override the setting at the ad group level.</p>
-   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
-   */
-  def withCustomParameters(customParameters: AnyRef): KeywordBuilder = js.native
   /**
    * Sets the destination URL of the keyword to the specified value.
    * <aside class="warning">

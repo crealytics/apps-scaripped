@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var phoneNumber = phoneNumberIterator.next();
  *  }</pre>
  */
-trait PhoneNumberIterator extends SizeAwareIterator[PhoneNumber]
+trait PhoneNumberIterator extends js.Object with SizeAwareIterator[PhoneNumber]

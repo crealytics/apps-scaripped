@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var negativeKeyword = negativeKeywordIterator.next();
  *  }</pre>
  */
-trait NegativeKeywordIterator extends SizeAwareIterator[NegativeKeyword]
+trait NegativeKeywordIterator extends js.Object with SizeAwareIterator[NegativeKeyword]

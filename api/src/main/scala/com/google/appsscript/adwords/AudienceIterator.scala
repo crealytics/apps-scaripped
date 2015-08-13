@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var audience = audienceIterator.next();
  *  }</pre>
  */
-trait AudienceIterator extends SizeAwareIterator[Audience]
+trait AudienceIterator extends js.Object with SizeAwareIterator[Audience]

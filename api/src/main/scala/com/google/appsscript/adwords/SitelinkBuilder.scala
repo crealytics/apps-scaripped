@@ -36,24 +36,7 @@ import scala.scalajs.js
  *    var errors = sitelinkOperation.getErrors();
  *  }</pre>
  */
-trait SitelinkBuilder extends Builder[Sitelink] {
-  /**
-   * Creates a
-   * <a href="adwordsapp_sitelink.html">Sitelink</a>
-   * . Returns a
-   * <a href="adwordsapp_sitelinkoperation.html">SitelinkOperation</a>
-   * that can be used to get the new sitelink (or access any associated errors if creation failed).
-   */
-  override def build(): Operation[Sitelink] = js.native
-  /**
-   * Sets the custom parameters of the new sitelink to the specified value.
-   * <p>Custom parameters enable you to create your own <a href="//support.google.com/adwords/answer/2375447">ValueTrack</a> parameters that you can assign your own IDs to.</p>
-   * <p>The name of a custom parameter can contain only alphanumeric characters, and custom parameter values may not contain white space. When referring to the custom parameter in final URLs and tracking template, you should surround the custom parameter in braces, and prefix an underscore to its name, e.g. <code>{_param}</code>.</p>
-   * <p>You can have up to 3 custom parameters for an entity. The key and value must not exceed 16 and 200 bytes respectively.</p>
-   * <p>Custom parameters specified at a lower level entity will override the setting specified at a higher level entity, e.g., setting custom parameters at the ad group level overrides the setting at the campaign level, and and custom parameters specified at the ad level override the setting at the ad group level.</p>
-   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
-   */
-  def withCustomParameters(customParameters: AnyRef): SitelinkBuilder = js.native
+trait SitelinkBuilder extends js.Object with Builder[Sitelink] with BuilderWithCustomParameters {
   /** Sets the first description line of the new sitelink description to the specified value. */
   def withDescription1(description1: String): SitelinkBuilder = js.native
   /** Sets the second description line of the new sitelink description to the specified value. */

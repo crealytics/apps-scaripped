@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var adGroupSitelink = adGroupSitelinkIterator.next();
  *  }</pre>
  */
-trait AdGroupSitelinkIterator extends SizeAwareIterator[AdGroupSitelink]
+trait AdGroupSitelinkIterator extends js.Object with SizeAwareIterator[AdGroupSitelink]

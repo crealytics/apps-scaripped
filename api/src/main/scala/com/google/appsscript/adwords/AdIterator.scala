@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var ad = adIterator.next();
  *  }</pre>
  */
-trait AdIterator extends SizeAwareIterator[Ad]
+trait AdIterator extends js.Object with SizeAwareIterator[Ad]

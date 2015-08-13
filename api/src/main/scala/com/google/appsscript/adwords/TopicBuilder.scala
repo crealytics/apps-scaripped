@@ -24,15 +24,7 @@ import scala.scalajs.js
  *    .withCpc(0.50)                  // optional
  *    .build()                        // create the topic</pre>
  */
-trait TopicBuilder extends Builder[Topic] {
-  /**
-   * Builds the topic. Returns a
-   * <a href="adwordsapp_topicoperation.html">TopicOperation</a>
-   * that corresponds to the creation of the
-   * <a href="adwordsapp_topic.html">Topic</a>
-   * .
-   */
-  override def build(): Operation[Topic] = js.native
+trait TopicBuilder extends js.Object with Builder[Topic] {
   /**
    * Builds the excluded topic. Returns an
    * <a href="adwordsapp_excludedtopicoperation.html">ExcludedTopicOperation</a>

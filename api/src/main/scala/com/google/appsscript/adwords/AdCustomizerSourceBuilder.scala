@@ -32,7 +32,7 @@ import scala.scalajs.js
  *    .build();                                              // create the ad customizer source</pre>
  * <p></p>
  */
-trait AdCustomizerSourceBuilder extends Builder[AdCustomizerSource] {
+trait AdCustomizerSourceBuilder extends js.Object with Builder[AdCustomizerSource] {
   /**
    * Adds an attribute of the given name and type to the new ad customizer source. Existing attributes are not modified.
    * <p>Valid types are <code>text, number, price, date</code>.</p>
@@ -68,14 +68,6 @@ trait AdCustomizerSourceBuilder extends Builder[AdCustomizerSource] {
    * <p>An error will be thrown if an additional attribute's name is one of <code>start date, end date, device preference, scheduling, target campaign, target ad group, keyword text, match type, keyword, id</code>, case insensitive.</p>
    */
   def addAttributes(attributes: AnyRef): AdCustomizerSourceBuilder = js.native
-  /**
-   * Builds the ad customizer source. Returns an
-   * <a href="adwordsapp_adcustomizersourceoperation.html">AdCustomizerSourceOperation</a>
-   * that corresponds to the creation of the
-   * <a href="adwordsapp_adcustomizersource.html">AdCustomizerSource</a>
-   * .
-   */
-  override def build(): Operation[AdCustomizerSource] = js.native
   /** Sets the name of the new ad customizer source to the specified value. This field is required. */
   def withName(name: String): AdCustomizerSourceBuilder = js.native
 }

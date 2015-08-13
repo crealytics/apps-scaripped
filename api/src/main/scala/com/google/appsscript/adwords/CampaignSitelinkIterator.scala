@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var campaignSitelink = campaignSitelinkIterator.next();
  *  }</pre>
  */
-trait CampaignSitelinkIterator extends SizeAwareIterator[CampaignSitelink]
+trait CampaignSitelinkIterator extends js.Object with SizeAwareIterator[CampaignSitelink]

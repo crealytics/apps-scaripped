@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var excludedDisplayKeyword = excludedDisplayKeywordIterator.next();
  *  }</pre>
  */
-trait ExcludedDisplayKeywordIterator extends SizeAwareIterator[ExcludedDisplayKeyword]
+trait ExcludedDisplayKeywordIterator extends js.Object with SizeAwareIterator[ExcludedDisplayKeyword]

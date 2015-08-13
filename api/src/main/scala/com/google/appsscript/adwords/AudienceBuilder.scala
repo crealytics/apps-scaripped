@@ -25,15 +25,7 @@ import scala.scalajs.js
  *    .withCpc(0.50)                  // optional
  *    .build()                        // create the audience</pre>
  */
-trait AudienceBuilder extends Builder[Audience] {
-  /**
-   * Builds the audience. Returns a
-   * <a href="adwordsapp_audienceoperation.html">AudienceOperation</a>
-   * that corresponds to the creation of the
-   * <a href="adwordsapp_audience.html">Audience</a>
-   * .
-   */
-  override def build(): Operation[Audience] = js.native
+trait AudienceBuilder extends js.Object with Builder[Audience] {
   /**
    * Builds the excluded audience. Returns an
    * <a href="adwordsapp_excludedaudienceoperation.html">ExcludedAudienceOperation</a>

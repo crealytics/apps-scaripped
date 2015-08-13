@@ -19,7 +19,7 @@ import scala.scalajs.js
  * <a href="/adwords/api/docs/guides/shared-budgets">AdWords API article</a>
  * .
  */
-trait Budget extends js.Object {
+trait Budget extends js.Object with HasStatistics {
   /** Returns the selector of all campaigns that share this budget. */
   def campaigns(): CampaignSelector = js.native
   /** Returns the amount of the budget, in the currency of the account. */
@@ -42,20 +42,6 @@ trait Budget extends js.Object {
   def getId(): Long = js.native
   /** Returns the name of the budget. Every budget must have a non-empty name; all budget names in an account are distinct. */
   def getName(): String = js.native
-  /**
-   * Returns stats for the specified custom date range. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in
-   * <code>YYYYMMDD</code>
-   * form. For instance,
-   * <code>March 24th, 2013</code>
-   * is represented as either
-   * <code>{year: 2013, month: 3, day: 24}</code>
-   * or
-   * <code>"20130324"</code>
-   * . The date range is inclusive on both ends, so
-   * <code>forDateRange("20130324", "20130324")</code>
-   * defines a range of a single day.
-   */
-  def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
   /**
    * Returns
    * <code>true</code>

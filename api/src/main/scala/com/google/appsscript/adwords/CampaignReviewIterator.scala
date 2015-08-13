@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var campaignReview = campaignReviewIterator.next();
  *  }</pre>
  */
-trait CampaignReviewIterator extends SizeAwareIterator[CampaignReview]
+trait CampaignReviewIterator extends js.Object with SizeAwareIterator[CampaignReview]

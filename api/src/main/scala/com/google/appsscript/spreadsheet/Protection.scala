@@ -1,22 +1,20 @@
 package com.google.appsscript.spreadsheet
 
-import com.google.appsscript.base._
-
 import com.google.appsscript.charts._
 
-import com.google.appsscript.drive._
+import com.google.appsscript.base._
 
 import scala.scalajs.js
 
 /**
- * Protection Access and modify protected ranges and sheets. A protected range can protect either a static range of cells or a named range. A protected sheet may include unprotected regions. For spreadsheets created with the older version of Google Sheets, use the PageProtection class instead. 
- *  
- * 
+ * Protection Access and modify protected ranges and sheets. A protected range can protect either a static range of cells or a named range. A protected sheet may include unprotected regions. For spreadsheets created with the older version of Google Sheets, use the PageProtection class instead.
+ *
+ *
  *  // Protect range A1:B10, then remove all other users from the list of editors.
  *  var ss = SpreadsheetApp.getActive();
  *  var range = ss.getRange('A1:B10');
  *  var protection = range.protect().setDescription('Sample protected range');
- * 
+ *
  *  // Ensure the current user is an editor before removing others. Otherwise, if the user's edit
  *  // permission comes from a group, the script will throw an exception upon removing the group.
  *  var me = Session.getEffectiveUser();
@@ -25,10 +23,10 @@ import scala.scalajs.js
  *  if (protection.canDomainEdit()) {
  *    protection.setDomainEdit(false);
  *  }
- *  
- *  
- *  
- * 
+ *
+ *
+ *
+ *
  *  // Remove all range protections in the spreadsheet that the user has permission to edit.
  *  var ss = SpreadsheetApp.getActive();
  *  var protections = ss.getProtections(SpreadsheetApp.ProtectionType.RANGE);
@@ -38,14 +36,14 @@ import scala.scalajs.js
  *      protection.remove();
  *    }
  *  }
- *  
- *  
- *  
- * 
+ *
+ *
+ *
+ *
  *  // Protect the active sheet, then remove all other users from the list of editors.
  *  var sheet = SpreadsheetApp.getActiveSheet();
  *  var protection = sheet.protect().setDescription('Sample protected sheet');
- * 
+ *
  *  // Ensure the current user is an editor before removing others. Otherwise, if the user's edit
  *  // permission comes from a group, the script will throw an exception upon removing the group.
  *  var me = Session.getEffectiveUser();

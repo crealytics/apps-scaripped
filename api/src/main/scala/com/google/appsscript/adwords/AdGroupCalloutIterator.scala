@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var adGroupCallout = adGroupCalloutIterator.next();
  *  }</pre>
  */
-trait AdGroupCalloutIterator extends SizeAwareIterator[AdGroupCallout]
+trait AdGroupCalloutIterator extends js.Object with SizeAwareIterator[AdGroupCallout]

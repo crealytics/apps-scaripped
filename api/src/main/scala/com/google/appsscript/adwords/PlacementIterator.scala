@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var placement = placementIterator.next();
  *  }</pre>
  */
-trait PlacementIterator extends SizeAwareIterator[Placement]
+trait PlacementIterator extends js.Object with SizeAwareIterator[Placement]

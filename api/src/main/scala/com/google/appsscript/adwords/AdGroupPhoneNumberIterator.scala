@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var adGroupPhoneNumber = adGroupPhoneNumberIterator.next();
  *  }</pre>
  */
-trait AdGroupPhoneNumberIterator extends SizeAwareIterator[AdGroupPhoneNumber]
+trait AdGroupPhoneNumberIterator extends js.Object with SizeAwareIterator[AdGroupPhoneNumber]

@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var review = reviewIterator.next();
  *  }</pre>
  */
-trait ReviewIterator extends SizeAwareIterator[Review]
+trait ReviewIterator extends js.Object with SizeAwareIterator[Review]

@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var accountLabel = accountLabelIterator.next();
  *  }</pre>
  */
-trait AccountLabelIterator extends SizeAwareIterator[AccountLabel]
+trait AccountLabelIterator extends js.Object with SizeAwareIterator[AccountLabel]

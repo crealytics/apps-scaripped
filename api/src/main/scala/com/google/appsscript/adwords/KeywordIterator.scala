@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var keyword = keywordIterator.next();
  *  }</pre>
  */
-trait KeywordIterator extends SizeAwareIterator[Keyword]
+trait KeywordIterator extends js.Object with SizeAwareIterator[Keyword]

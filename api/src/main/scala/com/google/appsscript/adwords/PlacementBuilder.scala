@@ -23,15 +23,7 @@ import scala.scalajs.js
  *      .withCpc(0.50)                   // optional
  *      .build()                         // create the placement</pre>
  */
-trait PlacementBuilder extends Builder[Placement] {
-  /**
-   * Builds the placement. Returns a
-   * <a href="adwordsapp_placementoperation.html">PlacementOperation</a>
-   * that corresponds to the creation of the
-   * <a href="adwordsapp_placement.html">Placement</a>
-   * .
-   */
-  override def build(): Operation[Placement] = js.native
+trait PlacementBuilder extends js.Object with Builder[Placement] {
   /**
    * Builds the excluded placement. Returns an
    * <a href="adwordsapp_excludedplacementoperation.html">ExcludedPlacementOperation</a>

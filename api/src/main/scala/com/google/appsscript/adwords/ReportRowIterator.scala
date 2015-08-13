@@ -21,4 +21,4 @@ import scala.scalajs.js
  *    var row = rows.next();
  *  }</pre>
  */
-trait ReportRowIterator extends SizeAwareIterator[ReportRow]
+trait ReportRowIterator extends js.Object with SizeAwareIterator[ReportRow]

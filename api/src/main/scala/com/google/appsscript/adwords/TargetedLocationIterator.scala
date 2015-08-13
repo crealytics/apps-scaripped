@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var location = locationIterator.next();
  *  }</pre>
  */
-trait TargetedLocationIterator extends SizeAwareIterator[TargetedLocation]
+trait TargetedLocationIterator extends js.Object with SizeAwareIterator[TargetedLocation]

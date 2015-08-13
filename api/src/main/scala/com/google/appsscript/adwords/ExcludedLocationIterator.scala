@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var location = locationIterator.next();
  *  }</pre>
  */
-trait ExcludedLocationIterator extends SizeAwareIterator[ExcludedLocation]
+trait ExcludedLocationIterator extends js.Object with SizeAwareIterator[ExcludedLocation]

@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var accountCallout = accountCalloutIterator.next();
  *  }</pre>
  */
-trait AccountCalloutIterator extends SizeAwareIterator[AccountCallout]
+trait AccountCalloutIterator extends js.Object with SizeAwareIterator[AccountCallout]

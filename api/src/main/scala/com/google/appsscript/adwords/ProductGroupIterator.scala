@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var productGroup = productGroupIterator.next();
  *  }</pre>
  */
-trait ProductGroupIterator extends SizeAwareIterator[ProductGroup]
+trait ProductGroupIterator extends js.Object with SizeAwareIterator[ProductGroup]

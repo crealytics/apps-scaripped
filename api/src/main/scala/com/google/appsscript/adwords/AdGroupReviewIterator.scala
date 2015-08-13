@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var adGroupReview = adGroupReviewIterator.next();
  *  }</pre>
  */
-trait AdGroupReviewIterator extends SizeAwareIterator[AdGroupReview]
+trait AdGroupReviewIterator extends js.Object with SizeAwareIterator[AdGroupReview]

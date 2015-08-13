@@ -13,7 +13,7 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /** Represents an AdWords ad. */
-trait Ad extends js.Object {
+trait Ad extends js.Object with HasStatistics {
   /**
    * Applies a label to the ad.
    * <code>name</code>
@@ -87,20 +87,6 @@ trait Ad extends js.Object {
    * <p>Ad IDs may be shared across ad groups. In order to uniquely identify one ad, one must specify both its ad group ID and its creative ID.</p>
    */
   def getId(): Long = js.native
-  /**
-   * Returns stats for the specified custom date range. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in
-   * <code>YYYYMMDD</code>
-   * form. For instance,
-   * <code>March 24th, 2013</code>
-   * is represented as either
-   * <code>{year: 2013, month: 3, day: 24}</code>
-   * or
-   * <code>"20130324"</code>
-   * . The date range is inclusive on both ends, so
-   * <code>forDateRange("20130324", "20130324")</code>
-   * defines a range of a single day.
-   */
-  def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
   /**
    * Returns the type of the ad. Possible values:
    * <code>IMAGE_AD, MOBILE_AD, MOBILE_IMAGE_AD, PRODUCT_AD, RICH_MEDIA_AD, TEMPLATE_AD, TEXT_AD</code>

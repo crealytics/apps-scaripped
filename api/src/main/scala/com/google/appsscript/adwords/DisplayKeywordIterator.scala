@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var displayKeyword = displayKeywordIterator.next();
  *  }</pre>
  */
-trait DisplayKeywordIterator extends SizeAwareIterator[DisplayKeyword]
+trait DisplayKeywordIterator extends js.Object with SizeAwareIterator[DisplayKeyword]

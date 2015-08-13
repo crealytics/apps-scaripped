@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var callout = calloutIterator.next();
  *  }</pre>
  */
-trait CalloutIterator extends SizeAwareIterator[Callout]
+trait CalloutIterator extends js.Object with SizeAwareIterator[Callout]

@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var excludedAudience = excludedAudienceIterator.next();
  *  }</pre>
  */
-trait ExcludedAudienceIterator extends SizeAwareIterator[ExcludedAudience]
+trait ExcludedAudienceIterator extends js.Object with SizeAwareIterator[ExcludedAudience]

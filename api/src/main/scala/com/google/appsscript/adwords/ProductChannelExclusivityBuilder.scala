@@ -17,15 +17,7 @@ import scala.scalajs.js
  * <a href="adwordsapp_productchannelexclusivity.html">ProductChannelExclusivity</a>
  * objects.
  */
-trait ProductChannelExclusivityBuilder extends Builder[ProductChannelExclusivity] {
-  /**
-   * Builds the product channel exclusivity. Returns a
-   * <a href="adwordsapp_productchannelexclusivityoperation.html">ProductChannelExclusivityOperation</a>
-   * that corresponds to the creation of the
-   * <a href="adwordsapp_productchannelexclusivity.html">ProductChannelExclusivity</a>
-   * .
-   */
-  override def build(): Operation[ProductChannelExclusivity] = js.native
+trait ProductChannelExclusivityBuilder extends js.Object with Builder[ProductChannelExclusivity] {
   /** Specifies the bid of the product channel exclusivity. If this is unspecified, will use the bid of the parent product group. */
   def withBid(bid: Double): ProductChannelExclusivityBuilder = js.native
   /**

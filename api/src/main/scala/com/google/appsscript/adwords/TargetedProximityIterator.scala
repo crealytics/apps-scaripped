@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var proximity = proximityIterator.next();
  *  }</pre>
  */
-trait TargetedProximityIterator extends SizeAwareIterator[TargetedProximity]
+trait TargetedProximityIterator extends js.Object with SizeAwareIterator[TargetedProximity]

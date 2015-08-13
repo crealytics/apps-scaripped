@@ -4,7 +4,7 @@ import com.google.appsscript.base._
 
 import com.google.appsscript.charts._
 
-import com.appsscript.drive._
+import com.google.appsscript.drive._
 
 import com.google.appsscript.spreadsheet._
 
@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var topic = topicIterator.next();
  *  }</pre>
  */
-trait TopicIterator extends SizeAwareIterator[Topic]
+trait TopicIterator extends js.Object with SizeAwareIterator[Topic]

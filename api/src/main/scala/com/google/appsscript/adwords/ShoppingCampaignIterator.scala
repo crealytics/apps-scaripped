@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var shoppingCampaign = shoppingCampaignIterator.next();
  *  }</pre>
  */
-trait ShoppingCampaignIterator extends SizeAwareIterator[ShoppingCampaign]
+trait ShoppingCampaignIterator extends js.Object with SizeAwareIterator[ShoppingCampaign]

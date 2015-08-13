@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var sitelink = sitelinkIterator.next();
  *  }</pre>
  */
-trait SitelinkIterator extends SizeAwareIterator[Sitelink]
+trait SitelinkIterator extends js.Object with SizeAwareIterator[Sitelink]

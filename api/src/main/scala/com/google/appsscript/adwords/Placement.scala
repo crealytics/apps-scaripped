@@ -16,7 +16,7 @@ import scala.scalajs.js
  * Represents an AdWords website placement.
  * <p>Mobile app placements and mobile app category placements are not supported.</p>
  */
-trait Placement extends js.Object {
+trait Placement extends js.Object with HasStatistics {
   /** Provides access to this placement's bidding fields. */
   def bidding(): PlacementBidding = js.native
   /** Returns the ad group to which this placement belongs. */
@@ -29,20 +29,6 @@ trait Placement extends js.Object {
    * if the placement is automatic.
    */
   def getId(): Long = js.native
-  /**
-   * Returns stats for the specified custom date range. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in
-   * <code>YYYYMMDD</code>
-   * form. For instance,
-   * <code>March 24th, 2013</code>
-   * is represented as either
-   * <code>{year: 2013, month: 3, day: 24}</code>
-   * or
-   * <code>"20130324"</code>
-   * . The date range is inclusive on both ends, so
-   * <code>forDateRange("20130324", "20130324")</code>
-   * defines a range of a single day.
-   */
-  def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
   /** Returns the URL of the placement. */
   def getUrl(): String = js.native
   /**

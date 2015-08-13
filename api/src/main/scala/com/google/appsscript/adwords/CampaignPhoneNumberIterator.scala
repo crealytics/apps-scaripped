@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var campaignPhoneNumber = campaignPhoneNumberIterator.next();
  *  }</pre>
  */
-trait CampaignPhoneNumberIterator extends SizeAwareIterator[CampaignPhoneNumber]
+trait CampaignPhoneNumberIterator extends js.Object with SizeAwareIterator[CampaignPhoneNumber]

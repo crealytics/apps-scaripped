@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var adParam = adParamIterator.next();
  *  }</pre>
  */
-trait AdParamIterator extends SizeAwareIterator[AdParam]
+trait AdParamIterator extends js.Object with SizeAwareIterator[AdParam]

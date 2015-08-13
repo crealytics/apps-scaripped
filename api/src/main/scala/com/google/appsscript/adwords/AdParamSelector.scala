@@ -22,7 +22,7 @@ import scala.scalajs.js
  *    var adParam = adParamIterator.next();
  *  }</pre>
  */
-trait AdParamSelector extends Selector[AdParamSelector] {
+trait AdParamSelector extends js.Object with Selector[AdParamSelector] {
   /** Fetches the requested ad params and returns an iterator. */
   def get(): AdParamIterator = js.native
 }

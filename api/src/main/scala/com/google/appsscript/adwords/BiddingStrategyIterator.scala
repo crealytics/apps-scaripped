@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var biddingStrategy = biddingStrategyIterator.next();
  *  }</pre>
  */
-trait BiddingStrategyIterator extends SizeAwareIterator[BiddingStrategy]
+trait BiddingStrategyIterator extends js.Object with SizeAwareIterator[BiddingStrategy]

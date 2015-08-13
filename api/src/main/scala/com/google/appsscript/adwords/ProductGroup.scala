@@ -14,7 +14,7 @@ import scala.scalajs.js
 
 /**
  */
-trait ProductGroup extends js.Object {
+trait ProductGroup extends js.Object with HasStatistics {
   /** Returns this product group represented as a product brand. */
   def asBrand(): ProductBrand = js.native
   /** Returns this product group represented as a product category. */
@@ -67,20 +67,6 @@ trait ProductGroup extends js.Object {
    * or the product group is excluded.
    */
   def getMaxCpc(): Double = js.native
-  /**
-   * Returns stats for the specified custom date range. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in
-   * <code>YYYYMMDD</code>
-   * form. For instance,
-   * <code>March 24th, 2013</code>
-   * is represented as either
-   * <code>{year: 2013, month: 3, day: 24}</code>
-   * or
-   * <code>"20130324"</code>
-   * . The date range is inclusive on both ends, so
-   * <code>forDateRange("20130324", "20130324")</code>
-   * defines a range of a single day.
-   */
-  def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
   /**
    * Returns the value of the product group or
    * <code>null</code>

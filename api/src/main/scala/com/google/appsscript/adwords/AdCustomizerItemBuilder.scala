@@ -24,15 +24,7 @@ import scala.scalajs.js
  *    .withMobilePreferred(true)                           // optional
  *    .build();                                            // create the ad customizer item</pre>
  */
-trait AdCustomizerItemBuilder extends Builder[AdCustomizerItem] {
-  /**
-   * Builds the ad customizer data item. Returns an
-   * <a href="adwordsapp_adcustomizeritemoperation.html">AdCustomizerItemOperation</a>
-   * that corresponds to the creation of the
-   * <a href="adwordsapp_adcustomizeritem.html">AdCustomizerItem</a>
-   * .
-   */
-  override def build(): Operation[AdCustomizerItem] = js.native
+trait AdCustomizerItemBuilder extends js.Object with Builder[AdCustomizerItem] {
   /**
    * Sets the value of the named attribute of the ad customizer item. The value must be consistent with the type of the attribute. See
    * <a href="adwordsapp_adcustomizeritem.html#setAttributeValue_2">AdCustomizerItem.setAttributeValue</a>

@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var budget = budgetIterator.next();
  *  }</pre>
  */
-trait BudgetIterator extends SizeAwareIterator[Budget]
+trait BudgetIterator extends js.Object with SizeAwareIterator[Budget]

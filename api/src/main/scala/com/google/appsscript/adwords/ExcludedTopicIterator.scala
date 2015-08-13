@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var excludedTopic = excludedTopicIterator.next();
  *  }</pre>
  */
-trait ExcludedTopicIterator extends SizeAwareIterator[ExcludedTopic]
+trait ExcludedTopicIterator extends js.Object with SizeAwareIterator[ExcludedTopic]

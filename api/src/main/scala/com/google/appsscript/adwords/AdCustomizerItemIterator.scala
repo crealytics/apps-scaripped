@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var adCustomizerItem = adCustomizerItemIterator.next();
  *  }</pre>
  */
-trait AdCustomizerItemIterator extends SizeAwareIterator[AdCustomizerItem]
+trait AdCustomizerItemIterator extends js.Object with SizeAwareIterator[AdCustomizerItem]

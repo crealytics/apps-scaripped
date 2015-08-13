@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var adSchedule = adScheduleIterator.next();
  *  }</pre>
  */
-trait AdScheduleIterator extends SizeAwareIterator[AdSchedule]
+trait AdScheduleIterator extends js.Object with SizeAwareIterator[AdSchedule]

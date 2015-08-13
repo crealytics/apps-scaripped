@@ -13,7 +13,7 @@ import com.google.appsscript.drive._
 import scala.scalajs.js
 
 /** Represents a product type. */
-trait ProductType extends js.Object {
+trait ProductType extends js.Object with HasStatistics {
   /** Returns a selector of the child product groups of this product type. */
   def children(): ProductGroupSelector = js.native
   /**
@@ -45,20 +45,6 @@ trait ProductType extends js.Object {
    * or the product type is excluded.
    */
   def getMaxCpc(): Double = js.native
-  /**
-   * Returns stats for the specified custom date range. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in
-   * <code>YYYYMMDD</code>
-   * form. For instance,
-   * <code>March 24th, 2013</code>
-   * is represented as either
-   * <code>{year: 2013, month: 3, day: 24}</code>
-   * or
-   * <code>"20130324"</code>
-   * . The date range is inclusive on both ends, so
-   * <code>forDateRange("20130324", "20130324")</code>
-   * defines a range of a single day.
-   */
-  def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
   /** Returns the name of the product type. */
   def getType(): String = js.native
   /**

@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var accountMobileApp = accountMobileAppIterator.next();
  *  }</pre>
  */
-trait AccountMobileAppIterator extends SizeAwareIterator[AccountMobileApp]
+trait AccountMobileAppIterator extends js.Object with SizeAwareIterator[AccountMobileApp]

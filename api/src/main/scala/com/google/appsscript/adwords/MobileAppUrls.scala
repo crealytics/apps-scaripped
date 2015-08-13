@@ -17,7 +17,7 @@ import scala.scalajs.js
  * <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a>
  * for more information.
  */
-trait MobileAppUrls extends js.Object {
+trait MobileAppUrls extends js.Object with HasFinalUrl {
   /**
    * Clears the mobile final URL of the mobile app.
    * <p>Clearing mobile final URL will cause the final URL to be used instead.</p>
@@ -34,13 +34,6 @@ trait MobileAppUrls extends js.Object {
    * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
    */
   def getCustomParameters(): AnyRef = js.native
-  /**
-   * Returns the final URL of the mobile app.
-   * <p>The final URL represents the actual landing page for your mobile app. The final URL must be the URL of the page that the user ends up on after clicking on your ad, once all the redirects have taken place.</p>
-   * <p>Final URLs follow the same override rules as destination URLs. For example, a final URL at the keyword level overrides a final URL at an ad level.</p>
-   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
-   */
-  def getFinalUrl(): String = js.native
   /**
    * Returns the mobile final URL of the mobile app.
    * <p>The mobile final URL represents the actual landing page for your mobile app on a mobile device. The final mobile URL must be the URL of the page that the user ends up on after clicking on your ad on a mobile device, once all the redirects have taken place.</p>

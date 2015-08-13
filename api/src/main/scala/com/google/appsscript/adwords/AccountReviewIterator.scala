@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var accountReview = accountReviewIterator.next();
  *  }</pre>
  */
-trait AccountReviewIterator extends SizeAwareIterator[AccountReview]
+trait AccountReviewIterator extends js.Object with SizeAwareIterator[AccountReview]

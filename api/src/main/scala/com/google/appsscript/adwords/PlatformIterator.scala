@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var platform = platformIterator.next();
  *  }</pre>
  */
-trait PlatformIterator extends SizeAwareIterator[Platform]
+trait PlatformIterator extends js.Object with SizeAwareIterator[Platform]

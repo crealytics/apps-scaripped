@@ -20,4 +20,4 @@ import scala.scalajs.js
  *    var campaignMobileApp = campaignMobileAppIterator.next();
  *  }</pre>
  */
-trait CampaignMobileAppIterator extends SizeAwareIterator[CampaignMobileApp]
+trait CampaignMobileAppIterator extends js.Object with SizeAwareIterator[CampaignMobileApp]
