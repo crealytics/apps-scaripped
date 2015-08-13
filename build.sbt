@@ -28,7 +28,7 @@ generateApi in (Compile) := Def.inputTaskDyn {
 }.evaluated
 
 
-generatorPath in Compile := (sourceManaged in (api, Compile)).value / "scala"
+generatorPath in Compile := (scalaSource in (api, Compile)).value
 
 bintrayOrganization in ThisBuild := Some("crealytics")
 
