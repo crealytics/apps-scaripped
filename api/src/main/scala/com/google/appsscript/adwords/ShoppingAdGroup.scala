@@ -26,6 +26,16 @@ trait ShoppingAdGroup extends js.Object {
   def applyLabel(name: String): Unit = js.native
   /** Provides access to this shopping ad group's bidding fields. */
   def bidding(): ShoppingAdGroupBidding = js.native
+  /**
+   * Creates a new negative keyword with the specified text. Match type for the new negative keyword is specified as follows:
+   * <ul>
+   *  <li><code>createNegativeKeyword("shoes")</code> - broad match.</li>
+   *  <li><code>createNegativeKeyword("\"shoes\"")</code> - phrase match.</li>
+   *  <li><code>createNegativeKeyword("[leather shoes]")</code> - exact match.</li>
+   * </ul>
+   * <p>Returns nothing.</p>
+   */
+  def createNegativeKeyword(keywordText: String): Unit = js.native
   /** Creates the root product group of the shopping ad group (if one doesn't already exist). Newly constructed shopping ad groups as well as ones modified by other means may not have any product groups. */
   def createRootProductGroup(): Operation[ProductGroup] = js.native
   /**
@@ -45,20 +55,6 @@ trait ShoppingAdGroup extends js.Object {
   def getEntityType(): String = js.native
   /** Returns the ID of the shopping ad group. */
   def getId(): Long = js.native
-  /**
-   *  Returns the default max cpc bid of the shopping ad group, in the currency of the account. Returns 
-   * <code>null</code>
-   *  if the 
-   * <a href="adwordsapp_shoppingcampaign.html#getBiddingStrategyType_0">shopping campaign's bidding strategy</a>
-   *  is not 
-   * <code>MANUAL_CPC</code>
-   * .
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_shoppingadgroupbidding.html#getCpc_0">ShoppingAdGroupBidding.getCpc()</a>.
-   * </aside>
-   */
-  def getMaxCpc(): Double = js.native
   /**
    * Returns the mobile bid modifier for this ad group.
    * <p> The bid modifier is a multiplier applied to the shopping ad group's bids on mobile devices. So, for instance, a bid modifier of <code>1.1</code> increases the bid to 110% of its original value, and changes a bid of $5.00 to $5.50. </p>
@@ -120,21 +116,6 @@ trait ShoppingAdGroup extends js.Object {
   def removeLabel(name: String): Unit = js.native
   /** Returns the root product group of the shopping ad group (if there is one). */
   def rootProductGroup(): ProductGroup = js.native
-  /**
-   *  Sets the default max cpc bid of the shopping ad group to the specified value. The change will take effect only if the 
-   * <a href="adwordsapp_shoppingcampaign.html#getBiddingStrategyType_0">shopping campaign's bidding strategy</a>
-   *  is 
-   * <code>MANUAL_CPC</code>
-   * .
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_shoppingadgroupbidding.html#setCpc_1">ShoppingAdGroupBidding.setCpc(double)</a>.
-   * </aside>
-   *  
-   * <p>Returns nothing.</p>
-   *  
-   */
-  def setMaxCpc(maxCpc: Double): Unit = js.native
   /**
    * Sets the mobile bid modifier for this ad group to the specified value.
    * <p> The bid modifier is a multiplier applied to the shopping ad group's bids on mobile devices. So, for instance, a bid modifier of <code>1.1</code> increases the bid to 110% of its original value, and changes a bid of $5.00 to $5.50. </p>

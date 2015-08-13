@@ -33,24 +33,9 @@ trait ShoppingAdGroupBuilder extends Builder[ShoppingAdGroup] {
    */
   override def build(): Operation[ShoppingAdGroup] = js.native
   /** Sets the bidding strategy of the new shopping ad group to the specified value. */
-  def withBiddingStrategy(biddingStrategy: String): ShoppingAdGroupBuilder = js.native
+  def withBiddingStrategy(biddingStrategy: BiddingStrategy): ShoppingAdGroupBuilder = js.native
   /** Sets the max CPC bid of the new shopping ad group to the specified value. */
   def withCpc(cpc: Double): ShoppingAdGroupBuilder = js.native
-  /**
-   *  Sets the default max cpc bid of the new shopping ad group to the specified value. If the bid is not set, the shopping ad group will assume a default bid that depends on the campaign's bidding strategy:
-   * <ul> 
-   *  <li><code>MANUAL_CPM</code>: $0.25</li> 
-   *  <li>Other types: $0.01</li> 
-   * </ul>
-   *  If you try to specify the max cpc bid when the campaign's bidding strategy is not 
-   * <code>MANUAL_CPC</code>
-   * , creation of the shopping ad group will fail.
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_shoppingadgroupbuilder.html#withCpc_1">ShoppingAdGroupBuilder.withCpc(double)</a>.
-   * </aside>
-   */
-  def withMaxCpc(maxCpc: Double): ShoppingAdGroupBuilder = js.native
   /** Sets the name of the new shopping ad group to the specified value. If ad group name is not set, the shopping ad group will assume a default name ('Ad Group #5'). */
   def withName(name: String): ShoppingAdGroupBuilder = js.native
   /**

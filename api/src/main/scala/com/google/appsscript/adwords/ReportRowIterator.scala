@@ -21,21 +21,4 @@ import scala.scalajs.js
  *    var row = rows.next();
  *  }</pre>
  */
-trait ReportRowIterator extends SizeAwareIterator[ReportRow] {
-  /**
-   * Returns the next row in the report.
-   * <p>Report rows are returned as plain Javascript objects — in other words, associative arrays. Individual columns can be accessed by indexing by AWQL column names: </p>
-   * <pre class="prettyprint">
-   *  var report = AdWordsApp.report(
-   *      'SELECT Query, Ctr ' +
-   *      'FROM   SEARCH_QUERY_PERFORMANCE_REPORT ' +
-   *      'DURING 20130101,20130301');
-   *  var rows = report.rows();
-   *  while (rows.hasNext()) {
-   *    var row = rows.next();
-   *    var query = row['Query'];
-   *    var ctr = row['Ctr'];
-   *  }</pre>
-   */
-  def next(): ReportRow = js.native
-}
+trait ReportRowIterator extends SizeAwareIterator[ReportRow]

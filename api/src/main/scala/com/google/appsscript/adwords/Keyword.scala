@@ -27,6 +27,13 @@ trait Keyword extends js.Object {
   /** Provides access to this keyword's bidding fields. */
   def bidding(): KeywordBidding = js.native
   /**
+   * Clears the destination URL of the keyword. To upgrade keywords to final URL, first clear the destination URL, then set the final URL with
+   * <a href="adwordsapp_keywordurls.html#setFinalUrl_1">KeywordUrls.setFinalUrl</a>
+   * .
+   * <p>Returns nothing.</p>
+   */
+  def clearDestinationUrl(): Unit = js.native
+  /**
    * Enables the keyword.
    * <p>Returns nothing.</p>
    */
@@ -70,20 +77,6 @@ trait Keyword extends js.Object {
    * .
    */
   def getMatchType(): String = js.native
-  /**
-   *  Returns the max cpc bid of the keyword, in the currency of the account. Returns 
-   * <code>null</code>
-   *  if the 
-   * <a href="adwordsapp_campaign.html#getBiddingStrategyType_0">campaign's bidding strategy</a>
-   *  is not 
-   * <code>MANUAL_CPC</code>
-   * .
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_keywordbidding.html#getCpc_0">KeywordBidding.getCpc()</a>.
-   * </aside>
-   */
-  def getMaxCpc(): Double = js.native
   /**
    * Returns the quality score of the keyword, in
    * <code>1..10</code>
@@ -162,18 +155,9 @@ trait Keyword extends js.Object {
    */
   def setDestinationUrl(destinationUrl: String): Unit = js.native
   /**
-   *  Sets the max cpc bid of the keyword to the specified value. The change will take effect only if the 
-   * <a href="adwordsapp_campaign.html#getBiddingStrategyType_0">campaign's bidding strategy</a>
-   *  is 
-   * <code>MANUAL_CPC</code>
-   * .
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_keywordbidding.html#setCpc_1">KeywordBidding.setCpc(double)</a>.
-   * </aside>
-   *  
-   * <p>Returns nothing.</p>
-   *  
+   * Provides access to this keyword's URL fields. See
+   * <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a>
+   * for more information.
    */
-  def setMaxCpc(maxCpc: Double): Unit = js.native
+  def urls(): KeywordUrls = js.native
 }

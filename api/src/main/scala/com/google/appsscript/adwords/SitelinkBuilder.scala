@@ -46,13 +46,14 @@ trait SitelinkBuilder extends Builder[Sitelink] {
    */
   override def build(): Operation[Sitelink] = js.native
   /**
-   *  Returns the newly created sitelink.
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_sitelinkbuilder.html#build_0">SitelinkBuilder.build()</a> instead.
-   * </aside>
+   * Sets the custom parameters of the new sitelink to the specified value.
+   * <p>Custom parameters enable you to create your own <a href="//support.google.com/adwords/answer/2375447">ValueTrack</a> parameters that you can assign your own IDs to.</p>
+   * <p>The name of a custom parameter can contain only alphanumeric characters, and custom parameter values may not contain white space. When referring to the custom parameter in final URLs and tracking template, you should surround the custom parameter in braces, and prefix an underscore to its name, e.g. <code>{_param}</code>.</p>
+   * <p>You can have up to 3 custom parameters for an entity. The key and value must not exceed 16 and 200 bytes respectively.</p>
+   * <p>Custom parameters specified at a lower level entity will override the setting specified at a higher level entity, e.g., setting custom parameters at the ad group level overrides the setting at the campaign level, and and custom parameters specified at the ad level override the setting at the ad group level.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
    */
-  def create(): Sitelink = js.native
+  def withCustomParameters(customParameters: AnyRef): SitelinkBuilder = js.native
   /** Sets the first description line of the new sitelink description to the specified value. */
   def withDescription1(description1: String): SitelinkBuilder = js.native
   /** Sets the second description line of the new sitelink description to the specified value. */
@@ -72,6 +73,13 @@ trait SitelinkBuilder extends Builder[Sitelink] {
    * </ul>
    */
   def withEndDate(date: AnyRef): SitelinkBuilder = js.native
+  /**
+   * Sets the final URL of the new sitelink to the specified value.
+   * <p>The final URL represents the actual landing page for your sitelink. The final URL must be the URL of the page that the user ends up on after clicking on your ad, once all the redirects have taken place.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   * Final URLs are required.
+   */
+  def withFinalUrl(finalUrl: String): SitelinkBuilder = js.native
   /** Sets the link text of the new sitelink to the specified value. This field is required. */
   def withLinkText(linkText: String): SitelinkBuilder = js.native
   /**
@@ -83,6 +91,12 @@ trait SitelinkBuilder extends Builder[Sitelink] {
    * </aside>
    */
   def withLinkUrl(linkUrl: String): SitelinkBuilder = js.native
+  /**
+   * Sets the mobile final URL of the new sitelink to the specified value.
+   * <p>The mobile final URL represents the actual landing page for your sitelink on a mobile device. The final mobile URL must be the URL of the page that the user ends up on after clicking on your ad on a mobile device, once all the redirects have taken place.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   */
+  def withMobileFinalUrl(mobileFinalUrl: String): SitelinkBuilder = js.native
   /**
    * Sets the sitelink's device preference to mobile or clears it. This field is optional and defaults to
    * <code>false</code>
@@ -125,4 +139,11 @@ trait SitelinkBuilder extends Builder[Sitelink] {
    * </ul>
    */
   def withStartDate(date: AnyRef): SitelinkBuilder = js.native
+  /**
+   * Sets the tracking template of the new sitelink to the specified value.
+   * <p>You can optionally use the tracking template to specify additional tracking parameters or redirects. AdWords will use this template to assemble the actual destination URL to associate with the ad.</p>
+   * <p>A tracking template specified at a lower level entity will override the setting specified at a higher level entity, e.g., a tracking template set at the ad group level overrides the setting at the campaign level, and a tracking template specified at the ad level overrides the setting at the ad group level.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   */
+  def withTrackingTemplate(trackingTemplate: String): SitelinkBuilder = js.native
 }

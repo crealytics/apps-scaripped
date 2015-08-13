@@ -109,5 +109,5 @@ trait BulkUploads extends js.Object {
    *    var upload = AdWordsApp.bulkUploads().newFileUpload(file);
    *  }</pre>
    */
-  def newFileUpload(file: File): FileUpload = js.native
+  def newFileUpload(file: File, optArgs: AnyRef): FileUpload = js.native
 }

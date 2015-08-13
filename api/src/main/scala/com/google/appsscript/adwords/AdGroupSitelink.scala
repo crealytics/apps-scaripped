@@ -18,6 +18,23 @@ import scala.scalajs.js
  * page for more information on sitelinks and other types of ad extensions.
  */
 trait AdGroupSitelink extends js.Object {
+  /**
+   * Clears the first description line of the ad group-level sitelink description.
+   * <p>Returns nothing.</p>
+   */
+  def clearDescription1(): Unit = js.native
+  /**
+   * Clears the second description line of the ad group-level sitelink description.
+   * <p>Returns nothing.</p>
+   */
+  def clearDescription2(): Unit = js.native
+  /**
+   * Clears the link URL of the ad group-level sitelink. To upgrade ad group-level sitelinks to final URL, first clear the link URL, then set the final URL with
+   * <a href="adwordsapp_sitelinkurls.html#setFinalUrl_1">SitelinkUrls.setFinalUrl</a>
+   * .
+   * <p>Returns nothing.</p>
+   */
+  def clearLinkUrl(): Unit = js.native
   /** Returns the ad group to which this ad group-level sitelink belongs. */
   def getAdGroup(): AdGroup = js.native
   /** Returns the campaign to which this ad group-level sitelink belongs. */
@@ -164,4 +181,10 @@ trait AdGroupSitelink extends js.Object {
    * <p>Returns nothing.</p>
    */
   def setStartDate(date: AnyRef): Unit = js.native
+  /**
+   * Provides access to the URL fields of this ad group-level sitelink. See
+   * <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a>
+   * for more information.
+   */
+  def urls(): SitelinkUrls = js.native
 }

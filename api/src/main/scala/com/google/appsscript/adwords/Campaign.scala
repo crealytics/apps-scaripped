@@ -231,16 +231,6 @@ trait Campaign extends js.Object {
    */
   def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
   /**
-   *  Returns 
-   * <code>true</code>
-   *  if the campaign is removed.
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_campaign.html#isRemoved_0">Campaign.isRemoved()</a> instead.
-   * </aside>
-   */
-  def isDeleted(): Boolean = js.native
-  /**
    * Returns
    * <code>true</code>
    * if the campaign is enabled.
@@ -322,17 +312,6 @@ trait Campaign extends js.Object {
    */
   def setAdRotationType(adRotationType: String): Unit = js.native
   /**
-   *  Sets the budget of the campaign to the specified value.
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>this functionality has been deprecated. The call to this method will throw an exception if the campaign is using a shared budget. Please use 
-   *  <a href="adwordsapp_budget.html#setAmount_1">Budget.setAmount(double)</a> instead.
-   * </aside>
-   *  
-   * <p>Returns nothing.</p>
-   *  
-   */
-  def setBudget(amount: Double): Unit = js.native
-  /**
    * Sets the campaign's end date from either an object containing year, month, and day fields, or an 8-digit string in
    * <code>YYYYMMDD</code>
    * format. For instance,
@@ -373,4 +352,10 @@ trait Campaign extends js.Object {
   def setStartDate(date: AnyRef): Unit = js.native
   /** Provides access to campaign-level targeting criteria: device targeting, ad scheduling, and location targeting. */
   def targeting(): Targeting = js.native
+  /**
+   * Provides access to this campaign's URL fields. See
+   * <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a>
+   * for more information.
+   */
+  def urls(): CampaignUrls = js.native
 }

@@ -46,14 +46,6 @@ trait PhoneNumberBuilder extends Builder[PhoneNumber] {
    */
   override def build(): Operation[PhoneNumber] = js.native
   /**
-   *  Returns the newly created phone number.
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_phonenumberbuilder.html#build_0">PhoneNumberBuilder.build()</a> instead.
-   * </aside>
-   */
-  def create(): PhoneNumber = js.native
-  /**
    * If set to
    * <code>true</code>
    * , only the advertiser's phone number will get displayed. If set to

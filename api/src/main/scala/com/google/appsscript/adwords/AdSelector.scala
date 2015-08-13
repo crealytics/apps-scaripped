@@ -256,11 +256,6 @@ trait AdSelector extends Selector[AdSelector] {
    *    <td>StringSet</td>
    *    <td><code>withCondition("LabelNames CONTAINS_ANY ['Xmas', 'New Year']")</code>. The value is a list of exact, case-sensitive label names.</td>
    *   </tr>
-   *   <tr>
-   *    <td>DevicePreferenceType</td>
-   *    <td>Enumeration: <code>MOBILE</code>, <code>ALL</code></td>
-   *    <td><code>withCondition("DevicePreferenceType = MOBILE")</code>. Use to fetch only mobile-preferred ads.</td>
-   *   </tr>
    *  </tbody>
    * </table>
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_adselector.html#forDateRange_1">AdSelector.forDateRange(String)</a> or <a href="adwordsapp_adselector.html#forDateRange_2">AdSelector.forDateRange(Object, Object)</a>. </p>

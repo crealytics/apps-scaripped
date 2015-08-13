@@ -18,6 +18,13 @@ import scala.scalajs.js
  * page for more information on mobile apps and other types of ad extensions.
  */
 trait AdGroupMobileApp extends js.Object {
+  /**
+   * Clears the link URL of the ad group-level mobile app. To upgrade ad group-level mobile apps to final URL, first clear the link URL, then set the final URL with
+   * <a href="adwordsapp_mobileappurls.html#setFinalUrl_1">MobileAppUrls.setFinalUrl</a>
+   * .
+   * <p>Returns nothing.</p>
+   */
+  def clearLinkUrl(): Unit = js.native
   /** Returns the ad group to which this ad group-level mobile app belongs. */
   def getAdGroup(): AdGroup = js.native
   /** Returns the application store-specific ID of the ad group-level mobile app. */
@@ -170,4 +177,10 @@ trait AdGroupMobileApp extends js.Object {
    * <p>Returns nothing.</p>
    */
   def setStore(store: String): Unit = js.native
+  /**
+   * Provides access to the URL fields of this ad group-level mobile app. See
+   * <a href="//support.google.com/adwords/answer/6049217">Using upgraded URLs</a>
+   * for more information.
+   */
+  def urls(): MobileAppUrls = js.native
 }

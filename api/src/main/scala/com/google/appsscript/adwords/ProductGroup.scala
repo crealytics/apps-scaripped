@@ -19,6 +19,10 @@ trait ProductGroup extends js.Object {
   def asBrand(): ProductBrand = js.native
   /** Returns this product group represented as a product category. */
   def asCategory(): ProductCategory = js.native
+  /** Returns this product group represented as a product channel. */
+  def asChannel(): ProductChannel = js.native
+  /** Returns this product group represented as a product channel exclusivity. */
+  def asChannelExclusivity(): ProductChannelExclusivity = js.native
   /** Returns this product group represented as a product condition. */
   def asCondition(): ProductCondition = js.native
   /** Returns this product group represented as a product custom label. */

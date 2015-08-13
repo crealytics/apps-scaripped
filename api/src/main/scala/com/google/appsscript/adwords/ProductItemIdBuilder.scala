@@ -17,7 +17,15 @@ import scala.scalajs.js
  * <a href="adwordsapp_productitemid.html">ProductItemId</a>
  * objects.
  */
-trait ProductItemIdBuilder extends ProductGroupBuilder[ProductItemIdOperation] {
+trait ProductItemIdBuilder extends Builder[ProductItemId] {
+  /**
+   * Builds the product item id. Returns a
+   * <a href="adwordsapp_productitemidoperation.html">ProductItemIdOperation</a>
+   * that corresponds to the creation of the
+   * <a href="adwordsapp_productitemid.html">ProductItemId</a>
+   * .
+   */
+  override def build(): Operation[ProductItemId] = js.native
   /** Specifies the bid of the product item id. If this is unspecified, will use the bid of the parent product group. */
   def withBid(bid: Double): ProductItemIdBuilder = js.native
   /** Specifies the value of the product item id. */

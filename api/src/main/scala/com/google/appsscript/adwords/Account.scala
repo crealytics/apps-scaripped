@@ -19,6 +19,31 @@ import scala.scalajs.js
  */
 trait Account extends js.Object {
   /**
+   * Adds a callout extension to this account. See also
+   * <a href="adwordsapp_extensions.html#newCalloutBuilder_0">Extensions.newCalloutBuilder()</a>
+   */
+  def addCallout(calloutExtension: Callout): Operation[Callout] = js.native
+  /**
+   * Adds a mobile app extension to this account. See also
+   * <a href="adwordsapp_extensions.html#newMobileAppBuilder_0">Extensions.newMobileAppBuilder()</a>
+   */
+  def addMobileApp(mobileAppExtension: MobileApp): Operation[MobileApp] = js.native
+  /**
+   * Adds a review extension to this account. See also
+   * <a href="adwordsapp_extensions.html#newReviewBuilder_0">Extensions.newReviewBuilder()</a>
+   */
+  def addReview(reviewExtension: Review): Operation[Review] = js.native
+  /**
+   * Provides access to account-level extensions:
+   * <a href="adwordsapp_accountcallout.html">AccountCallout</a>
+   * ,
+   * <a href="adwordsapp_accountmobileapp.html">AccountMobileApp</a>
+   * , and
+   * <a href="adwordsapp_accountreview.html">AccountReview</a>
+   * .
+   */
+  def extensions(): AccountExtensions = js.native
+  /**
    * Returns the currency code of the account. The returned values are in the three-letter ISO 4217 format, e.g.
    * <code>'USD'</code>
    * ,
@@ -64,4 +89,19 @@ trait Account extends js.Object {
    * <p>Please refer to <a href="/adwords/api/docs/appendix/timezones">AdWords API Timezones</a> for the full list of possible return values.</p>
    */
   def getTimeZone(): String = js.native
+  /**
+   * Removes a callout extension from this account.
+   * <p>Returns nothing.</p>
+   */
+  def removeCallout(calloutExtension: Callout): Unit = js.native
+  /**
+   * Removes a mobile app extension from this account.
+   * <p>Returns nothing.</p>
+   */
+  def removeMobileApp(mobileAppExtension: MobileApp): Unit = js.native
+  /**
+   * Removes a review extension from this account.
+   * <p>Returns nothing.</p>
+   */
+  def removeReview(reviewExtension: Review): Unit = js.native
 }

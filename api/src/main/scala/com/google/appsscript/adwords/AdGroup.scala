@@ -54,21 +54,11 @@ trait AdGroup extends js.Object {
   /** Provides access to this ad group's bidding fields. */
   def bidding(): AdGroupBidding = js.native
   /**
-   *  Creates a new keyword in the ad group with the specified bid and destination URL. The specified bid will be used in place of ad group's default. Match type for the new keyword is specified as follows: 
-   * <ul> 
-   *  <li><code>createKeyword("shoes", 2.5, "http://www.example.com")</code> - broad match.</li> 
-   *  <li><code>createKeyword("\"shoes\"", 2.5, "http://www.example.com")</code> - phrase match.</li> 
-   *  <li><code>createKeyword("[leather shoes]", 2.5, "http://www.example.com")</code> - exact match.</li> 
-   * </ul>
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_adgroup.html#newKeywordBuilder_0">AdGroup.newKeywordBuilder()</a>.
-   * </aside>
-   *  
+   * Clears the mobile bid modifier for this ad group. By clearing this value, the ad group will use its campaign's mobile bid modifier (if one is set).
+   * <p>For more information about bid modifiers, please see the <a href="https://support.google.com/adwords/answer/2732132?hl=en">AdWords Help Center article</a>.</p>
    * <p>Returns nothing.</p>
-   *  
    */
-  def createKeyword(keywordText: String, maxCpc: Double, destinationUrl: String): Unit = js.native
+  def clearMobileBidModifier(): Unit = js.native
   /**
    * Creates a new negative keyword with the specified text. Match type for the new negative keyword is specified as follows:
    * <ul>
@@ -79,27 +69,6 @@ trait AdGroup extends js.Object {
    * <p>Returns nothing.</p>
    */
   def createNegativeKeyword(keywordText: String): Unit = js.native
-  /**
-   *  Creates a new text ad in the ad group, with some additional parameters. 
-   * <code>optArgs</code>
-   *  is used to denote the ad as mobile-preferred: 
-   * <pre class="prettyprint">
-   *  var optArgs = {
-   *    isMobilePreferred: true
-   *  };
-   *  adGroup.createTextAd('headline', 'line1', 'line2', 'example.com', 'http://www.example.com',
-   *      optArgs);</pre>
-   *  
-   * <p><code>optArgs</code> is an optional parameter and may be omitted.</p>
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_adgroup.html#newTextAdBuilder_0">AdGroup.newTextAdBuilder()</a>.
-   * </aside>
-   *  
-   * <p>Returns nothing.</p>
-   *  
-   */
-  def createTextAd(headline: String, description1: String, description2: String, displayUrl: String, destinationUrl: String, optArgs: AnyRef): Unit = js.native
   /**
    * Provides access to this ad group's display criteria:
    * <a href="adwordsapp_audience.html">Audience</a>
@@ -152,20 +121,6 @@ trait AdGroup extends js.Object {
   /** Returns the ID of the ad group. */
   def getId(): Long = js.native
   /**
-   *  Returns the default keyword max cpc bid of the ad group, in the currency of the account. Returns 
-   * <code>null</code>
-   *  if the 
-   * <a href="adwordsapp_campaign.html#getBiddingStrategyType_0">campaign's bidding strategy</a>
-   *  is not 
-   * <code>MANUAL_CPC</code>
-   * .
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_adgroupbidding.html#getCpc_0">AdGroupBidding.getCpc()</a>.
-   * </aside>
-   */
-  def getKeywordMaxCpc(): Double = js.native
-  /**
    * Returns the mobile bid modifier for this ad group.
    * <p> The bid modifier is a multiplier applied to the ad group's bids on mobile devices. So, for instance, a bid modifier of <code>1.1</code> increases the bid to 110% of its original value, and changes a bid of $5.00 to $5.50. </p>
    * <p> Note that when you set a mobile bid modifier at both campaign- and ad group-level in a single campaign, the ad group mobile bid modifier will be used when determining your bid UNLESS the campaign mobile bid modifier is set to -1 (i.e. -100%) which will opt the entire campaign out of mobile regardless of any ad group mobile bid modifiers that may have been set. </p>
@@ -188,16 +143,6 @@ trait AdGroup extends js.Object {
    * defines a range of a single day.
    */
   def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
-  /**
-   *  Returns 
-   * <code>true</code>
-   *  if the ad group is removed.
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_adgroup.html#isRemoved_0">AdGroup.isRemoved()</a> instead.
-   * </aside>
-   */
-  def isDeleted(): Boolean = js.native
   /**
    * Returns
    * <code>true</code>
@@ -264,21 +209,6 @@ trait AdGroup extends js.Object {
    */
   def removeSitelink(sitelinkExtension: Sitelink): Unit = js.native
   /**
-   *  Sets the default keyword max cpc bid of the ad group to the specified value. The change will take effect only if the 
-   * <a href="adwordsapp_campaign.html#getBiddingStrategyType_0">campaign's bidding strategy</a>
-   *  is 
-   * <code>MANUAL_CPC</code>
-   * .
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_adgroupbidding.html#setCpc_1">AdGroupBidding.setCpc(double)</a>.
-   * </aside>
-   *  
-   * <p>Returns nothing.</p>
-   *  
-   */
-  def setKeywordMaxCpc(keywordMaxCpc: Double): Unit = js.native
-  /**
    * Sets the mobile bid modifier for this ad group to the specified value.
    * <p> The bid modifier is a multiplier applied to the ad group's bids on mobile devices. So, for instance, a bid modifier of <code>1.1</code> increases the bid to 110% of its original value, and changes a bid of $5.00 to $5.50. </p>
    * <p> The operation will fail if the ad group's campaign has a mobile bid modifier of -1 (i.e. -100%). Setting a campaign mobile bid modifier to -1 will opt the entire campaign out of mobile.</p>
@@ -292,4 +222,10 @@ trait AdGroup extends js.Object {
    * <p>Returns nothing.</p>
    */
   def setName(name: String): Unit = js.native
+  /**
+   * Provides access to this ad group's URL fields. See
+   * <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a>
+   * for more information.
+   */
+  def urls(): AdGroupUrls = js.native
 }

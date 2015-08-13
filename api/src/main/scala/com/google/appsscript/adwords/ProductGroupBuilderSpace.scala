@@ -26,6 +26,10 @@ trait ProductGroupBuilderSpace extends js.Object {
   def brandBuilder(): ProductBrandBuilder = js.native
   /** Returns a product category builder. */
   def categoryBuilder(): ProductCategoryBuilder = js.native
+  /** Returns a product channel builder. */
+  def channelBuilder(): ProductChannelBuilder = js.native
+  /** Returns a product channel exclusivity builder. */
+  def channelExclusivityBuilder(): ProductChannelExclusivityBuilder = js.native
   /** Returns a product condition builder. */
   def conditionBuilder(): ProductConditionBuilder = js.native
   /** Returns a product custom label builder. */

@@ -156,3 +156,6 @@ trait AdWordsApp extends js.Object {
   /** Provides access to campaign-level targeting criteria: device targeting, ad scheduling, and location targeting. */
   def targeting(): Targeting = js.native
 }
+
+/** Entry point for the AdWords API */
+object AdWordsApp extends AdWordsApp

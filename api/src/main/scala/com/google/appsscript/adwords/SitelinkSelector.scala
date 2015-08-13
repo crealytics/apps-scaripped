@@ -180,17 +180,6 @@ trait SitelinkSelector extends Selector[SitelinkSelector] {
    *    <td>Long</td>
    *    <td><code>withCondition("Impressions != 0")</code></td>
    *   </tr>
-   *   <tr>
-   *    <td colspan="3">
-   *     <center>
-   *      <strong><i>Sitelink attributes</i></strong>
-   *     </center></td>
-   *   </tr>
-   *   <tr>
-   *    <td>DevicePreferenceType</td>
-   *    <td>Enumeration: <code>MOBILE</code>, <code>ALL</code></td>
-   *    <td><code>withCondition("DevicePreferenceType = MOBILE")</code>. Use to fetch only mobile-preferred sitelinks.</td>
-   *   </tr>
    *  </tbody>
    * </table>
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_sitelinkselector.html#forDateRange_1">SitelinkSelector.forDateRange(String)</a> or <a href="adwordsapp_sitelinkselector.html#forDateRange_2">SitelinkSelector.forDateRange(Object, Object)</a>. </p>

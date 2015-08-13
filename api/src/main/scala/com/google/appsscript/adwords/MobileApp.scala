@@ -18,6 +18,13 @@ import scala.scalajs.js
  * page for more information on mobile apps and other types of ad extensions.
  */
 trait MobileApp extends js.Object {
+  /**
+   * Clears the link URL of the mobile app. To upgrade mobile apps to final URL, first clear the link URL, then set the final URL with
+   * <a href="adwordsapp_mobileappurls.html#setFinalUrl_1">MobileAppUrls.setFinalUrl</a>
+   * .
+   * <p>Returns nothing.</p>
+   */
+  def clearLinkUrl(): Unit = js.native
   /** Returns the application store-specific ID of the mobile app. */
   def getAppId(): String = js.native
   /**
@@ -166,4 +173,10 @@ trait MobileApp extends js.Object {
    * <p>Returns nothing.</p>
    */
   def setStore(store: String): Unit = js.native
+  /**
+   * Provides access to the URL fields of this mobile app. See
+   * <a href="//support.google.com/adwords/answer/6049217">Using upgraded URLs</a>
+   * for more information.
+   */
+  def urls(): MobileAppUrls = js.native
 }

@@ -146,4 +146,10 @@ trait Ad extends js.Object {
    * <p>Returns nothing.</p>
    */
   def removeLabel(name: String): Unit = js.native
+  /**
+   * Provides access to this ad's URL fields. See
+   * <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a>
+   * for more information.
+   */
+  def urls(): AdUrls = js.native
 }

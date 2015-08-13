@@ -14,6 +14,24 @@ import scala.scalajs.js
 
 /** Provides access to a display keyword's bidding fields. */
 trait DisplayKeywordBidding extends js.Object {
+  /**
+   * Clears the max CPC bid for this display keyword. This will allow this display keyword to inherit its bid from the ad group level.
+   * <p>Please note that although this method will effectively clear the max CPC bid for this display keyword, the change may have no effect on actual bidding if this display keyword has a <a href="adwordsapp_biddingstrategy.html">BiddingStrategy</a> which does not involve max CPC bids.</p>
+   * <p>Returns nothing.</p>
+   */
+  def clearCpc(): Unit = js.native
+  /**
+   * Clears the CPM bid for this display keyword. This will allow this display keyword to inherit its bid from the ad group level.
+   * <p>Please note that although this method will effectively clear the CPM bid for this display keyword, the change may have no effect on actual bidding if this display keyword has a <a href="adwordsapp_biddingstrategy.html">BiddingStrategy</a> which does not involve CPM bids.</p>
+   * <p>See <a href="https://support.google.com/adwords/answer/6310"> Cost-per-thousand impressions (CPM)</a> for more information.</p>
+   * <p>Returns nothing.</p>
+   */
+  def clearCpm(): Unit = js.native
+  /**
+   * Clears the bidding strategy for this display keyword. This will allow this display keyword to inherit its bidding strategy from the ad group level.
+   * <p>Returns nothing.</p>
+   */
+  def clearStrategy(): Unit = js.native
   /** Returns the max CPC bid for this display keyword. */
   def getCpc(): Double = js.native
   /**
@@ -56,4 +74,17 @@ trait DisplayKeywordBidding extends js.Object {
    * <p>Returns nothing.</p>
    */
   def setCpm(cpm: Double): Unit = js.native
+  /**
+   * Sets the bidding strategy of this display keyword to the specified anonymous bidding strategy.
+   * <p>The supported anonymous bidding strategies are as follows: </p>
+   * <ul>
+   *  <li><code>"BUDGET_OPTIMIZER"</code>: In budget optimizer, Google automatically places bids for the user based on their daily/monthly budget.</li>
+   *  <li><code>"CONVERSION_OPTIMIZER"</code>: Conversion optimizer bidding strategy helps you maximize your return on investment (ROI) by automatically getting you the most possible conversions for your budget. For more information on conversion optimizer, visit the <a href="https://support.google.com/adwords/answer/2471188">Conversion Optimizer help center</a></li>
+   *  <li><code>"MANUAL_CPC"</code>: Manual click-based bidding where user pays per click.</li>
+   *  <li><code>"MANUAL_CPM"</code>: Manual impression-based bidding where user pays per thousand impressions. This can only be used for "Display Network only" campaigns.</li>
+   * </ul>
+   * <p></p>
+   * <p>Returns nothing.</p>
+   */
+  def setStrategy(biddingStrategy: String): Unit = js.native
 }

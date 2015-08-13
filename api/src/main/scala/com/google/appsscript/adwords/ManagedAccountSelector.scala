@@ -77,7 +77,7 @@ trait ManagedAccountSelector extends Selector[ManagedAccountSelector] {
    * <p></p>
    * <p>Returns nothing.</p>
    */
-  def executeInParallel(functionName: String, optionalCallbackFunctionName: String): Unit = js.native
+  def executeInParallel(functionName: String, optionalCallbackFunctionName: String, optionalInput: String): Unit = js.native
   /**
    * Sets a custom date range onto the selector. Both parameters can be either an object containing year, month, and day fields, or an 8-digit string in
    * <code>YYYYMMDD</code>

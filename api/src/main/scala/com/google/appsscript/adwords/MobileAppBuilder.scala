@@ -47,16 +47,17 @@ trait MobileAppBuilder extends Builder[MobileApp] {
    * that can be used to get the new mobile app (or access any associated errors if creation failed).
    */
   override def build(): Operation[MobileApp] = js.native
-  /**
-   *  Returns the newly created mobile app.
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_mobileappbuilder.html#build_0">MobileAppBuilder.build()</a> instead.
-   * </aside>
-   */
-  def create(): MobileApp = js.native
   /** Sets the mobile app's app ID. Takes a string representing the store-specific ID for the target application. This field is required. */
   def withAppId(appId: String): MobileAppBuilder = js.native
+  /**
+   * Sets the custom parameters of the new mobile app to the specified value.
+   * <p>Custom parameters enable you to create your own <a href="//support.google.com/adwords/answer/2375447">ValueTrack</a> parameters that you can assign your own IDs to.</p>
+   * <p>The name of a custom parameter can contain only alphanumeric characters, and custom parameter values may not contain white space. When referring to the custom parameter in final URLs and tracking template, you should surround the custom parameter in braces, and prefix an underscore to its name, e.g. <code>{_param}</code>.</p>
+   * <p>You can have up to 3 custom parameters for an entity. The key and value must not exceed 16 and 200 bytes respectively.</p>
+   * <p>Custom parameters specified at a lower level entity will override the setting specified at a higher level entity, e.g., setting custom parameters at the ad group level overrides the setting at the campaign level, and and custom parameters specified at the ad level override the setting at the ad group level.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   */
+  def withCustomParameters(customParameters: AnyRef): MobileAppBuilder = js.native
   /**
    * Sets the mobile app's end date from either an object containing year, month, and day fields, or an 8-digit string in
    * <code>YYYYMMDD</code>
@@ -72,6 +73,13 @@ trait MobileAppBuilder extends Builder[MobileApp] {
    * </ul>
    */
   def withEndDate(date: AnyRef): MobileAppBuilder = js.native
+  /**
+   * Sets the final URL of the new mobile app to the specified value.
+   * <p>The final URL represents the actual landing page for your mobile app. The final URL must be the URL of the page that the user ends up on after clicking on your ad, once all the redirects have taken place.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   * Final URLs are required.
+   */
+  def withFinalUrl(finalUrl: String): MobileAppBuilder = js.native
   /** Sets the link text of the mobile app. This field is required. */
   def withLinkText(linkText: String): MobileAppBuilder = js.native
   /**
@@ -83,6 +91,12 @@ trait MobileAppBuilder extends Builder[MobileApp] {
    * </aside>
    */
   def withLinkUrl(linkUrl: String): MobileAppBuilder = js.native
+  /**
+   * Sets the mobile final URL of the new mobile app to the specified value.
+   * <p>The mobile final URL represents the actual landing page for your mobile app on a mobile device. The final mobile URL must be the URL of the page that the user ends up on after clicking on your ad on a mobile device, once all the redirects have taken place.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   */
+  def withMobileFinalUrl(mobileFinalUrl: String): MobileAppBuilder = js.native
   /**
    * Sets the mobile app's device preference to mobile or clears it. This field is optional and defaults to
    * <code>false</code>
@@ -127,4 +141,12 @@ trait MobileAppBuilder extends Builder[MobileApp] {
   def withStartDate(date: AnyRef): MobileAppBuilder = js.native
   /** Sets the application store that this application belongs to. This accepts either "iOS" or "Android". This field is required. */
   def withStore(store: String): MobileAppBuilder = js.native
+  /**
+   * Sets the tracking template of the new mobile app to the specified value.
+   * <p>You can optionally use the tracking template to specify additional tracking parameters or redirects. AdWords will use this template to assemble the actual destination URL to associate with the ad.</p>
+   * <p>A tracking template specified at a lower level entity will override the setting specified at a higher level entity, e.g., a tracking template set at the ad group level overrides the setting at the campaign level, and a tracking template specified at the ad level overrides the setting at the ad group level.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   * If tracking template is not set, then tracking template will default to "{lpurl}" (no tracking).
+   */
+  def withTrackingTemplate(trackingTemplate: String): MobileAppBuilder = js.native
 }

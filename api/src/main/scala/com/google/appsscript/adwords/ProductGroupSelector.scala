@@ -185,4 +185,21 @@ trait ProductGroupSelector extends Selector[ProductGroupSelector] {
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_productgroupselector.html#forDateRange_1">ProductGroupSelector.forDateRange(String)</a> or <a href="adwordsapp_productgroupselector.html#forDateRange_2">ProductGroupSelector.forDateRange(Object, Object)</a>. </p>
    */
   override def withCondition(condition: String): ProductGroupSelector = js.native
+  /**
+   * Restricts this selector to return only product groups with the given product group IDs.
+   * <pre class="prettyprint">
+   *  var productGroupIds = [12345, 23456, 34567];
+   *  selector = selector.withIds(productGroupIds);</pre>
+   * <p>The resulting selector can be further refined by applying additional conditions to it. The ID-based condition will then be AND-ed together with all the other conditions, including any other ID-based conditions. So, for instance, the following selector: </p>
+   * <pre class="prettyprint">
+   *  AdWordsApp.productGroups()
+   *     .withIds([12345, 23456, 34567])
+   *     .withIds([34567, 45678, 56789]);</pre>
+   * will only get the product group with ID
+   * <code>34567</code>
+   * , since it would be the only product group that satisfies both ID conditions.
+   * <p></p>
+   * <p>The selector can only support up to 10,000 IDs. If more than 10,000 IDs are specified, the corresponding get() call will fail with a runtime error.</p>
+   */
+  def withIds(ids: js.Array[Long]): ProductGroupSelector = js.native
 }

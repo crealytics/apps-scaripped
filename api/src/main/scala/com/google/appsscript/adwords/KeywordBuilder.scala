@@ -34,7 +34,7 @@ trait KeywordBuilder extends Builder[Keyword] {
    */
   override def build(): Operation[Keyword] = js.native
   /** Sets the bidding strategy of the new keyword to the specified value. */
-  def withBiddingStrategy(biddingStrategy: String): KeywordBuilder = js.native
+  def withBiddingStrategy(biddingStrategy: BiddingStrategy): KeywordBuilder = js.native
   /** Sets the max CPC bid of the new keyword to the specified value. */
   def withCpc(cpc: Double): KeywordBuilder = js.native
   /**
@@ -42,6 +42,15 @@ trait KeywordBuilder extends Builder[Keyword] {
    * <p>See <a href="https://support.google.com/adwords/answer/6310"> Cost-per-thousand impressions (CPM)</a> for more information.</p>
    */
   def withCpm(cpm: Double): KeywordBuilder = js.native
+  /**
+   * Sets the custom parameters of the new keyword to the specified value.
+   * <p>Custom parameters enable you to create your own <a href="//support.google.com/adwords/answer/2375447">ValueTrack</a> parameters that you can assign your own IDs to.</p>
+   * <p>The name of a custom parameter can contain only alphanumeric characters, and custom parameter values may not contain white space. When referring to the custom parameter in final URLs and tracking template, you should surround the custom parameter in braces, and prefix an underscore to its name, e.g. <code>{_param}</code>.</p>
+   * <p>You can have up to 3 custom parameters for an entity. The key and value must not exceed 16 and 200 bytes respectively.</p>
+   * <p>Custom parameters specified at a lower level entity will override the setting specified at a higher level entity, e.g., setting custom parameters at the ad group level overrides the setting at the campaign level, and and custom parameters specified at the ad level override the setting at the ad group level.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   */
+  def withCustomParameters(customParameters: AnyRef): KeywordBuilder = js.native
   /**
    * Sets the destination URL of the keyword to the specified value.
    * <aside class="warning">
@@ -52,6 +61,18 @@ trait KeywordBuilder extends Builder[Keyword] {
    */
   def withDestinationUrl(destinationUrl: String): KeywordBuilder = js.native
   /**
+   * Sets the final URL of the new keyword to the specified value.
+   * <p>The final URL represents the actual landing page for your keyword. The final URL must be the URL of the page that the user ends up on after clicking on your ad, once all the redirects have taken place.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   */
+  def withFinalUrl(finalUrl: String): KeywordBuilder = js.native
+  /**
+   * Sets the mobile final URL of the new keyword to the specified value.
+   * <p>The mobile final URL represents the actual landing page for your keyword on a mobile device. The final mobile URL must be the URL of the page that the user ends up on after clicking on your ad on a mobile device, once all the redirects have taken place.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   */
+  def withMobileFinalUrl(mobileFinalUrl: String): KeywordBuilder = js.native
+  /**
    * Sets the text of the new keyword to the specified value. This field is required. Match type for the new keyword is specified as follows:
    * <ul>
    *  <li><code>keywordBuilder.withText("shoes")</code> - broad match.</li>
@@ -60,4 +81,11 @@ trait KeywordBuilder extends Builder[Keyword] {
    * </ul>
    */
   def withText(text: String): KeywordBuilder = js.native
+  /**
+   * Sets the tracking template of the new keyword to the specified value.
+   * <p>You can optionally use the tracking template to specify additional tracking parameters or redirects. AdWords will use this template to assemble the actual destination URL to associate with the ad.</p>
+   * <p>A tracking template specified at a lower level entity will override the setting specified at a higher level entity, e.g., a tracking template set at the ad group level overrides the setting at the campaign level, and a tracking template specified at the ad level overrides the setting at the ad group level.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   */
+  def withTrackingTemplate(trackingTemplate: String): KeywordBuilder = js.native
 }

@@ -32,16 +32,8 @@ trait AdGroupBuilder extends Builder[AdGroup] {
    * that can be used to get the new ad group (or access any associated errors if creation failed).
    */
   override def build(): Operation[AdGroup] = js.native
-  /**
-   *  Returns the newly created ad group.
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_adgroupbuilder.html#build_0">AdGroupBuilder.build()</a> instead.
-   * </aside>
-   */
-  def create(): AdGroup = js.native
   /** Sets the bidding strategy of the new ad group to the specified value. */
-  def withBiddingStrategy(biddingStrategy: String): AdGroupBuilder = js.native
+  def withBiddingStrategy(biddingStrategy: BiddingStrategy): AdGroupBuilder = js.native
   /**
    * Sets the max CPA bid of the new ad group to the specified value.
    * <p>If the bid is not set, the ad group will assume a default max CPA bid of $0.01.</p>
@@ -59,20 +51,14 @@ trait AdGroupBuilder extends Builder[AdGroup] {
    */
   def withCpm(cpm: Double): AdGroupBuilder = js.native
   /**
-   *  Sets the default keyword max cpc bid of the new ad group to the specified value. If the bid is not set, the ad group will assume a default bid that depends on the campaign's bidding strategy:
-   * <ul> 
-   *  <li><code>MANUAL_CPM</code>: $0.25</li> 
-   *  <li>Other types: $0.01</li> 
-   * </ul>
-   *  If you try to specify the keyword max cpc bid when the campaign's bidding strategy is not 
-   * <code>MANUAL_CPC</code>
-   * , creation of the ad group will fail.
-   * <aside class="warning">
-   *  <strong>Deprecated. </strong>This functionality has been deprecated. Please use 
-   *  <a href="adwordsapp_adgroupbuilder.html#withCpc_1">AdGroupBuilder.withCpc(double)</a>.
-   * </aside>
+   * Sets the custom parameters of the new ad group to the specified value.
+   * <p>Custom parameters enable you to create your own <a href="//support.google.com/adwords/answer/2375447">ValueTrack</a> parameters that you can assign your own IDs to.</p>
+   * <p>The name of a custom parameter can contain only alphanumeric characters, and custom parameter values may not contain white space. When referring to the custom parameter in final URLs and tracking template, you should surround the custom parameter in braces, and prefix an underscore to its name, e.g. <code>{_param}</code>.</p>
+   * <p>You can have up to 3 custom parameters for an entity. The key and value must not exceed 16 and 200 bytes respectively.</p>
+   * <p>Custom parameters specified at a lower level entity will override the setting specified at a higher level entity, e.g., setting custom parameters at the ad group level overrides the setting at the campaign level, and and custom parameters specified at the ad level override the setting at the ad group level.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
    */
-  def withKeywordMaxCpc(keywordMaxCpc: Double): AdGroupBuilder = js.native
+  def withCustomParameters(customParameters: AnyRef): AdGroupBuilder = js.native
   /** Sets the name of the new ad group to the specified value. If ad group name is not set, the ad group will assume a default name ('Ad Group #5'). */
   def withName(name: String): AdGroupBuilder = js.native
   /**
@@ -81,4 +67,11 @@ trait AdGroupBuilder extends Builder[AdGroup] {
    * .
    */
   def withStatus(status: String): AdGroupBuilder = js.native
+  /**
+   * Sets the tracking template of the new ad group to the specified value.
+   * <p>You can optionally use the tracking template to specify additional tracking parameters or redirects. AdWords will use this template to assemble the actual destination URL to associate with the ad.</p>
+   * <p>A tracking template specified at a lower level entity will override the setting specified at a higher level entity, e.g., a tracking template set at the ad group level overrides the setting at the campaign level, and a tracking template specified at the ad level overrides the setting at the ad group level.</p>
+   * <p>See <a href="//support.google.com/adwords/answer/6049217">Using Upgraded URLs</a> for more information.</p>
+   */
+  def withTrackingTemplate(trackingTemplate: String): AdGroupBuilder = js.native
 }

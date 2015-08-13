@@ -81,5 +81,5 @@ trait AdGroupBidding extends js.Object {
    * <p></p>
    * <p>Returns nothing.</p>
    */
-  def setStrategy(biddingStrategy: BiddingStrategy): Unit = js.native
+  def setStrategy(biddingStrategy: String): Unit = js.native
 }

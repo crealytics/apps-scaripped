@@ -14,6 +14,19 @@ import scala.scalajs.js
 
 /** Provides access to an audience's bidding fields. */
 trait AudienceBidding extends js.Object {
+  /**
+   * Clears the max CPC bid for this audience. This will allow this audience to inherit its bid from the ad group level.
+   * <p>Please note that although this method will effectively clear the max CPC bid for this audience, the change may have no effect on actual bidding if this audience has a <a href="adwordsapp_biddingstrategy.html">BiddingStrategy</a> which does not involve max CPC bids.</p>
+   * <p>Returns nothing.</p>
+   */
+  def clearCpc(): Unit = js.native
+  /**
+   * Clears the CPM bid for this audience. This will allow this audience to inherit its bid from the ad group level.
+   * <p>Please note that although this method will effectively clear the CPM bid for this audience, the change may have no effect on actual bidding if this audience has a <a href="adwordsapp_biddingstrategy.html">BiddingStrategy</a> which does not involve CPM bids.</p>
+   * <p>See <a href="https://support.google.com/adwords/answer/6310"> Cost-per-thousand impressions (CPM)</a> for more information.</p>
+   * <p>Returns nothing.</p>
+   */
+  def clearCpm(): Unit = js.native
   /** Returns the max CPC bid for this audience. */
   def getCpc(): Double = js.native
   /**

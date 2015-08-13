@@ -78,6 +78,16 @@ trait ShoppingCampaign extends js.Object {
   /** Provides access to this shopping campaign's bidding fields. */
   def bidding(): ShoppingCampaignBidding = js.native
   /**
+   * Creates a new campaign-level negative keyword with the specified text. Match type for the new negative keyword is specified as follows:
+   * <ul>
+   *  <li><code>createNegativeKeyword("shoes")</code> - broad match.</li>
+   *  <li><code>createNegativeKeyword("\"shoes\"")</code> - phrase match.</li>
+   *  <li><code>createNegativeKeyword("[leather shoes]")</code> - exact match.</li>
+   * </ul>
+   * <p>Returns nothing.</p>
+   */
+  def createNegativeKeyword(keywordText: String): Unit = js.native
+  /**
    * Enables the shopping campaign.
    * <p>Returns nothing.</p>
    */

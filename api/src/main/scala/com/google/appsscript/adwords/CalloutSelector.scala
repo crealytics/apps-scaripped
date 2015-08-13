@@ -180,17 +180,6 @@ trait CalloutSelector extends Selector[CalloutSelector] {
    *    <td>Long</td>
    *    <td><code>withCondition("Impressions != 0")</code></td>
    *   </tr>
-   *   <tr>
-   *    <td colspan="3">
-   *     <center>
-   *      <strong><i>Callout attributes</i></strong>
-   *     </center></td>
-   *   </tr>
-   *   <tr>
-   *    <td>DevicePreferenceType</td>
-   *    <td>Enumeration: <code>MOBILE</code>, <code>ALL</code></td>
-   *    <td><code>withCondition("DevicePreferenceType = MOBILE")</code>. Use to fetch only mobile-preferred callouts.</td>
-   *   </tr>
    *  </tbody>
    * </table>
    * <p>If a stats column is used in the condition, date range must be specified via <a href="adwordsapp_calloutselector.html#forDateRange_1">CalloutSelector.forDateRange(String)</a> or <a href="adwordsapp_calloutselector.html#forDateRange_2">CalloutSelector.forDateRange(Object, Object)</a>. </p>

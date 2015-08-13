@@ -63,7 +63,7 @@ trait ManagedAccount extends js.Object {
    *  <code>0</code>.
    * </aside>
    */
-  def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): Stats = js.native
+  def getStatsFor(dateFrom: AnyRef, dateTo: AnyRef): ManagedAccountStats = js.native
   /**
    * Returns the POSIX time zone of the account.
    * <p>Returned values are in the standard time zone identifier form, such as <code>'America/Los_Angeles'</code>.</p>
