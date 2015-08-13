@@ -27,7 +27,7 @@ trait ApiScraper {
       "Date" -> "scala.scalajs.js.Date",
       "Object" -> "AnyRef").withDefault(identity)
   def renameType(tpe: String): String = {
-    val strippedType = stripNamespace(tpe)
+    val strippedType = tpe.stripNamespace
     val typeRegex = """(.*?)(\[\]|\.\.\.)?""".r
     val typeRegex(className, arrayBrackets) = strippedType
     val renamedClass = ClassRenamings(className)
@@ -38,9 +38,11 @@ trait ApiScraper {
       case _ => throw new RuntimeException(s"Unknown type: tpe")
     }
   }
-  def stripMethodArguments(str: String) = """\(.*\)""".r.replaceAllIn(str, "")
-  def stripNamespace(str: String) = """\w*\.(\w)""".r.replaceAllIn(str, "$1")
-
+  implicit class StringCleaning(str: String) {
+    def fixWhitespace = str.replaceAll("\\s+(\n|$)", "\n")
+    def stripMethodArguments = """\(.*\)""".r.replaceAllIn(str, "")
+    def stripNamespace = """\w*\.(\w)""".r.replaceAllIn(str, "$1")
+  }
 }
 
 object GoogleAppScriptClassScraper extends ApiScraper {
@@ -70,8 +72,8 @@ object GoogleAppScriptClassScraper extends ApiScraper {
     val classDescription = doc >> text("div.type.doc")
     val methodElements = (doc >?> elementList("div.function.doc"))
     val apiMethods = methodElements.getOrElse(List()).map { div =>
-      val name = stripMethodArguments(div >> text("h3 code"))
-      val description = (div >?> text("p")).getOrElse("").trim
+      val name = (div >> text("h3 code")).stripMethodArguments
+      val description = (div >?> text("p")).getOrElse("").trim.fixWhitespace
       val returnType = renameType((div >?> text("h4 + p > code")).getOrElse("void")).trim
       val paramRows = (div >> elementList("table.function.param tr")).drop(1)
       val params = paramRows.flatMap { row =>
@@ -104,10 +106,10 @@ object GoogleAdWordsScriptScraper extends ApiScraper {
       List("Related", "Methods").exists(p => n.toString().contains(p))
     }
     val (descriptionNodes, contentNodes) = children.span(n => !isEndOfClassDescription(n))
-    val classDescription = descriptionNodes.map(_.toString.trim).mkString("\n")
+    val classDescription = descriptionNodes.map(_.toString.trim).mkString("\n").fixWhitespace
     val methodNameElements = doc >> elementList("h2 code")
     def readApiMethod(thisMethod: Element): ApiMethod = {
-      val name = stripMethodArguments(thisMethod.text)
+      val name = thisMethod.text.stripMethodArguments
       val currentIndex = thisMethod.parent.elementSiblingIndex()
       val parent = thisMethod.parent
       val followingNodes = parent.parent.childNodes().dropWhile(n => !n.equals(parent)).drop(1)
@@ -115,8 +117,8 @@ object GoogleAdWordsScriptScraper extends ApiScraper {
       val (descriptionNodes, signatureNodes) = rightNodes.splitAtType("h3")
       val (parameterNodes, returnTypeNodes) = signatureNodes.span(n => !(n.nodeName().equals("h3") && n.toString().contains("Return")))
       //println(s"Description nodes for $thisMethod:\n$descriptionNodes\nParameter nodes:\n$parameterNodes\nReturn type Nodes:\n$returnTypeNodes")
-      val returnType = renameType(returnTypeNodes.findElement("table").map(t => stripNamespace(t >> text("tr td"))).getOrElse("void"))
-      val description = descriptionNodes.map(_.toString.trim).mkString("\n")
+      val returnType = renameType(returnTypeNodes.findElement("table").map(t => (t >> text("tr td")).stripNamespace).getOrElse("void"))
+      val description = descriptionNodes.map(_.toString.trim).mkString("\n").fixWhitespace
       val params = parameterNodes.findElement("table").map { table =>
         (table >> elementList("tr")).flatMap { row =>
           row >> texts("td") match {
