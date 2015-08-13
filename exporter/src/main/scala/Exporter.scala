@@ -42,7 +42,7 @@ object Exporter extends App {
               ApiMethod(d.name.toString, params, d.decltpe.get.toString, d.scalaDoc.getOrElse(""))
           }
         }
-        ApiClass(t.name.toString, "", methods, "", t.templ.parents.map(_.toString).filterNot(_ == "js.Object"))
+        ApiClass(t.name.toString, "", methods.map(m => (m.name, m)).toMap, "", t.templ.parents.map(_.toString)/*.filterNot(_ == "js.Object")*/)
       }
       classes
     }

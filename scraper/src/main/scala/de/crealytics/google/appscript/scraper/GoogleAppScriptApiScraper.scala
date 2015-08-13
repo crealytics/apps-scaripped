@@ -82,7 +82,7 @@ object GoogleAppScriptClassScraper extends ApiScraper {
       }
       ApiMethod(name, params, returnType, description)
     }.toSeq
-    ApiClass(apiClassName, tpe, apiMethods, classDescription)
+    ApiClass(apiClassName, tpe, apiMethods.map(m => (m.name, m)).toMap, classDescription)
   }
 }
 
@@ -128,6 +128,6 @@ object GoogleAdWordsScriptScraper extends ApiScraper {
       ApiMethod(name, params, returnType, description)
     }
     val apiMethods = methodNameElements.map(readApiMethod)
-    ApiClass(apiClassName, "class", apiMethods, classDescription)
+    ApiClass(apiClassName, "class", apiMethods.map(m => (m.name, m)).toMap, classDescription)
   }
 }

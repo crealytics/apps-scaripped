@@ -10,7 +10,7 @@ object CodeGenerator {
 
   def codeForClass(classes: Seq[ApiClass], pkg: String = "", imports: Seq[String] = Seq()): String = {
     val classDefs = classes.map { cls =>
-      val methodDefs = cls.methods.map { m =>
+      val methodDefs = cls.methods.toList.sortBy(_._1).map { case(_, m) =>
         val withoutParams = DEF(m.name.replace("\\(.*\\)", ""), m.returnType)
         val paramsWithDummy = if (m.parameters.isEmpty)
           Seq(ApiParam("dummyDontUse", "String", ""))
