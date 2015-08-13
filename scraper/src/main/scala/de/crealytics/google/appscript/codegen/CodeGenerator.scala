@@ -26,7 +26,11 @@ object CodeGenerator {
         case "object" => OBJECTDEF(cls.name)
         case _ => TRAITDEF(cls.name)
       }
-      (baseClassDef withParents (cls.parents) := BLOCK(methodDefs)).withDoc(cls.description)
+      val classBody = if(methodDefs.isEmpty)
+        EmptyTree
+      else
+        BLOCK(methodDefs)
+      ((baseClassDef withParents (cls.parents)) := classBody).withDoc(cls.description)
     }
     val compilationUnitDef = BLOCK(
       imports.map(i => IMPORT(i)) ++
