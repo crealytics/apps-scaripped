@@ -92,37 +92,40 @@ object BigTimeScraper extends App {
 
     overviewUrls.par.foreach { importLink =>
       import importLink._
-      def generateCode(classes: Seq[ApiClass]): String = {
-        val modifiedClasses = classes.flatMap { cl =>
-          classModifications.filter(_.className.r.unanchored.findFirstIn(cl.name).isDefined).foldLeft[Option[ApiClass]](Some(cl)) { case (mc, mod) =>
-            mod match {
-              case ClassModification(_, "removeMethod", methodName) => Some(cl.copy(methods = cl.methods.filterNot(_.name == methodName)))
-              case ClassModification(_, "removeClass", _) => None
-              case _ => Some(cl)
-            }
-          }
-        }
-        val code = if(modifiedClasses.isEmpty)
-          ""
-        else
-          CodeGenerator.codeForClass(modifiedClasses, pkg, imports.map(allFromPackage))
-
-        replacements.foldLeft(code) { case (cod, rep) => rep.input.r.unanchored.replaceAllIn(cod, rep.output)}
-      }
-      def persistWith(w: (ammonite.ops.Path, String) => Unit)(classes: Seq[ApiClass]): Unit = {
-        val code = generateCode(classes)
-        if (code.isEmpty) return ()
-        val spkg = pkg.split("\\.").toList
-        val path = spkg.foldLeft(wd)(_ / _)
-        mkdir ! path
-        val filePath = path / s"${classes.head.name}.scala"
-        w(filePath, code)
-        println(s"Wrote $filePath")
-      }
       val classes = scrapeOverviewUrl(importLink, cacheDir)
       val groupedClasses = (classes ++ importLink.extraClasses).toSeq.groupBy(_.name).values.map(_.toList.distinct)
-      groupedClasses.foreach(persistWith(write.over(_, _)))
+      groupedClasses.filterNot(_.isEmpty).foreach(cs => persistWith(write.over(_, _))(generateCode(cs, importLink), wd, pkg + "." + cs.head.name))
     }
   }
 
+  def generateCode(classes: Seq[ApiClass], importLink: ImportLink): String = {
+    import importLink._
+    val modifiedClasses = classes.flatMap { cl =>
+      classModifications.filter(_.className.r.unanchored.findFirstIn(cl.name).isDefined).foldLeft[Option[ApiClass]](Some(cl)) { case (mc, mod) =>
+        mod match {
+          case ClassModification(_, "removeMethod", methodName) => Some(cl.copy(methods = cl.methods.filterNot(_._1 == methodName)))
+          case ClassModification(_, "removeClass", _) => None
+          case _ => Some(cl)
+        }
+      }
+    }
+    val code = if(modifiedClasses.isEmpty)
+      ""
+    else
+      CodeGenerator.codeForClass(modifiedClasses, pkg, imports.map(allFromPackage))
+
+    replacements.foldLeft(code) { case (cod, rep) => rep.input.r.unanchored.replaceAllIn(cod, rep.output)}
+  }
+
+  def persistWith(w: (ammonite.ops.Path, String) => Unit)(code: String, wd: Path, fullClassName: String): Unit = {
+    if (code.isEmpty) return ()
+    val splitted = fullClassName.split("\\.").toList
+    val className = splitted.last
+    val spkg = splitted.dropRight(1)
+    val path = spkg.foldLeft(wd)(_ / _)
+    mkdir ! path
+    val filePath = path / s"${className}.scala"
+    w(filePath, code)
+    println(s"Wrote $filePath")
+  }
 }
