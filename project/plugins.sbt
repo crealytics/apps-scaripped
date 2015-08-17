@@ -7,7 +7,7 @@ resolvers += Resolver.url(
 
 addSbtPlugin("me.lessis" % "bintray-sbt" % "0.3.0")
 
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.3")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.4")
 
 addSbtPlugin("com.danieltrinh" % "sbt-scalariform" % "1.3.0")
 
