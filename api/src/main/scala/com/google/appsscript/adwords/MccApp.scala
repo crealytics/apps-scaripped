@@ -51,3 +51,6 @@ trait MccApp extends js.Object {
    */
   def select(account: ManagedAccount): Unit = js.native
 }
+
+/** Entry point for the Mcc API */
+object MccApp extends MccApp
