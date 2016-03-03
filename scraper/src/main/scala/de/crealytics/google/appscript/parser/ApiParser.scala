@@ -3,9 +3,6 @@ package de.crealytics.google.appscript.parser
 import scala.meta._
 import scala.meta.tql._
 import scala.meta.internal.ast.Defn
-import scala.meta.ui._
-import scala.meta.syntactic.Token
-import scala.meta.syntactic.Token._
 import scala.language.reflectiveCalls
 import scala.meta.dialects.Scala211
 import scala.collection.mutable.HashMap

@@ -13,7 +13,7 @@ import org.jsoup.nodes._
 import org.jsoup.select._
 import java.nio.file.{ Paths, Files }
 import java.nio.charset.StandardCharsets
-import ammonite.ops._
+import ammonite.ops.{RegexContextMaker => _, _}
 import net.ceedubs.ficus.Ficus._
 import net.ceedubs.ficus.readers.ArbitraryTypeReader._
 import extensions._
@@ -66,21 +66,26 @@ object BigTimeScraper extends App {
     }
 
   }
+  implicit class Regex(sc: StringContext) {
+    def r = new util.matching.Regex(sc.parts.mkString, sc.parts.tail.map(_ => "x"): _*)
+  }
   def scrapeOverviewUrl(importLink: ImportLink, cacheDir: Path) = {
     import importLink._
     val ovDoc = scrapeAndCache(url, cacheDir)
     val detailPages = scraper.scrapeOverview(ovDoc).distinct.sorted
     val basePage = new java.net.URL(url)
-    detailPages.par.map { dp =>
+    detailPages.par.flatMap { dp =>
       import basePage._
-      val subUrl = if (dp.startsWith("/")) {
-        getProtocol + "://" + getHost +
+      val subUrl = dp match {
+        case r"^/.*" => getProtocol + "://" + getHost +
           (if (getPort == -1) "" else ":" + getPort) + dp
-      } else {
-        url + dp
+        case r"^http.*" => dp
+        case _ => url + dp
       }
-      val doc = scrapeAndCache(subUrl, cacheDir)
-      scraper.scrapeClass(doc)
+      scala.util.Try {
+        val doc = scrapeAndCache(subUrl, cacheDir)
+        scraper.scrapeClass(doc)
+      }.toOption
     }
   }
 
