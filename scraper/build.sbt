@@ -8,7 +8,7 @@ libraryDependencies ++= Seq(
   "com.lihaoyi" %% "ammonite-ops" % "0.4.3",
   "com.typesafe" % "config" % "1.2.1",
   "net.ceedubs" %% "ficus" % "1.1.2",
-  "org.scalameta" %% "scalameta" % "0.1.0-SNAPSHOT",
+  "org.scalameta" %% "scalameta" % "1.2.0",
   "com.eed3si9n" %% "treehugger" % "0.3.0"
 )
 
