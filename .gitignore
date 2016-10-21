@@ -5,3 +5,7 @@ target/
 .cache
 .settings/
 .DS_Store
+/.ensime*
+/.idea
+*.sc
+*.html
