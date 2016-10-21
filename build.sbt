@@ -4,7 +4,7 @@ organization in ThisBuild := "de.crealytics"
 
 version in ThisBuild := "0.2.2"
 
-scalaVersion in ThisBuild := "2.11.7"
+scalaVersion in ThisBuild := "2.11.8"
 
 resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
 
