@@ -1,4 +1,4 @@
-package de.crealytics.google.appscript.api
+package com.crealytics.google.appscript.api
 
 case class ApiMethod(name: String, parameters: Seq[ApiParam], returnType: String, description: String)
 

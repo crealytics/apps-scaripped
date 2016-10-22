@@ -1,11 +1,12 @@
-package de.crealytics.google.appscript.scraper
+package com.crealytics.google.appscript.scraper
+
 import net.ruippeixotog.scalascraper.browser.Browser
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import org.jsoup.nodes._
 import org.jsoup.select._
-import de.crealytics.google.appscript.api._
+import com.crealytics.google.appscript.api._
 import scala.util._
 import scala.collection.JavaConverters._
 

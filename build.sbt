@@ -1,6 +1,6 @@
 name := "apps-scaripped"
 
-organization in ThisBuild := "de.crealytics"
+organization in ThisBuild := "com.crealytics"
 
 version in ThisBuild := "0.2.2"
 
@@ -27,6 +27,19 @@ generateApi in (Compile) := Def.inputTaskDyn {
   (runMain in (scraper, Compile)).toTask(s" de.crealytics.google.appscript.scraper.BigTimeScraper $path ${apis.mkString(",")}")
 }.evaluated
 
+pomExtra in Global :=
+  <url>https://github.com/crealytics/apps-scaripped</url>
+    <scm>
+      <url>git@github.com:crealytics/apps-scaripped.git</url>
+      <connection>scm:git:git@github.com:crealytics/apps-scaripped.git</connection>
+    </scm>
+    <developers>
+      <developer>
+        <id>nightscape</id>
+        <name>Martin Mauch</name>
+        <url>http://www.crealytics.com</url>
+      </developer>
+    </developers>
 
 generatorPath in Compile := (scalaSource in (api, Compile)).value
 

@@ -1,3 +1,5 @@
+package com.crealytics.google.appscript
+
 import scala.collection.IterableLike
 import scala.collection.generic.CanBuildFrom
 

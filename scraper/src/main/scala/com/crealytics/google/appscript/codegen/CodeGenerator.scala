@@ -1,7 +1,7 @@
-package de.crealytics.google.appscript.codegen
+package com.crealytics.google.appscript.codegen
 
-import de.crealytics.google.appscript.api._
-import de.crealytics.google.appscript.scraper.GoogleAppScriptClassScraper
+import com.crealytics.google.appscript.scraper.GoogleAppScriptClassScraper
+import com.crealytics.google.appscript.api._
 import treehugger.forest._
 import definitions._
 import treehuggerDSL._

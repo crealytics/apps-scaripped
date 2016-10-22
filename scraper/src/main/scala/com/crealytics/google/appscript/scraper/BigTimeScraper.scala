@@ -1,9 +1,9 @@
-package de.crealytics.google.appscript.scraper
+package com.crealytics.google.appscript.scraper
 
-import de.crealytics.google.appscript.api._
-import de.crealytics.google.appscript.scraper._
-import de.crealytics.google.appscript.parser._
-import de.crealytics.google.appscript.codegen._
+import com.crealytics.google.appscript.api._
+import com.crealytics.google.appscript.scraper._
+import com.crealytics.google.appscript.parser._
+import com.crealytics.google.appscript.codegen._
 import net.ruippeixotog.scalascraper.browser.Browser
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
@@ -11,12 +11,13 @@ import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import org.jsoup.Jsoup
 import org.jsoup.nodes._
 import org.jsoup.select._
-import java.nio.file.{ Paths, Files }
+import java.nio.file.{Files, Paths}
 import java.nio.charset.StandardCharsets
+
 import ammonite.ops.{RegexContextMaker => _, _}
+import com.crealytics.google.appscript.codegen.CodeGenerator
 import net.ceedubs.ficus.Ficus._
 import net.ceedubs.ficus.readers.ArbitraryTypeReader._
-import extensions._
 
 object BigTimeScraper extends App {
   if (args.length < 1)

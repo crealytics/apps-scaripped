@@ -1,4 +1,4 @@
-package de.crealytics.google.appscript.parser
+package com.crealytics.google.appscript.parser
 
 import scala.language.reflectiveCalls
 import scala.meta._
@@ -6,7 +6,7 @@ import scala.meta.dialects.Scala211
 import scala.util.Try
 
 import ammonite.ops._
-import de.crealytics.google.appscript.api._
+import com.crealytics.google.appscript.api._
 
 class ApiParser(path: Path) {
   implicit class RichDefnDef(d: Defn.Def) {
