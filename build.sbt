@@ -2,7 +2,7 @@ name := "apps-scaripped"
 
 organization in ThisBuild := "com.crealytics"
 
-version in ThisBuild := "0.2.2"
+version in ThisBuild := "0.2.6"
 
 scalaVersion in ThisBuild := "2.11.8"
 
@@ -27,6 +27,16 @@ generateApi in (Compile) := Def.inputTaskDyn {
   (runMain in (scraper, Compile)).toTask(s" de.crealytics.google.appscript.scraper.BigTimeScraper $path ${apis.mkString(",")}")
 }.evaluated
 
+publishMavenStyle in Global := true
+
+publishTo in Global := {
+  val nexus = "https://oss.sonatype.org/"
+  if (version.value.endsWith("SNAPSHOT"))
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+}
+
 pomExtra in Global :=
   <url>https://github.com/crealytics/apps-scaripped</url>
     <scm>
@@ -42,7 +52,5 @@ pomExtra in Global :=
     </developers>
 
 generatorPath in Compile := (scalaSource in (api, Compile)).value
-
-bintrayOrganization in ThisBuild := Some("crealytics")
 
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
